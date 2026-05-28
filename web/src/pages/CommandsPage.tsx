@@ -1,4 +1,5 @@
 import { ListDetail } from "../components/ListDetail.js";
+import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type CommandItem } from "../api.js";
 
@@ -28,7 +29,7 @@ export function CommandsPage() {
             <dl className="kv">
               <dt>description</dt><dd>{item.raw.description || "—"}</dd>
             </dl>
-            <pre style={{ marginTop: 14 }}>{item.raw.body}</pre>
+            <div style={{ marginTop: 14 }}><Markdown>{item.raw.body}</Markdown></div>
           </>
         )}
       />

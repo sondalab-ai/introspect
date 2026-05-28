@@ -1,4 +1,5 @@
 import { ListDetail } from "../components/ListDetail.js";
+import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type InstructionsItem } from "../api.js";
 
@@ -25,7 +26,7 @@ export function InstructionsPage() {
           <>
             <h2>{item.title}</h2>
             <div className="meta">{item.raw.path}</div>
-            <pre>{item.raw.content}</pre>
+            <Markdown>{item.raw.content}</Markdown>
           </>
         )}
       />

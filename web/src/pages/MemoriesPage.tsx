@@ -1,4 +1,5 @@
 import { ListDetail } from "../components/ListDetail.js";
+import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type MemoryItem } from "../api.js";
 
@@ -33,7 +34,7 @@ export function MemoriesPage() {
             <div className="meta">
               {scopeLabel(item.raw.scope)} · {item.raw.path}
             </div>
-            <pre>{item.raw.body}</pre>
+            <Markdown>{item.raw.body}</Markdown>
           </>
         )}
       />
