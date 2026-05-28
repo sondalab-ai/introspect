@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { mkdtempSync, writeFileSync, rmSync, symlinkSync, unlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readMarkdownDir } from "../markdownDir.js";
@@ -43,5 +43,19 @@ describe("readMarkdownDir", () => {
     expect(items).toHaveLength(1);
     expect(items[0]!.meta).toEqual({});
     expect(items[0]!.body).toBe("no frontmatter here, just body.");
+  });
+
+  it("skips broken symlinks and missing files without throwing", () => {
+    writeFileSync(join(dir, "ok.md"), "ok body");
+    // Broken symlink whose target never existed.
+    symlinkSync(join(dir, "nope-target.md"), join(dir, "broken.md"));
+    // Symlink whose target gets removed.
+    const stale = join(dir, "stale-target.md");
+    writeFileSync(stale, "stale body");
+    symlinkSync(stale, join(dir, "stale.md"));
+    unlinkSync(stale);
+
+    const items = readMarkdownDir(dir);
+    expect(items.map((i) => i.name).sort()).toEqual(["ok"]);
   });
 });

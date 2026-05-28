@@ -16,15 +16,21 @@ export interface SettingsItem {
 
 const FILENAMES = ["settings.json", "settings.local.json"];
 
+function asRecord(v: unknown): Record<string, unknown> {
+  return v !== null && typeof v === "object" && !Array.isArray(v)
+    ? (v as Record<string, unknown>)
+    : {};
+}
+
 function partition(obj: Record<string, unknown>): {
   hooks: Record<string, unknown>;
   permissions: Record<string, unknown>;
   env: Record<string, unknown>;
   other: Record<string, unknown>;
 } {
-  const hooks = (obj.hooks as Record<string, unknown>) ?? {};
-  const permissions = (obj.permissions as Record<string, unknown>) ?? {};
-  const env = (obj.env as Record<string, unknown>) ?? {};
+  const hooks = asRecord(obj.hooks);
+  const permissions = asRecord(obj.permissions);
+  const env = asRecord(obj.env);
   const other: Record<string, unknown> = {};
   for (const [k, v] of Object.entries(obj)) {
     if (k === "hooks" || k === "permissions" || k === "env") continue;
@@ -46,7 +52,7 @@ export function readSettings(roots: ResolvedRoot[]): SettingsItem[] {
       } catch {
         continue;
       }
-      if (parsed === null || typeof parsed !== "object") continue;
+      if (parsed === null || typeof parsed !== "object" || Array.isArray(parsed)) continue;
       const partitioned = partition(parsed as Record<string, unknown>);
       const { value, redactedKeys } = redactSecrets({
         hooks: partitioned.hooks,

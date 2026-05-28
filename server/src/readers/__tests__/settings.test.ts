@@ -59,4 +59,21 @@ describe("readSettings", () => {
     writeFileSync(join(dir, "settings.json"), "{not json");
     expect(readSettings([rootOf(dir)])).toEqual([]);
   });
+
+  it("returns [] when settings.json is a JSON array", () => {
+    writeFileSync(join(dir, "settings.json"), JSON.stringify([{ hooks: {} }]));
+    expect(readSettings([rootOf(dir)])).toEqual([]);
+  });
+
+  it("coerces non-object hooks/permissions/env subfields to {}", () => {
+    writeFileSync(
+      join(dir, "settings.json"),
+      JSON.stringify({ hooks: "nope", permissions: [1, 2], env: 42 })
+    );
+    const items = readSettings([rootOf(dir)]);
+    expect(items).toHaveLength(1);
+    expect(items[0]!.hooks).toEqual({});
+    expect(items[0]!.permissions).toEqual({});
+    expect(items[0]!.env).toEqual({});
+  });
 });
