@@ -26,11 +26,21 @@ export function AgentsPage() {
           <>
             <h2>{item.raw.name}</h2>
             <div className="meta">{item.raw.path}</div>
-            <dl className="kv">
-              <dt>description</dt><dd>{item.raw.description || "—"}</dd>
-              <dt>tools</dt><dd>{item.raw.tools || "—"}</dd>
-            </dl>
-            <div style={{ marginTop: 14 }}><Markdown>{item.raw.body}</Markdown></div>
+            {item.raw.description ? (
+              <div className="detail-lead">{item.raw.description}</div>
+            ) : null}
+            {item.raw.tools ? (
+              <div className="tools-row">
+                {item.raw.tools
+                  .split(",")
+                  .map((t) => t.trim())
+                  .filter(Boolean)
+                  .map((t) => (
+                    <span className="tool-chip" key={t}>{t}</span>
+                  ))}
+              </div>
+            ) : null}
+            <Markdown>{item.raw.body}</Markdown>
           </>
         )}
       />
