@@ -81,7 +81,8 @@ body {
 
 /* 3-col grid: list pane | resizer | detail. Width comes from inline style. */
 .ld { display: grid; grid-template-columns: 300px 8px 1fr; height: 100%; gap: 0; min-height: 0; }
-.ld-list { padding: 0 14px 0 0; overflow-y: auto; min-width: 0; }
+/* Inner padding gives the rounded items' glow room before scroll clipping. */
+.ld-list { padding: 8px 12px 12px 8px; overflow-y: auto; min-width: 0; }
 .ld-search { display: block; width: 100%; box-sizing: border-box; margin-bottom: 10px;
   padding: 8px 11px; font-family: "IBM Plex Mono"; font-size: 12px; color: var(--txt);
   background: rgba(8,12,16,.55); border: 1px solid var(--glass-border);
@@ -93,11 +94,11 @@ body {
 .ld-list-title { font-family: "Space Grotesk"; font-size: 11px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--mut); padding-bottom: 10px;
   border-bottom: 1px solid var(--line); margin-bottom: 8px; }
-.ld-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; }
+.ld-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; margin: 2px 0; }
 .ld-item:hover { background: rgba(46,230,192,.05); }
 /* Rounded clickable items use a glow ring on active (no left inset bar). */
 .ld-item.on { background: linear-gradient(90deg, rgba(46,230,192,.12), rgba(46,230,192,.02));
-  box-shadow: 0 0 0 1px rgba(46,230,192,.35), 0 0 12px rgba(46,230,192,.22); }
+  box-shadow: 0 0 0 1px rgba(46,230,192,.35), 0 0 9px rgba(46,230,192,.22); }
 /* Indented child item under a MEMORY.md header — subtle hierarchy guide. */
 .ld-item.is-child { position: relative; }
 .ld-item.is-child::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0;
