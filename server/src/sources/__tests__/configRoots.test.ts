@@ -64,4 +64,13 @@ describe("discoverConfigRoots", () => {
     expect(roots).toHaveLength(1);
     expect(roots[0]!.realPath).toBe(realpathSync(real));
   });
+
+  it("rethrows errors that are not 'missing path' (ENOENT/ENOTDIR/ELOOP)", () => {
+    // A path containing a null byte triggers ERR_INVALID_ARG_VALUE from
+    // realpathSync — not a missing-path code, so it must propagate.
+    const badPath = `foo${String.fromCharCode(0)}bar`;
+    expect(() =>
+      discoverConfigRoots({ env: { CLAUDE_CONFIG_DIR: badPath } })
+    ).toThrow(/ERR_INVALID_ARG_VALUE|null bytes/);
+  });
 });

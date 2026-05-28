@@ -3,10 +3,19 @@ import { join } from "node:path";
 import type { ConfigRoot, ResolvedSource, SourceId } from "./types.js";
 
 /**
- * Relative path of each source under a config root. Convention-variable
- * sources (memories) use a sensible default here; the discovery profile
- * (later slice) overrides them. `existsSync` follows symlinks, so this is
- * symlink-agnostic for the source entries themselves.
+ * Relative path of each source under a config root. `existsSync` follows
+ * symlinks, so this is symlink-agnostic for the source entries themselves.
+ *
+ * Several mappings here are intentionally Placeholder (not delivered) —
+ * they will be refined by the discovery profile (Slice 1.5) which can
+ * override paths per user/project convention:
+ *   - `skills` and `plugins` currently both resolve to `plugins/` (skills
+ *     in practice live under `plugins/<plugin>/skills/`, but Slice 0 only
+ *     needs to report presence of the plugins root);
+ *   - `memories` defaults to `memory/` even though real layouts vary
+ *     (e.g. `docs/memory/` symlinked from the config root);
+ *   - `instructions` always reads `CLAUDE.md`; companion files such as
+ *     `CLAUDE.local.md` are not surfaced yet.
  */
 const SOURCE_RELATIVE: Record<SourceId, string> = {
   instructions: "CLAUDE.md",

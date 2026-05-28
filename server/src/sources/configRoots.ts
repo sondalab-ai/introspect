@@ -13,7 +13,9 @@ export function candidatePaths(opts: ResolveOptions = {}): string[] {
 
 /**
  * Resolve candidate paths through realpath and deduplicate by inode.
- * Non-existent paths are silently skipped (they are not config roots).
+ * Paths that do not exist or aren't traversable (ENOENT/ENOTDIR/ELOOP)
+ * are skipped silently — they're simply not config roots. Any other I/O
+ * error (e.g. EACCES) is rethrown so the caller can surface it.
  */
 export function discoverConfigRoots(opts: ResolveOptions = {}): ConfigRoot[] {
   const seen = new Set<number>();
@@ -24,12 +26,24 @@ export function discoverConfigRoots(opts: ResolveOptions = {}): ConfigRoot[] {
     try {
       realPath = realpathSync(declaredPath);
       inode = statSync(realPath).ino;
-    } catch {
-      continue;
+    } catch (err) {
+      if (isMissingPathError(err)) continue;
+      throw err;
     }
     if (seen.has(inode)) continue;
     seen.add(inode);
     roots.push({ declaredPath, realPath, inode });
   }
   return roots;
+}
+
+const MISSING_PATH_CODES = new Set(["ENOENT", "ENOTDIR", "ELOOP"]);
+function isMissingPathError(err: unknown): boolean {
+  return (
+    typeof err === "object" &&
+    err !== null &&
+    "code" in err &&
+    typeof (err as { code: unknown }).code === "string" &&
+    MISSING_PATH_CODES.has((err as { code: string }).code)
+  );
 }
