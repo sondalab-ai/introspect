@@ -1,6 +1,8 @@
+#!/usr/bin/env node
 import { spawn } from "node:child_process";
 import { platform } from "node:process";
 import { buildServer } from "../api/server.js";
+import { parseExtraRoots } from "./env.js";
 
 const PORT = Number(process.env.INTROSPECT_PORT ?? 4317);
 
@@ -9,17 +11,22 @@ function openBrowser(url: string): void {
   const cmd =
     platform === "darwin" ? "open" : platform === "win32" ? "start" : "xdg-open";
   try {
-    spawn(cmd, [url], { stdio: "ignore", detached: true, shell: platform === "win32" }).unref();
+    const child = spawn(cmd, [url], {
+      stdio: "ignore",
+      detached: true,
+      shell: platform === "win32",
+    });
+    child.on("error", () => {
+      // best-effort: missing browser binary or PATH issue is non-fatal
+    });
+    child.unref();
   } catch {
-    // ignore — the URL is printed below regardless
+    // sync spawn failure — also non-fatal
   }
 }
 
 async function main(): Promise<void> {
-  const extraRoots = (process.env.INTROSPECT_EXTRA_ROOTS ?? "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const extraRoots = parseExtraRoots(process.env.INTROSPECT_EXTRA_ROOTS);
 
   const app = buildServer({ extraRoots });
   await app.listen({ port: PORT, host: "127.0.0.1" });

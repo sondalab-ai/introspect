@@ -32,4 +32,12 @@ describe("buildServer", () => {
     expect(agents.status).toBe("present");
     await app.close();
   });
+
+  it("GET /sources returns [] when no config roots resolve", async () => {
+    const app = buildServer({ env: { CLAUDE_CONFIG_DIR: "/definitely/does/not/exist" }, homeDir: "/also/missing" });
+    const res = await app.inject({ method: "GET", url: "/sources" });
+    expect(res.statusCode).toBe(200);
+    expect(res.json()).toEqual([]);
+    await app.close();
+  });
 });
