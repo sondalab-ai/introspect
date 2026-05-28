@@ -10,7 +10,7 @@ export function MemoriesPage() {
   const items = state.data.map((it) => ({
     id: it.path,
     title: it.name,
-    subtitle: it.bodyPreview,
+    subtitle: it.scope === "global" ? "global" : `project · ${it.scope}`,
     raw: it,
   }));
 
@@ -18,12 +18,16 @@ export function MemoriesPage() {
     <div className="canvas-body">
       <ListDetail
         items={items}
-        listTitle="Memories"
+        listTitle={`Memories (${items.length})`}
         emptyMessage="Nessuna memoria trovata."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.name}</h2>
-            <div className="meta">{item.raw.path}</div>
+            <div className="meta">
+              {item.raw.scope === "global" ? "global" : `project · ${item.raw.scope}`}
+              {" · "}
+              {item.raw.path}
+            </div>
             <pre>{item.raw.bodyPreview}</pre>
           </>
         )}
