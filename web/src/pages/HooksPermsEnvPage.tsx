@@ -17,6 +17,7 @@ export function HooksPermsEnvPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="settings"
         items={items}
         listTitle="Settings"
         emptyMessage="Nessun settings.json trovato."

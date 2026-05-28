@@ -17,6 +17,7 @@ export function AgentsPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="agents"
         items={items}
         listTitle="Subagenti"
         emptyMessage="Nessun agente trovato."

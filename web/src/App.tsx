@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { NAV_GROUPS } from "./nav.js";
+import { useResizableWidth } from "./useResizableWidth.js";
 import { InstructionsPage } from "./pages/InstructionsPage.js";
 import { AgentsPage } from "./pages/AgentsPage.js";
 import { CommandsPage } from "./pages/CommandsPage.js";
@@ -26,9 +27,10 @@ function renderPage(label: string): ReactNode {
 
 export function App() {
   const [active, setActive] = useState("System prompt");
+  const nav = useResizableWidth({ storageKey: "nav-w", min: 180, max: 360, initial: 222 });
 
   return (
-    <div className="app">
+    <div className="app" style={{ gridTemplateColumns: `${nav.width}px 8px 1fr 300px` }}>
       <nav className="nav glass">
         <div className="brand">
           <b>◇</b> intro<b>spect</b>
@@ -49,6 +51,11 @@ export function App() {
           </div>
         ))}
       </nav>
+
+      <div className="resizer" role="separator" aria-orientation="vertical"
+           aria-label="Resize navigation" {...nav.handlers}>
+        <div className="resizer-grip" />
+      </div>
 
       <section className="canvas">
         <div className="l">{active}</div>

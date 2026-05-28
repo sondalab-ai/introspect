@@ -17,6 +17,7 @@ export function PluginsPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="plugins"
         items={items}
         listTitle="Plugin installati"
         emptyMessage="Nessun plugin trovato."

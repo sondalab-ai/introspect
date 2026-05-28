@@ -17,6 +17,7 @@ export function InstructionsPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="instructions"
         items={items}
         listTitle="CLAUDE.md per config root"
         emptyMessage="Nessun CLAUDE.md trovato."

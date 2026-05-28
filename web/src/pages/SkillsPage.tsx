@@ -17,6 +17,7 @@ export function SkillsPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="skills"
         items={items}
         listTitle="Skills"
         emptyMessage="Nessuna skill trovata."

@@ -17,6 +17,7 @@ export function CommandsPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="commands"
         items={items}
         listTitle="Slash commands"
         emptyMessage="Nessun command trovato."

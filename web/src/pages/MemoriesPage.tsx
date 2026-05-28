@@ -23,6 +23,7 @@ export function MemoriesPage() {
   return (
     <div className="canvas-body">
       <ListDetail
+        storageKey="memories"
         items={items}
         listTitle={`Memories (${items.length})`}
         emptyMessage="Nessuna memoria trovata."
