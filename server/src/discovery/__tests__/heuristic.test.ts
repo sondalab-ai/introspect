@@ -66,4 +66,18 @@ describe("discoverHeuristic", () => {
       rmSync(root2, { recursive: true, force: true });
     }
   });
+
+  it("resolves slugs when path components contain '.' (e.g. user.name)", () => {
+    // Simulate /tmp/xyz/user.name/proj-with-dash where Claude's slug encodes
+    // both `/` and `.` as `-`, producing `-tmp-xyz-user-name-proj-with-dash`.
+    const dotDir = join(root, "user.name", "proj-with-dash");
+    mkdirSync(dotDir, { recursive: true });
+    mkdirSync(join(dotDir, "docs", "memory"), { recursive: true });
+    // The slug encodes the real path of `dotDir` (resolved through realpath).
+    const slug = realpathSync(dotDir).replace(/[/.]/g, "-");
+    mkdirSync(join(root, "projects", slug), { recursive: true });
+
+    const r = discoverHeuristic([rootOf(root)]);
+    expect(r.extraMemoryDirs).toContain(realpathSync(join(dotDir, "docs", "memory")));
+  });
 });

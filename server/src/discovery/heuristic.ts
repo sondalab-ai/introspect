@@ -24,31 +24,64 @@ function listProjectSlugs(root: string): string[] {
 }
 
 /**
- * Resolve a Claude-style slug (`/path/to/repo` → `-path-to-repo`) back to an
- * absolute filesystem path. The mapping is lossy because `-` is also a legal
- * character inside path components; we walk candidates `-` → `/` greedily
- * against the live filesystem and return the first directory that exists.
+ * Resolve a Claude-style slug back to an absolute filesystem path.
+ *
+ * Claude builds slugs by replacing both `/` and `.` with `-`, which makes the
+ * inverse ambiguous: a `-` in the slug may correspond to a path separator, a
+ * literal `-` (e.g. `camunda-hub`), or a `.` (e.g. `marcello.barile`).
+ *
+ * Resolve by walking the live filesystem level by level: at each directory we
+ * inspect real entries, slug-encode their names with the same rule, and recurse
+ * into any whose encoded form is a prefix of the remaining slug tokens.
  */
 function slugToPath(slug: string): string | null {
   const stripped = slug.replace(/^-/, "");
   const tokens = stripped.split("-");
-  return walk("", tokens, 0);
+  return walk("/", tokens, 0);
+}
+
+function encodeName(name: string): string {
+  return name.replace(/[/.]/g, "-");
 }
 
 function walk(prefix: string, tokens: string[], i: number): string | null {
   if (i >= tokens.length) {
-    return prefix !== "" && existsSync(prefix) ? prefix : null;
-  }
-  // Greedily try the longest run of tokens (joined by `-`) as a single
-  // child component, then back off. This lets us match path components
-  // that legitimately contain `-` (e.g. `h-repo-GsFmiL`).
-  for (let j = tokens.length; j > i; j--) {
-    const component = tokens.slice(i, j).join("-");
-    const candidate = prefix + "/" + component;
-    if (existsSync(candidate)) {
-      const r = walk(candidate, tokens, j);
-      if (r) return r;
+    try {
+      if (statSync(prefix).isDirectory()) return prefix;
+    } catch {
+      // fall through
     }
+    return null;
+  }
+  let entries: string[];
+  try {
+    entries = readdirSync(prefix);
+  } catch {
+    return null;
+  }
+  const remaining = tokens.length - i;
+  // Prefer the longest-encoded entry first so paths with `-` or `.` are
+  // matched in one shot before shorter false-positive prefixes.
+  const candidates: { entry: string; consumed: number }[] = [];
+  for (const entry of entries) {
+    const enc = encodeName(entry).split("-");
+    if (enc.length > remaining) continue;
+    let ok = true;
+    for (let t = 0; t < enc.length; t++) {
+      if (enc[t] !== tokens[i + t]) { ok = false; break; }
+    }
+    if (ok) candidates.push({ entry, consumed: enc.length });
+  }
+  candidates.sort((a, b) => b.consumed - a.consumed);
+  for (const c of candidates) {
+    const next = prefix.endsWith("/") ? prefix + c.entry : prefix + "/" + c.entry;
+    try {
+      if (!statSync(next).isDirectory()) continue;
+    } catch {
+      continue;
+    }
+    const r = walk(next, tokens, i + c.consumed);
+    if (r) return r;
   }
   return null;
 }
