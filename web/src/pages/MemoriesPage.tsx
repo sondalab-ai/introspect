@@ -3,10 +3,24 @@ import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type MemoryItem } from "../api.js";
 
-function scopeLabel(s: string): string {
-  if (s === "global") return "global";
-  if (s.startsWith("discovered:")) return `discovered · ${s.slice("discovered:".length)}`;
-  return `project · ${s}`;
+type ScopeKind = "global" | "project" | "discovered";
+
+function scopeChip(s: string): { label: string; kind: ScopeKind } {
+  if (s === "global") return { label: "global", kind: "global" };
+  if (s.startsWith("discovered:")) {
+    const path = s.slice("discovered:".length);
+    return { label: path, kind: "discovered" };
+  }
+  return { label: s, kind: "project" };
+}
+
+function ScopeChip({ scope }: { scope: string }) {
+  const c = scopeChip(scope);
+  return (
+    <span className={`glass-chip is-${c.kind}`} title={scope}>
+      <span className="chip-text">{c.label}</span>
+    </span>
+  );
 }
 
 export function MemoriesPage() {
@@ -17,7 +31,7 @@ export function MemoriesPage() {
   const items = state.data.map((it) => ({
     id: it.path,
     title: it.name,
-    subtitle: scopeLabel(it.scope),
+    subtitle: scopeChip(it.scope).label,
     raw: it,
   }));
 
@@ -31,9 +45,10 @@ export function MemoriesPage() {
         renderDetail={(item) => (
           <>
             <h2>{item.raw.name}</h2>
-            <div className="meta">
-              {scopeLabel(item.raw.scope)} · {item.raw.path}
+            <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "2px 0 16px" }}>
+              <ScopeChip scope={item.raw.scope} />
             </div>
+            <div className="meta">{item.raw.path}</div>
             <Markdown>{item.raw.body}</Markdown>
           </>
         )}
