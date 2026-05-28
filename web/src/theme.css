@@ -95,8 +95,9 @@ body {
   border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .ld-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; }
 .ld-item:hover { background: rgba(46,230,192,.05); }
-.ld-item.on { background: linear-gradient(90deg, rgba(46,230,192,.10), transparent);
-  box-shadow: inset 2px 0 0 var(--cy); }
+/* Rounded clickable items use a glow ring on active (no left inset bar). */
+.ld-item.on { background: linear-gradient(90deg, rgba(46,230,192,.12), rgba(46,230,192,.02));
+  box-shadow: 0 0 0 1px rgba(46,230,192,.35), 0 0 12px rgba(46,230,192,.22); }
 /* Indented child item under a MEMORY.md header — subtle hierarchy guide. */
 .ld-item.is-child { position: relative; }
 .ld-item.is-child::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0;
