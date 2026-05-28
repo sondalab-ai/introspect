@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import { asString, bodyPreview } from "./frontmatter.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
 export interface SkillItem {
@@ -14,11 +15,6 @@ export interface SkillItem {
 const SKILL_FILE = "SKILL.md";
 /** Max nesting depth from the plugins root to look for SKILL.md. */
 const MAX_DEPTH = 4;
-const PREVIEW_LIMIT = 200;
-
-function asString(v: unknown): string {
-  return typeof v === "string" ? v : "";
-}
 
 function walk(dir: string, depth: number, out: string[]): void {
   if (depth > MAX_DEPTH) return;
@@ -56,7 +52,7 @@ export function readSkills(roots: ResolvedRoot[]): SkillItem[] {
         path,
         name: asString(meta.name) || path,
         description: asString(meta.description),
-        bodyPreview: body.replace(/\s+/g, " ").trim().slice(0, PREVIEW_LIMIT),
+        bodyPreview: bodyPreview(body),
       });
     }
   }

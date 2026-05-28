@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { asString } from "./frontmatter.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
 export interface PluginItem {
@@ -10,9 +11,6 @@ export interface PluginItem {
   version: string;
 }
 
-function asString(v: unknown): string {
-  return typeof v === "string" ? v : "";
-}
 function asBool(v: unknown): boolean {
   return v === true;
 }

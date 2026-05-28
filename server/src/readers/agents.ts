@@ -1,5 +1,6 @@
 import { join } from "node:path";
 import { readMarkdownDir } from "./markdownDir.js";
+import { asString } from "./frontmatter.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
 export interface AgentItem {
@@ -9,10 +10,6 @@ export interface AgentItem {
   description: string;
   tools: string;
   bodyPreview: string;
-}
-
-function asString(v: unknown): string {
-  return typeof v === "string" ? v : "";
 }
 
 /** Read agent definitions from `<root>/agents/*.md`. */

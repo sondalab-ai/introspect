@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import { bodyPreview } from "./frontmatter.js";
 
 export interface MarkdownItem {
   /** Filename without the `.md` extension. */
@@ -15,8 +16,6 @@ export interface MarkdownItem {
   bodyPreview: string;
 }
 
-const PREVIEW_LIMIT = 200;
-
 /** List `*.md` files in a directory, parse frontmatter, sort by name. */
 export function readMarkdownDir(dirPath: string): MarkdownItem[] {
   if (!existsSync(dirPath)) return [];
@@ -25,8 +24,15 @@ export function readMarkdownDir(dirPath: string): MarkdownItem[] {
   for (const entry of entries) {
     if (!entry.endsWith(".md")) continue;
     const path = join(dirPath, entry);
-    if (!statSync(path).isFile()) continue;
-    const raw = readFileSync(path, "utf8");
+    let raw: string;
+    try {
+      const st = statSync(path);
+      if (!st.isFile()) continue;
+      raw = readFileSync(path, "utf8");
+    } catch {
+      // Entry vanished, broken symlink, or unreadable — skip.
+      continue;
+    }
     const parsed = matter(raw);
     const body = parsed.content.trimStart();
     items.push({
@@ -34,7 +40,7 @@ export function readMarkdownDir(dirPath: string): MarkdownItem[] {
       path,
       meta: parsed.data ?? {},
       body,
-      bodyPreview: body.replace(/\s+/g, " ").trim().slice(0, PREVIEW_LIMIT),
+      bodyPreview: bodyPreview(body),
     });
   }
   items.sort((a, b) => a.name.localeCompare(b.name));

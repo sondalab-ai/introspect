@@ -1,5 +1,6 @@
 import { join } from "node:path";
 import { readMarkdownDir } from "./markdownDir.js";
+import { asString } from "./frontmatter.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
 export interface CommandItem {
@@ -8,10 +9,6 @@ export interface CommandItem {
   name: string;
   description: string;
   bodyPreview: string;
-}
-
-function asString(v: unknown): string {
-  return typeof v === "string" ? v : "";
 }
 
 /** Read slash commands from `<root>/commands/*.md`. */
