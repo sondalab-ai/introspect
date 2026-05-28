@@ -8,6 +8,8 @@ import { readSkills } from "../readers/skills.js";
 import { readMemories } from "../readers/memories.js";
 import { readPlugins } from "../readers/plugins.js";
 import { readSettings } from "../readers/settings.js";
+import { readProjects } from "../readers/projects.js";
+import { readSessions, readSession } from "../readers/sessions.js";
 import { defaultProfilePath, loadProfile } from "../discovery/profile.js";
 
 /** Build the read-only API. `opts` are forwarded to the source resolver. */
@@ -27,6 +29,21 @@ export function buildServer(opts: ResolveOptions = {}): FastifyInstance {
   });
   app.get("/plugins", async () => readPlugins(resolveSources(opts)));
   app.get("/settings", async () => readSettings(resolveSources(opts)));
+
+  app.get("/projects", async () => readProjects(resolveSources(opts)));
+
+  app.get<{ Params: { slug: string } }>("/projects/:slug/sessions", async (req) =>
+    readSessions(resolveSources(opts), req.params.slug),
+  );
+
+  app.get<{ Params: { slug: string; id: string } }>(
+    "/sessions/:slug/:id",
+    async (req, reply) => {
+      const t = readSession(resolveSources(opts), req.params.slug, req.params.id);
+      if (!t) return reply.code(404).send({ error: "not found" });
+      return t;
+    },
+  );
 
   return app;
 }
