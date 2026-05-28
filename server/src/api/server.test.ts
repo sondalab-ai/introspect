@@ -40,4 +40,23 @@ describe("buildServer", () => {
     expect(res.json()).toEqual([]);
     await app.close();
   });
+
+  it("exposes all Slice-1 endpoints with status 200", async () => {
+    // dir already has an `agents/` subdir created in beforeEach.
+    const app = buildServer({ env: { CLAUDE_CONFIG_DIR: dir } });
+    for (const path of [
+      "/instructions",
+      "/agents",
+      "/commands",
+      "/skills",
+      "/memories",
+      "/plugins",
+      "/settings",
+    ]) {
+      const res = await app.inject({ method: "GET", url: path });
+      expect(res.statusCode, `expected 200 from ${path}`).toBe(200);
+      expect(Array.isArray(res.json())).toBe(true);
+    }
+    await app.close();
+  });
 });
