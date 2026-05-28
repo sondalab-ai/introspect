@@ -2,7 +2,10 @@
   "name": "@introspect/server",
   "version": "0.0.0",
   "type": "module",
-  "bin": { "introspect": "./dist/bin/introspect.js" },
+  "bin": {
+    "introspect": "./dist/bin/introspect.js",
+    "introspect-init": "./dist/bin/introspect-init.js"
+  },
   "scripts": {
     "dev": "tsx watch src/bin/introspect.ts",
     "build": "tsc -p tsconfig.json",
