@@ -8,6 +8,8 @@ export interface ListDetailItem {
   title: string;
   /** Secondary line shown under the title. */
   subtitle?: string;
+  /** Indent depth (0 = root). Used to render hierarchy in the list. */
+  level?: number;
 }
 
 export interface ListDetailProps<T extends ListDetailItem> {
@@ -82,16 +84,21 @@ export function ListDetail<T extends ListDetailItem>({
         {filtered.length === 0 ? (
           <div className="ld-empty">{query.trim() ? "Nessun risultato." : emptyMessage}</div>
         ) : (
-          filtered.map((item) => (
-            <div
-              key={item.id}
-              className={`ld-item${item.id === (selected?.id ?? "") ? " on" : ""}`}
-              onClick={() => setSelectedId(item.id)}
-            >
-              <div className="ld-item-title">{item.title}</div>
-              {item.subtitle ? <div className="ld-item-sub">{item.subtitle}</div> : null}
-            </div>
-          ))
+          filtered.map((item) => {
+            const lvl = item.level ?? 0;
+            const padLeft = 10 + lvl * 16;
+            return (
+              <div
+                key={item.id}
+                className={`ld-item${item.id === (selected?.id ?? "") ? " on" : ""}${lvl > 0 ? " is-child" : ""}`}
+                style={{ paddingLeft: padLeft }}
+                onClick={() => setSelectedId(item.id)}
+              >
+                <div className="ld-item-title">{item.title}</div>
+                {item.subtitle ? <div className="ld-item-sub">{item.subtitle}</div> : null}
+              </div>
+            );
+          })
         )}
       </div>
       <div

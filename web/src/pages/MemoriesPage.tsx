@@ -23,17 +23,69 @@ function ScopeChip({ scope }: { scope: string }) {
   );
 }
 
+interface MemoryRow {
+  id: string;
+  title: string;
+  subtitle: string;
+  level: number;
+  raw: MemoryItem;
+}
+
+function dirOf(path: string): string {
+  const i = path.lastIndexOf("/");
+  return i < 0 ? "" : path.slice(0, i);
+}
+
+function isMemoryMd(name: string): boolean {
+  return name.toUpperCase() === "MEMORY";
+}
+
+/** Group by folder, then within each folder MEMORY.md first (level 0), others indented (level 1). */
+function withHierarchy(items: MemoryItem[]): MemoryRow[] {
+  const groups = new Map<string, MemoryItem[]>();
+  for (const it of items) {
+    const d = dirOf(it.path);
+    const g = groups.get(d);
+    if (g) g.push(it);
+    else groups.set(d, [it]);
+  }
+  const dirs = [...groups.keys()].sort();
+  const out: MemoryRow[] = [];
+  for (const d of dirs) {
+    const group = groups.get(d)!;
+    const memoryMd = group.find((i) => isMemoryMd(i.name));
+    const others = group
+      .filter((i) => i !== memoryMd)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const hasParent = !!memoryMd;
+    if (memoryMd) {
+      out.push({
+        id: memoryMd.path,
+        title: memoryMd.name,
+        subtitle: scopeChip(memoryMd.scope).label,
+        level: 0,
+        raw: memoryMd,
+      });
+    }
+    for (const o of others) {
+      out.push({
+        id: o.path,
+        title: o.name,
+        subtitle: scopeChip(o.scope).label,
+        level: hasParent ? 1 : 0,
+        raw: o,
+      });
+    }
+  }
+  return out;
+}
+
 export function MemoriesPage() {
   const state = useEndpoint<MemoryItem[]>(ENDPOINTS.memories);
   if (state.status === "loading") return <div className="loading">Caricamento…</div>;
   if (state.status === "error") return <div className="error">Errore: {state.error}</div>;
 
-  const items = state.data.map((it) => ({
-    id: it.path,
-    title: it.name,
-    subtitle: scopeChip(it.scope).label,
-    raw: it,
-  }));
+  const items = withHierarchy(state.data);
 
   return (
     <div className="canvas-body">
