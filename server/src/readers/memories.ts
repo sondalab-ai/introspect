@@ -39,17 +39,28 @@ function listSubdirs(dir: string): string[] {
 }
 
 /**
- * Aggregate memory items per root from both `<root>/memory/` (global scope)
- * and `<root>/projects/<slug>/memory/` (per-project scope).
+ * Aggregate memory items per root from `<root>/memory/`, `<root>/projects/<slug>/memory/`,
+ * and any additional absolute paths provided (typically from the discovery profile).
  * Convention-variable; refined by the discovery profile in Slice 1.5.
  */
-export function readMemories(roots: ResolvedRoot[]): MemoryItem[] {
+export function readMemories(
+  roots: ResolvedRoot[],
+  extraDirs: string[] = [],
+): MemoryItem[] {
   const out: MemoryItem[] = [];
   for (const { root } of roots) {
     out.push(...collectFrom(root.realPath, join(root.realPath, "memory"), "global"));
     const projectsDir = join(root.realPath, "projects");
     for (const slug of listSubdirs(projectsDir)) {
       out.push(...collectFrom(root.realPath, join(projectsDir, slug, "memory"), slug));
+    }
+  }
+  const seen = new Set<string>(out.map((i) => i.path));
+  for (const dir of extraDirs) {
+    for (const item of collectFrom(dir, dir, `discovered:${dir}`)) {
+      if (seen.has(item.path)) continue;
+      seen.add(item.path);
+      out.push(item);
     }
   }
   return out;

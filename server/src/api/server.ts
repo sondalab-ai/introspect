@@ -8,6 +8,7 @@ import { readSkills } from "../readers/skills.js";
 import { readMemories } from "../readers/memories.js";
 import { readPlugins } from "../readers/plugins.js";
 import { readSettings } from "../readers/settings.js";
+import { defaultProfilePath, loadProfile } from "../discovery/profile.js";
 
 /** Build the read-only API. `opts` are forwarded to the source resolver. */
 export function buildServer(opts: ResolveOptions = {}): FastifyInstance {
@@ -20,7 +21,10 @@ export function buildServer(opts: ResolveOptions = {}): FastifyInstance {
   app.get("/agents", async () => readAgents(resolveSources(opts)));
   app.get("/commands", async () => readCommands(resolveSources(opts)));
   app.get("/skills", async () => readSkills(resolveSources(opts)));
-  app.get("/memories", async () => readMemories(resolveSources(opts)));
+  app.get("/memories", async () => {
+    const profile = loadProfile(defaultProfilePath());
+    return readMemories(resolveSources(opts), profile.extraMemoryDirs);
+  });
   app.get("/plugins", async () => readPlugins(resolveSources(opts)));
   app.get("/settings", async () => readSettings(resolveSources(opts)));
 

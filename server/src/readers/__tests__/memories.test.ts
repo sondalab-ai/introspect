@@ -62,4 +62,26 @@ describe("readMemories", () => {
     const scopes = items.map((i) => i.scope).sort();
     expect(scopes).toEqual(["global", "p1", "p2"]);
   });
+
+  it("includes memories from extraDirs and tags scope='discovered:<dir>'", () => {
+    const extra = mkdtempSync(join(tmpdir(), "extra-mem-"));
+    writeFileSync(join(extra, "x.md"), "x body");
+    try {
+      const items = readMemories([rootOf(dir)], [extra]);
+      const e = items.find((i) => i.name === "x")!;
+      expect(e).toBeDefined();
+      expect(e.scope).toBe(`discovered:${extra}`);
+    } finally {
+      rmSync(extra, { recursive: true, force: true });
+    }
+  });
+
+  it("does not duplicate entries that are already reachable via projects symlinks", () => {
+    const slug = "p1";
+    mkdirSync(join(dir, "projects", slug, "memory"), { recursive: true });
+    const file = join(dir, "projects", slug, "memory", "shared.md");
+    writeFileSync(file, "shared");
+    const items = readMemories([rootOf(dir)], [join(dir, "projects", slug, "memory")]);
+    expect(items.filter((i) => i.path === file)).toHaveLength(1);
+  });
 });
