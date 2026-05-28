@@ -155,6 +155,11 @@ body {
   font-size: 13px; line-height: 1.55; margin-bottom: 4px; }
 .ld-detail .kv dt { color: var(--mut); }
 .ld-detail .kv dd { color: var(--txt); word-break: break-word; }
+
+/* Stand-alone description shown above the body — no "description:" label needed. */
+.detail-lead { font-family: "Space Grotesk"; font-size: 14.5px; color: #cfe1dd;
+  line-height: 1.55; margin: -2px 0 20px; padding: 4px 0 4px 14px;
+  border-left: 2px solid var(--cy); }
 .canvas-body { height: calc(100% - 40px); margin-top: 12px; }
 .loading, .error { color: var(--mut); font-size: 12px; padding: 12px 4px; }
 .error { color: #ff6b6b; }

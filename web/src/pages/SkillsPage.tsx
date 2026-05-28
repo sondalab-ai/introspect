@@ -26,10 +26,10 @@ export function SkillsPage() {
           <>
             <h2>{item.raw.name}</h2>
             <div className="meta">{item.raw.path}</div>
-            <dl className="kv">
-              <dt>description</dt><dd>{item.raw.description || "—"}</dd>
-            </dl>
-            <div style={{ marginTop: 14 }}><Markdown>{item.raw.body}</Markdown></div>
+            {item.raw.description ? (
+              <div className="detail-lead">{item.raw.description}</div>
+            ) : null}
+            <Markdown>{item.raw.body}</Markdown>
           </>
         )}
       />
