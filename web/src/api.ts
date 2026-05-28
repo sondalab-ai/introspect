@@ -1,8 +1,8 @@
 export interface InstructionsItem { rootPath: string; path: string; content: string; }
-export interface AgentItem { rootPath: string; path: string; name: string; description: string; tools: string; bodyPreview: string; }
-export interface CommandItem { rootPath: string; path: string; name: string; description: string; bodyPreview: string; }
-export interface SkillItem { rootPath: string; path: string; name: string; description: string; bodyPreview: string; }
-export interface MemoryItem { rootPath: string; path: string; name: string; meta: Record<string, unknown>; bodyPreview: string; scope: string; }
+export interface AgentItem { rootPath: string; path: string; name: string; description: string; tools: string; body: string; bodyPreview: string; }
+export interface CommandItem { rootPath: string; path: string; name: string; description: string; body: string; bodyPreview: string; }
+export interface SkillItem { rootPath: string; path: string; name: string; description: string; body: string; bodyPreview: string; }
+export interface MemoryItem { rootPath: string; path: string; name: string; meta: Record<string, unknown>; body: string; bodyPreview: string; scope: string; }
 export interface PluginItem { rootPath: string; id: string; source: string; enabled: boolean; version: string; }
 export interface SettingsItem {
   rootPath: string;

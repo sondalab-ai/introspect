@@ -29,7 +29,7 @@ export function AgentsPage() {
               <dt>description</dt><dd>{item.raw.description || "—"}</dd>
               <dt>tools</dt><dd>{item.raw.tools || "—"}</dd>
             </dl>
-            <pre style={{ marginTop: 14 }}>{item.raw.bodyPreview}</pre>
+            <pre style={{ marginTop: 14 }}>{item.raw.body}</pre>
           </>
         )}
       />

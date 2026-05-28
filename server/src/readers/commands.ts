@@ -8,6 +8,7 @@ export interface CommandItem {
   path: string;
   name: string;
   description: string;
+  body: string;
   bodyPreview: string;
 }
 
@@ -22,6 +23,7 @@ export function readCommands(roots: ResolvedRoot[]): CommandItem[] {
         path: it.path,
         name: it.name,
         description: asString(it.meta.description),
+        body: it.body,
         bodyPreview: it.bodyPreview,
       });
     }

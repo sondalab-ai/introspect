@@ -9,6 +9,7 @@ export interface SkillItem {
   path: string;
   name: string;
   description: string;
+  body: string;
   bodyPreview: string;
 }
 
@@ -52,6 +53,7 @@ export function readSkills(roots: ResolvedRoot[]): SkillItem[] {
         path,
         name: asString(meta.name) || path,
         description: asString(meta.description),
+        body,
         bodyPreview: bodyPreview(body),
       });
     }

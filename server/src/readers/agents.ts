@@ -9,6 +9,7 @@ export interface AgentItem {
   name: string;
   description: string;
   tools: string;
+  body: string;
   bodyPreview: string;
 }
 
@@ -24,6 +25,7 @@ export function readAgents(roots: ResolvedRoot[]): AgentItem[] {
         name: asString(it.meta.name) || it.name,
         description: asString(it.meta.description),
         tools: asString(it.meta.tools),
+        body: it.body,
         bodyPreview: it.bodyPreview,
       });
     }

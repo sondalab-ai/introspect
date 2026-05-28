@@ -28,7 +28,7 @@ export function CommandsPage() {
             <dl className="kv">
               <dt>description</dt><dd>{item.raw.description || "—"}</dd>
             </dl>
-            <pre style={{ marginTop: 14 }}>{item.raw.bodyPreview}</pre>
+            <pre style={{ marginTop: 14 }}>{item.raw.body}</pre>
           </>
         )}
       />

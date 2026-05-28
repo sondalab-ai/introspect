@@ -8,6 +8,7 @@ export interface MemoryItem {
   path: string;
   name: string;
   meta: Record<string, unknown>;
+  body: string;
   bodyPreview: string;
   /** "global" for `<root>/memory/`, or the project slug for `<root>/projects/<slug>/memory/`. */
   scope: string;
@@ -19,6 +20,7 @@ function collectFrom(rootPath: string, memoryDir: string, scope: string): Memory
     path: it.path,
     name: it.name,
     meta: it.meta,
+    body: it.body,
     bodyPreview: it.bodyPreview,
     scope,
   }));

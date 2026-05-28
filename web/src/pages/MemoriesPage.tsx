@@ -33,7 +33,7 @@ export function MemoriesPage() {
             <div className="meta">
               {scopeLabel(item.raw.scope)} · {item.raw.path}
             </div>
-            <pre>{item.raw.bodyPreview}</pre>
+            <pre>{item.raw.body}</pre>
           </>
         )}
       />
