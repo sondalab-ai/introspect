@@ -2,15 +2,18 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
 import { asString, bodyPreview } from "./frontmatter.js";
+import { pluginInstallPaths } from "./pluginPaths.js";
+import { annotatePrecedence, type ItemSource, type Precedence } from "./precedence.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
-export interface SkillItem {
+export interface SkillItem extends Precedence {
   rootPath: string;
   path: string;
   name: string;
   description: string;
   body: string;
   bodyPreview: string;
+  source: ItemSource;
 }
 
 const SKILL_FILE = "SKILL.md";
@@ -36,27 +39,36 @@ function walk(dir: string, depth: number, out: string[]): void {
   }
 }
 
-/** Read skill definitions from `<root>/plugins/**\/SKILL.md`, capped depth. */
+/**
+ * Read skill definitions: personal skills under `<root>/skills/**\/SKILL.md`
+ * plus each installed plugin's `<installPath>/skills/**\/SKILL.md`. Depth-capped.
+ */
 export function readSkills(roots: ResolvedRoot[]): SkillItem[] {
-  const out: SkillItem[] = [];
+  const out: Omit<SkillItem, keyof Precedence>[] = [];
   for (const { root } of roots) {
-    const pluginsDir = join(root.realPath, "plugins");
-    const files: string[] = [];
-    walk(pluginsDir, 0, files);
-    for (const path of files) {
-      const raw = readFileSync(path, "utf8");
-      const parsed = matter(raw);
-      const meta = parsed.data ?? {};
-      const body = parsed.content.trimStart();
-      out.push({
-        rootPath: root.realPath,
-        path,
-        name: asString(meta.name) || path,
-        description: asString(meta.description),
-        body,
-        bodyPreview: bodyPreview(body),
-      });
+    const skillDirs: { dir: string; source: ItemSource }[] = [
+      { dir: join(root.realPath, "skills"), source: "user" },
+      ...pluginInstallPaths(root.realPath).map((p) => ({ dir: join(p, "skills"), source: "plugin" as const })),
+    ];
+    for (const { dir, source } of skillDirs) {
+      const files: string[] = [];
+      walk(dir, 0, files);
+      for (const path of files) {
+        const raw = readFileSync(path, "utf8");
+        const parsed = matter(raw);
+        const meta = parsed.data ?? {};
+        const body = parsed.content.trimStart();
+        out.push({
+          rootPath: root.realPath,
+          path,
+          name: asString(meta.name) || path,
+          description: asString(meta.description),
+          body,
+          bodyPreview: bodyPreview(body),
+          source,
+        });
+      }
     }
   }
-  return out;
+  return annotatePrecedence(out);
 }

@@ -30,6 +30,35 @@ describe("readProjects", () => {
     expect(items[0]!.lastActivityMs).toBeGreaterThan(0);
   });
 
+  it("reads the real cwd from the newest session transcript", () => {
+    const p1 = join(dir, "projects", "-Users-a-b-camunda-hub");
+    mkdirSync(p1, { recursive: true });
+    writeFileSync(join(p1, "s1.jsonl"), `${JSON.stringify({ type: "user", cwd: "/Users/a.b/src/camunda-hub" })}\n`);
+    const items = readProjects([rootOf(dir)]);
+    expect(items[0]!.cwd).toBe("/Users/a.b/src/camunda-hub");
+  });
+
+  it("flags cwdExists=false when the real folder is gone, true when present", () => {
+    const gone = join(dir, "projects", "-gone");
+    mkdirSync(gone, { recursive: true });
+    writeFileSync(join(gone, "s.jsonl"), `${JSON.stringify({ cwd: join(dir, "does-not-exist") })}\n`);
+    const here = join(dir, "projects", "-here");
+    mkdirSync(here, { recursive: true });
+    writeFileSync(join(here, "s.jsonl"), `${JSON.stringify({ cwd: dir })}\n`);
+
+    const items = readProjects([rootOf(dir)]);
+    const bySlug = Object.fromEntries(items.map((i) => [i.slug, i]));
+    expect(bySlug["-gone"]!.cwdExists).toBe(false);
+    expect(bySlug["-here"]!.cwdExists).toBe(true);
+  });
+
+  it("leaves cwd undefined when no transcript carries one", () => {
+    const p1 = join(dir, "projects", "-p");
+    mkdirSync(p1, { recursive: true });
+    writeFileSync(join(p1, "s1.jsonl"), "{}\n");
+    expect(readProjects([rootOf(dir)])[0]!.cwd).toBeUndefined();
+  });
+
   it("aggregates projects across multiple roots", () => {
     const a = mkdtempSync(join(tmpdir(), "proj-a-"));
     const b = mkdtempSync(join(tmpdir(), "proj-b-"));

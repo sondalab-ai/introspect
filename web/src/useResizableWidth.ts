@@ -8,6 +8,8 @@ export interface ResizableOpts {
   max: number;
   /** Default width if nothing is stored yet. */
   initial: number;
+  /** If true, drag-left grows the panel (use for panels anchored on the right). */
+  invert?: boolean;
 }
 
 export interface ResizableHandle {
@@ -56,7 +58,8 @@ export function useResizableWidth(opts: ResizableOpts): ResizableHandle {
     onPointerMove(e) {
       if (!dragRef.current) return;
       const dx = e.clientX - dragRef.current.startX;
-      setWidth(clamp(dragRef.current.startW + dx));
+      const delta = opts.invert ? -dx : dx;
+      setWidth(clamp(dragRef.current.startW + delta));
     },
     onPointerUp(e) {
       if (!dragRef.current) return;

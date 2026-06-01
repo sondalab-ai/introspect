@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { readMarkdownDir } from "./markdownDir.js";
+import { projectCwd } from "./projectCwd.js";
 import type { ResolvedRoot } from "../sources/types.js";
 
 export interface MemoryItem {
@@ -12,9 +13,11 @@ export interface MemoryItem {
   bodyPreview: string;
   /** "global" for `<root>/memory/`, or the project slug for `<root>/projects/<slug>/memory/`. */
   scope: string;
+  /** Real working dir for project-scoped memories (from the project's transcripts). */
+  cwd?: string;
 }
 
-function collectFrom(rootPath: string, memoryDir: string, scope: string): MemoryItem[] {
+function collectFrom(rootPath: string, memoryDir: string, scope: string, cwd?: string): MemoryItem[] {
   return readMarkdownDir(memoryDir).map((it) => ({
     rootPath,
     path: it.path,
@@ -23,6 +26,7 @@ function collectFrom(rootPath: string, memoryDir: string, scope: string): Memory
     body: it.body,
     bodyPreview: it.bodyPreview,
     scope,
+    cwd,
   }));
 }
 
@@ -54,7 +58,9 @@ export function readMemories(
     out.push(...collectFrom(root.realPath, join(root.realPath, "memory"), "global"));
     const projectsDir = join(root.realPath, "projects");
     for (const slug of listSubdirs(projectsDir)) {
-      out.push(...collectFrom(root.realPath, join(projectsDir, slug, "memory"), slug));
+      const memoryDir = join(projectsDir, slug, "memory");
+      if (!existsSync(memoryDir)) continue;
+      out.push(...collectFrom(root.realPath, memoryDir, slug, projectCwd(join(projectsDir, slug))));
     }
   }
   const seen = new Set<string>(out.map((i) => i.path));

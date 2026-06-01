@@ -117,4 +117,26 @@ describe("buildServer", () => {
     expect(res.statusCode).toBe(404);
     await app.close();
   });
+
+  it("GET /sessions returns cross-project aggregated list", async () => {
+    const { mkdirSync, writeFileSync } = await import("node:fs");
+    mkdirSync(`${dir}/projects/-pa`, { recursive: true });
+    mkdirSync(`${dir}/projects/-pb`, { recursive: true });
+    writeFileSync(
+      `${dir}/projects/-pa/s1.jsonl`,
+      JSON.stringify({ type: "assistant", uuid: "u", isSidechain: false, timestamp: "2026-05-28T00:00:00Z",
+        message: { model: "opus-4-7", content: [] } }) + "\n",
+    );
+    writeFileSync(
+      `${dir}/projects/-pb/s2.jsonl`,
+      JSON.stringify({ type: "assistant", uuid: "u", isSidechain: false, timestamp: "2026-05-29T00:00:00Z",
+        message: { model: "opus-4-7", content: [] } }) + "\n",
+    );
+    const app = buildServer({ env: { CLAUDE_CONFIG_DIR: dir } });
+    const res = await app.inject({ method: "GET", url: "/sessions" });
+    expect(res.statusCode).toBe(200);
+    const body = res.json() as Array<{ slug: string; sessionId: string }>;
+    expect(body.map((s) => s.sessionId).sort()).toEqual(["s1", "s2"]);
+    await app.close();
+  });
 });

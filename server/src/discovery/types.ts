@@ -14,7 +14,8 @@ export interface Profile {
   extraMemoryDirs: string[];
 }
 
-/** Empty/default profile used when no file exists yet. */
+/** Empty/default profile used when no file exists yet.
+ * `generatedAt` is left at epoch zero so callers can distinguish "default" from "saved at <real time>". */
 export function emptyProfile(): Profile {
   return {
     version: 1,

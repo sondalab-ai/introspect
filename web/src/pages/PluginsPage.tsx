@@ -10,7 +10,7 @@ export function PluginsPage() {
   const items = state.data.map((it) => ({
     id: `${it.rootPath}::${it.id}`,
     title: it.id,
-    subtitle: it.enabled ? "enabled" : "disabled",
+    subtitle: `${it.source || "—"} · ${it.enabled ? "enabled" : "disabled"}`,
     raw: it,
   }));
 
@@ -29,6 +29,7 @@ export function PluginsPage() {
               <dt>source</dt><dd>{item.raw.source || "—"}</dd>
               <dt>version</dt><dd>{item.raw.version || "—"}</dd>
               <dt>enabled</dt><dd>{String(item.raw.enabled)}</dd>
+              <dt>installPath</dt><dd>{item.raw.installPath || "—"}</dd>
             </dl>
           </>
         )}

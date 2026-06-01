@@ -1,0 +1,466 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [ref=e164] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "110%" [ref=e165] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: Sessions · History
+    - generic [ref=e167]:
+      - generic [ref=e168]:
+        - generic [ref=e169]: Sessions (115)
+        - textbox "Cerca…" [ref=e170]
+        - generic [ref=e171] [cursor=pointer]:
+          - generic [ref=e172]: 14e9c387-a2d6-4ae0-a7ea-4b690a208be5
+          - generic [ref=e173]: ~/src · 5/31/2026, 6:55:09 PM · 79.2 KB
+        - generic [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]: 037d59bf-ff0f-418e-aa88-b3a4f9ed74bc
+          - generic [ref=e176]: ~/src · 5/29/2026, 11:47:37 PM · 60.8 KB
+        - generic [ref=e177] [cursor=pointer]:
+          - generic [ref=e178]: 411cb43c-7ab7-41f3-8ff2-049b7485e38c
+          - generic [ref=e179]: /private/tmp · 5/29/2026, 11:36:41 PM · 52.8 KB
+        - generic [ref=e180] [cursor=pointer]:
+          - generic [ref=e181]: db5be782-82bc-44a8-be9d-583e02b91a7c
+          - generic [ref=e182]: ~/src · 5/29/2026, 11:35:59 PM · 191.5 KB
+        - generic [ref=e183] [cursor=pointer]:
+          - generic [ref=e184]: 413e4d14-4ce3-409e-ad71-b192621577b2
+          - generic [ref=e185]: ~/Desktop/sync-skills-plugin · 5/29/2026, 11:34:25 PM · 490.2 KB
+        - generic [ref=e186] [cursor=pointer]:
+          - generic [ref=e187]: cc15b71e-0c15-4753-aeaa-d97a1871a3c8
+          - generic [ref=e188]: /private/tmp · 5/29/2026, 11:34:04 PM · 57.8 KB
+        - generic [ref=e189] [cursor=pointer]:
+          - generic [ref=e190]: 2a1bdbcb-fb1b-4aa4-ae68-7a649d37ecdf
+          - generic [ref=e191]: /private/tmp · 5/29/2026, 11:29:41 PM · 52.8 KB
+        - generic [ref=e192] [cursor=pointer]:
+          - generic [ref=e193]: 8e516492-1016-45d5-ad75-889562086b9d
+          - generic [ref=e194]: /private/tmp · 5/29/2026, 11:29:21 PM · 51.5 KB
+        - generic [ref=e195] [cursor=pointer]:
+          - generic [ref=e196]: b22d7845-9e26-49b3-b5b2-cf62742b0a55
+          - generic [ref=e197]: /private/tmp · 5/29/2026, 11:27:11 PM · 54.1 KB
+        - generic [ref=e198] [cursor=pointer]:
+          - generic [ref=e199]: 279a4f51-cc4c-46cb-aef2-8e42db727730
+          - generic [ref=e200]: /private/tmp · 5/29/2026, 11:26:47 PM · 60.5 KB
+        - generic [ref=e201] [cursor=pointer]:
+          - generic [ref=e202]: 418105d9-19a8-46d7-b8ac-7393fdc66915
+          - generic [ref=e203]: ~/src · 5/29/2026, 11:14:34 PM · 1.1 MB
+        - generic [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]: 93684c6d-9b16-40dc-9d6e-78d5556d7a4a
+          - generic [ref=e206]: /private/tmp · 5/29/2026, 3:45:09 PM · 58.5 KB
+        - generic [ref=e207] [cursor=pointer]:
+          - generic [ref=e208]: de19e996-803d-48d8-a1b7-f76ceb901f7c
+          - generic [ref=e209]: /private/tmp · 5/29/2026, 3:44:43 PM · 88.8 KB
+        - generic [ref=e210] [cursor=pointer]:
+          - generic [ref=e211]: a2200156-4615-4f34-beae-41712f52539d
+          - generic [ref=e212]: /private/tmp · 5/29/2026, 2:41:37 PM · 58.1 KB
+        - generic [ref=e213] [cursor=pointer]:
+          - generic [ref=e214]: 9f69e673-adb6-4ab1-a4e0-63fd01bd80d2
+          - generic [ref=e215]: /private/tmp · 5/29/2026, 2:33:26 PM · 46.9 KB
+        - generic [ref=e216] [cursor=pointer]:
+          - generic [ref=e217]: cdf6e819-493c-4d2b-bd67-12352535013c
+          - generic [ref=e218]: /private/tmp · 5/29/2026, 2:33:13 PM · 62.6 KB
+        - generic [ref=e219] [cursor=pointer]:
+          - generic [ref=e220]: da6b5e8c-a3f7-4678-afa4-f25ef9497c41
+          - generic [ref=e221]: /private/tmp · 5/29/2026, 1:16:21 PM · 45.6 KB
+        - generic [ref=e222] [cursor=pointer]:
+          - generic [ref=e223]: ec684177-3981-488d-a572-d3fe35f6ca77
+          - generic [ref=e224]: ~/src/product-epics-pilot · 5/29/2026, 12:02:03 PM · 1.9 MB
+        - generic [ref=e225] [cursor=pointer]:
+          - generic [ref=e226]: 5aaa4ecc-0961-436b-8399-d262f092f4aa
+          - generic [ref=e227]: /private/tmp · 5/29/2026, 11:59:29 AM · 48.6 KB
+        - generic [ref=e228] [cursor=pointer]:
+          - generic [ref=e229]: 43b018c5-2c91-407d-9478-2574d4c481c0
+          - generic [ref=e230]: /private/tmp · 5/29/2026, 11:59:18 AM · 66.0 KB
+        - generic [ref=e231] [cursor=pointer]:
+          - generic [ref=e232]: 5f01f1e9-3756-434d-90b9-3f773d46f4e0
+          - generic [ref=e233]: /private/tmp · 5/29/2026, 11:03:56 AM · 72.0 KB
+        - generic [ref=e234] [cursor=pointer]:
+          - generic [ref=e235]: dbcd8841-adb2-4af8-8a9c-3a2fd7ee3734
+          - generic [ref=e236]: /private/tmp · 5/29/2026, 10:25:18 AM · 51.0 KB
+        - generic [ref=e237] [cursor=pointer]:
+          - generic [ref=e238]: 0576f704-55ea-40f9-8a3d-a96f21846f45
+          - generic [ref=e239]: /private/tmp · 5/29/2026, 10:25:04 AM · 194.8 KB
+        - generic [ref=e240] [cursor=pointer]:
+          - generic [ref=e241]: 4232f662-714e-411d-a842-337d7a2e19a5
+          - generic [ref=e242]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 8:49:00 AM · 62.8 KB
+        - generic [ref=e243] [cursor=pointer]:
+          - generic [ref=e244]: 66f25b30-e11d-4dbf-b86d-bec78339adab
+          - generic [ref=e245]: /private/tmp · 5/29/2026, 5:53:37 AM · 48.0 KB
+        - generic [ref=e246] [cursor=pointer]:
+          - generic [ref=e247]: 53ad6fc7-3ac7-4644-9cea-2ac714aa407e
+          - generic [ref=e248]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 25.7 KB
+        - generic [ref=e249] [cursor=pointer]:
+          - generic [ref=e250]: a88e13dc-a64e-4b73-97fe-5289e85b5fe2
+          - generic [ref=e251]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 29.1 KB
+        - generic [ref=e252] [cursor=pointer]:
+          - generic [ref=e253]: 13b3f7e4-fbc5-4ffb-9a78-4b6fa4890a70
+          - generic [ref=e254]: /private/tmp · 5/29/2026, 4:03:36 AM · 35.3 KB
+        - generic [ref=e255] [cursor=pointer]:
+          - generic [ref=e256]: 074f4480-df80-4297-a662-5a9a6c3d5baf
+          - generic [ref=e257]: /private/tmp · 5/28/2026, 10:51:42 PM · 54.9 KB
+        - generic [ref=e258] [cursor=pointer]:
+          - generic [ref=e259]: ee5a834b-7e6e-4d0d-a5ab-e5b0c964c40f
+          - generic [ref=e260]: /private/tmp · 5/28/2026, 10:51:24 PM · 63.0 KB
+        - generic [ref=e261] [cursor=pointer]:
+          - generic [ref=e262]: f15f7ed3-4a50-4a60-bae5-1948945b2f01
+          - generic [ref=e263]: /private/tmp · 5/28/2026, 10:12:57 PM · 140.9 KB
+        - generic [ref=e264] [cursor=pointer]:
+          - generic [ref=e265]: aa2eed45-4207-4b4a-a224-7c74894424e4
+          - generic [ref=e266]: ~/src/product-epics-pilot · 5/28/2026, 10:12:34 PM · 46.1 KB
+        - generic [ref=e267] [cursor=pointer]:
+          - generic [ref=e268]: 712fae4d-f5b3-4cba-b7c8-236b8b3e6575
+          - generic [ref=e269]: ~/src/product-epics-pilot · 5/28/2026, 10:12:25 PM · 125.1 KB
+        - generic [ref=e270] [cursor=pointer]:
+          - generic [ref=e271]: e8f20ae5-78d7-4e56-9878-c778cd8d6edc
+          - generic [ref=e272]: /private/tmp · 5/28/2026, 10:12:22 PM · 130.0 KB
+        - generic [ref=e273] [cursor=pointer]:
+          - generic [ref=e274]: 6e0f9e02-60a2-4c3b-b9d3-83b7ce698665
+          - generic [ref=e275]: /private/tmp · 5/28/2026, 9:47:41 PM · 63.2 KB
+        - generic [ref=e276] [cursor=pointer]:
+          - generic [ref=e277]: 90914c0a-b08a-4332-b33d-964ace8c5759
+          - generic [ref=e278]: /private/tmp · 5/28/2026, 9:47:08 PM · 57.0 KB
+        - generic [ref=e279] [cursor=pointer]:
+          - generic [ref=e280]: d0b44cef-6cba-45b7-b81c-a256d777aa6d
+          - generic [ref=e281]: /private/tmp · 5/28/2026, 5:50:52 PM · 72.9 KB
+        - generic [ref=e282] [cursor=pointer]:
+          - generic [ref=e283]: 877bde71-5b65-4c1f-90df-3994c9ae14b3
+          - generic [ref=e284]: /private/tmp · 5/28/2026, 5:32:34 PM · 49.3 KB
+        - generic [ref=e285] [cursor=pointer]:
+          - generic [ref=e286]: 76353e7d-379a-4e8e-91af-6062d3fb17b5
+          - generic [ref=e287]: /private/tmp · 5/28/2026, 5:32:21 PM · 77.7 KB
+        - generic [ref=e288] [cursor=pointer]:
+          - generic [ref=e289]: cd58d5da-faf6-4a60-9f50-33a18ba59e72
+          - generic [ref=e290]: /private/tmp · 5/28/2026, 4:06:37 PM · 63.6 KB
+        - generic [ref=e291] [cursor=pointer]:
+          - generic [ref=e292]: 379ab4db-dd5b-414e-bcb1-a14aa3628f42
+          - generic [ref=e293]: /private/tmp · 5/28/2026, 3:22:11 PM · 59.0 KB
+        - generic [ref=e294] [cursor=pointer]:
+          - generic [ref=e295]: 41a2442b-0078-4b67-9c7d-a2a9cd5bec8f
+          - generic [ref=e296]: /private/tmp · 5/28/2026, 3:21:51 PM · 55.9 KB
+        - generic [ref=e297] [cursor=pointer]:
+          - generic [ref=e298]: c665bca3-c9ec-437e-a2f9-e7e18a0c3265
+          - generic [ref=e299]: /private/tmp · 5/28/2026, 12:22:05 PM · 61.9 KB
+        - generic [ref=e300] [cursor=pointer]:
+          - generic [ref=e301]: dbffa78d-0721-4d9d-b966-21a5c6f4faaa
+          - generic [ref=e302]: /private/tmp · 5/28/2026, 11:58:36 AM · 56.0 KB
+        - generic [ref=e303] [cursor=pointer]:
+          - generic [ref=e304]: ac387746-cc9c-4bae-8940-863c083b611a
+          - generic [ref=e305]: /private/tmp · 5/28/2026, 11:58:18 AM · 71.3 KB
+        - generic [ref=e306] [cursor=pointer]:
+          - generic [ref=e307]: 902cde75-0bb3-4cca-abc1-66fd4056437b
+          - generic [ref=e308]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/27/2026, 1:17:35 PM · 33.2 KB
+        - generic [ref=e309] [cursor=pointer]:
+          - generic [ref=e310]: fe95ee3a-1ca6-4275-aa2a-eed3cbc7825f
+          - generic [ref=e311]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/26/2026, 5:17:02 PM · 1011.1 KB
+        - generic [ref=e312] [cursor=pointer]:
+          - generic [ref=e313]: ca8f54a1-7834-46d1-a3c4-bfa62aa6c754
+          - generic [ref=e314]: /private/tmp · 5/26/2026, 5:08:06 PM · 50.6 KB
+        - generic [ref=e315] [cursor=pointer]:
+          - generic [ref=e316]: 5e0bd5bd-b9b7-4c21-8066-05b6517cdf9c
+          - generic [ref=e317]: /private/tmp · 5/26/2026, 5:07:51 PM · 73.5 KB
+        - generic [ref=e318] [cursor=pointer]:
+          - generic [ref=e319]: 134c167d-e26f-41b6-8442-eccdcb7bca34
+          - generic [ref=e320]: /private/tmp · 5/25/2026, 7:13:25 PM · 46.0 KB
+        - generic [ref=e321] [cursor=pointer]:
+          - generic [ref=e322]: 84f225e2-139e-45ee-9c96-5a99a85fb86c
+          - generic [ref=e323]: /private/tmp · 5/25/2026, 7:13:13 PM · 78.9 KB
+        - generic [ref=e324] [cursor=pointer]:
+          - generic [ref=e325]: c90046f2-17c5-4354-8d22-69803f7f39bd
+          - generic [ref=e326]: /private/tmp · 5/25/2026, 5:07:03 PM · 45.2 KB
+        - generic [ref=e327] [cursor=pointer]:
+          - generic [ref=e328]: f9de5d51-cfb8-4369-b8fd-6df7d2990c4d
+          - generic [ref=e329]: /private/tmp · 5/25/2026, 5:06:54 PM · 54.9 KB
+        - generic [ref=e330] [cursor=pointer]:
+          - generic [ref=e331]: e2730624-ae1e-45ee-92ee-a1df5a52c898
+          - generic [ref=e332]: ~/.claude · 5/25/2026, 3:56:37 PM · 1.1 MB
+        - generic [ref=e333] [cursor=pointer]:
+          - generic [ref=e334]: aae05972-2eee-433a-a3e8-9bbac7c3074e
+          - generic [ref=e335]: /private/tmp · 5/25/2026, 1:57:16 PM · 49.5 KB
+        - generic [ref=e336] [cursor=pointer]:
+          - generic [ref=e337]: 91917dd3-a2ed-42fd-9456-2e0cc65c4f53
+          - generic [ref=e338]: /private/tmp · 5/25/2026, 1:57:00 PM · 114.8 KB
+        - generic [ref=e339] [cursor=pointer]:
+          - generic [ref=e340]: 5a72385e-0478-4c3f-ac5b-289de3736849
+          - generic [ref=e341]: /private/tmp · 5/25/2026, 12:55:16 PM · 78.5 KB
+        - generic [ref=e342] [cursor=pointer]:
+          - generic [ref=e343]: b2b815e2-d658-4499-aa77-566c8ec6d91f
+          - generic [ref=e344]: ~/src/product-epics-pilot · 5/25/2026, 12:54:47 PM · 697.4 KB
+        - generic [ref=e345] [cursor=pointer]:
+          - generic [ref=e346]: a79c4da9-b31f-4b61-9fb5-99a788c3c0c8
+          - generic [ref=e347]: /private/tmp · 5/25/2026, 12:36:40 PM · 47.1 KB
+        - generic [ref=e348] [cursor=pointer]:
+          - generic [ref=e349]: f2647c81-3dac-42ab-894b-9e104f363760
+          - generic [ref=e350]: /private/tmp · 5/25/2026, 12:36:27 PM · 78.7 KB
+        - generic [ref=e351] [cursor=pointer]:
+          - generic [ref=e352]: 252736a3-9625-4a91-830e-eca2d222758d
+          - generic [ref=e353]: /private/tmp · 5/25/2026, 10:55:46 AM · 59.8 KB
+        - generic [ref=e354] [cursor=pointer]:
+          - generic [ref=e355]: 186701e6-8bde-4f06-bd7c-bcdf31642d64
+          - generic [ref=e356]: /private/tmp · 5/25/2026, 10:55:22 AM · 55.3 KB
+        - generic [ref=e357] [cursor=pointer]:
+          - generic [ref=e358]: f301285d-b002-45ce-b5d2-082c38581266
+          - generic [ref=e359]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/25/2026, 10:55:04 AM · 30.9 KB
+        - generic [ref=e360] [cursor=pointer]:
+          - generic [ref=e361]: a5071f3d-f821-435b-a1c9-79b80f706d3b
+          - generic [ref=e362]: ~/src/mine/spexr · 5/24/2026, 8:30:08 PM · 57.2 KB
+        - generic [ref=e363] [cursor=pointer]:
+          - generic [ref=e364]: f6f3301e-4d49-4209-8bd2-513f637eaf82
+          - generic [ref=e365]: ~/src/mine/spexr · 5/24/2026, 8:27:33 PM · 147.9 KB
+        - generic [ref=e366] [cursor=pointer]:
+          - generic [ref=e367]: fa9e4b78-72a2-4a41-ab5a-d05ba5c2e614
+          - generic [ref=e368]: ~/src/mine/spexr · 5/24/2026, 8:26:43 PM · 420.4 KB
+        - generic [ref=e369] [cursor=pointer]:
+          - generic [ref=e370]: 197928db-6bbe-41e6-a163-57d70ef64a06
+          - generic [ref=e371]: ~/Desktop/test-spexr · 5/23/2026, 4:04:44 PM · 56.9 KB
+        - generic [ref=e372] [cursor=pointer]:
+          - generic [ref=e373]: 67c8635f-8f1c-471d-8dfe-bcbe63bd7ae4
+          - generic [ref=e374]: ~/Desktop/test-spexr · 5/22/2026, 10:24:29 PM · 24.2 KB
+        - generic [ref=e375] [cursor=pointer]:
+          - generic [ref=e376]: 216b412b-f48a-4d65-b610-bc82930431ab
+          - generic [ref=e377]: ~/src/camunda-hub · 5/22/2026, 5:47:33 PM · 377.5 KB
+        - generic [ref=e378] [cursor=pointer]:
+          - generic [ref=e379]: c297c2b3-ce40-434c-9d1d-c7aca7575077
+          - generic [ref=e380]: /private/tmp · 5/22/2026, 5:47:03 PM · 65.5 KB
+        - generic [ref=e381] [cursor=pointer]:
+          - generic [ref=e382]: dbbeee32-4b7d-49ce-bb3a-510c8d096b07
+          - generic [ref=e383]: /private/tmp · 5/22/2026, 5:38:58 PM · 57.8 KB
+        - generic [ref=e384] [cursor=pointer]:
+          - generic [ref=e385]: 51d0cb28-350d-459a-8bb4-f069d2156ebc
+          - generic [ref=e386]: /private/tmp · 5/22/2026, 5:30:18 PM · 55.7 KB
+        - generic [ref=e387] [cursor=pointer]:
+          - generic [ref=e388]: df365228-51ed-4c9e-8289-2d5c7d13319e
+          - generic [ref=e389]: /private/tmp · 5/22/2026, 5:26:00 PM · 64.4 KB
+        - generic [ref=e390] [cursor=pointer]:
+          - generic [ref=e391]: e71d8bc2-5ec3-41f9-b983-a1d90c883c06
+          - generic [ref=e392]: ~/src/camunda-hub · 5/22/2026, 5:23:49 PM · 300.5 KB
+        - generic [ref=e393] [cursor=pointer]:
+          - generic [ref=e394]: 151aaf85-2004-4fdd-92d3-46be68cd6927
+          - generic [ref=e395]: /private/tmp · 5/22/2026, 5:17:47 PM · 61.4 KB
+        - generic [ref=e396] [cursor=pointer]:
+          - generic [ref=e397]: 1184ab49-d8d4-46a9-bedc-86a778f2f322
+          - generic [ref=e398]: /private/tmp · 5/22/2026, 5:05:37 PM · 46.6 KB
+        - generic [ref=e399] [cursor=pointer]:
+          - generic [ref=e400]: fa9c9c28-1b86-4399-bb61-8e11bc43e00a
+          - generic [ref=e401]: /private/tmp · 5/22/2026, 5:05:24 PM · 292.6 KB
+        - generic [ref=e402] [cursor=pointer]:
+          - generic [ref=e403]: d823952e-717b-427b-a649-638ddd4299df
+          - generic [ref=e404]: ~/src/camunda-hub · 5/22/2026, 11:44:59 AM · 271.4 KB
+        - generic [ref=e405] [cursor=pointer]:
+          - generic [ref=e406]: c70fc64d-fd5e-4eca-bad0-67dc6432707c
+          - generic [ref=e407]: /private/tmp · 5/22/2026, 11:41:50 AM · 47.9 KB
+        - generic [ref=e408] [cursor=pointer]:
+          - generic [ref=e409]: f8fd87c8-9426-44b2-81e1-4f03c593c4dc
+          - generic [ref=e410]: /private/tmp · 5/22/2026, 11:41:35 AM · 53.1 KB
+        - generic [ref=e411] [cursor=pointer]:
+          - generic [ref=e412]: 89991544-d1cd-4698-aa09-d4ce068fc686
+          - generic [ref=e413]: ~/.claude/skills · 5/21/2026, 9:15:00 PM · 83.1 KB
+        - generic [ref=e414] [cursor=pointer]:
+          - generic [ref=e415]: bfd6f95c-8995-40c0-981d-5465cc4c9af5
+          - generic [ref=e416]: ~/.claude · 5/21/2026, 9:08:04 PM · 71.5 KB
+        - generic [ref=e417] [cursor=pointer]:
+          - generic [ref=e418]: 189b9fdd-49ae-4f0c-abc0-f56c505ea5a2
+          - generic [ref=e419]: ~ · 5/21/2026, 1:37:48 PM · 350.0 KB
+        - generic [ref=e420] [cursor=pointer]:
+          - generic [ref=e421]: 9c84076a-282a-49d6-a58a-6735fb3efcd4
+          - generic [ref=e422]: ~/src/product-epics-pilot · 5/21/2026, 1:17:17 PM · 604.6 KB
+        - generic [ref=e423] [cursor=pointer]:
+          - generic [ref=e424]: 2ee116ec-509f-4dca-9405-95820109f590
+          - generic [ref=e425]: ~/src/camunda-hub · 5/20/2026, 2:28:46 PM · 3.8 MB
+        - generic [ref=e426] [cursor=pointer]:
+          - generic [ref=e427]: 0be494f9-b483-467c-93f5-c8b1b3d2dc7c
+          - generic [ref=e428]: ~/src/camunda-hub · 5/18/2026, 3:15:38 PM · 2.7 MB
+        - generic [ref=e429] [cursor=pointer]:
+          - generic [ref=e430]: 6712a109-a507-489d-a865-ec8b0ed3d775
+          - generic [ref=e431]: ~ · 5/18/2026, 12:28:04 PM · 102.1 KB
+        - generic [ref=e432] [cursor=pointer]:
+          - generic [ref=e433]: b137d7f6-3691-4aca-9d00-3b3e1916ac71
+          - generic [ref=e434]: ~/src/camunda-hub · 5/15/2026, 9:59:22 AM · 6.2 MB
+        - generic [ref=e435] [cursor=pointer]:
+          - generic [ref=e436]: 319dab42-7293-4431-abf8-b6e3aeb9af5c
+          - generic [ref=e437]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 2:54:11 PM · 1.1 MB
+        - generic [ref=e438] [cursor=pointer]:
+          - generic [ref=e439]: 31d187f4-f301-4e48-9002-8356679dde09
+          - generic [ref=e440]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 12:27:08 PM · 284.8 KB
+        - generic [ref=e441] [cursor=pointer]:
+          - generic [ref=e442]: 82d88f86-b2b2-4e5d-b56b-07f92a3ef946
+          - generic [ref=e443]: ~/src/camunda-hub · 5/12/2026, 3:54:22 PM · 130.2 KB
+        - generic [ref=e444] [cursor=pointer]:
+          - generic [ref=e445]: 826987e5-f893-448e-a2b8-5c1e307f3fda
+          - generic [ref=e446]: ~/src/camunda-hub · 5/11/2026, 9:09:12 AM · 238.7 KB
+        - generic [ref=e447] [cursor=pointer]:
+          - generic [ref=e448]: 7fff9e4e-5d82-4d28-8efc-06ce2f5173da
+          - generic [ref=e449]: ~/src/camunda-hub · 5/8/2026, 5:25:55 PM · 121.2 KB
+        - generic [ref=e450] [cursor=pointer]:
+          - generic [ref=e451]: 0bbcc910-a11a-470b-8aa3-4c01e183d7e8
+          - generic [ref=e452]: ~/src/camunda-hub · 5/8/2026, 4:18:44 PM · 2.2 MB
+        - generic [ref=e453] [cursor=pointer]:
+          - generic [ref=e454]: 064c1f2d-12df-47f7-b9e0-beea27b69ff7
+          - generic [ref=e455]: ~/src/camunda-hub · 5/8/2026, 11:21:14 AM · 533.5 KB
+        - generic [ref=e456] [cursor=pointer]:
+          - generic [ref=e457]: 195439d8-140c-42c0-9ea1-9e4b05c25529
+          - generic [ref=e458]: ~/src/camunda-hub · 5/8/2026, 10:38:02 AM · 2.5 MB
+        - generic [ref=e459] [cursor=pointer]:
+          - generic [ref=e460]: f47bf127-5c30-4313-b437-60900721435b
+          - generic [ref=e461]: ~/src/mine/sguardo-a-nord · 5/6/2026, 11:02:40 PM · 405.5 KB
+        - generic [ref=e462] [cursor=pointer]:
+          - generic [ref=e463]: 8b355e67-f8d5-4f53-81a8-41f80645c55a
+          - generic [ref=e464]: ~/src/camunda-hub · 5/6/2026, 5:51:05 PM · 5.0 MB
+        - generic [ref=e465] [cursor=pointer]:
+          - generic [ref=e466]: e923ed12-0c62-47e5-b86f-8ff988b48e8d
+          - generic [ref=e467]: ~/src/camunda-hub · 5/6/2026, 5:49:03 PM · 92.9 KB
+        - generic [ref=e468] [cursor=pointer]:
+          - generic [ref=e469]: a7856b78-c5cb-4489-a5c9-0790e3d06718
+          - generic [ref=e470]: ~/src/camunda-hub · 5/6/2026, 5:47:03 PM · 56.5 KB
+        - generic [ref=e471] [cursor=pointer]:
+          - generic [ref=e472]: 0f6dd843-4a86-42a8-9a94-90457638e4cf
+          - generic [ref=e473]: ~/src/mine/local-agents · 5/6/2026, 12:50:25 PM · 606.4 KB
+        - generic [ref=e474] [cursor=pointer]:
+          - generic [ref=e475]: f6918488-2ef3-4280-bb64-8438158de599
+          - generic [ref=e476]: ~/src/camunda-hub · 5/5/2026, 10:31:22 PM · 22.5 KB
+        - generic [ref=e477] [cursor=pointer]:
+          - generic [ref=e478]: 26345c87-d2c5-4306-81fd-4676ba42ba8f
+          - generic [ref=e479]: ~/src/mine/local-agents · 5/4/2026, 4:48:15 PM · 596.4 KB
+        - generic [ref=e480] [cursor=pointer]:
+          - generic [ref=e481]: 7697ce20-2219-4fd6-9d91-1a077437de2c
+          - generic [ref=e482]: ~/src/camunda-hub · 5/4/2026, 3:41:30 PM · 1.8 MB
+        - generic [ref=e483] [cursor=pointer]:
+          - generic [ref=e484]: be1f5670-cd8d-414e-8eb0-dbe78d987e40
+          - generic [ref=e485]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 1:30:40 PM · 51.0 KB
+        - generic [ref=e486] [cursor=pointer]:
+          - generic [ref=e487]: 77f39084-2e57-4e15-8f46-7525b5ce1b3e
+          - generic [ref=e488]: ~/src/camunda-hub · 5/4/2026, 12:51:52 PM · 910.0 KB
+        - generic [ref=e489] [cursor=pointer]:
+          - generic [ref=e490]: 7982789b-90e2-4c2a-8251-f70aa12fef63
+          - generic [ref=e491]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 12:51:45 PM · 430.9 KB
+        - generic [ref=e492] [cursor=pointer]:
+          - generic [ref=e493]: 5365bc9f-0f94-47c3-bad5-8a1d1d25bbc1
+          - generic [ref=e494]: ~/src/mine/local-agents · 5/3/2026, 10:59:15 PM · 311.4 KB
+        - generic [ref=e495] [cursor=pointer]:
+          - generic [ref=e496]: d7f8a49b-47b5-4624-a6df-db046045bacc
+          - generic [ref=e497]: ~/src/mine/local-agents · 5/3/2026, 6:35:50 PM · 33.2 KB
+        - generic [ref=e498] [cursor=pointer]:
+          - generic [ref=e499]: 5ef405ea-6dc7-4178-af7d-456aa5f7c3e2
+          - generic [ref=e500]: ~/src/mine/local-agents · 5/3/2026, 6:28:44 PM · 31.7 KB
+        - generic [ref=e501] [cursor=pointer]:
+          - generic [ref=e502]: b1eb36a9-d9f6-4479-950a-70d81851b8c7
+          - generic [ref=e503]: ~/src/mine/local-agents · 5/3/2026, 6:24:43 PM · 24.2 KB
+        - generic [ref=e504] [cursor=pointer]:
+          - generic [ref=e505]: ba7b5057-65e4-4b69-9740-6966f0d2f972
+          - generic [ref=e506]: ~/src/mine/local-agents · 5/3/2026, 6:24:00 PM · 221.6 KB
+        - generic [ref=e507] [cursor=pointer]:
+          - generic [ref=e508]: b88aea5f-d43d-4718-9c2e-26b80841fa67
+          - generic [ref=e509]: ~/src/mine/local-agents · 5/3/2026, 6:18:03 PM · 175.4 KB
+        - generic [ref=e510] [cursor=pointer]:
+          - generic [ref=e511]: afed043e-d93b-4b03-8a25-b8c4bd7c7d1e
+          - generic [ref=e512]: ~/src/mine/local-agents · 5/3/2026, 6:06:30 PM · 256.8 KB
+        - generic [ref=e513] [cursor=pointer]:
+          - generic [ref=e514]: 8f0bb88b-2287-457c-b077-76eb334d1b9f
+          - generic [ref=e515]: Users · marcello · barile · · claude · — · 240 B
+      - separator "Resize list pane" [ref=e516]
+      - generic [ref=e519]:
+        - heading "037d59bf-ff0f-418e-aa88-b3a4f9ed74bc" [level=2] [ref=e675]
+        - generic "-Users-marcello-barile-src" [ref=e522]: ~/src
+        - generic [ref=e523]:
+          - term [ref=e524]: first
+          - definition [ref=e525]: 5/29/2026, 11:36:22 PM
+          - term [ref=e526]: last
+          - definition [ref=e527]: 5/29/2026, 11:47:37 PM
+          - term [ref=e528]: cwd
+          - definition [ref=e529]: /Users/marcello.barile/src
+          - term [ref=e530]: git branch
+          - definition [ref=e531]: HEAD
+          - term [ref=e532]: models
+          - definition [ref=e533]: claude-sonnet-4-6
+          - term [ref=e534]: messages
+          - definition [ref=e535]: user 6 · assistant 3 · sidechain 0
+          - term [ref=e536]: tool calls
+          - definition [ref=e537]: "1"
+          - term [ref=e538]: subagents
+          - definition [ref=e539]: "0"
+          - term [ref=e540]: tokens
+          - definition [ref=e541]: "311"
+        - generic [ref=e542]:
+          - heading "Timeline" [level=3] [ref=e543]
+          - generic [ref=e544]:
+            - button "Timeline" [ref=e545] [cursor=pointer]
+            - button "Events" [ref=e546] [cursor=pointer]
+            - button "Graph" [ref=e547] [cursor=pointer]
+        - generic [ref=e548]:
+          - generic [ref=e551]:
+            - generic:
+              - generic: ⋯ 7m 54s
+            - generic "user · user" [ref=e553] [cursor=pointer]:
+              - generic [ref=e555]: user
+              - generic [ref=e556]: user
+            - generic "user · user" [ref=e560] [cursor=pointer]:
+              - generic [ref=e562]: user
+              - generic [ref=e563]: user
+            - generic "user · user" [ref=e676] [cursor=pointer]:
+              - generic [ref=e569]: user
+              - generic [ref=e570]: user
+            - generic "user · user" [ref=e677] [cursor=pointer]:
+              - generic [ref=e576]: user
+              - generic [ref=e577]: user
+            - generic "user · user" [ref=e678] [cursor=pointer]:
+              - generic [ref=e583]: user
+              - generic [ref=e584]: user
+            - generic "thinking · think" [ref=e679] [cursor=pointer]:
+              - generic [ref=e590]: thinking
+              - generic [ref=e591]: think
+            - generic [ref=e594] [cursor=pointer]:
+              - generic "tool_use · Read" [ref=e680]:
+                - generic [ref=e597]: tool_use
+                - generic [ref=e598]: Read
+              - generic [ref=e599]:
+                - generic: 25 ms
+            - generic "tool_result · err" [ref=e681] [cursor=pointer]:
+              - generic [ref=e604]: tool_result
+              - generic [ref=e605]: err
+            - generic "text · say" [ref=e682] [cursor=pointer]:
+              - generic [ref=e611]: text
+              - generic [ref=e612]: say
+          - generic [ref=e657]: Click su una riga per i dettagli. Doppio click per saltare all'evento. I tratti ⋯ sono pause compresse.
+          - generic [ref=e658]:
+            - generic [ref=e659]: thinking
+            - generic [ref=e661]: text
+            - generic [ref=e663]: user
+            - generic [ref=e665]: tool_use
+            - generic [ref=e667]: tool_result
+            - generic [ref=e669]: subagent_spawn
+            - generic [ref=e671]: skill_use
+            - generic [ref=e673]: meta
+  - separator "Resize event stream" [ref=e152]
+  - complementary [ref=e154]:
+    - generic [ref=e155]:
+      - heading "EVENT STREAM" [level=4] [ref=e156]
+      - generic [ref=e157]: live
+    - generic [ref=e159]:
+      - combobox "Filter by project slug" [ref=e160]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]: Connected · 2 client(s)

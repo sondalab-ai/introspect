@@ -1,0 +1,106 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+  - separator "Resize navigation" [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]: Projects
+    - generic [ref=e676]:
+      - generic [ref=e677]:
+        - generic [ref=e678]: Projects (18)
+        - textbox "Cerca…" [ref=e679]
+        - generic [ref=e680] [cursor=pointer]:
+          - generic [ref=e681]: ~/src
+          - generic [ref=e682]: 4 sessioni · 5/31/2026, 9:16:56 PM
+        - generic [ref=e683] [cursor=pointer]:
+          - generic [ref=e684]: ~/Desktop/sync-skills-plugin
+          - generic [ref=e685]: 1 sessioni · 5/29/2026, 11:38:55 PM · ⚠ cartella rimossa
+        - generic [ref=e686] [cursor=pointer]:
+          - generic [ref=e687]: /private/tmp
+          - generic [ref=e688]: 56 sessioni · 5/29/2026, 11:36:41 PM
+        - generic [ref=e689] [cursor=pointer]:
+          - generic [ref=e690]: ~/src/product-epics-pilot
+          - generic [ref=e691]: 5 sessioni · 5/29/2026, 2:10:44 PM
+        - generic [ref=e692] [cursor=pointer]:
+          - generic [ref=e693]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T
+          - generic [ref=e694]: 5 sessioni · 5/29/2026, 8:49:01 AM
+        - generic [ref=e695] [cursor=pointer]:
+          - generic [ref=e696]: ~/src/camunda-hub
+          - generic [ref=e697]: 18 sessioni · 5/29/2026, 2:01:50 AM
+        - generic [ref=e698] [cursor=pointer]:
+          - generic [ref=e699]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents
+          - generic [ref=e700]: 3 sessioni · 5/27/2026, 5:08:18 PM
+        - generic [ref=e701] [cursor=pointer]:
+          - generic [ref=e702]: ~/.claude
+          - generic [ref=e703]: 3 sessioni · 5/25/2026, 3:57:56 PM
+        - generic [ref=e704] [cursor=pointer]:
+          - generic [ref=e705]: ~/src/mine/spexr
+          - generic [ref=e706]: 3 sessioni · 5/24/2026, 8:30:15 PM
+        - generic [ref=e707] [cursor=pointer]:
+          - generic [ref=e708]: ~/Desktop/test-spexr
+          - generic [ref=e709]: 2 sessioni · 5/23/2026, 4:07:28 PM · ⚠ cartella rimossa
+        - generic [ref=e710] [cursor=pointer]:
+          - generic [ref=e711]: ~/.claude/skills
+          - generic [ref=e712]: 1 sessioni · 5/21/2026, 9:15:18 PM
+        - generic [ref=e713] [cursor=pointer]:
+          - generic [ref=e714]: ~
+          - generic [ref=e715]: 2 sessioni · 5/21/2026, 1:39:17 PM
+        - generic [ref=e716] [cursor=pointer]:
+          - generic [ref=e717]: ~/src/mine/local-agents
+          - generic [ref=e718]: 9 sessioni · 5/18/2026, 12:30:14 PM
+        - generic [ref=e719] [cursor=pointer]:
+          - generic [ref=e720]: ~/src/mine/sguardo-a-nord
+          - generic [ref=e721]: 1 sessioni · 5/15/2026, 1:39:12 PM
+        - generic [ref=e722] [cursor=pointer]:
+          - generic [ref=e723]: ~/src/camunda-hub/frontend/packages/modeler/play
+          - generic [ref=e724]: 2 sessioni · 5/5/2026, 10:00:21 AM
+        - generic [ref=e725] [cursor=pointer]:
+          - generic [ref=e726]: Users · marcello · barile · Desktop · foo · prj
+          - generic [ref=e727]: 0 sessioni · —
+        - generic [ref=e728] [cursor=pointer]:
+          - generic [ref=e729]: Users · marcello · barile · Desktop · test
+          - generic [ref=e730]: 0 sessioni · —
+        - generic [ref=e731] [cursor=pointer]:
+          - generic [ref=e732]: Users · marcello · barile · src · mine · spexr · test
+          - generic [ref=e733]: 0 sessioni · —
+      - separator "Resize list pane" [ref=e734]
+      - generic [ref=e736]:
+        - heading "~/src/mine/spexr" [level=2] [ref=e737]
+        - generic "-Users-marcello-barile-src-mine-spexr" [ref=e738]: /Users/marcello.barile/src/mine/spexr
+        - generic [ref=e739]:
+          - term [ref=e740]: sessions
+          - definition [ref=e741]: "3"
+          - term [ref=e742]: last activity
+          - definition [ref=e743]: 5/24/2026, 8:30:15 PM
+        - button "Apri sessioni →" [ref=e744] [cursor=pointer]
+  - separator "Resize event stream" [ref=e146]
+  - complementary [ref=e148]:
+    - generic [ref=e149]:
+      - heading "EVENT STREAM" [level=4] [ref=e150]
+      - generic [ref=e151]: live
+    - generic [ref=e153]:
+      - combobox "Filter by project slug" [ref=e154]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e155] [cursor=pointer]
+    - generic [ref=e157]: Connected · 2 client(s)

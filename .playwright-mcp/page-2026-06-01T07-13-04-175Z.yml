@@ -1,0 +1,168 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [ref=e40] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "120%" [ref=e43] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: Live graph
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - heading "Live graph" [level=2] [ref=e166]
+        - generic [ref=e167]: live
+      - generic [ref=e169]:
+        - generic [ref=e170]: session
+        - combobox [ref=e171]:
+          - option "auto (ultima attiva)" [selected]
+          - option "Users · marcello · barile · src / 14e9c387"
+          - option "Users · marcello · barile · src / 037d59bf"
+          - option "private · tmp / 411cb43c"
+          - option "Users · marcello · barile · src / db5be782"
+          - option "Users · marcello · barile · Desktop / 413e4d14"
+          - option "private · tmp / cc15b71e"
+          - option "private · tmp / 2a1bdbcb"
+          - option "private · tmp / 8e516492"
+          - option "private · tmp / b22d7845"
+          - option "private · tmp / 279a4f51"
+          - option "Users · marcello · barile · src / 418105d9"
+          - option "private · tmp / 93684c6d"
+          - option "private · tmp / de19e996"
+          - option "private · tmp / a2200156"
+          - option "private · tmp / 9f69e673"
+          - option "private · tmp / cdf6e819"
+          - option "private · tmp / da6b5e8c"
+          - option "Users · marcello · barile · src · pr / ec684177"
+          - option "private · tmp / 5aaa4ecc"
+          - option "private · tmp / 43b018c5"
+          - option "private · tmp / 5f01f1e9"
+          - option "private · tmp / dbcd8841"
+          - option "private · tmp / 0576f704"
+          - option "private · var · folders · 1t · yb3f7 / 4232f662"
+          - option "private · tmp / 66f25b30"
+          - option "private · var · folders · 1t · yb3f7 / 53ad6fc7"
+          - option "private · var · folders · 1t · yb3f7 / a88e13dc"
+          - option "private · tmp / 13b3f7e4"
+          - option "private · tmp / 074f4480"
+          - option "private · tmp / ee5a834b"
+          - option "private · tmp / f15f7ed3"
+          - option "Users · marcello · barile · src · pr / aa2eed45"
+          - option "Users · marcello · barile · src · pr / 712fae4d"
+          - option "private · tmp / e8f20ae5"
+          - option "private · tmp / 6e0f9e02"
+          - option "private · tmp / 90914c0a"
+          - option "private · tmp / d0b44cef"
+          - option "private · tmp / 877bde71"
+          - option "private · tmp / 76353e7d"
+          - option "private · tmp / cd58d5da"
+          - option "private · tmp / 379ab4db"
+          - option "private · tmp / 41a2442b"
+          - option "private · tmp / c665bca3"
+          - option "private · tmp / dbffa78d"
+          - option "private · tmp / ac387746"
+          - option "private · var · folders · 1t · yb3f7 / 902cde75"
+          - option "Users · marcello · barile · src · pr / fe95ee3a"
+          - option "private · tmp / ca8f54a1"
+          - option "private · tmp / 5e0bd5bd"
+          - option "private · tmp / 134c167d"
+          - option "private · tmp / 84f225e2"
+          - option "private · tmp / c90046f2"
+          - option "private · tmp / f9de5d51"
+          - option "Users · marcello · barile · · claud / e2730624"
+          - option "private · tmp / aae05972"
+          - option "private · tmp / 91917dd3"
+          - option "private · tmp / 5a72385e"
+          - option "Users · marcello · barile · src · pr / b2b815e2"
+          - option "private · tmp / a79c4da9"
+          - option "private · tmp / f2647c81"
+          - option "private · tmp / 252736a3"
+          - option "private · tmp / 186701e6"
+          - option "private · var · folders · 1t · yb3f7 / f301285d"
+          - option "Users · marcello · barile · src · mi / a5071f3d"
+          - option "Users · marcello · barile · src · mi / f6f3301e"
+          - option "Users · marcello · barile · src · mi / fa9e4b78"
+          - option "Users · marcello · barile · Desktop / 197928db"
+          - option "Users · marcello · barile · Desktop / 67c8635f"
+          - option "Users · marcello · barile · src · ca / 216b412b"
+          - option "private · tmp / c297c2b3"
+          - option "private · tmp / dbbeee32"
+          - option "private · tmp / 51d0cb28"
+          - option "private · tmp / df365228"
+          - option "Users · marcello · barile · src · ca / e71d8bc2"
+          - option "private · tmp / 151aaf85"
+          - option "private · tmp / 1184ab49"
+          - option "private · tmp / fa9c9c28"
+          - option "Users · marcello · barile · src · ca / d823952e"
+          - option "private · tmp / c70fc64d"
+          - option "private · tmp / f8fd87c8"
+          - option "Users · marcello · barile · · claud / 89991544"
+          - option "Users · marcello · barile · · claud / bfd6f95c"
+          - option "Users · marcello · barile / 189b9fdd"
+          - option "Users · marcello · barile · src · pr / 9c84076a"
+          - option "Users · marcello · barile · src · ca / 2ee116ec"
+          - option "Users · marcello · barile · src · ca / 0be494f9"
+          - option "Users · marcello · barile / 6712a109"
+          - option "Users · marcello · barile · src · ca / b137d7f6"
+          - option "Users · marcello · barile · src · pr / 319dab42"
+          - option "Users · marcello · barile · src · pr / 31d187f4"
+          - option "Users · marcello · barile · src · ca / 82d88f86"
+          - option "Users · marcello · barile · src · ca / 826987e5"
+          - option "Users · marcello · barile · src · ca / 7fff9e4e"
+          - option "Users · marcello · barile · src · ca / 0bbcc910"
+          - option "Users · marcello · barile · src · ca / 064c1f2d"
+          - option "Users · marcello · barile · src · ca / 195439d8"
+          - option "Users · marcello · barile · src · mi / f47bf127"
+          - option "Users · marcello · barile · src · ca / 8b355e67"
+          - option "Users · marcello · barile · src · ca / e923ed12"
+          - option "Users · marcello · barile · src · ca / a7856b78"
+          - option "Users · marcello · barile · src · mi / 0f6dd843"
+          - option "Users · marcello · barile · src · ca / f6918488"
+          - option "Users · marcello · barile · src · mi / 26345c87"
+          - option "Users · marcello · barile · src · ca / 7697ce20"
+          - option "Users · marcello · barile · src · ca / be1f5670"
+          - option "Users · marcello · barile · src · ca / 77f39084"
+          - option "Users · marcello · barile · src · ca / 7982789b"
+          - option "Users · marcello · barile · src · mi / 5365bc9f"
+          - option "Users · marcello · barile · src · mi / d7f8a49b"
+          - option "Users · marcello · barile · src · mi / 5ef405ea"
+          - option "Users · marcello · barile · src · mi / b1eb36a9"
+          - option "Users · marcello · barile · src · mi / ba7b5057"
+          - option "Users · marcello · barile · src · mi / b88aea5f"
+          - option "Users · marcello · barile · src · mi / afed043e"
+          - option "Users · marcello · barile · · claud / 8f0bb88b"
+      - generic [ref=e172]: in attesa di eventi live… (oppure scegli una sessione esistente)
+  - separator "Resize event stream" [ref=e152]
+  - complementary [ref=e154]:
+    - generic [ref=e155]:
+      - heading "EVENT STREAM" [level=4] [ref=e156]
+      - generic [ref=e157]: live
+    - generic [ref=e159]:
+      - combobox "Filter by project slug" [ref=e160]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]: Connected · 2 client(s)

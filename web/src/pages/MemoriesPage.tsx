@@ -2,23 +2,27 @@ import { ListDetail } from "../components/ListDetail.js";
 import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type MemoryItem } from "../api.js";
+import { prettyProjectName } from "../projectName.js";
 
 type ScopeKind = "global" | "project" | "discovered";
 
-function scopeChip(s: string): { label: string; kind: ScopeKind } {
-  if (s === "global") return { label: "global", kind: "global" };
-  if (s.startsWith("discovered:")) {
-    const path = s.slice("discovered:".length);
-    return { label: path, kind: "discovered" };
-  }
-  return { label: s, kind: "project" };
+function scopeKind(s: string): ScopeKind {
+  if (s === "global") return "global";
+  if (s.startsWith("discovered:")) return "discovered";
+  return "project";
 }
 
-function ScopeChip({ scope }: { scope: string }) {
-  const c = scopeChip(scope);
+/** Human scope label: project scopes use the same pretty path as the Projects page. */
+function scopeLabel(m: Pick<MemoryItem, "scope" | "cwd">): string {
+  if (m.scope === "global") return "global";
+  if (m.scope.startsWith("discovered:")) return m.scope.slice("discovered:".length);
+  return prettyProjectName(m.cwd, m.scope);
+}
+
+function ScopeChip({ memory }: { memory: MemoryItem }) {
   return (
-    <span className={`glass-chip is-${c.kind}`} title={scope}>
-      <span className="chip-text">{c.label}</span>
+    <span className={`glass-chip is-${scopeKind(memory.scope)}`} title={memory.cwd ?? memory.scope}>
+      <span className="chip-text">{scopeLabel(memory)}</span>
     </span>
   );
 }
@@ -62,7 +66,7 @@ function withHierarchy(items: MemoryItem[]): MemoryRow[] {
       out.push({
         id: memoryMd.path,
         title: memoryMd.name,
-        subtitle: scopeChip(memoryMd.scope).label,
+        subtitle: scopeLabel(memoryMd),
         level: 0,
         raw: memoryMd,
       });
@@ -71,7 +75,7 @@ function withHierarchy(items: MemoryItem[]): MemoryRow[] {
       out.push({
         id: o.path,
         title: o.name,
-        subtitle: scopeChip(o.scope).label,
+        subtitle: scopeLabel(o),
         level: hasParent ? 1 : 0,
         raw: o,
       });
@@ -98,7 +102,7 @@ export function MemoriesPage() {
           <>
             <h2>{item.raw.name}</h2>
             <div style={{ display: "flex", alignItems: "center", gap: 10, margin: "2px 0 16px" }}>
-              <ScopeChip scope={item.raw.scope} />
+              <ScopeChip memory={item.raw} />
             </div>
             <div className="meta">{item.raw.path}</div>
             <Markdown>{item.raw.body}</Markdown>

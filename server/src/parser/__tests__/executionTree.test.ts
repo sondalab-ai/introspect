@@ -46,6 +46,19 @@ describe("buildTree", () => {
     expect(buildTree(events)).toHaveLength(1);
   });
 
+  it("keeps every event when several share a uuid (text + tool_use of one message)", () => {
+    const events: SessionEvent[] = [
+      ev({ kind: "user", uuid: "u" }),
+      ev({ kind: "text", uuid: "a", parentUuid: "u" }),
+      ev({ kind: "tool_use", uuid: "a", parentUuid: "u" }),
+    ];
+    const tree = buildTree(events);
+    expect(tree).toHaveLength(1);
+    // text and tool_use are siblings under the user node — neither overwritten/duplicated
+    const kinds = tree[0]!.children.map((n) => n.event.kind);
+    expect(kinds).toEqual(["text", "tool_use"]);
+  });
+
   it("flags sidechain branches preserved through nesting", () => {
     const events: SessionEvent[] = [
       ev({ kind: "subagent_spawn", uuid: "a" }),

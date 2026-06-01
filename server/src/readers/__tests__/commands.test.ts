@@ -37,4 +37,20 @@ describe("readCommands", () => {
     expect(items[0]!.description).toBe("Record a decision");
     expect(items[0]!.bodyPreview.startsWith("use it like")).toBe(true);
   });
+
+  it("also reads commands from installed plugins' installPath", () => {
+    const installPath = join(dir, "plugins", "cache", "mp", "p1", "v1");
+    mkdirSync(join(installPath, "commands"), { recursive: true });
+    writeFileSync(join(installPath, "commands", "commit.md"), "---\ndescription: Commit\n---\nb");
+    mkdirSync(join(dir, "plugins"), { recursive: true });
+    writeFileSync(
+      join(dir, "plugins", "installed_plugins.json"),
+      JSON.stringify({ version: 2, plugins: { "p1@mp": [{ installPath }] } })
+    );
+    mkdirSync(join(dir, "commands"));
+    writeFileSync(join(dir, "commands", "decision.md"), "---\ndescription: Decide\n---\nb");
+
+    const names = readCommands([rootOf(dir)]).map((i) => i.name).sort();
+    expect(names).toEqual(["commit", "decision"]);
+  });
 });

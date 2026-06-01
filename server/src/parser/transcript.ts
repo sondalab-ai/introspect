@@ -23,6 +23,23 @@ function sessionIdFromFile(path: string): string {
   return base.endsWith(".jsonl") ? base.slice(0, -".jsonl".length) : base;
 }
 
+/** Derive a readable title from a prompt: slash command, else first meaningful line. */
+function cleanTitle(text: string): string {
+  const name = text.match(/<command-name>\s*\/?([^<\n]+?)\s*<\/command-name>/);
+  if (name?.[1]) return `/${name[1].trim()}`.slice(0, 140);
+  const msg = text.match(/<command-message>\s*([^<\n]+?)\s*<\/command-message>/);
+  if (msg?.[1]) return msg[1].trim().slice(0, 140);
+  const isBoilerplate = (l: string): boolean =>
+    /^Caveat:/i.test(l) || /messages below were generated/i.test(l) || /DO NOT respond/i.test(l);
+  const lines = text
+    // drop noisy injected blocks entirely (tag + inner), then any remaining tags
+    .replace(/<(system-reminder|local-command-[a-z-]*|command-args|command-output|command-stdout)[^>]*>[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .split("\n").map((l) => l.trim()).filter(Boolean);
+  const pick = lines.find((l) => !isBoilerplate(l)) ?? lines[0] ?? "";
+  return pick.replace(/\s+/g, " ").trim().slice(0, 140);
+}
+
 /** Parse a full transcript file in one pass. */
 export function readTranscript(path: string): Transcript {
   const { lines } = readLinesFrom(path, 0);
@@ -30,11 +47,13 @@ export function readTranscript(path: string): Transcript {
   const meta = emptyMeta(sessionId);
   const events: SessionEvent[] = [];
   const modelsSeen = new Set<string>();
+  let firstUserText = "";
 
   for (const raw of lines) {
     let env: Record<string, unknown> | null;
     try { env = asObj(JSON.parse(raw)); } catch { env = null; }
     if (env) {
+      if (env.type === "summary") { const sm = s(env.summary); if (sm && !meta.title) meta.title = sm.slice(0, 140); }
       if (env.type === "assistant") meta.messageCounts.assistant += 1;
       else if (env.type === "user") meta.messageCounts.user += 1;
       if (env.isSidechain === true) meta.messageCounts.sidechain += 1;
@@ -67,9 +86,12 @@ export function readTranscript(path: string): Transcript {
         meta.toolCounts[e.name] = (meta.toolCounts[e.name] ?? 0) + 1;
       } else if (e.kind === "subagent_spawn") {
         meta.subagentCount += 1;
+      } else if (e.kind === "user" && !firstUserText && e.text.trim()) {
+        firstUserText = e.text;
       }
     }
   }
 
+  if (!meta.title && firstUserText) meta.title = cleanTitle(firstUserText);
   return { events, tree: buildTree(events), meta };
 }

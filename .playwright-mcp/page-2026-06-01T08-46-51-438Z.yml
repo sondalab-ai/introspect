@@ -1,0 +1,45 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [ref=e40] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "120%" [ref=e43] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: System prompt
+    - generic [ref=e49]: Caricamento…
+  - separator "Resize event stream" [ref=e50]
+  - complementary [ref=e52]:
+    - generic [ref=e53]:
+      - heading "EVENT STREAM" [level=4] [ref=e54]
+      - generic [ref=e55]: live · 2
+    - generic [ref=e57]:
+      - combobox "Filter by project slug" [ref=e58]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e59] [cursor=pointer]
+    - generic [ref=e61]: in attesa di eventi…

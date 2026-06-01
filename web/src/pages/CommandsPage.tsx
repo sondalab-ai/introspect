@@ -2,6 +2,7 @@ import { ListDetail } from "../components/ListDetail.js";
 import { Markdown } from "../components/Markdown.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type CommandItem } from "../api.js";
+import { PrecedenceBadges, precedenceSuffix } from "../precedence.js";
 
 export function CommandsPage() {
   const state = useEndpoint<CommandItem[]>(ENDPOINTS.commands);
@@ -11,7 +12,7 @@ export function CommandsPage() {
   const items = state.data.map((it) => ({
     id: it.path,
     title: `/${it.name}`,
-    subtitle: it.description,
+    subtitle: `${it.description}${precedenceSuffix(it)}`,
     raw: it,
   }));
 
@@ -26,6 +27,7 @@ export function CommandsPage() {
           <>
             <h2>/{item.raw.name}</h2>
             <div className="meta">{item.raw.path}</div>
+            <PrecedenceBadges p={item.raw} />
             {item.raw.description ? (
               <div className="detail-lead">{item.raw.description}</div>
             ) : null}

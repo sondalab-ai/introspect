@@ -38,4 +38,20 @@ describe("readAgents", () => {
     expect(items[0]!.tools).toBe("Read, Grep");
     expect(items[0]!.rootPath).toBe(realpathSync(dir));
   });
+
+  it("also reads agents from installed plugins' installPath", () => {
+    const installPath = join(dir, "plugins", "cache", "mp", "p1", "v1");
+    mkdirSync(join(installPath, "agents"), { recursive: true });
+    writeFileSync(join(installPath, "agents", "plugin-agent.md"), "---\nname: plugin-agent\n---\nb");
+    mkdirSync(join(dir, "plugins"), { recursive: true });
+    writeFileSync(
+      join(dir, "plugins", "installed_plugins.json"),
+      JSON.stringify({ version: 2, plugins: { "p1@mp": [{ installPath }] } })
+    );
+    mkdirSync(join(dir, "agents"));
+    writeFileSync(join(dir, "agents", "personal.md"), "---\nname: personal\n---\nb");
+
+    const names = readAgents([rootOf(dir)]).map((i) => i.name).sort();
+    expect(names).toEqual(["personal", "plugin-agent"]);
+  });
 });

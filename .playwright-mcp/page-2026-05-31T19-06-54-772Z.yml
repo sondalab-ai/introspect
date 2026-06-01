@@ -1,0 +1,47 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+  - separator "Resize navigation" [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]: Live graph
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - heading "Live graph" [level=2] [ref=e160]
+        - generic [ref=e161]: live
+      - generic [ref=e163]:
+        - generic [ref=e164]: session
+        - combobox [ref=e165]:
+          - option "auto (ultima attiva)" [selected]
+      - generic [ref=e166]: in attesa di eventi live…
+  - separator "Resize event stream" [ref=e146]
+  - complementary [ref=e148]:
+    - generic [ref=e149]:
+      - heading "EVENT STREAM" [level=4] [ref=e150]
+      - generic [ref=e151]: live
+    - generic [ref=e153]:
+      - combobox "Filter by project slug" [ref=e154]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e155] [cursor=pointer]
+    - generic [ref=e157]: Connected · 2 client(s)

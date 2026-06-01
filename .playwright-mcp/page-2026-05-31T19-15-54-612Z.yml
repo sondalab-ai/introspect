@@ -1,0 +1,964 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+  - separator "Resize navigation" [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]: Sessions · History
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e68]: Sessions (115)
+        - textbox "Cerca…" [ref=e69]
+        - generic [ref=e70] [cursor=pointer]:
+          - generic [ref=e71]: 14e9c387-a2d6-4ae0-a7ea-4b690a208be5
+          - generic [ref=e72]: ~/src · 5/31/2026, 9:15:11 PM · 83.5 KB
+        - generic [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]: 037d59bf-ff0f-418e-aa88-b3a4f9ed74bc
+          - generic [ref=e75]: ~/src · 5/29/2026, 11:47:37 PM · 60.8 KB
+        - generic [ref=e76] [cursor=pointer]:
+          - generic [ref=e77]: 411cb43c-7ab7-41f3-8ff2-049b7485e38c
+          - generic [ref=e78]: /private/tmp · 5/29/2026, 11:36:41 PM · 52.8 KB
+        - generic [ref=e79] [cursor=pointer]:
+          - generic [ref=e80]: db5be782-82bc-44a8-be9d-583e02b91a7c
+          - generic [ref=e81]: ~/src · 5/29/2026, 11:35:59 PM · 191.5 KB
+        - generic [ref=e82] [cursor=pointer]:
+          - generic [ref=e83]: 413e4d14-4ce3-409e-ad71-b192621577b2
+          - generic [ref=e84]: ~/Desktop/sync-skills-plugin · 5/29/2026, 11:34:25 PM · 490.2 KB
+        - generic [ref=e85] [cursor=pointer]:
+          - generic [ref=e86]: cc15b71e-0c15-4753-aeaa-d97a1871a3c8
+          - generic [ref=e87]: /private/tmp · 5/29/2026, 11:34:04 PM · 57.8 KB
+        - generic [ref=e88] [cursor=pointer]:
+          - generic [ref=e89]: 2a1bdbcb-fb1b-4aa4-ae68-7a649d37ecdf
+          - generic [ref=e90]: /private/tmp · 5/29/2026, 11:29:41 PM · 52.8 KB
+        - generic [ref=e91] [cursor=pointer]:
+          - generic [ref=e92]: 8e516492-1016-45d5-ad75-889562086b9d
+          - generic [ref=e93]: /private/tmp · 5/29/2026, 11:29:21 PM · 51.5 KB
+        - generic [ref=e94] [cursor=pointer]:
+          - generic [ref=e95]: b22d7845-9e26-49b3-b5b2-cf62742b0a55
+          - generic [ref=e96]: /private/tmp · 5/29/2026, 11:27:11 PM · 54.1 KB
+        - generic [ref=e97] [cursor=pointer]:
+          - generic [ref=e98]: 279a4f51-cc4c-46cb-aef2-8e42db727730
+          - generic [ref=e99]: /private/tmp · 5/29/2026, 11:26:47 PM · 60.5 KB
+        - generic [ref=e100] [cursor=pointer]:
+          - generic [ref=e101]: 418105d9-19a8-46d7-b8ac-7393fdc66915
+          - generic [ref=e102]: ~/src · 5/29/2026, 11:14:34 PM · 1.1 MB
+        - generic [ref=e103] [cursor=pointer]:
+          - generic [ref=e104]: 93684c6d-9b16-40dc-9d6e-78d5556d7a4a
+          - generic [ref=e105]: /private/tmp · 5/29/2026, 3:45:09 PM · 58.5 KB
+        - generic [ref=e106] [cursor=pointer]:
+          - generic [ref=e107]: de19e996-803d-48d8-a1b7-f76ceb901f7c
+          - generic [ref=e108]: /private/tmp · 5/29/2026, 3:44:43 PM · 88.8 KB
+        - generic [ref=e109] [cursor=pointer]:
+          - generic [ref=e110]: a2200156-4615-4f34-beae-41712f52539d
+          - generic [ref=e111]: /private/tmp · 5/29/2026, 2:41:37 PM · 58.1 KB
+        - generic [ref=e112] [cursor=pointer]:
+          - generic [ref=e113]: 9f69e673-adb6-4ab1-a4e0-63fd01bd80d2
+          - generic [ref=e114]: /private/tmp · 5/29/2026, 2:33:26 PM · 46.9 KB
+        - generic [ref=e115] [cursor=pointer]:
+          - generic [ref=e116]: cdf6e819-493c-4d2b-bd67-12352535013c
+          - generic [ref=e117]: /private/tmp · 5/29/2026, 2:33:13 PM · 62.6 KB
+        - generic [ref=e118] [cursor=pointer]:
+          - generic [ref=e119]: da6b5e8c-a3f7-4678-afa4-f25ef9497c41
+          - generic [ref=e120]: /private/tmp · 5/29/2026, 1:16:21 PM · 45.6 KB
+        - generic [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: ec684177-3981-488d-a572-d3fe35f6ca77
+          - generic [ref=e123]: ~/src/product-epics-pilot · 5/29/2026, 12:02:03 PM · 1.9 MB
+        - generic [ref=e124] [cursor=pointer]:
+          - generic [ref=e125]: 5aaa4ecc-0961-436b-8399-d262f092f4aa
+          - generic [ref=e126]: /private/tmp · 5/29/2026, 11:59:29 AM · 48.6 KB
+        - generic [ref=e127] [cursor=pointer]:
+          - generic [ref=e128]: 43b018c5-2c91-407d-9478-2574d4c481c0
+          - generic [ref=e129]: /private/tmp · 5/29/2026, 11:59:18 AM · 66.0 KB
+        - generic [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]: 5f01f1e9-3756-434d-90b9-3f773d46f4e0
+          - generic [ref=e132]: /private/tmp · 5/29/2026, 11:03:56 AM · 72.0 KB
+        - generic [ref=e133] [cursor=pointer]:
+          - generic [ref=e134]: dbcd8841-adb2-4af8-8a9c-3a2fd7ee3734
+          - generic [ref=e135]: /private/tmp · 5/29/2026, 10:25:18 AM · 51.0 KB
+        - generic [ref=e136] [cursor=pointer]:
+          - generic [ref=e137]: 0576f704-55ea-40f9-8a3d-a96f21846f45
+          - generic [ref=e138]: /private/tmp · 5/29/2026, 10:25:04 AM · 194.8 KB
+        - generic [ref=e139] [cursor=pointer]:
+          - generic [ref=e140]: 4232f662-714e-411d-a842-337d7a2e19a5
+          - generic [ref=e141]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 8:49:00 AM · 62.8 KB
+        - generic [ref=e142] [cursor=pointer]:
+          - generic [ref=e143]: 66f25b30-e11d-4dbf-b86d-bec78339adab
+          - generic [ref=e144]: /private/tmp · 5/29/2026, 5:53:37 AM · 48.0 KB
+        - generic [ref=e145] [cursor=pointer]:
+          - generic [ref=e146]: 53ad6fc7-3ac7-4644-9cea-2ac714aa407e
+          - generic [ref=e147]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 25.7 KB
+        - generic [ref=e148] [cursor=pointer]:
+          - generic [ref=e149]: a88e13dc-a64e-4b73-97fe-5289e85b5fe2
+          - generic [ref=e150]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 29.1 KB
+        - generic [ref=e151] [cursor=pointer]:
+          - generic [ref=e152]: 13b3f7e4-fbc5-4ffb-9a78-4b6fa4890a70
+          - generic [ref=e153]: /private/tmp · 5/29/2026, 4:03:36 AM · 35.3 KB
+        - generic [ref=e154] [cursor=pointer]:
+          - generic [ref=e155]: 074f4480-df80-4297-a662-5a9a6c3d5baf
+          - generic [ref=e156]: /private/tmp · 5/28/2026, 10:51:42 PM · 54.9 KB
+        - generic [ref=e157] [cursor=pointer]:
+          - generic [ref=e158]: ee5a834b-7e6e-4d0d-a5ab-e5b0c964c40f
+          - generic [ref=e159]: /private/tmp · 5/28/2026, 10:51:24 PM · 63.0 KB
+        - generic [ref=e160] [cursor=pointer]:
+          - generic [ref=e161]: f15f7ed3-4a50-4a60-bae5-1948945b2f01
+          - generic [ref=e162]: /private/tmp · 5/28/2026, 10:12:57 PM · 140.9 KB
+        - generic [ref=e163] [cursor=pointer]:
+          - generic [ref=e164]: aa2eed45-4207-4b4a-a224-7c74894424e4
+          - generic [ref=e165]: ~/src/product-epics-pilot · 5/28/2026, 10:12:34 PM · 46.1 KB
+        - generic [ref=e166] [cursor=pointer]:
+          - generic [ref=e167]: 712fae4d-f5b3-4cba-b7c8-236b8b3e6575
+          - generic [ref=e168]: ~/src/product-epics-pilot · 5/28/2026, 10:12:25 PM · 125.1 KB
+        - generic [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]: e8f20ae5-78d7-4e56-9878-c778cd8d6edc
+          - generic [ref=e171]: /private/tmp · 5/28/2026, 10:12:22 PM · 130.0 KB
+        - generic [ref=e172] [cursor=pointer]:
+          - generic [ref=e173]: 6e0f9e02-60a2-4c3b-b9d3-83b7ce698665
+          - generic [ref=e174]: /private/tmp · 5/28/2026, 9:47:41 PM · 63.2 KB
+        - generic [ref=e175] [cursor=pointer]:
+          - generic [ref=e176]: 90914c0a-b08a-4332-b33d-964ace8c5759
+          - generic [ref=e177]: /private/tmp · 5/28/2026, 9:47:08 PM · 57.0 KB
+        - generic [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]: d0b44cef-6cba-45b7-b81c-a256d777aa6d
+          - generic [ref=e180]: /private/tmp · 5/28/2026, 5:50:52 PM · 72.9 KB
+        - generic [ref=e181] [cursor=pointer]:
+          - generic [ref=e182]: 877bde71-5b65-4c1f-90df-3994c9ae14b3
+          - generic [ref=e183]: /private/tmp · 5/28/2026, 5:32:34 PM · 49.3 KB
+        - generic [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]: 76353e7d-379a-4e8e-91af-6062d3fb17b5
+          - generic [ref=e186]: /private/tmp · 5/28/2026, 5:32:21 PM · 77.7 KB
+        - generic [ref=e187] [cursor=pointer]:
+          - generic [ref=e188]: cd58d5da-faf6-4a60-9f50-33a18ba59e72
+          - generic [ref=e189]: /private/tmp · 5/28/2026, 4:06:37 PM · 63.6 KB
+        - generic [ref=e190] [cursor=pointer]:
+          - generic [ref=e191]: 379ab4db-dd5b-414e-bcb1-a14aa3628f42
+          - generic [ref=e192]: /private/tmp · 5/28/2026, 3:22:11 PM · 59.0 KB
+        - generic [ref=e193] [cursor=pointer]:
+          - generic [ref=e194]: 41a2442b-0078-4b67-9c7d-a2a9cd5bec8f
+          - generic [ref=e195]: /private/tmp · 5/28/2026, 3:21:51 PM · 55.9 KB
+        - generic [ref=e196] [cursor=pointer]:
+          - generic [ref=e197]: c665bca3-c9ec-437e-a2f9-e7e18a0c3265
+          - generic [ref=e198]: /private/tmp · 5/28/2026, 12:22:05 PM · 61.9 KB
+        - generic [ref=e199] [cursor=pointer]:
+          - generic [ref=e200]: dbffa78d-0721-4d9d-b966-21a5c6f4faaa
+          - generic [ref=e201]: /private/tmp · 5/28/2026, 11:58:36 AM · 56.0 KB
+        - generic [ref=e202] [cursor=pointer]:
+          - generic [ref=e203]: ac387746-cc9c-4bae-8940-863c083b611a
+          - generic [ref=e204]: /private/tmp · 5/28/2026, 11:58:18 AM · 71.3 KB
+        - generic [ref=e205] [cursor=pointer]:
+          - generic [ref=e206]: 902cde75-0bb3-4cca-abc1-66fd4056437b
+          - generic [ref=e207]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/27/2026, 1:17:35 PM · 33.2 KB
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: fe95ee3a-1ca6-4275-aa2a-eed3cbc7825f
+          - generic [ref=e210]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/26/2026, 5:17:02 PM · 1011.1 KB
+        - generic [ref=e211] [cursor=pointer]:
+          - generic [ref=e212]: ca8f54a1-7834-46d1-a3c4-bfa62aa6c754
+          - generic [ref=e213]: /private/tmp · 5/26/2026, 5:08:06 PM · 50.6 KB
+        - generic [ref=e214] [cursor=pointer]:
+          - generic [ref=e215]: 5e0bd5bd-b9b7-4c21-8066-05b6517cdf9c
+          - generic [ref=e216]: /private/tmp · 5/26/2026, 5:07:51 PM · 73.5 KB
+        - generic [ref=e217] [cursor=pointer]:
+          - generic [ref=e218]: 134c167d-e26f-41b6-8442-eccdcb7bca34
+          - generic [ref=e219]: /private/tmp · 5/25/2026, 7:13:25 PM · 46.0 KB
+        - generic [ref=e220] [cursor=pointer]:
+          - generic [ref=e221]: 84f225e2-139e-45ee-9c96-5a99a85fb86c
+          - generic [ref=e222]: /private/tmp · 5/25/2026, 7:13:13 PM · 78.9 KB
+        - generic [ref=e223] [cursor=pointer]:
+          - generic [ref=e224]: c90046f2-17c5-4354-8d22-69803f7f39bd
+          - generic [ref=e225]: /private/tmp · 5/25/2026, 5:07:03 PM · 45.2 KB
+        - generic [ref=e226] [cursor=pointer]:
+          - generic [ref=e227]: f9de5d51-cfb8-4369-b8fd-6df7d2990c4d
+          - generic [ref=e228]: /private/tmp · 5/25/2026, 5:06:54 PM · 54.9 KB
+        - generic [ref=e229] [cursor=pointer]:
+          - generic [ref=e230]: e2730624-ae1e-45ee-92ee-a1df5a52c898
+          - generic [ref=e231]: ~/.claude · 5/25/2026, 3:56:37 PM · 1.1 MB
+        - generic [ref=e232] [cursor=pointer]:
+          - generic [ref=e233]: aae05972-2eee-433a-a3e8-9bbac7c3074e
+          - generic [ref=e234]: /private/tmp · 5/25/2026, 1:57:16 PM · 49.5 KB
+        - generic [ref=e235] [cursor=pointer]:
+          - generic [ref=e236]: 91917dd3-a2ed-42fd-9456-2e0cc65c4f53
+          - generic [ref=e237]: /private/tmp · 5/25/2026, 1:57:00 PM · 114.8 KB
+        - generic [ref=e238] [cursor=pointer]:
+          - generic [ref=e239]: 5a72385e-0478-4c3f-ac5b-289de3736849
+          - generic [ref=e240]: /private/tmp · 5/25/2026, 12:55:16 PM · 78.5 KB
+        - generic [ref=e241] [cursor=pointer]:
+          - generic [ref=e242]: b2b815e2-d658-4499-aa77-566c8ec6d91f
+          - generic [ref=e243]: ~/src/product-epics-pilot · 5/25/2026, 12:54:47 PM · 697.4 KB
+        - generic [ref=e244] [cursor=pointer]:
+          - generic [ref=e245]: a79c4da9-b31f-4b61-9fb5-99a788c3c0c8
+          - generic [ref=e246]: /private/tmp · 5/25/2026, 12:36:40 PM · 47.1 KB
+        - generic [ref=e247] [cursor=pointer]:
+          - generic [ref=e248]: f2647c81-3dac-42ab-894b-9e104f363760
+          - generic [ref=e249]: /private/tmp · 5/25/2026, 12:36:27 PM · 78.7 KB
+        - generic [ref=e250] [cursor=pointer]:
+          - generic [ref=e251]: 252736a3-9625-4a91-830e-eca2d222758d
+          - generic [ref=e252]: /private/tmp · 5/25/2026, 10:55:46 AM · 59.8 KB
+        - generic [ref=e253] [cursor=pointer]:
+          - generic [ref=e254]: 186701e6-8bde-4f06-bd7c-bcdf31642d64
+          - generic [ref=e255]: /private/tmp · 5/25/2026, 10:55:22 AM · 55.3 KB
+        - generic [ref=e256] [cursor=pointer]:
+          - generic [ref=e257]: f301285d-b002-45ce-b5d2-082c38581266
+          - generic [ref=e258]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/25/2026, 10:55:04 AM · 30.9 KB
+        - generic [ref=e259] [cursor=pointer]:
+          - generic [ref=e260]: a5071f3d-f821-435b-a1c9-79b80f706d3b
+          - generic [ref=e261]: ~/src/mine/spexr · 5/24/2026, 8:30:08 PM · 57.2 KB
+        - generic [ref=e262] [cursor=pointer]:
+          - generic [ref=e263]: f6f3301e-4d49-4209-8bd2-513f637eaf82
+          - generic [ref=e264]: ~/src/mine/spexr · 5/24/2026, 8:27:33 PM · 147.9 KB
+        - generic [ref=e265] [cursor=pointer]:
+          - generic [ref=e266]: fa9e4b78-72a2-4a41-ab5a-d05ba5c2e614
+          - generic [ref=e267]: ~/src/mine/spexr · 5/24/2026, 8:26:43 PM · 420.4 KB
+        - generic [ref=e268] [cursor=pointer]:
+          - generic [ref=e269]: 197928db-6bbe-41e6-a163-57d70ef64a06
+          - generic [ref=e270]: ~/Desktop/test-spexr · 5/23/2026, 4:04:44 PM · 56.9 KB
+        - generic [ref=e271] [cursor=pointer]:
+          - generic [ref=e272]: 67c8635f-8f1c-471d-8dfe-bcbe63bd7ae4
+          - generic [ref=e273]: ~/Desktop/test-spexr · 5/22/2026, 10:24:29 PM · 24.2 KB
+        - generic [ref=e274] [cursor=pointer]:
+          - generic [ref=e275]: 216b412b-f48a-4d65-b610-bc82930431ab
+          - generic [ref=e276]: ~/src/camunda-hub · 5/22/2026, 5:47:33 PM · 377.5 KB
+        - generic [ref=e277] [cursor=pointer]:
+          - generic [ref=e278]: c297c2b3-ce40-434c-9d1d-c7aca7575077
+          - generic [ref=e279]: /private/tmp · 5/22/2026, 5:47:03 PM · 65.5 KB
+        - generic [ref=e280] [cursor=pointer]:
+          - generic [ref=e281]: dbbeee32-4b7d-49ce-bb3a-510c8d096b07
+          - generic [ref=e282]: /private/tmp · 5/22/2026, 5:38:58 PM · 57.8 KB
+        - generic [ref=e283] [cursor=pointer]:
+          - generic [ref=e284]: 51d0cb28-350d-459a-8bb4-f069d2156ebc
+          - generic [ref=e285]: /private/tmp · 5/22/2026, 5:30:18 PM · 55.7 KB
+        - generic [ref=e286] [cursor=pointer]:
+          - generic [ref=e287]: df365228-51ed-4c9e-8289-2d5c7d13319e
+          - generic [ref=e288]: /private/tmp · 5/22/2026, 5:26:00 PM · 64.4 KB
+        - generic [ref=e289] [cursor=pointer]:
+          - generic [ref=e290]: e71d8bc2-5ec3-41f9-b983-a1d90c883c06
+          - generic [ref=e291]: ~/src/camunda-hub · 5/22/2026, 5:23:49 PM · 300.5 KB
+        - generic [ref=e292] [cursor=pointer]:
+          - generic [ref=e293]: 151aaf85-2004-4fdd-92d3-46be68cd6927
+          - generic [ref=e294]: /private/tmp · 5/22/2026, 5:17:47 PM · 61.4 KB
+        - generic [ref=e295] [cursor=pointer]:
+          - generic [ref=e296]: 1184ab49-d8d4-46a9-bedc-86a778f2f322
+          - generic [ref=e297]: /private/tmp · 5/22/2026, 5:05:37 PM · 46.6 KB
+        - generic [ref=e298] [cursor=pointer]:
+          - generic [ref=e299]: fa9c9c28-1b86-4399-bb61-8e11bc43e00a
+          - generic [ref=e300]: /private/tmp · 5/22/2026, 5:05:24 PM · 292.6 KB
+        - generic [ref=e301] [cursor=pointer]:
+          - generic [ref=e302]: d823952e-717b-427b-a649-638ddd4299df
+          - generic [ref=e303]: ~/src/camunda-hub · 5/22/2026, 11:44:59 AM · 271.4 KB
+        - generic [ref=e304] [cursor=pointer]:
+          - generic [ref=e305]: c70fc64d-fd5e-4eca-bad0-67dc6432707c
+          - generic [ref=e306]: /private/tmp · 5/22/2026, 11:41:50 AM · 47.9 KB
+        - generic [ref=e307] [cursor=pointer]:
+          - generic [ref=e308]: f8fd87c8-9426-44b2-81e1-4f03c593c4dc
+          - generic [ref=e309]: /private/tmp · 5/22/2026, 11:41:35 AM · 53.1 KB
+        - generic [ref=e310] [cursor=pointer]:
+          - generic [ref=e311]: 89991544-d1cd-4698-aa09-d4ce068fc686
+          - generic [ref=e312]: ~/.claude/skills · 5/21/2026, 9:15:00 PM · 83.1 KB
+        - generic [ref=e313] [cursor=pointer]:
+          - generic [ref=e314]: bfd6f95c-8995-40c0-981d-5465cc4c9af5
+          - generic [ref=e315]: ~/.claude · 5/21/2026, 9:08:04 PM · 71.5 KB
+        - generic [ref=e316] [cursor=pointer]:
+          - generic [ref=e317]: 189b9fdd-49ae-4f0c-abc0-f56c505ea5a2
+          - generic [ref=e318]: ~ · 5/21/2026, 1:37:48 PM · 350.0 KB
+        - generic [ref=e319] [cursor=pointer]:
+          - generic [ref=e320]: 9c84076a-282a-49d6-a58a-6735fb3efcd4
+          - generic [ref=e321]: ~/src/product-epics-pilot · 5/21/2026, 1:17:17 PM · 604.6 KB
+        - generic [ref=e322] [cursor=pointer]:
+          - generic [ref=e323]: 2ee116ec-509f-4dca-9405-95820109f590
+          - generic [ref=e324]: ~/src/camunda-hub · 5/20/2026, 2:28:46 PM · 3.8 MB
+        - generic [ref=e325] [cursor=pointer]:
+          - generic [ref=e326]: 0be494f9-b483-467c-93f5-c8b1b3d2dc7c
+          - generic [ref=e327]: ~/src/camunda-hub · 5/18/2026, 3:15:38 PM · 2.7 MB
+        - generic [ref=e328] [cursor=pointer]:
+          - generic [ref=e329]: 6712a109-a507-489d-a865-ec8b0ed3d775
+          - generic [ref=e330]: ~ · 5/18/2026, 12:28:04 PM · 102.1 KB
+        - generic [ref=e331] [cursor=pointer]:
+          - generic [ref=e332]: b137d7f6-3691-4aca-9d00-3b3e1916ac71
+          - generic [ref=e333]: ~/src/camunda-hub · 5/15/2026, 9:59:22 AM · 6.2 MB
+        - generic [ref=e334] [cursor=pointer]:
+          - generic [ref=e335]: 319dab42-7293-4431-abf8-b6e3aeb9af5c
+          - generic [ref=e336]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 2:54:11 PM · 1.1 MB
+        - generic [ref=e337] [cursor=pointer]:
+          - generic [ref=e338]: 31d187f4-f301-4e48-9002-8356679dde09
+          - generic [ref=e339]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 12:27:08 PM · 284.8 KB
+        - generic [ref=e340] [cursor=pointer]:
+          - generic [ref=e341]: 82d88f86-b2b2-4e5d-b56b-07f92a3ef946
+          - generic [ref=e342]: ~/src/camunda-hub · 5/12/2026, 3:54:22 PM · 130.2 KB
+        - generic [ref=e343] [cursor=pointer]:
+          - generic [ref=e344]: 826987e5-f893-448e-a2b8-5c1e307f3fda
+          - generic [ref=e345]: ~/src/camunda-hub · 5/11/2026, 9:09:12 AM · 238.7 KB
+        - generic [ref=e346] [cursor=pointer]:
+          - generic [ref=e347]: 7fff9e4e-5d82-4d28-8efc-06ce2f5173da
+          - generic [ref=e348]: ~/src/camunda-hub · 5/8/2026, 5:25:55 PM · 121.2 KB
+        - generic [ref=e349] [cursor=pointer]:
+          - generic [ref=e350]: 0bbcc910-a11a-470b-8aa3-4c01e183d7e8
+          - generic [ref=e351]: ~/src/camunda-hub · 5/8/2026, 4:18:44 PM · 2.2 MB
+        - generic [ref=e352] [cursor=pointer]:
+          - generic [ref=e353]: 064c1f2d-12df-47f7-b9e0-beea27b69ff7
+          - generic [ref=e354]: ~/src/camunda-hub · 5/8/2026, 11:21:14 AM · 533.5 KB
+        - generic [ref=e355] [cursor=pointer]:
+          - generic [ref=e356]: 195439d8-140c-42c0-9ea1-9e4b05c25529
+          - generic [ref=e357]: ~/src/camunda-hub · 5/8/2026, 10:38:02 AM · 2.5 MB
+        - generic [ref=e358] [cursor=pointer]:
+          - generic [ref=e359]: f47bf127-5c30-4313-b437-60900721435b
+          - generic [ref=e360]: ~/src/mine/sguardo-a-nord · 5/6/2026, 11:02:40 PM · 405.5 KB
+        - generic [ref=e361] [cursor=pointer]:
+          - generic [ref=e362]: 8b355e67-f8d5-4f53-81a8-41f80645c55a
+          - generic [ref=e363]: ~/src/camunda-hub · 5/6/2026, 5:51:05 PM · 5.0 MB
+        - generic [ref=e364] [cursor=pointer]:
+          - generic [ref=e365]: e923ed12-0c62-47e5-b86f-8ff988b48e8d
+          - generic [ref=e366]: ~/src/camunda-hub · 5/6/2026, 5:49:03 PM · 92.9 KB
+        - generic [ref=e367] [cursor=pointer]:
+          - generic [ref=e368]: a7856b78-c5cb-4489-a5c9-0790e3d06718
+          - generic [ref=e369]: ~/src/camunda-hub · 5/6/2026, 5:47:03 PM · 56.5 KB
+        - generic [ref=e370] [cursor=pointer]:
+          - generic [ref=e371]: 0f6dd843-4a86-42a8-9a94-90457638e4cf
+          - generic [ref=e372]: ~/src/mine/local-agents · 5/6/2026, 12:50:25 PM · 606.4 KB
+        - generic [ref=e373] [cursor=pointer]:
+          - generic [ref=e374]: f6918488-2ef3-4280-bb64-8438158de599
+          - generic [ref=e375]: ~/src/camunda-hub · 5/5/2026, 10:31:22 PM · 22.5 KB
+        - generic [ref=e376] [cursor=pointer]:
+          - generic [ref=e377]: 26345c87-d2c5-4306-81fd-4676ba42ba8f
+          - generic [ref=e378]: ~/src/mine/local-agents · 5/4/2026, 4:48:15 PM · 596.4 KB
+        - generic [ref=e379] [cursor=pointer]:
+          - generic [ref=e380]: 7697ce20-2219-4fd6-9d91-1a077437de2c
+          - generic [ref=e381]: ~/src/camunda-hub · 5/4/2026, 3:41:30 PM · 1.8 MB
+        - generic [ref=e382] [cursor=pointer]:
+          - generic [ref=e383]: be1f5670-cd8d-414e-8eb0-dbe78d987e40
+          - generic [ref=e384]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 1:30:40 PM · 51.0 KB
+        - generic [ref=e385] [cursor=pointer]:
+          - generic [ref=e386]: 77f39084-2e57-4e15-8f46-7525b5ce1b3e
+          - generic [ref=e387]: ~/src/camunda-hub · 5/4/2026, 12:51:52 PM · 910.0 KB
+        - generic [ref=e388] [cursor=pointer]:
+          - generic [ref=e389]: 7982789b-90e2-4c2a-8251-f70aa12fef63
+          - generic [ref=e390]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 12:51:45 PM · 430.9 KB
+        - generic [ref=e391] [cursor=pointer]:
+          - generic [ref=e392]: 5365bc9f-0f94-47c3-bad5-8a1d1d25bbc1
+          - generic [ref=e393]: ~/src/mine/local-agents · 5/3/2026, 10:59:15 PM · 311.4 KB
+        - generic [ref=e394] [cursor=pointer]:
+          - generic [ref=e395]: d7f8a49b-47b5-4624-a6df-db046045bacc
+          - generic [ref=e396]: ~/src/mine/local-agents · 5/3/2026, 6:35:50 PM · 33.2 KB
+        - generic [ref=e397] [cursor=pointer]:
+          - generic [ref=e398]: 5ef405ea-6dc7-4178-af7d-456aa5f7c3e2
+          - generic [ref=e399]: ~/src/mine/local-agents · 5/3/2026, 6:28:44 PM · 31.7 KB
+        - generic [ref=e400] [cursor=pointer]:
+          - generic [ref=e401]: b1eb36a9-d9f6-4479-950a-70d81851b8c7
+          - generic [ref=e402]: ~/src/mine/local-agents · 5/3/2026, 6:24:43 PM · 24.2 KB
+        - generic [ref=e403] [cursor=pointer]:
+          - generic [ref=e404]: ba7b5057-65e4-4b69-9740-6966f0d2f972
+          - generic [ref=e405]: ~/src/mine/local-agents · 5/3/2026, 6:24:00 PM · 221.6 KB
+        - generic [ref=e406] [cursor=pointer]:
+          - generic [ref=e407]: b88aea5f-d43d-4718-9c2e-26b80841fa67
+          - generic [ref=e408]: ~/src/mine/local-agents · 5/3/2026, 6:18:03 PM · 175.4 KB
+        - generic [ref=e409] [cursor=pointer]:
+          - generic [ref=e410]: afed043e-d93b-4b03-8a25-b8c4bd7c7d1e
+          - generic [ref=e411]: ~/src/mine/local-agents · 5/3/2026, 6:06:30 PM · 256.8 KB
+        - generic [ref=e412] [cursor=pointer]:
+          - generic [ref=e413]: 8f0bb88b-2287-457c-b077-76eb334d1b9f
+          - generic [ref=e414]: Users · marcello · barile · · claude · — · 240 B
+      - separator "Resize list pane" [ref=e415]
+      - generic [ref=e418]:
+        - heading "14e9c387-a2d6-4ae0-a7ea-4b690a208be5" [level=2] [ref=e420]
+        - generic "-Users-marcello-barile-src" [ref=e421]: ~/src
+        - generic [ref=e422]:
+          - term [ref=e423]: first
+          - definition [ref=e424]: 5/29/2026, 11:16:03 PM
+          - term [ref=e425]: last
+          - definition [ref=e426]: 5/31/2026, 9:15:11 PM
+          - term [ref=e427]: cwd
+          - definition [ref=e428]: /Users/marcello.barile/src
+          - term [ref=e429]: git branch
+          - definition [ref=e430]: HEAD
+          - term [ref=e431]: models
+          - definition [ref=e432]: claude-sonnet-4-6, claude
+          - term [ref=e433]: messages
+          - definition [ref=e434]: user 12 · assistant 17 · sidechain 2
+          - term [ref=e435]: tool calls
+          - definition [ref=e436]: "9"
+          - term [ref=e437]: subagents
+          - definition [ref=e438]: "2"
+          - term [ref=e439]: tokens
+          - definition [ref=e440]: "1854"
+        - generic [ref=e441]:
+          - heading "Events (35)" [level=3] [ref=e442]
+          - generic [ref=e443]:
+            - button "Events" [ref=e444] [cursor=pointer]
+            - button "Graph" [ref=e445] [cursor=pointer]
+        - list [ref=e446]:
+          - listitem [ref=e447]:
+            - generic [ref=e448]:
+              - generic [ref=e449]: user
+              - generic [ref=e450]: 21:18:16
+            - paragraph [ref=e453]: <command-message>sync-skills</command-message> <command-name>/sync-skills</command-name>
+          - listitem [ref=e454]:
+            - generic [ref=e455]:
+              - generic [ref=e456]: user
+              - generic [ref=e457]: 21:18:16
+            - generic [ref=e459]:
+              - paragraph [ref=e460]: "Base directory for this skill: /Users/marcello.barile/.claude/skills/sync-skills"
+              - heading "sync-skills" [level=1] [ref=e461]
+              - paragraph [ref=e462]:
+                - text: Sync Claude Code skills from GitHub repos using the
+                - code [ref=e463]: gh
+                - text: CLI. Reads
+                - code [ref=e464]: ~/.claude/skill-sync.yml
+                - text: and fetches each tracked skill into
+                - code [ref=e465]: ~/.claude/skills/
+                - text: .
+              - heading "Step 0 — Precondition Checks" [level=2] [ref=e466]
+              - paragraph [ref=e467]: Run these before every operation. Stop immediately on failure.
+              - code [ref=e469]: gh --version
+              - paragraph [ref=e470]:
+                - text: "If command not found: output"
+                - code [ref=e471]: "Error: gh CLI not found. Install at https://cli.github.com"
+                - text: and stop.
+              - code [ref=e473]: gh auth status
+              - paragraph [ref=e474]:
+                - text: "If not authenticated: output"
+                - code [ref=e475]: "Error: not authenticated with GitHub. Run: gh auth login"
+                - text: and stop.
+              - code [ref=e477]: git --version
+              - paragraph [ref=e478]:
+                - text: "If command not found: output"
+                - code [ref=e479]: "Error: git not found. Change detection requires git. Install git and retry."
+                - text: and stop.
+              - heading "Manifest Format" [level=2] [ref=e480]
+              - paragraph [ref=e481]:
+                - text: "Location:"
+                - code [ref=e482]: ~/.claude/skill-sync.yml
+              - code [ref=e484]: "skills: - repo: myorg/myrepo # GitHub owner/repo (required) path: tools/claude/skills/my-skill # path inside repo — file or directory (required) ref: main # branch/tag/sha (optional, default: main) name: my-skill # local name override (optional)"
+              - paragraph [ref=e485]:
+                - strong [ref=e486]:
+                  - text: Name resolution when
+                  - code [ref=e487]: name
+                  - text: "is omitted:"
+              - list [ref=e488]:
+                - listitem [ref=e489]:
+                  - code [ref=e490]: path
+                  - text: "is a directory → last segment:"
+                  - code [ref=e491]: a/b/my-skill
+                  - text: →
+                  - code [ref=e492]: my-skill
+                - listitem [ref=e493]:
+                  - code [ref=e494]: path
+                  - text: "is a file → parent directory:"
+                  - code [ref=e495]: a/b/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e496]: my-skill
+              - paragraph [ref=e497]:
+                - text: "Local destination:"
+                - code [ref=e498]: ~/.claude/skills/<name>/
+              - heading "Commands" [level=2] [ref=e499]
+              - heading "Default — /sync-skills" [level=3] [ref=e500]:
+                - text: Default —
+                - code [ref=e501]: /sync-skills
+              - list [ref=e502]:
+                - listitem [ref=e503]: Run Step 0 (precondition checks)
+                - listitem [ref=e504]:
+                  - text: Check if
+                  - code [ref=e505]: ~/.claude/skill-sync.yml
+                  - text: exists
+                  - list [ref=e506]:
+                    - listitem [ref=e507]: Missing → run Interview Mode, then sync
+                    - listitem [ref=e508]: Present but malformed → show YAML parse error with line number, stop
+                - listitem [ref=e509]: "For each skill entry: run Fetch Skill"
+                - listitem [ref=e510]: Print Sync Report
+              - heading "/sync-skills list" [level=3] [ref=e511]:
+                - code [ref=e512]: /sync-skills list
+              - list [ref=e513]:
+                - listitem [ref=e514]:
+                  - text: Load
+                  - code [ref=e515]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found. Run /sync-skills to create one.\""
+                - listitem [ref=e516]:
+                  - text: "For each entry, print one line:"
+                  - code [ref=e518]: "<name> <repo> <path> [ref: <ref>]"
+                - listitem [ref=e519]:
+                  - text: "Print total:"
+                  - code [ref=e520]: N skill(s) tracked
+              - heading "/sync-skills add" [level=3] [ref=e521]:
+                - code [ref=e522]: /sync-skills add
+              - list [ref=e523]:
+                - listitem [ref=e524]: Run Step 0
+                - listitem [ref=e525]:
+                  - text: Load
+                  - code [ref=e526]: ~/.claude/skill-sync.yml
+                  - text: "; if missing, create empty file and inform user: \"Creating new manifest at ~/.claude/skill-sync.yml\" (do not run Interview Mode — add is explicit, no guided setup needed)"
+                - listitem [ref=e527]:
+                  - text: "Ask: \"GitHub repo (owner/repo)?\" — validate input matches"
+                  - code [ref=e528]: <owner>/<repo>
+                  - text: "(exactly one slash, no URL scheme). If invalid, prompt again: \"Expected format: owner/repo (e.g. myorg/myrepo).\""
+                - listitem [ref=e529]: "Ask: \"Path to skill in repo (file or directory)?\""
+                - listitem [ref=e530]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e531]: main
+                  - text: "\""
+                - listitem [ref=e532]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e533]: "Show entry as YAML, ask: \"Add this? (yes/no)\""
+                - listitem [ref=e534]:
+                  - text: "If yes: append entry to"
+                  - code [ref=e535]: ~/.claude/skill-sync.yml
+                  - text: ", then run Fetch Skill for this entry, print result"
+              - heading "/sync-skills remove <name>" [level=3] [ref=e536]:
+                - code [ref=e537]: /sync-skills remove <name>
+              - list [ref=e538]:
+                - listitem [ref=e539]:
+                  - text: Load
+                  - code [ref=e540]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found at ~/.claude/skill-sync.yml\""
+                - listitem [ref=e541]:
+                  - text: Find entry whose resolved name matches
+                  - code [ref=e542]: <name>
+                  - text: "; if none: \"No skill named '<name>' in manifest\""
+                - listitem [ref=e543]:
+                  - text: "Ask: \"Also delete local files at"
+                  - code [ref=e544]: ~/.claude/skills/<name>/
+                  - text: "? (yes/no)\""
+                - listitem [ref=e545]: Remove entry from manifest YAML, write file
+                - listitem [ref=e546]:
+                  - text: "If yes:"
+                  - code [ref=e547]: rm -rf ~/.claude/skills/<name>/
+                - listitem [ref=e548]:
+                  - text: "Confirm: \"Removed"
+                  - code [ref=e549]: <name>
+                  - text: from tracking" (append " and deleted local files" if applicable)
+              - heading "/sync-skills scan" [level=3] [ref=e550]:
+                - code [ref=e551]: /sync-skills scan
+              - list [ref=e552]:
+                - listitem [ref=e553]:
+                  - text: Load
+                  - code [ref=e554]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found\""
+                - listitem [ref=e555]:
+                  - text: "For each entry, check:"
+                  - code [ref=e556]: test -d ~/.claude/skills/<name>/
+                - listitem [ref=e557]: Collect entries where directory is absent
+                - listitem [ref=e558]: "If none: \"No orphaned entries found\""
+                - listitem [ref=e559]: "If found: remove those entries from manifest YAML, write file, print Scan Report"
+              - heading "Interview Mode" [level=2] [ref=e560]
+              - paragraph [ref=e561]:
+                - text: Triggered by
+                - code [ref=e562]: /sync-skills
+                - text: when
+                - code [ref=e563]: ~/.claude/skill-sync.yml
+                - text: "does not exist. Goal: guide user to build the manifest from scratch, optionally importing existing local skills."
+              - heading "Step I1 — Run precondition checks (Step 0)" [level=3] [ref=e564]
+              - heading "Step I2 — Scan for existing local skills" [level=3] [ref=e565]
+              - code [ref=e567]: ls ~/.claude/skills/
+              - paragraph [ref=e568]:
+                - text: "Collect subdirectory names, exclude:"
+                - code [ref=e569]: anthropic-skills
+                - text: (system-managed built-ins) and
+                - code [ref=e570]: sync-skills
+                - text: (this skill itself).
+              - paragraph [ref=e571]: "If any found, ask:"
+              - code [ref=e573]: "Found these existing local skills: [list] Which do you want to track? Enter names separated by commas, or press Enter to skip."
+              - paragraph [ref=e574]: "For each name the user enters:"
+              - list [ref=e575]:
+                - listitem [ref=e576]:
+                  - text: "Ask: \"GitHub repo for"
+                  - code [ref=e577]: <name>
+                  - text: (owner/repo)?" — validate
+                  - code [ref=e578]: <owner>/<repo>
+                  - text: format (one slash, no URL scheme); re-prompt if invalid.
+                - listitem [ref=e579]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e580]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e581]: main
+                  - text: "\""
+                - listitem [ref=e582]: Add entry to manifest list
+              - heading "Step I3 — Add new skills loop" [level=3] [ref=e583]
+              - paragraph [ref=e584]: "Ask:"
+              - code [ref=e586]: Add a skill to track? Enter GitHub repo (owner/repo) or press Enter to finish.
+              - paragraph [ref=e587]: "If user enters a repo:"
+              - list [ref=e588]:
+                - listitem [ref=e589]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e590]:
+                  - text: "Ask: \"Ref? Press Enter for"
+                  - code [ref=e591]: main
+                  - text: "\""
+                - listitem [ref=e592]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e593]: Add entry to manifest list
+                - listitem [ref=e594]: Repeat loop
+              - heading "Step I4 — Confirm and write" [level=3] [ref=e595]
+              - paragraph [ref=e596]: "Show YAML preview:"
+              - code [ref=e598]: "skills: - repo: ... path: ... ..."
+              - paragraph [ref=e599]:
+                - text: "Ask: \"Create"
+                - code [ref=e600]: ~/.claude/skill-sync.yml
+                - text: with this content? (yes/no)"
+              - paragraph [ref=e601]: "If yes: write file, then proceed to sync all entries. If no: \"Cancelled. Run /sync-skills again when ready.\""
+              - heading "Fetch Skill" [level=2] [ref=e602]
+              - paragraph [ref=e603]:
+                - text: Fetches one skill entry (
+                - code [ref=e604]: repo
+                - text: ","
+                - code [ref=e605]: path
+                - text: ","
+                - code [ref=e606]: ref
+                - text: ","
+                - code [ref=e607]: name
+                - text: ) from GitHub and writes it to
+                - code [ref=e608]: ~/.claude/skills/<name>/
+                - text: .
+              - heading "Step F1 — Inspect path" [level=3] [ref=e609]
+              - code [ref=e611]: "gh api repos/{repo}/contents/{path}?ref={ref}"
+              - paragraph [ref=e612]: "Interpret response:"
+              - list [ref=e613]:
+                - listitem [ref=e614]:
+                  - text: JSON
+                  - strong [ref=e615]: object
+                  - text: with
+                  - code [ref=e616]: "\"type\": \"file\""
+                  - text: → single file. Build
+                  - code [ref=e617]: "file_list = [{full_path: path, sha: .sha, content: .content}]"
+                - listitem [ref=e618]:
+                  - text: JSON
+                  - strong [ref=e619]: array
+                  - text: → directory. Collect all items where
+                  - code [ref=e620]: type == "file"
+                  - text: into
+                  - code [ref=e621]: file_list
+                  - text: . For items where
+                  - code [ref=e622]: type == "dir"
+                  - text: ", call"
+                  - code [ref=e623]: "gh api repos/{repo}/contents/{item.path}?ref={ref}"
+                  - text: recursively and add results to
+                  - code [ref=e624]: file_list
+                  - text: .
+                - listitem [ref=e625]:
+                  - text: HTTP 404 or error → record
+                  - code [ref=e626]: "✗ <name>: repo or path not found"
+                  - text: ", skip this skill."
+              - heading "Step F2 — Detect OS for base64 decode" [level=3] [ref=e627]
+              - code [ref=e629]: uname -s
+              - list [ref=e630]:
+                - listitem [ref=e631]:
+                  - code [ref=e632]: Darwin
+                  - text: → macOS → use
+                  - code [ref=e633]: base64 -D
+                  - text: for decode
+                - listitem [ref=e634]:
+                  - code [ref=e635]: Linux
+                  - text: → use
+                  - code [ref=e636]: base64 -d
+                  - text: for decode
+                - listitem [ref=e637]:
+                  - text: "Any other → use python3 fallback:"
+                  - code [ref=e638]: python3 -c 'import base64,sys; sys.stdout.buffer.write(base64.b64decode(sys.stdin.read()))'
+              - heading "Step F3 — For each file in file_list" [level=3] [ref=e639]
+              - paragraph [ref=e640]:
+                - text: Compute
+                - code [ref=e641]: relative_path
+                - text: ":"
+              - list [ref=e642]:
+                - listitem [ref=e643]:
+                  - text: If
+                  - code [ref=e644]: "{path}"
+                  - text: is a
+                  - strong [ref=e645]: directory
+                  - text: ": strip the"
+                  - code [ref=e646]: "{path}/"
+                  - text: prefix from
+                  - code [ref=e647]: file.full_path
+                - listitem [ref=e648]:
+                  - text: If
+                  - code [ref=e649]: "{path}"
+                  - text: is a
+                  - strong [ref=e650]: file
+                  - text: ": use the basename of"
+                  - code [ref=e651]: "{path}"
+                  - text: (e.g.,
+                  - code [ref=e652]: tools/skills/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e653]: SKILL.md
+                  - text: )
+              - paragraph [ref=e654]:
+                - text: If
+                - code [ref=e655]: "{path}"
+                - text: is a file and its basename is not
+                - code [ref=e656]: SKILL.md
+                - text: ", warn: \"Warning: file is not named SKILL.md — Claude Code may not auto-load this as a skill.\" Then continue."
+              - paragraph [ref=e657]:
+                - strong [ref=e658]: "Change detection:"
+              - code [ref=e660]: "local_sha=$(git hash-object ~/.claude/skills/{name}/{relative_path} 2>/dev/null || echo \"\")"
+              - paragraph [ref=e661]:
+                - text: If
+                - code [ref=e662]: local_sha == file.sha
+                - text: → mark this file as
+                - strong [ref=e663]: unchanged
+                - text: ", skip the write."
+              - paragraph [ref=e664]:
+                - strong [ref=e665]: "Write file:"
+              - code [ref=e667]: "mkdir -p \"$(dirname ~/.claude/skills/{name}/{relative_path})\" b64content='{file.content}' # macOS: printf '%s' \"$b64content\" | base64 -D > ~/.claude/skills/{name}/{relative_path} # Linux: printf '%s' \"$b64content\" | base64 -d > ~/.claude/skills/{name}/{relative_path}"
+              - paragraph [ref=e668]:
+                - text: "Note:"
+                - code [ref=e669]: file.content
+                - text: from GitHub API contains embedded newlines in the base64 string. Assigning to a variable first and using
+                - code [ref=e670]: printf '%s' "$b64content"
+                - text: handles this correctly;
+                - code [ref=e671]: base64
+                - text: ignores whitespace during decode.
+              - paragraph [ref=e672]:
+                - strong [ref=e673]: "Track result per skill:"
+              - list [ref=e674]:
+                - listitem [ref=e675]:
+                  - text: Any file written → skill result =
+                  - code [ref=e676]: updated
+                - listitem [ref=e677]:
+                  - text: All files unchanged → skill result =
+                  - code [ref=e678]: unchanged
+                - listitem [ref=e679]:
+                  - text: Any error during write → skill result =
+                  - code [ref=e680]: failed
+                  - text: with error detail
+              - heading "Sync Report" [level=2] [ref=e681]
+              - paragraph [ref=e682]: "Print after every sync operation:"
+              - code [ref=e684]: "Synced N skills: ✓ updated skill-a = unchanged skill-b ✗ failed skill-c (repo or path not found)"
+              - heading "Scan Report" [level=2] [ref=e685]
+              - code [ref=e687]: "Scan found N orphaned entries (local dir missing): - old-skill → removed from skill-sync.yml"
+          - listitem [ref=e688]:
+            - generic [ref=e689]:
+              - generic [ref=e690]: thinking
+              - generic [ref=e691]: 21:18:19
+            - generic [ref=e692]: (empty)
+          - listitem [ref=e693]:
+            - generic [ref=e694]:
+              - generic [ref=e695]: text
+              - generic [ref=e696]: 21:18:20
+            - paragraph [ref=e699]: Eseguo precondition checks e verifico manifest.
+          - listitem [ref=e700]:
+            - generic [ref=e701]:
+              - generic [ref=e702]: tool_use
+              - generic [ref=e703]: 21:18:21
+            - generic [ref=e704]:
+              - text: Bash
+              - code [ref=e705]: "{\"command\":\"gh --version && gh auth status && git --version\",\"description\":\"Precondition checks: gh, auth, git\"}"
+          - listitem [ref=e706]:
+            - generic [ref=e707]:
+              - generic [ref=e708]: tool_use
+              - generic [ref=e709]: 21:18:21
+            - generic [ref=e710]:
+              - text: Bash
+              - code [ref=e711]: "{\"command\":\"cat ~/.claude/skill-sync.yml 2>/dev/null || echo \\\"FILE_NOT_FOUND\\\"\",\"description\":\"Check manifest exists\"}"
+          - listitem [ref=e712]:
+            - generic [ref=e713]:
+              - generic [ref=e714]: tool_result
+              - generic [ref=e715]: 21:18:25
+            - generic [ref=e716]:
+              - text: ok
+              - code [ref=e717]: "gh version 2.78.0 (2025-08-21) https://github.com/cli/cli/releases/tag/v2.78.0 github.com ✓ Logged in to github.com account marcellobarile (keyring) - Active account: true - Git operations protocol: h"
+          - listitem [ref=e718]:
+            - generic [ref=e719]:
+              - generic [ref=e720]: tool_result
+              - generic [ref=e721]: 21:18:29
+            - generic [ref=e722]:
+              - text: ok
+              - code [ref=e723]: FILE_NOT_FOUND
+          - listitem [ref=e724]:
+            - generic [ref=e725]:
+              - generic [ref=e726]: thinking
+              - generic [ref=e727]: 21:18:31
+            - generic [ref=e728]: (empty)
+          - listitem [ref=e729]:
+            - generic [ref=e730]:
+              - generic [ref=e731]: text
+              - generic [ref=e732]: 21:18:32
+            - generic [ref=e734]:
+              - paragraph [ref=e735]: Preconditions OK. Manifest assente → Interview Mode.
+              - paragraph [ref=e736]:
+                - strong [ref=e737]: Step I2 — Scan skill locali esistenti
+          - listitem [ref=e738]:
+            - generic [ref=e739]:
+              - generic [ref=e740]: tool_use
+              - generic [ref=e741]: 21:18:32
+            - generic [ref=e742]:
+              - text: Bash
+              - code [ref=e743]: "{\"command\":\"ls ~/.claude/skills/ 2>/dev/null\",\"description\":\"List existing local skills\"}"
+          - listitem [ref=e744]:
+            - generic [ref=e745]:
+              - generic [ref=e746]: tool_result
+              - generic [ref=e747]: 21:18:51
+            - generic [ref=e748]:
+              - text: ok
+              - code [ref=e749]: anthropic-skills sync-skills
+          - listitem [ref=e750]:
+            - generic [ref=e751]:
+              - generic [ref=e752]: thinking
+              - generic [ref=e753]: 21:18:54
+            - generic [ref=e754]: (empty)
+          - listitem [ref=e755]:
+            - generic [ref=e756]:
+              - generic [ref=e757]: text
+              - generic [ref=e758]: 21:18:55
+            - generic [ref=e760]:
+              - paragraph [ref=e761]:
+                - text: Nessuna skill locale da importare (escluse
+                - code [ref=e762]: anthropic-skills
+                - text: e
+                - code [ref=e763]: sync-skills
+                - text: ).
+              - paragraph [ref=e764]:
+                - strong [ref=e765]: Step I3 — Aggiungi skill da tracciare
+              - paragraph [ref=e766]:
+                - text: Hai skill su GitHub che vuoi sincronizzare? Inserisci
+                - code [ref=e767]: owner/repo
+                - text: oppure premi Invio per terminare.
+          - listitem [ref=e768]:
+            - generic [ref=e769]:
+              - generic [ref=e770]: user
+              - generic [ref=e771]: 16:55:09
+            - paragraph [ref=e774]: live-test
+          - listitem [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: user
+              - generic [ref=e778]: 19:13:38
+            - paragraph [ref=e781]: start
+          - listitem [ref=e782]:
+            - generic [ref=e783]:
+              - generic [ref=e784]: text
+              - generic [ref=e785]: 19:13:38
+            - paragraph [ref=e788]: plan
+          - listitem [ref=e789]:
+            - generic [ref=e790]:
+              - generic [ref=e791]: tool_use
+              - generic [ref=e792]: 19:13:38
+            - generic [ref=e793]:
+              - text: Task
+              - code [ref=e794]: "{\"subagent_type\":\"explorer\",\"description\":\"dig\"}"
+          - listitem [ref=e795]:
+            - generic [ref=e796]:
+              - generic [ref=e797]: subagent_spawn
+              - generic [ref=e798]: 19:13:38
+            - generic [ref=e799]:
+              - text: explorer
+              - code [ref=e800]: dig
+          - listitem [ref=e801]:
+            - generic [ref=e802]:
+              - generic [ref=e803]: tool_use
+              - generic [ref=e804]: 19:13:38
+              - generic "sidechain" [ref=e805]: ↳
+            - generic [ref=e806]:
+              - text: Grep
+              - code [ref=e807]: "{\"pattern\":\"foo\"}"
+          - listitem [ref=e808]:
+            - generic [ref=e809]:
+              - generic [ref=e810]: tool_result
+              - generic [ref=e811]: 19:13:38
+            - generic [ref=e812]:
+              - text: ok
+              - code [ref=e813]: done
+          - listitem [ref=e814]:
+            - generic [ref=e815]:
+              - generic [ref=e816]: text
+              - generic [ref=e817]: 19:13:38
+            - paragraph [ref=e820]: next
+          - listitem [ref=e821]:
+            - generic [ref=e822]:
+              - generic [ref=e823]: tool_use
+              - generic [ref=e824]: 19:13:38
+            - generic [ref=e825]:
+              - text: Read
+              - code [ref=e826]: "{\"file\":\"a\"}"
+          - listitem [ref=e827]:
+            - generic [ref=e828]:
+              - generic [ref=e829]: tool_result
+              - generic [ref=e830]: 19:13:38
+            - generic [ref=e831]:
+              - text: ok
+              - code [ref=e832]: ok
+          - listitem [ref=e833]:
+            - generic [ref=e834]:
+              - generic [ref=e835]: text
+              - generic [ref=e836]: 19:13:38
+            - paragraph [ref=e839]: end
+          - listitem [ref=e840]:
+            - generic [ref=e841]:
+              - generic [ref=e842]: user
+              - generic [ref=e843]: 19:14:31
+            - paragraph [ref=e846]: start2
+          - listitem [ref=e847]:
+            - generic [ref=e848]:
+              - generic [ref=e849]: text
+              - generic [ref=e850]: 19:14:31
+            - paragraph [ref=e853]: plan
+          - listitem [ref=e854]:
+            - generic [ref=e855]:
+              - generic [ref=e856]: tool_use
+              - generic [ref=e857]: 19:14:31
+            - generic [ref=e858]:
+              - text: Task
+              - code [ref=e859]: "{\"subagent_type\":\"explorer\",\"description\":\"dig\"}"
+          - listitem [ref=e860]:
+            - generic [ref=e861]:
+              - generic [ref=e862]: subagent_spawn
+              - generic [ref=e863]: 19:14:31
+            - generic [ref=e864]:
+              - text: explorer
+              - code [ref=e865]: dig
+          - listitem [ref=e866]:
+            - generic [ref=e867]:
+              - generic [ref=e868]: tool_use
+              - generic [ref=e869]: 19:14:31
+              - generic "sidechain" [ref=e870]: ↳
+            - generic [ref=e871]:
+              - text: Grep
+              - code [ref=e872]: "{\"pattern\":\"foo\"}"
+          - listitem [ref=e873]:
+            - generic [ref=e874]:
+              - generic [ref=e875]: tool_result
+              - generic [ref=e876]: 19:14:31
+            - generic [ref=e877]:
+              - text: ok
+              - code [ref=e878]: done
+          - listitem [ref=e879]:
+            - generic [ref=e880]:
+              - generic [ref=e881]: text
+              - generic [ref=e882]: 19:14:31
+            - paragraph [ref=e885]: next
+          - listitem [ref=e886]:
+            - generic [ref=e887]:
+              - generic [ref=e888]: tool_use
+              - generic [ref=e889]: 19:14:31
+            - generic [ref=e890]:
+              - text: Read
+              - code [ref=e891]: "{\"file\":\"a\"}"
+          - listitem [ref=e892]:
+            - generic [ref=e893]:
+              - generic [ref=e894]: text
+              - generic [ref=e895]: 19:14:31
+            - paragraph [ref=e898]: end
+          - listitem [ref=e899]:
+            - generic [ref=e900]:
+              - generic [ref=e901]: user
+              - generic [ref=e902]: 19:15:11
+            - paragraph [ref=e905]: probe
+  - separator "Resize event stream" [ref=e44]
+  - complementary [ref=e46]:
+    - generic [ref=e47]:
+      - heading "EVENT STREAM" [level=4] [ref=e48]
+      - generic [ref=e49]: live
+    - generic [ref=e51]:
+      - combobox "Filter by project slug" [ref=e52]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e53] [cursor=pointer]
+    - generic [ref=e55]: Connected · 2 client(s)

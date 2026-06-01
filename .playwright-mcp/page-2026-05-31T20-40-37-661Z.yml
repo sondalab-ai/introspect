@@ -1,0 +1,203 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [active] [ref=e164] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "100%" [ref=e43] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: System prompt
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: CLAUDE.md per config root
+        - textbox "Cerca…" [ref=e53]
+        - generic [ref=e54] [cursor=pointer]:
+          - generic [ref=e55]: .claude/CLAUDE.md
+          - generic [ref=e56]: /Users/marcello.barile/.claude
+      - separator "Resize list pane" [ref=e57]
+      - generic [ref=e59]:
+        - heading ".claude/CLAUDE.md" [level=2] [ref=e60]
+        - generic [ref=e61]: /Users/marcello.barile/.claude/CLAUDE.md
+        - generic [ref=e62]:
+          - heading "Personal preferences (user scope)" [level=1] [ref=e63]
+          - paragraph [ref=e64]:
+            - text: Apply across all projects. Project
+            - code [ref=e65]: CLAUDE.md
+            - text: /
+            - code [ref=e66]: AGENTS.md
+            - text: takes precedence on conflict.
+          - heading "Language" [level=2] [ref=e67]
+          - paragraph [ref=e68]:
+            - text: Reply in
+            - strong [ref=e69]: Italian
+            - text: . Code, identifiers, source comments, commits, PR titles/bodies, quoted errors stay
+            - strong [ref=e70]: English
+            - text: .
+          - paragraph [ref=e71]:
+            - text: "When caveman skill active: apply compression to Italian, not English. See"
+            - code [ref=e72]: ~/.claude/caveman-italian.md
+            - text: for the drop-list.
+          - heading "Profile" [level=2] [ref=e73]
+          - paragraph [ref=e74]: "Senior generalist software engineer. Skip beginner explanations, common framework concepts, basic CS. Unfamiliar things: frame as \"does X to solve Y\", not from-scratch teaching."
+          - paragraph [ref=e75]:
+            - text: "When done: give human-readable explanation of changes."
+            - strong [ref=e76]: No CAVEMAN for this summary.
+            - text: "Never commit or push — humans handle. Bug fixes: step by step, rollback-friendly."
+          - heading "Response style" [level=2] [ref=e77]
+          - paragraph [ref=e78]: "Match verbosity to complexity. Trivial fix: one-liner + diff, no preamble. Non-obvious work: short rationale first, then results. No headers/bullets for simple answers. No trailing summaries. Don't narrate deliberation. Be humble — say what's known, not what user wants to hear."
+          - heading "Pause level" [level=2] [ref=e79]
+          - paragraph [ref=e80]: "Multi-file changes, refactors, new features, non-obvious architecture: brief proposal (2-4 sentences) in chat, wait for OK. Single-file localized changes: skip proposal."
+          - paragraph [ref=e81]: "Big topics or new task kickoffs: enter Plan mode autonomously. Plans: small iterative chunks, each independently reviewable and rollback-friendly."
+          - paragraph [ref=e82]:
+            - text: "After plan approval:"
+            - strong [ref=e83]: auto-accept mode
+            - text: — no per-edit confirmation. Pause only for irreversible actions, security warnings, genuinely ambiguous decision points.
+          - heading "Validation after edits" [level=2] [ref=e84]
+          - paragraph [ref=e85]: "Lint + typecheck + focused tests after code edits. Parallel where possible. Skip only for doc/comment-only changes. Don't dismiss failures without verifying against base branch. Keep comments in sync with implementation. New method/function: ~4 lines inline doc."
+          - heading "Code review" [level=2] [ref=e86]
+          - paragraph [ref=e87]:
+            - text: "Flag everything: blocking issues, suggestions, nits, missing tests, opportunities beyond diff. Group by severity. Always"
+            - code [ref=e88]: file:line
+            - text: citations.
+          - heading "Code exploration" [level=2] [ref=e89]
+          - paragraph [ref=e90]:
+            - text: "Sweep all naming variants (camelCase/PascalCase/snake_case/kebab-case) and call sites. Explore agent:"
+            - code [ref=e91]: "thoroughness: \"very thorough\""
+            - text: .
+          - heading "Testing" [level=2] [ref=e92]
+          - paragraph [ref=e93]:
+            - text: TDD for tricky logic, regressions, contract surfaces. Test-after for mechanical changes. Skip only for behavior-free changes (state why).
+            - strong [ref=e94]: Bug fixes always get a regression test.
+            - text: Match local framework/conventions.
+          - heading "Diagnostics" [level=2] [ref=e95]
+          - paragraph [ref=e96]: "Root cause, not symptom. Propose fix in chat, wait for OK. No auto-apply, no retry-until-green. Multiple fixes: list with recommendation. Exception: trivial mechanical fixes (apply directly with callout)."
+          - heading "Tooling style" [level=2] [ref=e97]
+          - paragraph [ref=e98]:
+            - text: Personal tooling at
+            - code [ref=e99]: ~/.claude/
+            - text: . No project-scoped Claude artifacts in shared repos without explicit ask. Generic role-based names (
+            - code [ref=e100]: code-reviewer
+            - text: ", not"
+            - code [ref=e101]: hub-reviewer
+            - text: ).
+          - heading "Skill authoring" [level=2] [ref=e102]
+          - list [ref=e103]:
+            - listitem [ref=e104]:
+              - strong [ref=e105]: Output language inferred by the agent.
+              - text: Skills present results in the user's language, inferred at runtime. Never hardcode a default language in a skill.
+            - listitem [ref=e106]:
+              - strong [ref=e107]: Skills are self-contained.
+              - text: A
+              - code [ref=e108]: SKILL.md
+              - text: (and its reference files) must never mention or depend on another skill by name. Inline any needed convention as a plain rule instead of pointing at another skill.
+          - heading "Memory organization" [level=2] [ref=e109]
+          - paragraph [ref=e110]:
+            - text: Project-specific memories →
+            - code [ref=e111]: <repo>/docs/memory/
+            - text: + symlink from
+            - code [ref=e112]: ~/.claude/projects/<slug>/memory/
+            - text: ". Generic/cross-project → this file. Shared monorepos (camunda-hub): memories stay in"
+            - code [ref=e113]: ~/.claude/projects/
+            - text: only. See
+            - code [ref=e114]: ~/.claude/memory-org.md
+            - text: for full rules and symlink setup.
+          - heading "Code hygiene" [level=2] [ref=e115]
+          - paragraph [ref=e116]:
+            - text: No comments by default (only non-obvious
+            - emphasis [ref=e117]: why
+            - text: ). No features/abstractions/error handling beyond task scope. No backwards-compat shims. See
+            - code [ref=e118]: ~/.claude/code-hygiene.md
+            - text: for SOLID, loop-size, lambda-in-condition rules.
+          - heading "PM artifact content rules" [level=2] [ref=e119]
+          - paragraph [ref=e120]: Applies to epics, solution proposals, specs, initiatives — any PM/eng written artifact.
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - strong [ref=e123]: Slice naming for delivery splits.
+              - text: When an epic is split into deliverable chunks, use
+              - code [ref=e124]: Slice 1
+              - text: /
+              - code [ref=e125]: Slice 2
+              - text: .
+              - strong [ref=e126]: Do not
+              - text: use
+              - code [ref=e127]: Branch 1/2
+              - text: (overloaded with git) or
+              - code [ref=e128]: Part 1/2
+              - text: (vaguer, PM-vocabulary mismatch). If old artifacts already say
+              - code [ref=e129]: Branch
+              - text: ", rename in prose; defer filename renames to a follow-up PR to avoid review churn."
+            - listitem [ref=e130]:
+              - strong [ref=e131]: Status terms must distinguish PoC from delivered.
+              - text: Reserve
+              - code [ref=e132]: Implemented
+              - text: /
+              - code [ref=e133]: Shipped
+              - text: /
+              - code [ref=e134]: Delivered
+              - text: "for behavior that is merged to the production codebase and available to users. For PoC/prototype work use one of:"
+              - code [ref=e135]: PoC implemented (not delivered)
+              - text: ","
+              - code [ref=e136]: Placeholder (not delivered)
+              - text: ","
+              - code [ref=e137]: Fail-fast stub (not delivered)
+              - text: . When introducing these in a doc, include a short legend that defines them.
+              - emphasis [ref=e138]: "Why:"
+              - text: reviewers (PMs, designers, stakeholders without code context) infer "shipped" from "implemented" unless you spell out the difference.
+            - listitem [ref=e139]:
+              - strong [ref=e140]: No bare acronyms.
+              - text: In specs/solution proposals, do not use abbreviations without first-use expansion or a glossary block. Prefer canonical engine/API names over invented shorthand (
+              - code [ref=e141]: bpmnProcessId
+              - text: ", not"
+              - code [ref=e142]: PDI
+              - text: ;
+              - code [ref=e143]: processInstanceKey
+              - text: ", not"
+              - code [ref=e144]: PIK
+              - text: ). Always spell out search/algorithm terms (
+              - code [ref=e145]: DFS
+              - text: → "depth-first search (DFS)") on first occurrence.
+            - listitem [ref=e146]:
+              - strong [ref=e147]: "\"What is this file\" header."
+              - text: "Every spec and solution proposal opens with a blockquote that states: file purpose, intended audience, owner, and its relationship to companion files (e.g., \"spec is the implementation contract; solution proposal covers trade-offs and alternatives\"). Reviewers often open one file via direct link without the surrounding context."
+            - listitem [ref=e148]:
+              - strong [ref=e149]: Unsourced roadmap/availability claims
+              - text: ("not on the roadmap", "API not yet available") must be either linked to a source or explicitly marked
+              - code [ref=e150]: (assumption — confirmed with <name>, <YYYY-MM-DD>)
+              - text: .
+              - emphasis [ref=e151]: "Why:"
+              - text: time-sensitive statements rot silently when they read as fact.
+  - separator "Resize event stream" [ref=e152]
+  - complementary [ref=e154]:
+    - generic [ref=e155]:
+      - heading "EVENT STREAM" [level=4] [ref=e156]
+      - generic [ref=e157]: live
+    - generic [ref=e159]:
+      - combobox "Filter by project slug" [ref=e160]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]: Connected · 2 client(s)

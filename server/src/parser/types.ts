@@ -48,6 +48,8 @@ export interface ExecutionNode {
 /** Per-session summary computed during normalization. */
 export interface SessionMeta {
   sessionId: string;
+  /** Human title: Claude's `summary` line if present, else the first user prompt. */
+  title?: string;
   firstTs?: string;
   lastTs?: string;
   models: string[];

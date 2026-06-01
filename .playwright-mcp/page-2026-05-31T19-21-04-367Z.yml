@@ -1,0 +1,1896 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+  - separator "Resize navigation" [ref=e39]
+  - generic [ref=e41]:
+    - generic [ref=e42]: Sessions · History
+    - generic [ref=e57]:
+      - generic [ref=e58]:
+        - generic [ref=e59]: Sessions (115)
+        - textbox "Cerca…" [ref=e60]
+        - generic [ref=e61] [cursor=pointer]:
+          - generic [ref=e62]: 14e9c387-a2d6-4ae0-a7ea-4b690a208be5
+          - generic [ref=e63]: ~/src · 5/31/2026, 6:55:09 PM · 79.2 KB
+        - generic [ref=e64] [cursor=pointer]:
+          - generic [ref=e65]: 037d59bf-ff0f-418e-aa88-b3a4f9ed74bc
+          - generic [ref=e66]: ~/src · 5/29/2026, 11:47:37 PM · 60.8 KB
+        - generic [ref=e67] [cursor=pointer]:
+          - generic [ref=e68]: 411cb43c-7ab7-41f3-8ff2-049b7485e38c
+          - generic [ref=e69]: /private/tmp · 5/29/2026, 11:36:41 PM · 52.8 KB
+        - generic [ref=e70] [cursor=pointer]:
+          - generic [ref=e71]: db5be782-82bc-44a8-be9d-583e02b91a7c
+          - generic [ref=e72]: ~/src · 5/29/2026, 11:35:59 PM · 191.5 KB
+        - generic [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]: 413e4d14-4ce3-409e-ad71-b192621577b2
+          - generic [ref=e75]: ~/Desktop/sync-skills-plugin · 5/29/2026, 11:34:25 PM · 490.2 KB
+        - generic [ref=e76] [cursor=pointer]:
+          - generic [ref=e77]: cc15b71e-0c15-4753-aeaa-d97a1871a3c8
+          - generic [ref=e78]: /private/tmp · 5/29/2026, 11:34:04 PM · 57.8 KB
+        - generic [ref=e79] [cursor=pointer]:
+          - generic [ref=e80]: 2a1bdbcb-fb1b-4aa4-ae68-7a649d37ecdf
+          - generic [ref=e81]: /private/tmp · 5/29/2026, 11:29:41 PM · 52.8 KB
+        - generic [ref=e82] [cursor=pointer]:
+          - generic [ref=e83]: 8e516492-1016-45d5-ad75-889562086b9d
+          - generic [ref=e84]: /private/tmp · 5/29/2026, 11:29:21 PM · 51.5 KB
+        - generic [ref=e85] [cursor=pointer]:
+          - generic [ref=e86]: b22d7845-9e26-49b3-b5b2-cf62742b0a55
+          - generic [ref=e87]: /private/tmp · 5/29/2026, 11:27:11 PM · 54.1 KB
+        - generic [ref=e88] [cursor=pointer]:
+          - generic [ref=e89]: 279a4f51-cc4c-46cb-aef2-8e42db727730
+          - generic [ref=e90]: /private/tmp · 5/29/2026, 11:26:47 PM · 60.5 KB
+        - generic [ref=e91] [cursor=pointer]:
+          - generic [ref=e92]: 418105d9-19a8-46d7-b8ac-7393fdc66915
+          - generic [ref=e93]: ~/src · 5/29/2026, 11:14:34 PM · 1.1 MB
+        - generic [ref=e94] [cursor=pointer]:
+          - generic [ref=e95]: 93684c6d-9b16-40dc-9d6e-78d5556d7a4a
+          - generic [ref=e96]: /private/tmp · 5/29/2026, 3:45:09 PM · 58.5 KB
+        - generic [ref=e97] [cursor=pointer]:
+          - generic [ref=e98]: de19e996-803d-48d8-a1b7-f76ceb901f7c
+          - generic [ref=e99]: /private/tmp · 5/29/2026, 3:44:43 PM · 88.8 KB
+        - generic [ref=e100] [cursor=pointer]:
+          - generic [ref=e101]: a2200156-4615-4f34-beae-41712f52539d
+          - generic [ref=e102]: /private/tmp · 5/29/2026, 2:41:37 PM · 58.1 KB
+        - generic [ref=e103] [cursor=pointer]:
+          - generic [ref=e104]: 9f69e673-adb6-4ab1-a4e0-63fd01bd80d2
+          - generic [ref=e105]: /private/tmp · 5/29/2026, 2:33:26 PM · 46.9 KB
+        - generic [ref=e106] [cursor=pointer]:
+          - generic [ref=e107]: cdf6e819-493c-4d2b-bd67-12352535013c
+          - generic [ref=e108]: /private/tmp · 5/29/2026, 2:33:13 PM · 62.6 KB
+        - generic [ref=e109] [cursor=pointer]:
+          - generic [ref=e110]: da6b5e8c-a3f7-4678-afa4-f25ef9497c41
+          - generic [ref=e111]: /private/tmp · 5/29/2026, 1:16:21 PM · 45.6 KB
+        - generic [ref=e112] [cursor=pointer]:
+          - generic [ref=e113]: ec684177-3981-488d-a572-d3fe35f6ca77
+          - generic [ref=e114]: ~/src/product-epics-pilot · 5/29/2026, 12:02:03 PM · 1.9 MB
+        - generic [ref=e115] [cursor=pointer]:
+          - generic [ref=e116]: 5aaa4ecc-0961-436b-8399-d262f092f4aa
+          - generic [ref=e117]: /private/tmp · 5/29/2026, 11:59:29 AM · 48.6 KB
+        - generic [ref=e118] [cursor=pointer]:
+          - generic [ref=e119]: 43b018c5-2c91-407d-9478-2574d4c481c0
+          - generic [ref=e120]: /private/tmp · 5/29/2026, 11:59:18 AM · 66.0 KB
+        - generic [ref=e121] [cursor=pointer]:
+          - generic [ref=e122]: 5f01f1e9-3756-434d-90b9-3f773d46f4e0
+          - generic [ref=e123]: /private/tmp · 5/29/2026, 11:03:56 AM · 72.0 KB
+        - generic [ref=e124] [cursor=pointer]:
+          - generic [ref=e125]: dbcd8841-adb2-4af8-8a9c-3a2fd7ee3734
+          - generic [ref=e126]: /private/tmp · 5/29/2026, 10:25:18 AM · 51.0 KB
+        - generic [ref=e127] [cursor=pointer]:
+          - generic [ref=e128]: 0576f704-55ea-40f9-8a3d-a96f21846f45
+          - generic [ref=e129]: /private/tmp · 5/29/2026, 10:25:04 AM · 194.8 KB
+        - generic [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]: 4232f662-714e-411d-a842-337d7a2e19a5
+          - generic [ref=e132]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 8:49:00 AM · 62.8 KB
+        - generic [ref=e133] [cursor=pointer]:
+          - generic [ref=e134]: 66f25b30-e11d-4dbf-b86d-bec78339adab
+          - generic [ref=e135]: /private/tmp · 5/29/2026, 5:53:37 AM · 48.0 KB
+        - generic [ref=e136] [cursor=pointer]:
+          - generic [ref=e137]: 53ad6fc7-3ac7-4644-9cea-2ac714aa407e
+          - generic [ref=e138]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 25.7 KB
+        - generic [ref=e139] [cursor=pointer]:
+          - generic [ref=e140]: a88e13dc-a64e-4b73-97fe-5289e85b5fe2
+          - generic [ref=e141]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/29/2026, 5:39:11 AM · 29.1 KB
+        - generic [ref=e142] [cursor=pointer]:
+          - generic [ref=e143]: 13b3f7e4-fbc5-4ffb-9a78-4b6fa4890a70
+          - generic [ref=e144]: /private/tmp · 5/29/2026, 4:03:36 AM · 35.3 KB
+        - generic [ref=e145] [cursor=pointer]:
+          - generic [ref=e146]: 074f4480-df80-4297-a662-5a9a6c3d5baf
+          - generic [ref=e147]: /private/tmp · 5/28/2026, 10:51:42 PM · 54.9 KB
+        - generic [ref=e148] [cursor=pointer]:
+          - generic [ref=e149]: ee5a834b-7e6e-4d0d-a5ab-e5b0c964c40f
+          - generic [ref=e150]: /private/tmp · 5/28/2026, 10:51:24 PM · 63.0 KB
+        - generic [ref=e151] [cursor=pointer]:
+          - generic [ref=e152]: f15f7ed3-4a50-4a60-bae5-1948945b2f01
+          - generic [ref=e153]: /private/tmp · 5/28/2026, 10:12:57 PM · 140.9 KB
+        - generic [ref=e154] [cursor=pointer]:
+          - generic [ref=e155]: aa2eed45-4207-4b4a-a224-7c74894424e4
+          - generic [ref=e156]: ~/src/product-epics-pilot · 5/28/2026, 10:12:34 PM · 46.1 KB
+        - generic [ref=e157] [cursor=pointer]:
+          - generic [ref=e158]: 712fae4d-f5b3-4cba-b7c8-236b8b3e6575
+          - generic [ref=e159]: ~/src/product-epics-pilot · 5/28/2026, 10:12:25 PM · 125.1 KB
+        - generic [ref=e160] [cursor=pointer]:
+          - generic [ref=e161]: e8f20ae5-78d7-4e56-9878-c778cd8d6edc
+          - generic [ref=e162]: /private/tmp · 5/28/2026, 10:12:22 PM · 130.0 KB
+        - generic [ref=e163] [cursor=pointer]:
+          - generic [ref=e164]: 6e0f9e02-60a2-4c3b-b9d3-83b7ce698665
+          - generic [ref=e165]: /private/tmp · 5/28/2026, 9:47:41 PM · 63.2 KB
+        - generic [ref=e166] [cursor=pointer]:
+          - generic [ref=e167]: 90914c0a-b08a-4332-b33d-964ace8c5759
+          - generic [ref=e168]: /private/tmp · 5/28/2026, 9:47:08 PM · 57.0 KB
+        - generic [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]: d0b44cef-6cba-45b7-b81c-a256d777aa6d
+          - generic [ref=e171]: /private/tmp · 5/28/2026, 5:50:52 PM · 72.9 KB
+        - generic [ref=e172] [cursor=pointer]:
+          - generic [ref=e173]: 877bde71-5b65-4c1f-90df-3994c9ae14b3
+          - generic [ref=e174]: /private/tmp · 5/28/2026, 5:32:34 PM · 49.3 KB
+        - generic [ref=e175] [cursor=pointer]:
+          - generic [ref=e176]: 76353e7d-379a-4e8e-91af-6062d3fb17b5
+          - generic [ref=e177]: /private/tmp · 5/28/2026, 5:32:21 PM · 77.7 KB
+        - generic [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]: cd58d5da-faf6-4a60-9f50-33a18ba59e72
+          - generic [ref=e180]: /private/tmp · 5/28/2026, 4:06:37 PM · 63.6 KB
+        - generic [ref=e181] [cursor=pointer]:
+          - generic [ref=e182]: 379ab4db-dd5b-414e-bcb1-a14aa3628f42
+          - generic [ref=e183]: /private/tmp · 5/28/2026, 3:22:11 PM · 59.0 KB
+        - generic [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]: 41a2442b-0078-4b67-9c7d-a2a9cd5bec8f
+          - generic [ref=e186]: /private/tmp · 5/28/2026, 3:21:51 PM · 55.9 KB
+        - generic [ref=e187] [cursor=pointer]:
+          - generic [ref=e188]: c665bca3-c9ec-437e-a2f9-e7e18a0c3265
+          - generic [ref=e189]: /private/tmp · 5/28/2026, 12:22:05 PM · 61.9 KB
+        - generic [ref=e190] [cursor=pointer]:
+          - generic [ref=e191]: dbffa78d-0721-4d9d-b966-21a5c6f4faaa
+          - generic [ref=e192]: /private/tmp · 5/28/2026, 11:58:36 AM · 56.0 KB
+        - generic [ref=e193] [cursor=pointer]:
+          - generic [ref=e194]: ac387746-cc9c-4bae-8940-863c083b611a
+          - generic [ref=e195]: /private/tmp · 5/28/2026, 11:58:18 AM · 71.3 KB
+        - generic [ref=e196] [cursor=pointer]:
+          - generic [ref=e197]: 902cde75-0bb3-4cca-abc1-66fd4056437b
+          - generic [ref=e198]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/27/2026, 1:17:35 PM · 33.2 KB
+        - generic [ref=e199] [cursor=pointer]:
+          - generic [ref=e200]: fe95ee3a-1ca6-4275-aa2a-eed3cbc7825f
+          - generic [ref=e201]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/26/2026, 5:17:02 PM · 1011.1 KB
+        - generic [ref=e202] [cursor=pointer]:
+          - generic [ref=e203]: ca8f54a1-7834-46d1-a3c4-bfa62aa6c754
+          - generic [ref=e204]: /private/tmp · 5/26/2026, 5:08:06 PM · 50.6 KB
+        - generic [ref=e205] [cursor=pointer]:
+          - generic [ref=e206]: 5e0bd5bd-b9b7-4c21-8066-05b6517cdf9c
+          - generic [ref=e207]: /private/tmp · 5/26/2026, 5:07:51 PM · 73.5 KB
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: 134c167d-e26f-41b6-8442-eccdcb7bca34
+          - generic [ref=e210]: /private/tmp · 5/25/2026, 7:13:25 PM · 46.0 KB
+        - generic [ref=e211] [cursor=pointer]:
+          - generic [ref=e212]: 84f225e2-139e-45ee-9c96-5a99a85fb86c
+          - generic [ref=e213]: /private/tmp · 5/25/2026, 7:13:13 PM · 78.9 KB
+        - generic [ref=e214] [cursor=pointer]:
+          - generic [ref=e215]: c90046f2-17c5-4354-8d22-69803f7f39bd
+          - generic [ref=e216]: /private/tmp · 5/25/2026, 5:07:03 PM · 45.2 KB
+        - generic [ref=e217] [cursor=pointer]:
+          - generic [ref=e218]: f9de5d51-cfb8-4369-b8fd-6df7d2990c4d
+          - generic [ref=e219]: /private/tmp · 5/25/2026, 5:06:54 PM · 54.9 KB
+        - generic [ref=e220] [cursor=pointer]:
+          - generic [ref=e221]: e2730624-ae1e-45ee-92ee-a1df5a52c898
+          - generic [ref=e222]: ~/.claude · 5/25/2026, 3:56:37 PM · 1.1 MB
+        - generic [ref=e223] [cursor=pointer]:
+          - generic [ref=e224]: aae05972-2eee-433a-a3e8-9bbac7c3074e
+          - generic [ref=e225]: /private/tmp · 5/25/2026, 1:57:16 PM · 49.5 KB
+        - generic [ref=e226] [cursor=pointer]:
+          - generic [ref=e227]: 91917dd3-a2ed-42fd-9456-2e0cc65c4f53
+          - generic [ref=e228]: /private/tmp · 5/25/2026, 1:57:00 PM · 114.8 KB
+        - generic [ref=e229] [cursor=pointer]:
+          - generic [ref=e230]: 5a72385e-0478-4c3f-ac5b-289de3736849
+          - generic [ref=e231]: /private/tmp · 5/25/2026, 12:55:16 PM · 78.5 KB
+        - generic [ref=e232] [cursor=pointer]:
+          - generic [ref=e233]: b2b815e2-d658-4499-aa77-566c8ec6d91f
+          - generic [ref=e234]: ~/src/product-epics-pilot · 5/25/2026, 12:54:47 PM · 697.4 KB
+        - generic [ref=e235] [cursor=pointer]:
+          - generic [ref=e236]: a79c4da9-b31f-4b61-9fb5-99a788c3c0c8
+          - generic [ref=e237]: /private/tmp · 5/25/2026, 12:36:40 PM · 47.1 KB
+        - generic [ref=e238] [cursor=pointer]:
+          - generic [ref=e239]: f2647c81-3dac-42ab-894b-9e104f363760
+          - generic [ref=e240]: /private/tmp · 5/25/2026, 12:36:27 PM · 78.7 KB
+        - generic [ref=e241] [cursor=pointer]:
+          - generic [ref=e242]: 252736a3-9625-4a91-830e-eca2d222758d
+          - generic [ref=e243]: /private/tmp · 5/25/2026, 10:55:46 AM · 59.8 KB
+        - generic [ref=e244] [cursor=pointer]:
+          - generic [ref=e245]: 186701e6-8bde-4f06-bd7c-bcdf31642d64
+          - generic [ref=e246]: /private/tmp · 5/25/2026, 10:55:22 AM · 55.3 KB
+        - generic [ref=e247] [cursor=pointer]:
+          - generic [ref=e248]: f301285d-b002-45ce-b5d2-082c38581266
+          - generic [ref=e249]: /private/var/folders/1t/yb3f74657xd272_47hlrk_p00000gn/T · 5/25/2026, 10:55:04 AM · 30.9 KB
+        - generic [ref=e250] [cursor=pointer]:
+          - generic [ref=e251]: a5071f3d-f821-435b-a1c9-79b80f706d3b
+          - generic [ref=e252]: ~/src/mine/spexr · 5/24/2026, 8:30:08 PM · 57.2 KB
+        - generic [ref=e253] [cursor=pointer]:
+          - generic [ref=e254]: f6f3301e-4d49-4209-8bd2-513f637eaf82
+          - generic [ref=e255]: ~/src/mine/spexr · 5/24/2026, 8:27:33 PM · 147.9 KB
+        - generic [ref=e256] [cursor=pointer]:
+          - generic [ref=e257]: fa9e4b78-72a2-4a41-ab5a-d05ba5c2e614
+          - generic [ref=e258]: ~/src/mine/spexr · 5/24/2026, 8:26:43 PM · 420.4 KB
+        - generic [ref=e259] [cursor=pointer]:
+          - generic [ref=e260]: 197928db-6bbe-41e6-a163-57d70ef64a06
+          - generic [ref=e261]: ~/Desktop/test-spexr · 5/23/2026, 4:04:44 PM · 56.9 KB
+        - generic [ref=e262] [cursor=pointer]:
+          - generic [ref=e263]: 67c8635f-8f1c-471d-8dfe-bcbe63bd7ae4
+          - generic [ref=e264]: ~/Desktop/test-spexr · 5/22/2026, 10:24:29 PM · 24.2 KB
+        - generic [ref=e265] [cursor=pointer]:
+          - generic [ref=e266]: 216b412b-f48a-4d65-b610-bc82930431ab
+          - generic [ref=e267]: ~/src/camunda-hub · 5/22/2026, 5:47:33 PM · 377.5 KB
+        - generic [ref=e268] [cursor=pointer]:
+          - generic [ref=e269]: c297c2b3-ce40-434c-9d1d-c7aca7575077
+          - generic [ref=e270]: /private/tmp · 5/22/2026, 5:47:03 PM · 65.5 KB
+        - generic [ref=e271] [cursor=pointer]:
+          - generic [ref=e272]: dbbeee32-4b7d-49ce-bb3a-510c8d096b07
+          - generic [ref=e273]: /private/tmp · 5/22/2026, 5:38:58 PM · 57.8 KB
+        - generic [ref=e274] [cursor=pointer]:
+          - generic [ref=e275]: 51d0cb28-350d-459a-8bb4-f069d2156ebc
+          - generic [ref=e276]: /private/tmp · 5/22/2026, 5:30:18 PM · 55.7 KB
+        - generic [ref=e277] [cursor=pointer]:
+          - generic [ref=e278]: df365228-51ed-4c9e-8289-2d5c7d13319e
+          - generic [ref=e279]: /private/tmp · 5/22/2026, 5:26:00 PM · 64.4 KB
+        - generic [ref=e280] [cursor=pointer]:
+          - generic [ref=e281]: e71d8bc2-5ec3-41f9-b983-a1d90c883c06
+          - generic [ref=e282]: ~/src/camunda-hub · 5/22/2026, 5:23:49 PM · 300.5 KB
+        - generic [ref=e283] [cursor=pointer]:
+          - generic [ref=e284]: 151aaf85-2004-4fdd-92d3-46be68cd6927
+          - generic [ref=e285]: /private/tmp · 5/22/2026, 5:17:47 PM · 61.4 KB
+        - generic [ref=e286] [cursor=pointer]:
+          - generic [ref=e287]: 1184ab49-d8d4-46a9-bedc-86a778f2f322
+          - generic [ref=e288]: /private/tmp · 5/22/2026, 5:05:37 PM · 46.6 KB
+        - generic [ref=e289] [cursor=pointer]:
+          - generic [ref=e290]: fa9c9c28-1b86-4399-bb61-8e11bc43e00a
+          - generic [ref=e291]: /private/tmp · 5/22/2026, 5:05:24 PM · 292.6 KB
+        - generic [ref=e292] [cursor=pointer]:
+          - generic [ref=e293]: d823952e-717b-427b-a649-638ddd4299df
+          - generic [ref=e294]: ~/src/camunda-hub · 5/22/2026, 11:44:59 AM · 271.4 KB
+        - generic [ref=e295] [cursor=pointer]:
+          - generic [ref=e296]: c70fc64d-fd5e-4eca-bad0-67dc6432707c
+          - generic [ref=e297]: /private/tmp · 5/22/2026, 11:41:50 AM · 47.9 KB
+        - generic [ref=e298] [cursor=pointer]:
+          - generic [ref=e299]: f8fd87c8-9426-44b2-81e1-4f03c593c4dc
+          - generic [ref=e300]: /private/tmp · 5/22/2026, 11:41:35 AM · 53.1 KB
+        - generic [ref=e301] [cursor=pointer]:
+          - generic [ref=e302]: 89991544-d1cd-4698-aa09-d4ce068fc686
+          - generic [ref=e303]: ~/.claude/skills · 5/21/2026, 9:15:00 PM · 83.1 KB
+        - generic [ref=e304] [cursor=pointer]:
+          - generic [ref=e305]: bfd6f95c-8995-40c0-981d-5465cc4c9af5
+          - generic [ref=e306]: ~/.claude · 5/21/2026, 9:08:04 PM · 71.5 KB
+        - generic [ref=e307] [cursor=pointer]:
+          - generic [ref=e308]: 189b9fdd-49ae-4f0c-abc0-f56c505ea5a2
+          - generic [ref=e309]: ~ · 5/21/2026, 1:37:48 PM · 350.0 KB
+        - generic [ref=e310] [cursor=pointer]:
+          - generic [ref=e311]: 9c84076a-282a-49d6-a58a-6735fb3efcd4
+          - generic [ref=e312]: ~/src/product-epics-pilot · 5/21/2026, 1:17:17 PM · 604.6 KB
+        - generic [ref=e313] [cursor=pointer]:
+          - generic [ref=e314]: 2ee116ec-509f-4dca-9405-95820109f590
+          - generic [ref=e315]: ~/src/camunda-hub · 5/20/2026, 2:28:46 PM · 3.8 MB
+        - generic [ref=e316] [cursor=pointer]:
+          - generic [ref=e317]: 0be494f9-b483-467c-93f5-c8b1b3d2dc7c
+          - generic [ref=e318]: ~/src/camunda-hub · 5/18/2026, 3:15:38 PM · 2.7 MB
+        - generic [ref=e319] [cursor=pointer]:
+          - generic [ref=e320]: 6712a109-a507-489d-a865-ec8b0ed3d775
+          - generic [ref=e321]: ~ · 5/18/2026, 12:28:04 PM · 102.1 KB
+        - generic [ref=e322] [cursor=pointer]:
+          - generic [ref=e323]: b137d7f6-3691-4aca-9d00-3b3e1916ac71
+          - generic [ref=e324]: ~/src/camunda-hub · 5/15/2026, 9:59:22 AM · 6.2 MB
+        - generic [ref=e325] [cursor=pointer]:
+          - generic [ref=e326]: 319dab42-7293-4431-abf8-b6e3aeb9af5c
+          - generic [ref=e327]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 2:54:11 PM · 1.1 MB
+        - generic [ref=e328] [cursor=pointer]:
+          - generic [ref=e329]: 31d187f4-f301-4e48-9002-8356679dde09
+          - generic [ref=e330]: ~/src/product-epics-pilot/initiatives/testing-camunda-agents · 5/13/2026, 12:27:08 PM · 284.8 KB
+        - generic [ref=e331] [cursor=pointer]:
+          - generic [ref=e332]: 82d88f86-b2b2-4e5d-b56b-07f92a3ef946
+          - generic [ref=e333]: ~/src/camunda-hub · 5/12/2026, 3:54:22 PM · 130.2 KB
+        - generic [ref=e334] [cursor=pointer]:
+          - generic [ref=e335]: 826987e5-f893-448e-a2b8-5c1e307f3fda
+          - generic [ref=e336]: ~/src/camunda-hub · 5/11/2026, 9:09:12 AM · 238.7 KB
+        - generic [ref=e337] [cursor=pointer]:
+          - generic [ref=e338]: 7fff9e4e-5d82-4d28-8efc-06ce2f5173da
+          - generic [ref=e339]: ~/src/camunda-hub · 5/8/2026, 5:25:55 PM · 121.2 KB
+        - generic [ref=e340] [cursor=pointer]:
+          - generic [ref=e341]: 0bbcc910-a11a-470b-8aa3-4c01e183d7e8
+          - generic [ref=e342]: ~/src/camunda-hub · 5/8/2026, 4:18:44 PM · 2.2 MB
+        - generic [ref=e343] [cursor=pointer]:
+          - generic [ref=e344]: 064c1f2d-12df-47f7-b9e0-beea27b69ff7
+          - generic [ref=e345]: ~/src/camunda-hub · 5/8/2026, 11:21:14 AM · 533.5 KB
+        - generic [ref=e346] [cursor=pointer]:
+          - generic [ref=e347]: 195439d8-140c-42c0-9ea1-9e4b05c25529
+          - generic [ref=e348]: ~/src/camunda-hub · 5/8/2026, 10:38:02 AM · 2.5 MB
+        - generic [ref=e349] [cursor=pointer]:
+          - generic [ref=e350]: f47bf127-5c30-4313-b437-60900721435b
+          - generic [ref=e351]: ~/src/mine/sguardo-a-nord · 5/6/2026, 11:02:40 PM · 405.5 KB
+        - generic [ref=e352] [cursor=pointer]:
+          - generic [ref=e353]: 8b355e67-f8d5-4f53-81a8-41f80645c55a
+          - generic [ref=e354]: ~/src/camunda-hub · 5/6/2026, 5:51:05 PM · 5.0 MB
+        - generic [ref=e355] [cursor=pointer]:
+          - generic [ref=e356]: e923ed12-0c62-47e5-b86f-8ff988b48e8d
+          - generic [ref=e357]: ~/src/camunda-hub · 5/6/2026, 5:49:03 PM · 92.9 KB
+        - generic [ref=e358] [cursor=pointer]:
+          - generic [ref=e359]: a7856b78-c5cb-4489-a5c9-0790e3d06718
+          - generic [ref=e360]: ~/src/camunda-hub · 5/6/2026, 5:47:03 PM · 56.5 KB
+        - generic [ref=e361] [cursor=pointer]:
+          - generic [ref=e362]: 0f6dd843-4a86-42a8-9a94-90457638e4cf
+          - generic [ref=e363]: ~/src/mine/local-agents · 5/6/2026, 12:50:25 PM · 606.4 KB
+        - generic [ref=e364] [cursor=pointer]:
+          - generic [ref=e365]: f6918488-2ef3-4280-bb64-8438158de599
+          - generic [ref=e366]: ~/src/camunda-hub · 5/5/2026, 10:31:22 PM · 22.5 KB
+        - generic [ref=e367] [cursor=pointer]:
+          - generic [ref=e368]: 26345c87-d2c5-4306-81fd-4676ba42ba8f
+          - generic [ref=e369]: ~/src/mine/local-agents · 5/4/2026, 4:48:15 PM · 596.4 KB
+        - generic [ref=e370] [cursor=pointer]:
+          - generic [ref=e371]: 7697ce20-2219-4fd6-9d91-1a077437de2c
+          - generic [ref=e372]: ~/src/camunda-hub · 5/4/2026, 3:41:30 PM · 1.8 MB
+        - generic [ref=e373] [cursor=pointer]:
+          - generic [ref=e374]: be1f5670-cd8d-414e-8eb0-dbe78d987e40
+          - generic [ref=e375]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 1:30:40 PM · 51.0 KB
+        - generic [ref=e376] [cursor=pointer]:
+          - generic [ref=e377]: 77f39084-2e57-4e15-8f46-7525b5ce1b3e
+          - generic [ref=e378]: ~/src/camunda-hub · 5/4/2026, 12:51:52 PM · 910.0 KB
+        - generic [ref=e379] [cursor=pointer]:
+          - generic [ref=e380]: 7982789b-90e2-4c2a-8251-f70aa12fef63
+          - generic [ref=e381]: ~/src/camunda-hub/frontend/packages/modeler/play · 5/4/2026, 12:51:45 PM · 430.9 KB
+        - generic [ref=e382] [cursor=pointer]:
+          - generic [ref=e383]: 5365bc9f-0f94-47c3-bad5-8a1d1d25bbc1
+          - generic [ref=e384]: ~/src/mine/local-agents · 5/3/2026, 10:59:15 PM · 311.4 KB
+        - generic [ref=e385] [cursor=pointer]:
+          - generic [ref=e386]: d7f8a49b-47b5-4624-a6df-db046045bacc
+          - generic [ref=e387]: ~/src/mine/local-agents · 5/3/2026, 6:35:50 PM · 33.2 KB
+        - generic [ref=e388] [cursor=pointer]:
+          - generic [ref=e389]: 5ef405ea-6dc7-4178-af7d-456aa5f7c3e2
+          - generic [ref=e390]: ~/src/mine/local-agents · 5/3/2026, 6:28:44 PM · 31.7 KB
+        - generic [ref=e391] [cursor=pointer]:
+          - generic [ref=e392]: b1eb36a9-d9f6-4479-950a-70d81851b8c7
+          - generic [ref=e393]: ~/src/mine/local-agents · 5/3/2026, 6:24:43 PM · 24.2 KB
+        - generic [ref=e394] [cursor=pointer]:
+          - generic [ref=e395]: ba7b5057-65e4-4b69-9740-6966f0d2f972
+          - generic [ref=e396]: ~/src/mine/local-agents · 5/3/2026, 6:24:00 PM · 221.6 KB
+        - generic [ref=e397] [cursor=pointer]:
+          - generic [ref=e398]: b88aea5f-d43d-4718-9c2e-26b80841fa67
+          - generic [ref=e399]: ~/src/mine/local-agents · 5/3/2026, 6:18:03 PM · 175.4 KB
+        - generic [ref=e400] [cursor=pointer]:
+          - generic [ref=e401]: afed043e-d93b-4b03-8a25-b8c4bd7c7d1e
+          - generic [ref=e402]: ~/src/mine/local-agents · 5/3/2026, 6:06:30 PM · 256.8 KB
+        - generic [ref=e403] [cursor=pointer]:
+          - generic [ref=e404]: 8f0bb88b-2287-457c-b077-76eb334d1b9f
+          - generic [ref=e405]: Users · marcello · barile · · claude · — · 240 B
+      - separator "Resize list pane" [ref=e406]
+      - generic [ref=e409]:
+        - heading "db5be782-82bc-44a8-be9d-583e02b91a7c" [level=2] [ref=e766]
+        - generic "-Users-marcello-barile-src" [ref=e412]: ~/src
+        - generic [ref=e413]:
+          - term [ref=e414]: first
+          - definition [ref=e415]: 5/29/2026, 11:22:30 PM
+          - term [ref=e416]: last
+          - definition [ref=e417]: 5/29/2026, 11:35:59 PM
+          - term [ref=e418]: cwd
+          - definition [ref=e419]: /Users/marcello.barile/src
+          - term [ref=e420]: git branch
+          - definition [ref=e421]: HEAD
+          - term [ref=e422]: models
+          - definition [ref=e423]: claude-sonnet-4-6
+          - term [ref=e424]: messages
+          - definition [ref=e425]: user 26 · assistant 37 · sidechain 0
+          - term [ref=e426]: tool calls
+          - definition [ref=e427]: "14"
+          - term [ref=e428]: subagents
+          - definition [ref=e429]: "0"
+          - term [ref=e430]: tokens
+          - definition [ref=e431]: "10934"
+        - generic [ref=e432]:
+          - heading "Events (63)" [level=3] [ref=e767]
+          - generic [ref=e434]:
+            - button "Events" [ref=e435] [cursor=pointer]
+            - button "Graph" [ref=e436] [cursor=pointer]
+        - list [ref=e437]:
+          - listitem [ref=e768]:
+            - generic [ref=e769]:
+              - generic [ref=e770]: user
+              - generic [ref=e771]: 21:22:32
+            - paragraph [ref=e774]: <command-message>sync-skills</command-message> <command-name>/sync-skills</command-name>
+          - listitem [ref=e775]:
+            - generic [ref=e776]:
+              - generic [ref=e777]: user
+              - generic [ref=e778]: 21:22:32
+            - generic [ref=e780]:
+              - paragraph [ref=e781]: "Base directory for this skill: /Users/marcello.barile/.claude/skills/sync-skills"
+              - heading "sync-skills" [level=1] [ref=e782]
+              - paragraph [ref=e783]:
+                - text: Sync Claude Code skills from GitHub repos using the
+                - code [ref=e784]: gh
+                - text: CLI. Reads
+                - code [ref=e785]: ~/.claude/skill-sync.yml
+                - text: and fetches each tracked skill into
+                - code [ref=e786]: ~/.claude/skills/
+                - text: .
+              - heading "Step 0 — Precondition Checks" [level=2] [ref=e787]
+              - paragraph [ref=e788]: Run these before every operation. Stop immediately on failure.
+              - code [ref=e790]: gh --version
+              - paragraph [ref=e791]:
+                - text: "If command not found: output"
+                - code [ref=e792]: "Error: gh CLI not found. Install at https://cli.github.com"
+                - text: and stop.
+              - code [ref=e794]: gh auth status
+              - paragraph [ref=e795]:
+                - text: "If not authenticated: output"
+                - code [ref=e796]: "Error: not authenticated with GitHub. Run: gh auth login"
+                - text: and stop.
+              - code [ref=e798]: git --version
+              - paragraph [ref=e799]:
+                - text: "If command not found: output"
+                - code [ref=e800]: "Error: git not found. Change detection requires git. Install git and retry."
+                - text: and stop.
+              - heading "Manifest Format" [level=2] [ref=e801]
+              - paragraph [ref=e802]:
+                - text: "Location:"
+                - code [ref=e803]: ~/.claude/skill-sync.yml
+              - code [ref=e805]: "skills: - repo: myorg/myrepo # GitHub owner/repo (required) path: tools/claude/skills/my-skill # path inside repo — file or directory (required) ref: main # branch/tag/sha (optional, default: main) name: my-skill # local name override (optional)"
+              - paragraph [ref=e806]:
+                - strong [ref=e807]:
+                  - text: Name resolution when
+                  - code [ref=e808]: name
+                  - text: "is omitted:"
+              - list [ref=e809]:
+                - listitem [ref=e810]:
+                  - code [ref=e811]: path
+                  - text: "is a directory → last segment:"
+                  - code [ref=e812]: a/b/my-skill
+                  - text: →
+                  - code [ref=e813]: my-skill
+                - listitem [ref=e814]:
+                  - code [ref=e815]: path
+                  - text: "is a file → parent directory:"
+                  - code [ref=e816]: a/b/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e817]: my-skill
+              - paragraph [ref=e818]:
+                - text: "Local destination:"
+                - code [ref=e819]: ~/.claude/skills/<name>/
+              - heading "Commands" [level=2] [ref=e820]
+              - heading "Default — /sync-skills" [level=3] [ref=e821]:
+                - text: Default —
+                - code [ref=e822]: /sync-skills
+              - list [ref=e823]:
+                - listitem [ref=e824]: Run Step 0 (precondition checks)
+                - listitem [ref=e825]:
+                  - text: Check if
+                  - code [ref=e826]: ~/.claude/skill-sync.yml
+                  - text: exists
+                  - list [ref=e827]:
+                    - listitem [ref=e828]: Missing → run Interview Mode, then sync
+                    - listitem [ref=e829]: Present but malformed → show YAML parse error with line number, stop
+                - listitem [ref=e830]: "For each skill entry: run Fetch Skill"
+                - listitem [ref=e831]: Print Sync Report
+              - heading "/sync-skills list" [level=3] [ref=e832]:
+                - code [ref=e833]: /sync-skills list
+              - list [ref=e834]:
+                - listitem [ref=e835]:
+                  - text: Load
+                  - code [ref=e836]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found. Run /sync-skills to create one.\""
+                - listitem [ref=e837]:
+                  - text: "For each entry, print one line:"
+                  - code [ref=e839]: "<name> <repo> <path> [ref: <ref>]"
+                - listitem [ref=e840]:
+                  - text: "Print total:"
+                  - code [ref=e841]: N skill(s) tracked
+              - heading "/sync-skills add" [level=3] [ref=e842]:
+                - code [ref=e843]: /sync-skills add
+              - list [ref=e844]:
+                - listitem [ref=e845]: Run Step 0
+                - listitem [ref=e846]:
+                  - text: Load
+                  - code [ref=e847]: ~/.claude/skill-sync.yml
+                  - text: "; if missing, create empty file and inform user: \"Creating new manifest at ~/.claude/skill-sync.yml\" (do not run Interview Mode — add is explicit, no guided setup needed)"
+                - listitem [ref=e848]:
+                  - text: "Ask: \"GitHub repo (owner/repo)?\" — validate input matches"
+                  - code [ref=e849]: <owner>/<repo>
+                  - text: "(exactly one slash, no URL scheme). If invalid, prompt again: \"Expected format: owner/repo (e.g. myorg/myrepo).\""
+                - listitem [ref=e850]: "Ask: \"Path to skill in repo (file or directory)?\""
+                - listitem [ref=e851]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e852]: main
+                  - text: "\""
+                - listitem [ref=e853]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e854]: "Show entry as YAML, ask: \"Add this? (yes/no)\""
+                - listitem [ref=e855]:
+                  - text: "If yes: append entry to"
+                  - code [ref=e856]: ~/.claude/skill-sync.yml
+                  - text: ", then run Fetch Skill for this entry, print result"
+              - heading "/sync-skills remove <name>" [level=3] [ref=e857]:
+                - code [ref=e858]: /sync-skills remove <name>
+              - list [ref=e859]:
+                - listitem [ref=e860]:
+                  - text: Load
+                  - code [ref=e861]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found at ~/.claude/skill-sync.yml\""
+                - listitem [ref=e862]:
+                  - text: Find entry whose resolved name matches
+                  - code [ref=e863]: <name>
+                  - text: "; if none: \"No skill named '<name>' in manifest\""
+                - listitem [ref=e864]:
+                  - text: "Ask: \"Also delete local files at"
+                  - code [ref=e865]: ~/.claude/skills/<name>/
+                  - text: "? (yes/no)\""
+                - listitem [ref=e866]: Remove entry from manifest YAML, write file
+                - listitem [ref=e867]:
+                  - text: "If yes:"
+                  - code [ref=e868]: rm -rf ~/.claude/skills/<name>/
+                - listitem [ref=e869]:
+                  - text: "Confirm: \"Removed"
+                  - code [ref=e870]: <name>
+                  - text: from tracking" (append " and deleted local files" if applicable)
+              - heading "/sync-skills scan" [level=3] [ref=e871]:
+                - code [ref=e872]: /sync-skills scan
+              - list [ref=e873]:
+                - listitem [ref=e874]:
+                  - text: Load
+                  - code [ref=e875]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found\""
+                - listitem [ref=e876]:
+                  - text: "For each entry, check:"
+                  - code [ref=e877]: test -d ~/.claude/skills/<name>/
+                - listitem [ref=e878]: Collect entries where directory is absent
+                - listitem [ref=e879]: "If none: \"No orphaned entries found\""
+                - listitem [ref=e880]: "If found: remove those entries from manifest YAML, write file, print Scan Report"
+              - heading "Interview Mode" [level=2] [ref=e881]
+              - paragraph [ref=e882]:
+                - text: Triggered by
+                - code [ref=e883]: /sync-skills
+                - text: when
+                - code [ref=e884]: ~/.claude/skill-sync.yml
+                - text: "does not exist. Goal: guide user to build the manifest from scratch, optionally importing existing local skills."
+              - heading "Step I1 — Run precondition checks (Step 0)" [level=3] [ref=e885]
+              - heading "Step I2 — Scan for existing local skills" [level=3] [ref=e886]
+              - code [ref=e888]: ls ~/.claude/skills/
+              - paragraph [ref=e889]:
+                - text: "Collect subdirectory names, exclude:"
+                - code [ref=e890]: anthropic-skills
+                - text: (system-managed built-ins) and
+                - code [ref=e891]: sync-skills
+                - text: (this skill itself).
+              - paragraph [ref=e892]: "If any found, ask:"
+              - code [ref=e894]: "Found these existing local skills: [list] Which do you want to track? Enter names separated by commas, or press Enter to skip."
+              - paragraph [ref=e895]: "For each name the user enters:"
+              - list [ref=e896]:
+                - listitem [ref=e897]:
+                  - text: "Ask: \"GitHub repo for"
+                  - code [ref=e898]: <name>
+                  - text: (owner/repo)?" — validate
+                  - code [ref=e899]: <owner>/<repo>
+                  - text: format (one slash, no URL scheme); re-prompt if invalid.
+                - listitem [ref=e900]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e901]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e902]: main
+                  - text: "\""
+                - listitem [ref=e903]: Add entry to manifest list
+              - heading "Step I3 — Add new skills loop" [level=3] [ref=e904]
+              - paragraph [ref=e905]: "Ask:"
+              - code [ref=e907]: Add a skill to track? Enter GitHub repo (owner/repo) or press Enter to finish.
+              - paragraph [ref=e908]: "If user enters a repo:"
+              - list [ref=e909]:
+                - listitem [ref=e910]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e911]:
+                  - text: "Ask: \"Ref? Press Enter for"
+                  - code [ref=e912]: main
+                  - text: "\""
+                - listitem [ref=e913]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e914]: Add entry to manifest list
+                - listitem [ref=e915]: Repeat loop
+              - heading "Step I4 — Confirm and write" [level=3] [ref=e916]
+              - paragraph [ref=e917]: "Show YAML preview:"
+              - code [ref=e919]: "skills: - repo: ... path: ... ..."
+              - paragraph [ref=e920]:
+                - text: "Ask: \"Create"
+                - code [ref=e921]: ~/.claude/skill-sync.yml
+                - text: with this content? (yes/no)"
+              - paragraph [ref=e922]: "If yes: write file, then proceed to sync all entries. If no: \"Cancelled. Run /sync-skills again when ready.\""
+              - heading "Fetch Skill" [level=2] [ref=e923]
+              - paragraph [ref=e924]:
+                - text: Fetches one skill entry (
+                - code [ref=e925]: repo
+                - text: ","
+                - code [ref=e926]: path
+                - text: ","
+                - code [ref=e927]: ref
+                - text: ","
+                - code [ref=e928]: name
+                - text: ) from GitHub and writes it to
+                - code [ref=e929]: ~/.claude/skills/<name>/
+                - text: .
+              - heading "Step F1 — Inspect path" [level=3] [ref=e930]
+              - code [ref=e932]: "gh api repos/{repo}/contents/{path}?ref={ref}"
+              - paragraph [ref=e933]: "Interpret response:"
+              - list [ref=e934]:
+                - listitem [ref=e935]:
+                  - text: JSON
+                  - strong [ref=e936]: object
+                  - text: with
+                  - code [ref=e937]: "\"type\": \"file\""
+                  - text: → single file. Build
+                  - code [ref=e938]: "file_list = [{full_path: path, sha: .sha, content: .content}]"
+                - listitem [ref=e939]:
+                  - text: JSON
+                  - strong [ref=e940]: array
+                  - text: → directory. Collect all items where
+                  - code [ref=e941]: type == "file"
+                  - text: into
+                  - code [ref=e942]: file_list
+                  - text: . For items where
+                  - code [ref=e943]: type == "dir"
+                  - text: ", call"
+                  - code [ref=e944]: "gh api repos/{repo}/contents/{item.path}?ref={ref}"
+                  - text: recursively and add results to
+                  - code [ref=e945]: file_list
+                  - text: .
+                - listitem [ref=e946]:
+                  - text: HTTP 404 or error → record
+                  - code [ref=e947]: "✗ <name>: repo or path not found"
+                  - text: ", skip this skill."
+              - heading "Step F2 — Detect OS for base64 decode" [level=3] [ref=e948]
+              - code [ref=e950]: uname -s
+              - list [ref=e951]:
+                - listitem [ref=e952]:
+                  - code [ref=e953]: Darwin
+                  - text: → macOS → use
+                  - code [ref=e954]: base64 -D
+                  - text: for decode
+                - listitem [ref=e955]:
+                  - code [ref=e956]: Linux
+                  - text: → use
+                  - code [ref=e957]: base64 -d
+                  - text: for decode
+                - listitem [ref=e958]:
+                  - text: "Any other → use python3 fallback:"
+                  - code [ref=e959]: python3 -c 'import base64,sys; sys.stdout.buffer.write(base64.b64decode(sys.stdin.read()))'
+              - heading "Step F3 — For each file in file_list" [level=3] [ref=e960]
+              - paragraph [ref=e961]:
+                - text: Compute
+                - code [ref=e962]: relative_path
+                - text: ":"
+              - list [ref=e963]:
+                - listitem [ref=e964]:
+                  - text: If
+                  - code [ref=e965]: "{path}"
+                  - text: is a
+                  - strong [ref=e966]: directory
+                  - text: ": strip the"
+                  - code [ref=e967]: "{path}/"
+                  - text: prefix from
+                  - code [ref=e968]: file.full_path
+                - listitem [ref=e969]:
+                  - text: If
+                  - code [ref=e970]: "{path}"
+                  - text: is a
+                  - strong [ref=e971]: file
+                  - text: ": use the basename of"
+                  - code [ref=e972]: "{path}"
+                  - text: (e.g.,
+                  - code [ref=e973]: tools/skills/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e974]: SKILL.md
+                  - text: )
+              - paragraph [ref=e975]:
+                - text: If
+                - code [ref=e976]: "{path}"
+                - text: is a file and its basename is not
+                - code [ref=e977]: SKILL.md
+                - text: ", warn: \"Warning: file is not named SKILL.md — Claude Code may not auto-load this as a skill.\" Then continue."
+              - paragraph [ref=e978]:
+                - strong [ref=e979]: "Change detection:"
+              - code [ref=e981]: "local_sha=$(git hash-object ~/.claude/skills/{name}/{relative_path} 2>/dev/null || echo \"\")"
+              - paragraph [ref=e982]:
+                - text: If
+                - code [ref=e983]: local_sha == file.sha
+                - text: → mark this file as
+                - strong [ref=e984]: unchanged
+                - text: ", skip the write."
+              - paragraph [ref=e985]:
+                - strong [ref=e986]: "Write file:"
+              - code [ref=e988]: "mkdir -p \"$(dirname ~/.claude/skills/{name}/{relative_path})\" b64content='{file.content}' # macOS: printf '%s' \"$b64content\" | base64 -D > ~/.claude/skills/{name}/{relative_path} # Linux: printf '%s' \"$b64content\" | base64 -d > ~/.claude/skills/{name}/{relative_path}"
+              - paragraph [ref=e989]:
+                - text: "Note:"
+                - code [ref=e990]: file.content
+                - text: from GitHub API contains embedded newlines in the base64 string. Assigning to a variable first and using
+                - code [ref=e991]: printf '%s' "$b64content"
+                - text: handles this correctly;
+                - code [ref=e992]: base64
+                - text: ignores whitespace during decode.
+              - paragraph [ref=e993]:
+                - strong [ref=e994]: "Track result per skill:"
+              - list [ref=e995]:
+                - listitem [ref=e996]:
+                  - text: Any file written → skill result =
+                  - code [ref=e997]: updated
+                - listitem [ref=e998]:
+                  - text: All files unchanged → skill result =
+                  - code [ref=e999]: unchanged
+                - listitem [ref=e1000]:
+                  - text: Any error during write → skill result =
+                  - code [ref=e1001]: failed
+                  - text: with error detail
+              - heading "Sync Report" [level=2] [ref=e1002]
+              - paragraph [ref=e1003]: "Print after every sync operation:"
+              - code [ref=e1005]: "Synced N skills: ✓ updated skill-a = unchanged skill-b ✗ failed skill-c (repo or path not found)"
+              - heading "Scan Report" [level=2] [ref=e1006]
+              - code [ref=e1008]: "Scan found N orphaned entries (local dir missing): - old-skill → removed from skill-sync.yml"
+          - listitem [ref=e1009]:
+            - generic [ref=e1010]:
+              - generic [ref=e1011]: thinking
+              - generic [ref=e1012]: 21:22:36
+            - generic [ref=e1013]: (empty)
+          - listitem [ref=e1014]:
+            - generic [ref=e1015]:
+              - generic [ref=e1016]: text
+              - generic [ref=e1017]: 21:22:37
+            - paragraph [ref=e1020]: Eseguo i controlli preliminari e poi sincronizzo le skill.
+          - listitem [ref=e1021]:
+            - generic [ref=e1022]:
+              - generic [ref=e1023]: tool_use
+              - generic [ref=e1024]: 21:22:37
+            - generic [ref=e1025]:
+              - text: Bash
+              - code [ref=e1026]: "{\"command\":\"gh --version && gh auth status && git --version\",\"description\":\"Precondition checks: gh, auth, git\"}"
+          - listitem [ref=e1027]:
+            - generic [ref=e1028]:
+              - generic [ref=e1029]: tool_result
+              - generic [ref=e1030]: 21:22:41
+            - generic [ref=e1031]:
+              - text: ok
+              - code [ref=e1032]: "gh version 2.78.0 (2025-08-21) https://github.com/cli/cli/releases/tag/v2.78.0 github.com ✓ Logged in to github.com account marcellobarile (keyring) - Active account: true - Git operations protocol: h"
+          - listitem [ref=e1033]:
+            - generic [ref=e1034]:
+              - generic [ref=e1035]: user
+              - generic [ref=e1036]: 21:22:42
+            - paragraph [ref=e1039]: "[Request interrupted by user]"
+          - listitem [ref=e1040]:
+            - generic [ref=e1041]:
+              - generic [ref=e1042]: user
+              - generic [ref=e1043]: 21:26:52
+            - paragraph [ref=e1046]: <command-message>sync-skills</command-message> <command-name>/sync-skills</command-name>
+          - listitem [ref=e1047]:
+            - generic [ref=e1048]:
+              - generic [ref=e1049]: user
+              - generic [ref=e1050]: 21:26:52
+            - generic [ref=e1052]:
+              - paragraph [ref=e1053]: "Base directory for this skill: /Users/marcello.barile/.claude/skills/sync-skills"
+              - heading "sync-skills" [level=1] [ref=e1054]
+              - paragraph [ref=e1055]:
+                - text: Sync Claude Code skills from GitHub repos using the
+                - code [ref=e1056]: gh
+                - text: CLI. Reads
+                - code [ref=e1057]: ~/.claude/skill-sync.yml
+                - text: and fetches each tracked skill into
+                - code [ref=e1058]: ~/.claude/skills/
+                - text: .
+              - heading "Step 0 — Precondition Checks" [level=2] [ref=e1059]
+              - paragraph [ref=e1060]: Run these before every operation. Stop immediately on failure.
+              - code [ref=e1062]: gh --version
+              - paragraph [ref=e1063]:
+                - text: "If command not found: output"
+                - code [ref=e1064]: "Error: gh CLI not found. Install at https://cli.github.com"
+                - text: and stop.
+              - code [ref=e1066]: gh auth status
+              - paragraph [ref=e1067]:
+                - text: "If not authenticated: output"
+                - code [ref=e1068]: "Error: not authenticated with GitHub. Run: gh auth login"
+                - text: and stop.
+              - code [ref=e1070]: git --version
+              - paragraph [ref=e1071]:
+                - text: "If command not found: output"
+                - code [ref=e1072]: "Error: git not found. Change detection requires git. Install git and retry."
+                - text: and stop.
+              - heading "Manifest Format" [level=2] [ref=e1073]
+              - paragraph [ref=e1074]:
+                - text: "Location:"
+                - code [ref=e1075]: ~/.claude/skill-sync.yml
+              - code [ref=e1077]: "skills: - repo: myorg/myrepo # GitHub owner/repo (required) path: tools/claude/skills/my-skill # path inside repo — file or directory (required) ref: main # branch/tag/sha (optional, default: main) name: my-skill # local name override (optional)"
+              - paragraph [ref=e1078]:
+                - strong [ref=e1079]:
+                  - text: Name resolution when
+                  - code [ref=e1080]: name
+                  - text: "is omitted:"
+              - list [ref=e1081]:
+                - listitem [ref=e1082]:
+                  - code [ref=e1083]: path
+                  - text: "is a directory → last segment:"
+                  - code [ref=e1084]: a/b/my-skill
+                  - text: →
+                  - code [ref=e1085]: my-skill
+                - listitem [ref=e1086]:
+                  - code [ref=e1087]: path
+                  - text: "is a file → parent directory:"
+                  - code [ref=e1088]: a/b/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e1089]: my-skill
+              - paragraph [ref=e1090]:
+                - text: "Local destination:"
+                - code [ref=e1091]: ~/.claude/skills/<name>/
+              - heading "Commands" [level=2] [ref=e1092]
+              - heading "Default — /sync-skills" [level=3] [ref=e1093]:
+                - text: Default —
+                - code [ref=e1094]: /sync-skills
+              - list [ref=e1095]:
+                - listitem [ref=e1096]: Run Step 0 (precondition checks)
+                - listitem [ref=e1097]:
+                  - text: Check if
+                  - code [ref=e1098]: ~/.claude/skill-sync.yml
+                  - text: exists
+                  - list [ref=e1099]:
+                    - listitem [ref=e1100]: Missing → run Interview Mode, then sync
+                    - listitem [ref=e1101]: Present but malformed → show YAML parse error with line number, stop
+                - listitem [ref=e1102]: "For each skill entry: run Fetch Skill"
+                - listitem [ref=e1103]: Print Sync Report
+              - heading "/sync-skills list" [level=3] [ref=e1104]:
+                - code [ref=e1105]: /sync-skills list
+              - list [ref=e1106]:
+                - listitem [ref=e1107]:
+                  - text: Load
+                  - code [ref=e1108]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found. Run /sync-skills to create one.\""
+                - listitem [ref=e1109]:
+                  - text: "For each entry, print one line:"
+                  - code [ref=e1111]: "<name> <repo> <path> [ref: <ref>]"
+                - listitem [ref=e1112]:
+                  - text: "Print total:"
+                  - code [ref=e1113]: N skill(s) tracked
+              - heading "/sync-skills add" [level=3] [ref=e1114]:
+                - code [ref=e1115]: /sync-skills add
+              - list [ref=e1116]:
+                - listitem [ref=e1117]: Run Step 0
+                - listitem [ref=e1118]:
+                  - text: Load
+                  - code [ref=e1119]: ~/.claude/skill-sync.yml
+                  - text: "; if missing, create empty file and inform user: \"Creating new manifest at ~/.claude/skill-sync.yml\" (do not run Interview Mode — add is explicit, no guided setup needed)"
+                - listitem [ref=e1120]:
+                  - text: "Ask: \"GitHub repo (owner/repo)?\" — validate input matches"
+                  - code [ref=e1121]: <owner>/<repo>
+                  - text: "(exactly one slash, no URL scheme). If invalid, prompt again: \"Expected format: owner/repo (e.g. myorg/myrepo).\""
+                - listitem [ref=e1122]: "Ask: \"Path to skill in repo (file or directory)?\""
+                - listitem [ref=e1123]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e1124]: main
+                  - text: "\""
+                - listitem [ref=e1125]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e1126]: "Show entry as YAML, ask: \"Add this? (yes/no)\""
+                - listitem [ref=e1127]:
+                  - text: "If yes: append entry to"
+                  - code [ref=e1128]: ~/.claude/skill-sync.yml
+                  - text: ", then run Fetch Skill for this entry, print result"
+              - heading "/sync-skills remove <name>" [level=3] [ref=e1129]:
+                - code [ref=e1130]: /sync-skills remove <name>
+              - list [ref=e1131]:
+                - listitem [ref=e1132]:
+                  - text: Load
+                  - code [ref=e1133]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found at ~/.claude/skill-sync.yml\""
+                - listitem [ref=e1134]:
+                  - text: Find entry whose resolved name matches
+                  - code [ref=e1135]: <name>
+                  - text: "; if none: \"No skill named '<name>' in manifest\""
+                - listitem [ref=e1136]:
+                  - text: "Ask: \"Also delete local files at"
+                  - code [ref=e1137]: ~/.claude/skills/<name>/
+                  - text: "? (yes/no)\""
+                - listitem [ref=e1138]: Remove entry from manifest YAML, write file
+                - listitem [ref=e1139]:
+                  - text: "If yes:"
+                  - code [ref=e1140]: rm -rf ~/.claude/skills/<name>/
+                - listitem [ref=e1141]:
+                  - text: "Confirm: \"Removed"
+                  - code [ref=e1142]: <name>
+                  - text: from tracking" (append " and deleted local files" if applicable)
+              - heading "/sync-skills scan" [level=3] [ref=e1143]:
+                - code [ref=e1144]: /sync-skills scan
+              - list [ref=e1145]:
+                - listitem [ref=e1146]:
+                  - text: Load
+                  - code [ref=e1147]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found\""
+                - listitem [ref=e1148]:
+                  - text: "For each entry, check:"
+                  - code [ref=e1149]: test -d ~/.claude/skills/<name>/
+                - listitem [ref=e1150]: Collect entries where directory is absent
+                - listitem [ref=e1151]: "If none: \"No orphaned entries found\""
+                - listitem [ref=e1152]: "If found: remove those entries from manifest YAML, write file, print Scan Report"
+              - heading "Interview Mode" [level=2] [ref=e1153]
+              - paragraph [ref=e1154]:
+                - text: Triggered by
+                - code [ref=e1155]: /sync-skills
+                - text: when
+                - code [ref=e1156]: ~/.claude/skill-sync.yml
+                - text: "does not exist. Goal: guide user to build the manifest from scratch, optionally importing existing local skills."
+              - heading "Step I1 — Run precondition checks (Step 0)" [level=3] [ref=e1157]
+              - heading "Step I2 — Scan for existing local skills" [level=3] [ref=e1158]
+              - code [ref=e1160]: ls ~/.claude/skills/
+              - paragraph [ref=e1161]:
+                - text: "Collect subdirectory names, exclude:"
+                - code [ref=e1162]: anthropic-skills
+                - text: (system-managed built-ins) and
+                - code [ref=e1163]: sync-skills
+                - text: (this skill itself).
+              - paragraph [ref=e1164]: "If any found, ask:"
+              - code [ref=e1166]: "Found these existing local skills: [list] Which do you want to track? Enter names separated by commas, or press Enter to skip."
+              - paragraph [ref=e1167]: "For each name the user enters:"
+              - list [ref=e1168]:
+                - listitem [ref=e1169]:
+                  - text: "Ask: \"GitHub repo for"
+                  - code [ref=e1170]: <name>
+                  - text: (owner/repo)?" — validate
+                  - code [ref=e1171]: <owner>/<repo>
+                  - text: format (one slash, no URL scheme); re-prompt if invalid.
+                - listitem [ref=e1172]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e1173]:
+                  - text: "Ask: \"Ref (branch/tag/sha)? Press Enter for"
+                  - code [ref=e1174]: main
+                  - text: "\""
+                - listitem [ref=e1175]: Add entry to manifest list
+              - heading "Step I3 — Add new skills loop" [level=3] [ref=e1176]
+              - paragraph [ref=e1177]: "Ask:"
+              - code [ref=e1179]: Add a skill to track? Enter GitHub repo (owner/repo) or press Enter to finish.
+              - paragraph [ref=e1180]: "If user enters a repo:"
+              - list [ref=e1181]:
+                - listitem [ref=e1182]: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e1183]:
+                  - text: "Ask: \"Ref? Press Enter for"
+                  - code [ref=e1184]: main
+                  - text: "\""
+                - listitem [ref=e1185]: "Ask: \"Local name? Press Enter to derive from path\""
+                - listitem [ref=e1186]: Add entry to manifest list
+                - listitem [ref=e1187]: Repeat loop
+              - heading "Step I4 — Confirm and write" [level=3] [ref=e1188]
+              - paragraph [ref=e1189]: "Show YAML preview:"
+              - code [ref=e1191]: "skills: - repo: ... path: ... ..."
+              - paragraph [ref=e1192]:
+                - text: "Ask: \"Create"
+                - code [ref=e1193]: ~/.claude/skill-sync.yml
+                - text: with this content? (yes/no)"
+              - paragraph [ref=e1194]: "If yes: write file, then proceed to sync all entries. If no: \"Cancelled. Run /sync-skills again when ready.\""
+              - heading "Fetch Skill" [level=2] [ref=e1195]
+              - paragraph [ref=e1196]:
+                - text: Fetches one skill entry (
+                - code [ref=e1197]: repo
+                - text: ","
+                - code [ref=e1198]: path
+                - text: ","
+                - code [ref=e1199]: ref
+                - text: ","
+                - code [ref=e1200]: name
+                - text: ) from GitHub and writes it to
+                - code [ref=e1201]: ~/.claude/skills/<name>/
+                - text: .
+              - heading "Step F1 — Inspect path" [level=3] [ref=e1202]
+              - code [ref=e1204]: "gh api repos/{repo}/contents/{path}?ref={ref}"
+              - paragraph [ref=e1205]: "Interpret response:"
+              - list [ref=e1206]:
+                - listitem [ref=e1207]:
+                  - text: JSON
+                  - strong [ref=e1208]: object
+                  - text: with
+                  - code [ref=e1209]: "\"type\": \"file\""
+                  - text: → single file. Build
+                  - code [ref=e1210]: "file_list = [{full_path: path, sha: .sha, content: .content}]"
+                - listitem [ref=e1211]:
+                  - text: JSON
+                  - strong [ref=e1212]: array
+                  - text: → directory. Collect all items where
+                  - code [ref=e1213]: type == "file"
+                  - text: into
+                  - code [ref=e1214]: file_list
+                  - text: . For items where
+                  - code [ref=e1215]: type == "dir"
+                  - text: ", call"
+                  - code [ref=e1216]: "gh api repos/{repo}/contents/{item.path}?ref={ref}"
+                  - text: recursively and add results to
+                  - code [ref=e1217]: file_list
+                  - text: .
+                - listitem [ref=e1218]:
+                  - text: HTTP 404 or error → record
+                  - code [ref=e1219]: "✗ <name>: repo or path not found"
+                  - text: ", skip this skill."
+              - heading "Step F2 — Detect OS for base64 decode" [level=3] [ref=e1220]
+              - code [ref=e1222]: uname -s
+              - list [ref=e1223]:
+                - listitem [ref=e1224]:
+                  - code [ref=e1225]: Darwin
+                  - text: → macOS → use
+                  - code [ref=e1226]: base64 -D
+                  - text: for decode
+                - listitem [ref=e1227]:
+                  - code [ref=e1228]: Linux
+                  - text: → use
+                  - code [ref=e1229]: base64 -d
+                  - text: for decode
+                - listitem [ref=e1230]:
+                  - text: "Any other → use python3 fallback:"
+                  - code [ref=e1231]: python3 -c 'import base64,sys; sys.stdout.buffer.write(base64.b64decode(sys.stdin.read()))'
+              - heading "Step F3 — For each file in file_list" [level=3] [ref=e1232]
+              - paragraph [ref=e1233]:
+                - text: Compute
+                - code [ref=e1234]: relative_path
+                - text: ":"
+              - list [ref=e1235]:
+                - listitem [ref=e1236]:
+                  - text: If
+                  - code [ref=e1237]: "{path}"
+                  - text: is a
+                  - strong [ref=e1238]: directory
+                  - text: ": strip the"
+                  - code [ref=e1239]: "{path}/"
+                  - text: prefix from
+                  - code [ref=e1240]: file.full_path
+                - listitem [ref=e1241]:
+                  - text: If
+                  - code [ref=e1242]: "{path}"
+                  - text: is a
+                  - strong [ref=e1243]: file
+                  - text: ": use the basename of"
+                  - code [ref=e1244]: "{path}"
+                  - text: (e.g.,
+                  - code [ref=e1245]: tools/skills/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e1246]: SKILL.md
+                  - text: )
+              - paragraph [ref=e1247]:
+                - text: If
+                - code [ref=e1248]: "{path}"
+                - text: is a file and its basename is not
+                - code [ref=e1249]: SKILL.md
+                - text: ", warn: \"Warning: file is not named SKILL.md — Claude Code may not auto-load this as a skill.\" Then continue."
+              - paragraph [ref=e1250]:
+                - strong [ref=e1251]: "Change detection:"
+              - code [ref=e1253]: "local_sha=$(git hash-object ~/.claude/skills/{name}/{relative_path} 2>/dev/null || echo \"\")"
+              - paragraph [ref=e1254]:
+                - text: If
+                - code [ref=e1255]: local_sha == file.sha
+                - text: → mark this file as
+                - strong [ref=e1256]: unchanged
+                - text: ", skip the write."
+              - paragraph [ref=e1257]:
+                - strong [ref=e1258]: "Write file:"
+              - code [ref=e1260]: "mkdir -p \"$(dirname ~/.claude/skills/{name}/{relative_path})\" b64content='{file.content}' # macOS: printf '%s' \"$b64content\" | base64 -D > ~/.claude/skills/{name}/{relative_path} # Linux: printf '%s' \"$b64content\" | base64 -d > ~/.claude/skills/{name}/{relative_path}"
+              - paragraph [ref=e1261]:
+                - text: "Note:"
+                - code [ref=e1262]: file.content
+                - text: from GitHub API contains embedded newlines in the base64 string. Assigning to a variable first and using
+                - code [ref=e1263]: printf '%s' "$b64content"
+                - text: handles this correctly;
+                - code [ref=e1264]: base64
+                - text: ignores whitespace during decode.
+              - paragraph [ref=e1265]:
+                - strong [ref=e1266]: "Track result per skill:"
+              - list [ref=e1267]:
+                - listitem [ref=e1268]:
+                  - text: Any file written → skill result =
+                  - code [ref=e1269]: updated
+                - listitem [ref=e1270]:
+                  - text: All files unchanged → skill result =
+                  - code [ref=e1271]: unchanged
+                - listitem [ref=e1272]:
+                  - text: Any error during write → skill result =
+                  - code [ref=e1273]: failed
+                  - text: with error detail
+              - heading "Sync Report" [level=2] [ref=e1274]
+              - paragraph [ref=e1275]: "Print after every sync operation:"
+              - code [ref=e1277]: "Synced N skills: ✓ updated skill-a = unchanged skill-b ✗ failed skill-c (repo or path not found)"
+              - heading "Scan Report" [level=2] [ref=e1278]
+              - code [ref=e1280]: "Scan found N orphaned entries (local dir missing): - old-skill → removed from skill-sync.yml"
+          - listitem [ref=e1281]:
+            - generic [ref=e1282]:
+              - generic [ref=e1283]: thinking
+              - generic [ref=e1284]: 21:26:58
+            - generic [ref=e1285]: (empty)
+          - listitem [ref=e1286]:
+            - generic [ref=e1287]:
+              - generic [ref=e1288]: text
+              - generic [ref=e1289]: 21:26:58
+            - paragraph [ref=e1292]: Step 0 già verificato. Leggo il manifest.
+          - listitem [ref=e1293]:
+            - generic [ref=e1294]:
+              - generic [ref=e1295]: tool_use
+              - generic [ref=e1296]: 21:26:59
+            - generic [ref=e1297]:
+              - text: Bash
+              - code [ref=e1298]: "{\"command\":\"cat ~/.claude/skill-sync.yml 2>/dev/null || echo \\\"FILE_NOT_FOUND\\\"\",\"description\":\"Check skill-sync.yml manifest\"}"
+          - listitem [ref=e1299]:
+            - generic [ref=e1300]:
+              - generic [ref=e1301]: tool_result
+              - generic [ref=e1302]: 21:27:04
+            - generic [ref=e1303]:
+              - text: ok
+              - code [ref=e1304]: FILE_NOT_FOUND
+          - listitem [ref=e1305]:
+            - generic [ref=e1306]:
+              - generic [ref=e1307]: text
+              - generic [ref=e1308]: 21:27:06
+            - paragraph [ref=e1311]: Manifest assente → Interview Mode.
+          - listitem [ref=e1312]:
+            - generic [ref=e1313]:
+              - generic [ref=e1314]: tool_use
+              - generic [ref=e1315]: 21:27:07
+            - generic [ref=e1316]:
+              - text: Bash
+              - code [ref=e1317]: "{\"command\":\"ls ~/.claude/skills/ 2>/dev/null\",\"description\":\"List existing local skills\"}"
+          - listitem [ref=e1318]:
+            - generic [ref=e1319]:
+              - generic [ref=e1320]: tool_result
+              - generic [ref=e1321]: 21:27:10
+            - generic [ref=e1322]:
+              - text: ok
+              - code [ref=e1323]: anthropic-skills sync-skills
+          - listitem [ref=e1324]:
+            - generic [ref=e1325]:
+              - generic [ref=e1326]: thinking
+              - generic [ref=e1327]: 21:27:13
+            - generic [ref=e1328]: (empty)
+          - listitem [ref=e1329]:
+            - generic [ref=e1330]:
+              - generic [ref=e1331]: text
+              - generic [ref=e1332]: 21:27:15
+            - generic [ref=e1334]:
+              - paragraph [ref=e1335]:
+                - text: Nessuna skill locale da importare (escluse
+                - code [ref=e1336]: anthropic-skills
+                - text: e
+                - code [ref=e1337]: sync-skills
+                - text: ).
+              - paragraph [ref=e1338]:
+                - strong [ref=e1339]: Step I3 — Aggiungi nuove skill
+              - paragraph [ref=e1340]:
+                - text: Vuoi tracciare skill da GitHub? Inserisci il repo (formato
+                - code [ref=e1341]: owner/repo
+                - text: ) o premi Invio per saltare.
+          - listitem [ref=e1342]:
+            - generic [ref=e1343]:
+              - generic [ref=e1344]: user
+              - generic [ref=e1345]: 21:27:36
+            - paragraph [ref=e1348]:
+              - link "https://github.com/bpmn-io/internal-docs/tree/main/development/ai-prompts/claude/skills/bpmn-io-discovery" [ref=e1349] [cursor=pointer]:
+                - /url: https://github.com/bpmn-io/internal-docs/tree/main/development/ai-prompts/claude/skills/bpmn-io-discovery
+          - listitem [ref=e1350]:
+            - generic [ref=e1351]:
+              - generic [ref=e1352]: thinking
+              - generic [ref=e1353]: 21:27:45
+            - generic [ref=e1354]: (empty)
+          - listitem [ref=e1355]:
+            - generic [ref=e1356]:
+              - generic [ref=e1357]: text
+              - generic [ref=e1358]: 21:27:46
+            - generic [ref=e1360]:
+              - paragraph [ref=e1361]: "URL parsata:"
+              - list [ref=e1362]:
+                - listitem [ref=e1363]:
+                  - strong [ref=e1364]: "repo:"
+                  - code [ref=e1365]: bpmn-io/internal-docs
+                - listitem [ref=e1366]:
+                  - strong [ref=e1367]: "path:"
+                  - code [ref=e1368]: development/ai-prompts/claude/skills/bpmn-io-discovery
+                - listitem [ref=e1369]:
+                  - strong [ref=e1370]: "ref:"
+                  - code [ref=e1371]: main
+                - listitem [ref=e1372]:
+                  - strong [ref=e1373]: "name:"
+                  - code [ref=e1374]: bpmn-io-discovery
+                  - text: (derivato dal path)
+              - paragraph [ref=e1375]:
+                - text: Vuoi override sul nome locale? Premi Invio per usare
+                - code [ref=e1376]: bpmn-io-discovery
+                - text: .
+          - listitem [ref=e1377]:
+            - generic [ref=e1378]:
+              - generic [ref=e1379]: user
+              - generic [ref=e1380]: 21:28:33
+            - paragraph [ref=e1383]: no lascia bpmn-io-discovery
+          - listitem [ref=e1384]:
+            - generic [ref=e1385]:
+              - generic [ref=e1386]: thinking
+              - generic [ref=e1387]: 21:28:36
+            - generic [ref=e1388]: (empty)
+          - listitem [ref=e1389]:
+            - generic [ref=e1390]:
+              - generic [ref=e1391]: text
+              - generic [ref=e1392]: 21:28:37
+            - paragraph [ref=e1395]:
+              - text: Altri repo da aggiungere? Inserisci
+              - code [ref=e1396]: owner/repo
+              - text: o premi Invio per finire.
+          - listitem [ref=e1397]:
+            - generic [ref=e1398]:
+              - generic [ref=e1399]: user
+              - generic [ref=e1400]: 21:28:41
+            - paragraph [ref=e1403]: "no"
+          - listitem [ref=e1404]:
+            - generic [ref=e1405]:
+              - generic [ref=e1406]: thinking
+              - generic [ref=e1407]: 21:28:47
+            - generic [ref=e1408]: (empty)
+          - listitem [ref=e1409]:
+            - generic [ref=e1410]:
+              - generic [ref=e1411]: text
+              - generic [ref=e1412]: 21:28:47
+            - generic [ref=e1414]:
+              - paragraph [ref=e1415]:
+                - strong [ref=e1416]: Step I4 — Conferma
+              - code [ref=e1418]: "skills: - repo: bpmn-io/internal-docs path: development/ai-prompts/claude/skills/bpmn-io-discovery ref: main name: bpmn-io-discovery"
+              - paragraph [ref=e1419]:
+                - text: Creo
+                - code [ref=e1420]: ~/.claude/skill-sync.yml
+                - text: con questo contenuto? (yes/no)
+          - listitem [ref=e1421]:
+            - generic [ref=e1422]:
+              - generic [ref=e1423]: user
+              - generic [ref=e1424]: 21:28:55
+            - paragraph [ref=e1427]: si
+          - listitem [ref=e1428]:
+            - generic [ref=e1429]:
+              - generic [ref=e1430]: thinking
+              - generic [ref=e1431]: 21:28:57
+            - generic [ref=e1432]: (empty)
+          - listitem [ref=e1433]:
+            - generic [ref=e1434]:
+              - generic [ref=e1435]: tool_use
+              - generic [ref=e1436]: 21:28:59
+            - generic [ref=e1437]:
+              - text: Write
+              - code [ref=e1438]: "{\"file_path\":\"/Users/marcello.barile/.claude/skill-sync.yml\",\"content\":\"skills:\\n - repo: bpmn-io/internal-docs\\n path: development/ai-prompts/claude/skills/bpmn-io-discovery\\n ref: main\\n name: bpmn-io-discovery\\n\"}"
+          - listitem [ref=e1439]:
+            - generic [ref=e1440]:
+              - generic [ref=e1441]: tool_result
+              - generic [ref=e1442]: 21:29:09
+            - generic [ref=e1443]:
+              - text: ok
+              - code [ref=e1444]: "File created successfully at: /Users/marcello.barile/.claude/skill-sync.yml (file state is current in your context — no need to Read it back)"
+          - listitem [ref=e1445]:
+            - generic [ref=e1446]:
+              - generic [ref=e1447]: text
+              - generic [ref=e1448]: 21:29:12
+            - paragraph [ref=e1451]: Manifest scritto. Fetch skill in corso.
+          - listitem [ref=e1452]:
+            - generic [ref=e1453]:
+              - generic [ref=e1454]: tool_use
+              - generic [ref=e1455]: 21:29:12
+            - generic [ref=e1456]:
+              - text: Bash
+              - code [ref=e1457]: "{\"command\":\"gh api \\\"repos/bpmn-io/internal-docs/contents/development/ai-prompts/claude/skills/bpmn-io-discovery?ref=main\\\"\",\"description\":\"Inspect path type (file or directory)\"}"
+          - listitem [ref=e1458]:
+            - generic [ref=e1459]:
+              - generic [ref=e1460]: tool_result
+              - generic [ref=e1461]: 21:29:13
+            - generic [ref=e1462]:
+              - text: ok
+              - code [ref=e1463]: "[{\"name\":\"SKILL.md\",\"path\":\"development/ai-prompts/claude/skills/bpmn-io-discovery/SKILL.md\",\"sha\":\"9f51852feabb26220d56467f07de3567d4dc722f\",\"size\":29985,\"url\":\"https://api.github.com/repos/bpmn-io/i"
+          - listitem [ref=e1464]:
+            - generic [ref=e1465]:
+              - generic [ref=e1466]: thinking
+              - generic [ref=e1467]: 21:29:18
+            - generic [ref=e1468]: (empty)
+          - listitem [ref=e1469]:
+            - generic [ref=e1470]:
+              - generic [ref=e1471]: text
+              - generic [ref=e1472]: 21:29:18
+            - paragraph [ref=e1475]: Directory con 3 file. Fetch in parallelo.
+          - listitem [ref=e1476]:
+            - generic [ref=e1477]:
+              - generic [ref=e1478]: tool_use
+              - generic [ref=e1479]: 21:29:20
+            - generic [ref=e1480]:
+              - text: Bash
+              - code [ref=e1481]: "{\"command\":\"gh api \\\"repos/bpmn-io/internal-docs/contents/development/ai-prompts/claude/skills/bpmn-io-discovery/SKILL.md?ref=main\\\" --jq '.content' | tr -d '\\\\n' | base64 -D > /tmp/bpmn-skill.md && echo \\\"OK\\\"\",\"description\":\"Fetch SKILL.m…"
+          - listitem [ref=e1482]:
+            - generic [ref=e1483]:
+              - generic [ref=e1484]: tool_use
+              - generic [ref=e1485]: 21:29:21
+            - generic [ref=e1486]:
+              - text: Bash
+              - code [ref=e1487]: "{\"command\":\"gh api \\\"repos/bpmn-io/internal-docs/contents/development/ai-prompts/claude/skills/bpmn-io-discovery/UPDATE.md?ref=main\\\" --jq '.content' | tr -d '\\\\n' | base64 -D > /tmp/bpmn-update.md && echo \\\"OK\\\"\",\"description\":\"Fetch UPDAT…"
+          - listitem [ref=e1488]:
+            - generic [ref=e1489]:
+              - generic [ref=e1490]: tool_use
+              - generic [ref=e1491]: 21:29:22
+            - generic [ref=e1492]:
+              - text: Bash
+              - code [ref=e1493]: "{\"command\":\"gh api \\\"repos/bpmn-io/internal-docs/contents/development/ai-prompts/claude/skills/bpmn-io-discovery/repositories.json?ref=main\\\" --jq '.content' | tr -d '\\\\n' | base64 -D > /tmp/bpmn-repos.json && echo \\\"OK\\\"\",\"description\":\"Fe…"
+          - listitem [ref=e1494]:
+            - generic [ref=e1495]:
+              - generic [ref=e1496]: tool_result
+              - generic [ref=e1497]: 21:29:24
+            - generic [ref=e1498]:
+              - text: ok
+              - code [ref=e1499]: OK
+          - listitem [ref=e1500]:
+            - generic [ref=e1501]:
+              - generic [ref=e1502]: tool_result
+              - generic [ref=e1503]: 21:29:27
+            - generic [ref=e1504]:
+              - text: ok
+              - code [ref=e1505]: OK
+          - listitem [ref=e1506]:
+            - generic [ref=e1507]:
+              - generic [ref=e1508]: tool_result
+              - generic [ref=e1509]: 21:29:30
+            - generic [ref=e1510]:
+              - text: ok
+              - code [ref=e1511]: OK
+          - listitem [ref=e1512]:
+            - generic [ref=e1513]:
+              - generic [ref=e1514]: tool_use
+              - generic [ref=e1515]: 21:29:36
+            - generic [ref=e1516]:
+              - text: Bash
+              - code [ref=e1517]: "{\"command\":\"mkdir -p ~/.claude/skills/bpmn-io-discovery && cp /tmp/bpmn-skill.md ~/.claude/skills/bpmn-io-discovery/SKILL.md && cp /tmp/bpmn-update.md ~/.claude/skills/bpmn-io-discovery/UPDATE.md && cp /tmp/bpmn-repos.json ~/.claude/skills/…"
+          - listitem [ref=e1518]:
+            - generic [ref=e1519]:
+              - generic [ref=e1520]: tool_result
+              - generic [ref=e1521]: 21:29:40
+            - generic [ref=e1522]:
+              - text: ok
+              - code [ref=e1523]: OK
+          - listitem [ref=e1524]:
+            - generic [ref=e1525]:
+              - generic [ref=e1526]: text
+              - generic [ref=e1527]: 21:29:43
+            - generic [ref=e1529]:
+              - code [ref=e1531]: "Synced 1 skill: ✓ updated bpmn-io-discovery"
+              - paragraph [ref=e1532]:
+                - text: "3 file scritti:"
+                - code [ref=e1533]: SKILL.md
+                - text: ","
+                - code [ref=e1534]: UPDATE.md
+                - text: ","
+                - code [ref=e1535]: repositories.json
+                - text: →
+                - code [ref=e1536]: ~/.claude/skills/bpmn-io-discovery/
+          - listitem [ref=e1537]:
+            - generic [ref=e1538]:
+              - generic [ref=e1539]: user
+              - generic [ref=e1540]: 21:29:53
+            - paragraph [ref=e1543]:
+              - code [ref=e1544]: /sync-skills list
+          - listitem [ref=e1545]:
+            - generic [ref=e1546]:
+              - generic [ref=e1547]: thinking
+              - generic [ref=e1548]: 21:29:58
+            - generic [ref=e1549]: (empty)
+          - listitem [ref=e1550]:
+            - generic [ref=e1551]:
+              - generic [ref=e1552]: tool_use
+              - generic [ref=e1553]: 21:29:58
+            - generic [ref=e1554]:
+              - text: Read
+              - code [ref=e1555]: "{\"file_path\":\"/Users/marcello.barile/.claude/skill-sync.yml\"}"
+          - listitem [ref=e1556]:
+            - generic [ref=e1557]:
+              - generic [ref=e1558]: tool_result
+              - generic [ref=e1559]: 21:30:03
+            - generic [ref=e1560]:
+              - text: ok
+              - code [ref=e1561]: "1 skills: 2 - repo: bpmn-io/internal-docs 3 path: development/ai-prompts/claude/skills/bpmn-io-discovery 4 ref: main 5 name: bpmn-io-discovery 6"
+          - listitem [ref=e1562]:
+            - generic [ref=e1563]:
+              - generic [ref=e1564]: text
+              - generic [ref=e1565]: 21:30:05
+            - code [ref=e1569]: "bpmn-io-discovery bpmn-io/internal-docs development/ai-prompts/claude/skills/bpmn-io-discovery ref: main 1 skill(s) tracked"
+          - listitem [ref=e1570]:
+            - generic [ref=e1571]:
+              - generic [ref=e1572]: user
+              - generic [ref=e1573]: 21:30:21
+            - paragraph [ref=e1576]: <command-message>sync-skills</command-message> <command-name>/sync-skills</command-name>
+          - listitem [ref=e1577]:
+            - generic [ref=e1578]:
+              - generic [ref=e1579]: user
+              - generic [ref=e1580]: 21:30:21
+            - generic [ref=e1582]:
+              - paragraph [ref=e1583]: "Base directory for this skill: /Users/marcello.barile/.claude/skills/sync-skills"
+              - heading "sync-skills" [level=1] [ref=e1584]
+              - paragraph [ref=e1585]:
+                - text: Sync Claude Code skills from GitHub repos using the
+                - code [ref=e1586]: gh
+                - text: CLI. Reads
+                - code [ref=e1587]: ~/.claude/skill-sync.yml
+                - text: and fetches each tracked skill into
+                - code [ref=e1588]: ~/.claude/skills/
+                - text: .
+              - heading "Step 0 — Precondition Checks" [level=2] [ref=e1589]
+              - paragraph [ref=e1590]:
+                - text: Run
+                - strong [ref=e1591]: only during Interview Mode
+                - text: (first-time setup). On subsequent operations, let
+                - code [ref=e1592]: gh
+                - text: /
+                - code [ref=e1593]: git
+                - text: fail naturally — their error output is self-explanatory.
+              - code [ref=e1595]: gh --version
+              - paragraph [ref=e1596]:
+                - text: "If command not found: output"
+                - code [ref=e1597]: "Error: gh CLI not found. Install at https://cli.github.com"
+                - text: and stop.
+              - code [ref=e1599]: gh auth status
+              - paragraph [ref=e1600]:
+                - text: "If not authenticated: output"
+                - code [ref=e1601]: "Error: not authenticated with GitHub. Run: gh auth login"
+                - text: and stop.
+              - code [ref=e1603]: git --version
+              - paragraph [ref=e1604]:
+                - text: "If command not found: output"
+                - code [ref=e1605]: "Error: git not found. Change detection requires git. Install git and retry."
+                - text: and stop.
+              - heading "Manifest Format" [level=2] [ref=e1606]
+              - paragraph [ref=e1607]:
+                - text: "Location:"
+                - code [ref=e1608]: ~/.claude/skill-sync.yml
+              - code [ref=e1610]: "skills: - repo: myorg/myrepo # GitHub owner/repo (required) path: tools/claude/skills/my-skill # path inside repo — file or directory (required) ref: main # branch/tag/sha (optional, default: main) name: my-skill # local name override (optional)"
+              - paragraph [ref=e1611]:
+                - strong [ref=e1612]:
+                  - text: Name resolution when
+                  - code [ref=e1613]: name
+                  - text: "is omitted:"
+              - list [ref=e1614]:
+                - listitem [ref=e1615]:
+                  - code [ref=e1616]: path
+                  - text: "is a directory → last segment:"
+                  - code [ref=e1617]: a/b/my-skill
+                  - text: →
+                  - code [ref=e1618]: my-skill
+                - listitem [ref=e1619]:
+                  - code [ref=e1620]: path
+                  - text: "is a file → parent directory:"
+                  - code [ref=e1621]: a/b/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e1622]: my-skill
+              - paragraph [ref=e1623]:
+                - text: "Local destination:"
+                - code [ref=e1624]: ~/.claude/skills/<name>/
+              - heading "Commands" [level=2] [ref=e1625]
+              - heading "Default — /sync-skills" [level=3] [ref=e1626]:
+                - text: Default —
+                - code [ref=e1627]: /sync-skills
+              - list [ref=e1628]:
+                - listitem [ref=e1629]:
+                  - text: Check if
+                  - code [ref=e1630]: ~/.claude/skill-sync.yml
+                  - text: exists
+                  - list [ref=e1631]:
+                    - listitem [ref=e1632]: Missing → run Interview Mode, then sync
+                    - listitem [ref=e1633]: Present but malformed → show YAML parse error with line number, stop
+                - listitem [ref=e1634]: "For each skill entry: run Fetch Skill"
+                - listitem [ref=e1635]: Print Sync Report
+              - heading "/sync-skills list" [level=3] [ref=e1636]:
+                - code [ref=e1637]: /sync-skills list
+              - list [ref=e1638]:
+                - listitem [ref=e1639]:
+                  - text: Load
+                  - code [ref=e1640]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found. Run /sync-skills to create one.\""
+                - listitem [ref=e1641]:
+                  - text: "For each entry, print one line:"
+                  - code [ref=e1643]: "<name> <repo> <path> [ref: <ref>]"
+                - listitem [ref=e1644]:
+                  - text: "Print total:"
+                  - code [ref=e1645]: N skill(s) tracked
+              - heading "/sync-skills add" [level=3] [ref=e1646]:
+                - code [ref=e1647]: /sync-skills add
+              - list [ref=e1648]:
+                - listitem [ref=e1649]:
+                  - text: Load
+                  - code [ref=e1650]: ~/.claude/skill-sync.yml
+                  - text: "; if missing, create empty file and inform user: \"Creating new manifest at ~/.claude/skill-sync.yml\" (do not run Interview Mode — add is explicit, no guided setup needed)"
+                - listitem [ref=e1651]:
+                  - text: "Ask: \"GitHub URL or repo? (paste a GitHub URL like"
+                  - code [ref=e1652]: https://github.com/owner/repo/tree/ref/path
+                  - text: ", or enter"
+                  - code [ref=e1653]: owner/repo
+                  - text: )"
+                  - list [ref=e1654]:
+                    - listitem [ref=e1655]:
+                      - strong [ref=e1656]: If input is a full GitHub URL
+                      - text: matching
+                      - code [ref=e1657]: "https://github.com/{owner}/{repo}/tree/{ref}/{path}"
+                      - text: ":"
+                      - list [ref=e1658]:
+                        - listitem [ref=e1659]:
+                          - text: Extract
+                          - code [ref=e1660]: "repo = {owner}/{repo}"
+                          - text: ","
+                          - code [ref=e1661]: "ref = {ref}"
+                          - text: ","
+                          - code [ref=e1662]: "path = {path}"
+                        - listitem [ref=e1663]:
+                          - text: "Show: \"Parsed → repo:"
+                          - code [ref=e1664]: "{repo}"
+                          - text: ", ref:"
+                          - code [ref=e1665]: "{ref}"
+                          - text: ", path:"
+                          - code [ref=e1666]: "{path}"
+                          - text: "\""
+                        - listitem [ref=e1667]: Skip steps 4 and 5 (already derived)
+                    - listitem [ref=e1668]:
+                      - strong [ref=e1669]:
+                        - text: If input matches
+                        - code [ref=e1670]: owner/repo
+                      - text: "(one slash, no URL scheme): proceed to steps 4 and 5"
+                    - listitem [ref=e1671]:
+                      - strong [ref=e1672]: If invalid
+                      - text: ": prompt again: \"Expected a GitHub URL or owner/repo (e.g. myorg/myrepo)\""
+                - listitem [ref=e1673]:
+                  - emphasis [ref=e1674]: (Only if not derived from URL)
+                  - text: "Ask: \"Path to skill in repo (file or directory)?\""
+                - listitem [ref=e1675]:
+                  - emphasis [ref=e1676]: (Only if not derived from URL)
+                  - text: "Ask: \"Ref (branch/tag/sha)? Default:"
+                  - code [ref=e1677]: main
+                  - text: "\" —"
+                  - strong [ref=e1678]:
+                    - text: if the user's response is empty or blank, use
+                    - code [ref=e1679]: main
+                - listitem [ref=e1680]:
+                  - text: "Ask: \"Local name? Default: derive from path\" —"
+                  - strong [ref=e1681]: if the user's response is empty or blank, derive from path
+                - listitem [ref=e1682]: "Show entry as YAML, ask: \"Add this? (yes/no)\""
+                - listitem [ref=e1683]:
+                  - text: "If yes: append entry to"
+                  - code [ref=e1684]: ~/.claude/skill-sync.yml
+                  - text: ", then run Fetch Skill for this entry, print result"
+              - heading "/sync-skills remove <name>" [level=3] [ref=e1685]:
+                - code [ref=e1686]: /sync-skills remove <name>
+              - list [ref=e1687]:
+                - listitem [ref=e1688]:
+                  - text: Load
+                  - code [ref=e1689]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found at ~/.claude/skill-sync.yml\""
+                - listitem [ref=e1690]:
+                  - text: Find entry whose resolved name matches
+                  - code [ref=e1691]: <name>
+                  - text: "; if none: \"No skill named '<name>' in manifest\""
+                - listitem [ref=e1692]:
+                  - text: "Ask: \"Also delete local files at"
+                  - code [ref=e1693]: ~/.claude/skills/<name>/
+                  - text: "? (yes/no)\""
+                - listitem [ref=e1694]: Remove entry from manifest YAML, write file
+                - listitem [ref=e1695]:
+                  - text: "If yes:"
+                  - code [ref=e1696]: rm -rf ~/.claude/skills/<name>/
+                - listitem [ref=e1697]:
+                  - text: "Confirm: \"Removed"
+                  - code [ref=e1698]: <name>
+                  - text: from tracking" (append " and deleted local files" if applicable)
+              - heading "/sync-skills scan" [level=3] [ref=e1699]:
+                - code [ref=e1700]: /sync-skills scan
+              - list [ref=e1701]:
+                - listitem [ref=e1702]:
+                  - text: Load
+                  - code [ref=e1703]: ~/.claude/skill-sync.yml
+                  - text: "; if missing: \"No manifest found\""
+                - listitem [ref=e1704]:
+                  - text: "For each entry, check:"
+                  - code [ref=e1705]: test -d ~/.claude/skills/<name>/
+                - listitem [ref=e1706]: Collect entries where directory is absent
+                - listitem [ref=e1707]: "If none: \"No orphaned entries found\""
+                - listitem [ref=e1708]: "If found: remove those entries from manifest YAML, write file, print Scan Report"
+              - heading "Interview Mode" [level=2] [ref=e1709]
+              - paragraph [ref=e1710]:
+                - text: Triggered by
+                - code [ref=e1711]: /sync-skills
+                - text: when
+                - code [ref=e1712]: ~/.claude/skill-sync.yml
+                - text: "does not exist. Goal: guide user to build the manifest from scratch, optionally importing existing local skills."
+              - heading "Step I1 — Run precondition checks (Step 0)" [level=3] [ref=e1713]
+              - heading "Step I2 — Scan for existing local skills" [level=3] [ref=e1714]
+              - code [ref=e1716]: ls ~/.claude/skills/
+              - paragraph [ref=e1717]:
+                - text: "Collect subdirectory names, exclude:"
+                - code [ref=e1718]: anthropic-skills
+                - text: (system-managed built-ins) and
+                - code [ref=e1719]: sync-skills
+                - text: (this skill itself).
+              - paragraph [ref=e1720]: "If any found, ask:"
+              - code [ref=e1722]: "Found these existing local skills: [list] Which do you want to track? Enter names separated by commas, or press Enter to skip."
+              - paragraph [ref=e1723]:
+                - strong [ref=e1724]: If the user's response is empty or blank, skip this step entirely (track no existing skills).
+              - paragraph [ref=e1725]: "For each name the user enters:"
+              - list [ref=e1726]:
+                - listitem [ref=e1727]:
+                  - text: "Ask: \"GitHub URL or repo for"
+                  - code [ref=e1728]: <name>
+                  - text: "? (paste a GitHub URL like"
+                  - code [ref=e1729]: https://github.com/owner/repo/tree/ref/path
+                  - text: ", or enter"
+                  - code [ref=e1730]: owner/repo
+                  - text: )"
+                  - list [ref=e1731]:
+                    - listitem [ref=e1732]:
+                      - strong [ref=e1733]: If full GitHub URL
+                      - text: ": extract repo, ref, path from it; skip the next two questions for this entry"
+                    - listitem [ref=e1734]:
+                      - strong [ref=e1735]:
+                        - text: If
+                        - code [ref=e1736]: owner/repo
+                      - text: "format: proceed to ask path and ref"
+                    - listitem [ref=e1737]:
+                      - strong [ref=e1738]: If invalid
+                      - text: ": re-prompt with: \"Expected a GitHub URL or owner/repo (e.g. myorg/myrepo)\""
+                - listitem [ref=e1739]:
+                  - emphasis [ref=e1740]: (Only if not derived from URL)
+                  - text: "Ask: \"Path in that repo (file or directory)?\""
+                - listitem [ref=e1741]:
+                  - emphasis [ref=e1742]: (Only if not derived from URL)
+                  - text: "Ask: \"Ref (branch/tag/sha)? Default:"
+                  - code [ref=e1743]: main
+                  - text: "\" —"
+                  - strong [ref=e1744]:
+                    - text: if the user's response is empty or blank, use
+                    - code [ref=e1745]: main
+                - listitem [ref=e1746]: Add entry to manifest list
+              - heading "Step I3 — Add new skills loop" [level=3] [ref=e1747]
+              - paragraph [ref=e1748]: "Ask:"
+              - code [ref=e1750]: Add a skill to track? Paste a GitHub URL (https://github.com/owner/repo/tree/ref/path), enter owner/repo, or press Enter to finish.
+              - paragraph [ref=e1751]:
+                - strong [ref=e1752]: If the user's response is empty or blank, exit the loop and proceed to Step I4.
+              - paragraph [ref=e1753]: "If user enters a URL or repo:"
+              - list [ref=e1754]:
+                - listitem [ref=e1755]:
+                  - strong [ref=e1756]: If full GitHub URL
+                  - text: ": extract repo, ref, path; skip path/ref questions"
+                - listitem [ref=e1757]:
+                  - strong [ref=e1758]:
+                    - text: If
+                    - code [ref=e1759]: owner/repo
+                  - text: "format:"
+                  - list [ref=e1760]:
+                    - listitem [ref=e1761]: "Ask: \"Path in that repo (file or directory)?\""
+                    - listitem [ref=e1762]:
+                      - text: "Ask: \"Ref? Default:"
+                      - code [ref=e1763]: main
+                      - text: "\" —"
+                      - strong [ref=e1764]:
+                        - text: if the user's response is empty or blank, use
+                        - code [ref=e1765]: main
+                - listitem [ref=e1766]:
+                  - text: "Ask: \"Local name? Default: derive from path\" —"
+                  - strong [ref=e1767]: if the user's response is empty or blank, derive from path
+                - listitem [ref=e1768]: Add entry to manifest list
+                - listitem [ref=e1769]: Repeat loop
+              - heading "Step I4 — Confirm and write" [level=3] [ref=e1770]
+              - paragraph [ref=e1771]: "Show YAML preview:"
+              - code [ref=e1773]: "skills: - repo: ... path: ... ..."
+              - paragraph [ref=e1774]:
+                - text: "Ask: \"Create"
+                - code [ref=e1775]: ~/.claude/skill-sync.yml
+                - text: with this content? (yes/no)"
+              - paragraph [ref=e1776]: "If yes: write file, then proceed to sync all entries. If no: \"Cancelled. Run /sync-skills again when ready.\""
+              - heading "Fetch Skill" [level=2] [ref=e1777]
+              - paragraph [ref=e1778]:
+                - text: Fetches one skill entry (
+                - code [ref=e1779]: repo
+                - text: ","
+                - code [ref=e1780]: path
+                - text: ","
+                - code [ref=e1781]: ref
+                - text: ","
+                - code [ref=e1782]: name
+                - text: ) from GitHub and writes it to
+                - code [ref=e1783]: ~/.claude/skills/<name>/
+                - text: .
+              - heading "Step F1 — Inspect path" [level=3] [ref=e1784]
+              - code [ref=e1786]: "gh api repos/{repo}/contents/{path}?ref={ref}"
+              - paragraph [ref=e1787]: "Interpret response:"
+              - list [ref=e1788]:
+                - listitem [ref=e1789]:
+                  - text: JSON
+                  - strong [ref=e1790]: object
+                  - text: with
+                  - code [ref=e1791]: "\"type\": \"file\""
+                  - text: → single file. Build
+                  - code [ref=e1792]: "file_list = [{full_path: path, sha: .sha, content: .content}]"
+                - listitem [ref=e1793]:
+                  - text: JSON
+                  - strong [ref=e1794]: array
+                  - text: → directory. Collect all items where
+                  - code [ref=e1795]: type == "file"
+                  - text: into
+                  - code [ref=e1796]: file_list
+                  - text: . For items where
+                  - code [ref=e1797]: type == "dir"
+                  - text: ", call"
+                  - code [ref=e1798]: "gh api repos/{repo}/contents/{item.path}?ref={ref}"
+                  - text: recursively and add results to
+                  - code [ref=e1799]: file_list
+                  - text: .
+                - listitem [ref=e1800]:
+                  - text: HTTP 404 or error → record
+                  - code [ref=e1801]: "✗ <name>: repo or path not found"
+                  - text: ", skip this skill."
+              - heading "Step F2 — Detect OS for base64 decode" [level=3] [ref=e1802]
+              - code [ref=e1804]: uname -s
+              - list [ref=e1805]:
+                - listitem [ref=e1806]:
+                  - code [ref=e1807]: Darwin
+                  - text: → macOS → use
+                  - code [ref=e1808]: base64 -D
+                  - text: for decode
+                - listitem [ref=e1809]:
+                  - code [ref=e1810]: Linux
+                  - text: → use
+                  - code [ref=e1811]: base64 -d
+                  - text: for decode
+                - listitem [ref=e1812]:
+                  - text: "Any other → use python3 fallback:"
+                  - code [ref=e1813]: python3 -c 'import base64,sys; sys.stdout.buffer.write(base64.b64decode(sys.stdin.read()))'
+              - heading "Step F3 — For each file in file_list" [level=3] [ref=e1814]
+              - paragraph [ref=e1815]:
+                - text: Compute
+                - code [ref=e1816]: relative_path
+                - text: ":"
+              - list [ref=e1817]:
+                - listitem [ref=e1818]:
+                  - text: If
+                  - code [ref=e1819]: "{path}"
+                  - text: is a
+                  - strong [ref=e1820]: directory
+                  - text: ": strip the"
+                  - code [ref=e1821]: "{path}/"
+                  - text: prefix from
+                  - code [ref=e1822]: file.full_path
+                - listitem [ref=e1823]:
+                  - text: If
+                  - code [ref=e1824]: "{path}"
+                  - text: is a
+                  - strong [ref=e1825]: file
+                  - text: ": use the basename of"
+                  - code [ref=e1826]: "{path}"
+                  - text: (e.g.,
+                  - code [ref=e1827]: tools/skills/my-skill/SKILL.md
+                  - text: →
+                  - code [ref=e1828]: SKILL.md
+                  - text: )
+              - paragraph [ref=e1829]:
+                - text: If
+                - code [ref=e1830]: "{path}"
+                - text: is a file and its basename is not
+                - code [ref=e1831]: SKILL.md
+                - text: ", warn: \"Warning: file is not named SKILL.md — Claude Code may not auto-load this as a skill.\" Then continue."
+              - paragraph [ref=e1832]:
+                - strong [ref=e1833]: "Change detection:"
+              - code [ref=e1835]: "local_sha=$(git hash-object ~/.claude/skills/{name}/{relative_path} 2>/dev/null || echo \"\")"
+              - paragraph [ref=e1836]:
+                - text: If
+                - code [ref=e1837]: local_sha == file.sha
+                - text: → mark this file as
+                - strong [ref=e1838]: unchanged
+                - text: ", skip the write."
+              - paragraph [ref=e1839]:
+                - strong [ref=e1840]: "Write file:"
+              - code [ref=e1842]: "mkdir -p \"$(dirname ~/.claude/skills/{name}/{relative_path})\" b64content='{file.content}' # macOS: printf '%s' \"$b64content\" | base64 -D > ~/.claude/skills/{name}/{relative_path} # Linux: printf '%s' \"$b64content\" | base64 -d > ~/.claude/skills/{name}/{relative_path}"
+              - paragraph [ref=e1843]:
+                - text: "Note:"
+                - code [ref=e1844]: file.content
+                - text: from GitHub API contains embedded newlines in the base64 string. Assigning to a variable first and using
+                - code [ref=e1845]: printf '%s' "$b64content"
+                - text: handles this correctly;
+                - code [ref=e1846]: base64
+                - text: ignores whitespace during decode.
+              - paragraph [ref=e1847]:
+                - strong [ref=e1848]: "Track result per skill:"
+              - list [ref=e1849]:
+                - listitem [ref=e1850]:
+                  - text: Any file written → skill result =
+                  - code [ref=e1851]: updated
+                - listitem [ref=e1852]:
+                  - text: All files unchanged → skill result =
+                  - code [ref=e1853]: unchanged
+                - listitem [ref=e1854]:
+                  - text: Any error during write → skill result =
+                  - code [ref=e1855]: failed
+                  - text: with error detail
+              - heading "Sync Report" [level=2] [ref=e1856]
+              - paragraph [ref=e1857]: "Print after every sync operation:"
+              - code [ref=e1859]: "Synced N skills: ✓ updated skill-a = unchanged skill-b ✗ failed skill-c (repo or path not found)"
+              - heading "Scan Report" [level=2] [ref=e1860]
+              - code [ref=e1862]: "Scan found N orphaned entries (local dir missing): - old-skill → removed from skill-sync.yml"
+          - listitem [ref=e1863]:
+            - generic [ref=e1864]:
+              - generic [ref=e1865]: thinking
+              - generic [ref=e1866]: 21:30:30
+            - generic [ref=e1867]: (empty)
+          - listitem [ref=e1868]:
+            - generic [ref=e1869]:
+              - generic [ref=e1870]: text
+              - generic [ref=e1871]: 21:30:30
+            - paragraph [ref=e1874]:
+              - text: Manifest presente. Fetch skill
+              - code [ref=e1875]: bpmn-io-discovery
+              - text: — controllo SHA locali vs remoti.
+          - listitem [ref=e1876]:
+            - generic [ref=e1877]:
+              - generic [ref=e1878]: tool_use
+              - generic [ref=e1879]: 21:30:31
+            - generic [ref=e1880]:
+              - text: Bash
+              - code [ref=e1881]: "{\"command\":\"git hash-object ~/.claude/skills/bpmn-io-discovery/SKILL.md 2>/dev/null || echo \\\"\\\"\",\"description\":\"Local SHA for SKILL.md\"}"
+          - listitem [ref=e1882]:
+            - generic [ref=e1883]:
+              - generic [ref=e1884]: tool_use
+              - generic [ref=e1885]: 21:30:32
+            - generic [ref=e1886]:
+              - text: Bash
+              - code [ref=e1887]: "{\"command\":\"git hash-object ~/.claude/skills/bpmn-io-discovery/UPDATE.md 2>/dev/null || echo \\\"\\\"\",\"description\":\"Local SHA for UPDATE.md\"}"
+          - listitem [ref=e1888]:
+            - generic [ref=e1889]:
+              - generic [ref=e1890]: tool_use
+              - generic [ref=e1891]: 21:30:33
+            - generic [ref=e1892]:
+              - text: Bash
+              - code [ref=e1893]: "{\"command\":\"git hash-object ~/.claude/skills/bpmn-io-discovery/repositories.json 2>/dev/null || echo \\\"\\\"\",\"description\":\"Local SHA for repositories.json\"}"
+          - listitem [ref=e1894]:
+            - generic [ref=e1895]:
+              - generic [ref=e1896]: tool_result
+              - generic [ref=e1897]: 21:30:33
+            - generic [ref=e1898]:
+              - text: ok
+              - code [ref=e1899]: 9f51852feabb26220d56467f07de3567d4dc722f
+          - listitem [ref=e1900]:
+            - generic [ref=e1901]:
+              - generic [ref=e1902]: tool_use
+              - generic [ref=e1903]: 21:30:34
+            - generic [ref=e1904]:
+              - text: Bash
+              - code [ref=e1905]: "{\"command\":\"gh api \\\"repos/bpmn-io/internal-docs/contents/development/ai-prompts/claude/skills/bpmn-io-discovery?ref=main\\\" --jq '[.[] | {name: .name, sha: .sha}]'\",\"description\":\"Remote SHAs for all files\"}"
+          - listitem [ref=e1906]:
+            - generic [ref=e1907]:
+              - generic [ref=e1908]: tool_result
+              - generic [ref=e1909]: 21:30:35
+            - generic [ref=e1910]:
+              - text: ok
+              - code [ref=e1911]: e6863bf1f2b65c5eac0d9d0da1194839a24c529b
+          - listitem [ref=e1912]:
+            - generic [ref=e1913]:
+              - generic [ref=e1914]: tool_result
+              - generic [ref=e1915]: 21:30:37
+            - generic [ref=e1916]:
+              - text: ok
+              - code [ref=e1917]: 14446794488c64fe34f9cadcea67db1ae22be0ed
+          - listitem [ref=e1918]:
+            - generic [ref=e1919]:
+              - generic [ref=e1920]: tool_result
+              - generic [ref=e1921]: 21:30:38
+            - generic [ref=e1922]:
+              - text: ok
+              - code [ref=e1923]: "[{\"name\":\"SKILL.md\",\"sha\":\"9f51852feabb26220d56467f07de3567d4dc722f\"},{\"name\":\"UPDATE.md\",\"sha\":\"e6863bf1f2b65c5eac0d9d0da1194839a24c529b\"},{\"name\":\"repositories.json\",\"sha\":\"14446794488c64fe34f9cadce"
+          - listitem [ref=e1924]:
+            - generic [ref=e1925]:
+              - generic [ref=e1926]: text
+              - generic [ref=e1927]: 21:30:41
+            - generic [ref=e1929]:
+              - paragraph [ref=e1930]: Tutti i SHA coincidono — nessun file cambiato.
+              - code [ref=e1932]: "Synced 1 skill: = unchanged bpmn-io-discovery"
+  - separator "Resize event stream" [ref=e44]
+  - complementary [ref=e46]:
+    - generic [ref=e47]:
+      - heading "EVENT STREAM" [level=4] [ref=e48]
+      - generic [ref=e49]: live
+    - generic [ref=e51]:
+      - combobox "Filter by project slug" [ref=e52]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e53] [cursor=pointer]
+    - generic [ref=e55]: Connected · 2 client(s)

@@ -25,36 +25,51 @@ describe("readPlugins", () => {
     expect(readPlugins([rootOf(dir)])).toEqual([]);
   });
 
-  it("returns plugin entries normalized from installed_plugins.json (object form)", () => {
+  it("reads v2 installed_plugins.json and joins enabled flags from settings.json", () => {
     mkdirSync(join(dir, "plugins"));
     writeFileSync(
       join(dir, "plugins", "installed_plugins.json"),
       JSON.stringify({
-        "superpowers@official": { source: "official", enabled: true, version: "5.1.0" },
-        "figma@official": { source: "official", enabled: false },
+        version: 2,
+        plugins: {
+          "superpowers@claude-plugins-official": [
+            { scope: "user", installPath: "/p/superpowers/5.1.0", version: "5.1.0" },
+          ],
+          "caveman@caveman": [{ scope: "user", installPath: "/p/caveman/abc", version: "abc" }],
+        },
       })
     );
+    writeFileSync(
+      join(dir, "settings.json"),
+      JSON.stringify({ enabledPlugins: { "superpowers@claude-plugins-official": true } })
+    );
+
     const items = readPlugins([rootOf(dir)]).sort((a, b) => a.id.localeCompare(b.id));
-    expect(items.map((i) => i.id)).toEqual(["figma@official", "superpowers@official"]);
-    expect(items[1]!.enabled).toBe(true);
-    expect(items[1]!.version).toBe("5.1.0");
+    expect(items.map((i) => i.id)).toEqual([
+      "caveman@caveman",
+      "superpowers@claude-plugins-official",
+    ]);
+    const sp = items[1]!;
+    expect(sp.source).toBe("claude-plugins-official");
+    expect(sp.version).toBe("5.1.0");
+    expect(sp.installPath).toBe("/p/superpowers/5.1.0");
+    expect(sp.enabled).toBe(true);
+    expect(items[0]!.enabled).toBe(false); // caveman absent from enabledPlugins
+    expect(items[0]!.source).toBe("caveman");
   });
 
-  it("returns plugin entries normalized from installed_plugins.json (array form)", () => {
+  it("returns [] when JSON is malformed", () => {
+    mkdirSync(join(dir, "plugins"));
+    writeFileSync(join(dir, "plugins", "installed_plugins.json"), "{ not json");
+    expect(readPlugins([rootOf(dir)])).toEqual([]);
+  });
+
+  it("skips ids whose install list is empty", () => {
     mkdirSync(join(dir, "plugins"));
     writeFileSync(
       join(dir, "plugins", "installed_plugins.json"),
-      JSON.stringify([{ id: "p1", source: "x", enabled: true }])
+      JSON.stringify({ version: 2, plugins: { "ghost@mp": [] } })
     );
-    const items = readPlugins([rootOf(dir)]);
-    expect(items).toEqual([
-      { rootPath: realpathSync(dir), id: "p1", source: "x", enabled: true, version: "" },
-    ]);
-  });
-
-  it("returns [] and does not throw when JSON is malformed", () => {
-    mkdirSync(join(dir, "plugins"));
-    writeFileSync(join(dir, "plugins", "installed_plugins.json"), "{ not json");
     expect(readPlugins([rootOf(dir)])).toEqual([]);
   });
 });

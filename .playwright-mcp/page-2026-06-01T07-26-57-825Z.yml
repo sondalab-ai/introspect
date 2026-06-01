@@ -1,0 +1,492 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [ref=e40] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "120%" [ref=e43] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: Sessions · History
+    - generic [ref=e165]:
+      - generic [ref=e166]:
+        - generic [ref=e167]: Sessions (115)
+        - textbox "Cerca…" [ref=e168]
+        - generic [ref=e169] [cursor=pointer]:
+          - generic [ref=e170]: /sync-skills
+          - generic [ref=e171]: 15 h fa · 43 h 39 min · src · 15 msg
+        - generic [ref=e172] [cursor=pointer]:
+          - generic [ref=e173]: sessione 037d59bf
+          - generic [ref=e174]: 2 g fa · 11 min · src · 9 msg
+        - generic [ref=e175] [cursor=pointer]:
+          - generic [ref=e176]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e177]: 2 g fa · 17 s · tmp · 3 msg
+        - generic [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]: /sync-skills
+          - generic [ref=e180]: 2 g fa · 13 min · src · 63 msg
+        - generic [ref=e181] [cursor=pointer]:
+          - generic [ref=e182]: instead of asking separate steps for owner/repo and path, ask a unique URL and derive the info from it. E.g. https://github.com/bpmn-io/inte
+          - generic [ref=e183]: 2 g fa · 19 min · sync-skills-plugin · 100 msg
+        - generic [ref=e184] [cursor=pointer]:
+          - generic [ref=e185]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e186]: 2 g fa · 10 s · tmp · 3 msg
+        - generic [ref=e187] [cursor=pointer]:
+          - generic [ref=e188]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e189]: 2 g fa · 18 s · tmp · 3 msg
+        - generic [ref=e190] [cursor=pointer]:
+          - generic [ref=e191]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e192]: 2 g fa · 11 s · tmp · 3 msg
+        - generic [ref=e193] [cursor=pointer]:
+          - generic [ref=e194]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e195]: 2 g fa · 23 s · tmp · 3 msg
+        - generic [ref=e196] [cursor=pointer]:
+          - generic [ref=e197]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e198]: 2 g fa · 13 s · tmp · 3 msg
+        - generic [ref=e199] [cursor=pointer]:
+          - generic [ref=e200]: sessione 418105d9
+          - generic [ref=e201]: 2 g fa · 9 h 3 min · src · 375 msg
+        - generic [ref=e202] [cursor=pointer]:
+          - generic [ref=e203]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e204]: 3 g fa · 24 s · tmp · 3 msg
+        - generic [ref=e205] [cursor=pointer]:
+          - generic [ref=e206]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e207]: 3 g fa · 38 s · tmp · 3 msg
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e210]: 3 g fa · 9 s · tmp · 3 msg
+        - generic [ref=e211] [cursor=pointer]:
+          - generic [ref=e212]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e213]: 3 g fa · 11 s · tmp · 3 msg
+        - generic [ref=e214] [cursor=pointer]:
+          - generic [ref=e215]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e216]: 3 g fa · 15 s · tmp · 3 msg
+        - generic [ref=e217] [cursor=pointer]:
+          - generic [ref=e218]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e219]: 3 g fa · 5 s · tmp · 3 msg
+        - generic [ref=e220] [cursor=pointer]:
+          - generic [ref=e221]: "A colleague of mine complains that ## Vision and strategic context on 3499 solution proposal is too technical, and suggests reading https://"
+          - generic [ref=e222]: 3 g fa · 24 h 17 min · product-epics-pilot · 516 msg
+        - generic [ref=e223] [cursor=pointer]:
+          - generic [ref=e224]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e225]: 3 g fa · 9 s · tmp · 3 msg
+        - generic [ref=e226] [cursor=pointer]:
+          - generic [ref=e227]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e228]: 3 g fa · 23 s · tmp · 3 msg
+        - generic [ref=e229] [cursor=pointer]:
+          - generic [ref=e230]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e231]: 3 g fa · 28 s · tmp · 3 msg
+        - generic [ref=e232] [cursor=pointer]:
+          - generic [ref=e233]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e234]: 3 g fa · 12 s · tmp · 3 msg
+        - generic [ref=e235] [cursor=pointer]:
+          - generic [ref=e236]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e237]: 3 g fa · 29 s · tmp · 3 msg
+        - generic [ref=e238] [cursor=pointer]:
+          - generic [ref=e239]: You are a memory consolidation agent. Your job is mechanical compression — no creativity, no opinions, no new content.
+          - generic [ref=e240]: 3 g fa · 23 s · T · 3 msg
+        - generic [ref=e241] [cursor=pointer]:
+          - generic [ref=e242]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e243]: 3 g fa · 3 h 24 min · tmp · 2 msg
+        - generic [ref=e244] [cursor=pointer]:
+          - generic [ref=e245]: You are a memory consolidation agent. Your job is mechanical compression — no creativity, no opinions, no new content.
+          - generic [ref=e246]: 3 g fa · 3 h 9 min · T · 2 msg
+        - generic [ref=e247] [cursor=pointer]:
+          - generic [ref=e248]: You are a memory consolidation agent. Your job is mechanical compression — no creativity, no opinions, no new content.
+          - generic [ref=e249]: 3 g fa · 3 h 9 min · T · 2 msg
+        - generic [ref=e250] [cursor=pointer]:
+          - generic [ref=e251]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e252]: 3 g fa · 1 h 34 min · tmp · 3 msg
+        - generic [ref=e253] [cursor=pointer]:
+          - generic [ref=e254]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e255]: 3 g fa · 16 s · tmp · 3 msg
+        - generic [ref=e256] [cursor=pointer]:
+          - generic [ref=e257]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e258]: 3 g fa · 17 s · tmp · 3 msg
+        - generic [ref=e259] [cursor=pointer]:
+          - generic [ref=e260]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e261]: 3 g fa · 23 s · tmp · 3 msg
+        - generic [ref=e262] [cursor=pointer]:
+          - generic [ref=e263]: restore
+          - generic [ref=e264]: 3 g fa · 1 s · product-epics-pilot · 1 msg
+        - generic [ref=e265] [cursor=pointer]:
+          - generic [ref=e266]: resume
+          - generic [ref=e267]: 3 g fa · 32 s · product-epics-pilot · 6 msg
+        - generic [ref=e268] [cursor=pointer]:
+          - generic [ref=e269]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e270]: 3 g fa · 26 s · tmp · 3 msg
+        - generic [ref=e271] [cursor=pointer]:
+          - generic [ref=e272]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e273]: 4 g fa · 32 s · tmp · 3 msg
+        - generic [ref=e274] [cursor=pointer]:
+          - generic [ref=e275]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e276]: 4 g fa · 11 s · tmp · 3 msg
+        - generic [ref=e277] [cursor=pointer]:
+          - generic [ref=e278]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e279]: 4 g fa · 18 s · tmp · 3 msg
+        - generic [ref=e280] [cursor=pointer]:
+          - generic [ref=e281]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e282]: 4 g fa · 12 s · tmp · 3 msg
+        - generic [ref=e283] [cursor=pointer]:
+          - generic [ref=e284]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e285]: 4 g fa · 33 s · tmp · 3 msg
+        - generic [ref=e286] [cursor=pointer]:
+          - generic [ref=e287]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e288]: 4 g fa · 14 s · tmp · 3 msg
+        - generic [ref=e289] [cursor=pointer]:
+          - generic [ref=e290]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e291]: 4 g fa · 19 s · tmp · 3 msg
+        - generic [ref=e292] [cursor=pointer]:
+          - generic [ref=e293]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e294]: 4 g fa · 12 s · tmp · 3 msg
+        - generic [ref=e295] [cursor=pointer]:
+          - generic [ref=e296]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e297]: 4 g fa · 14 s · tmp · 3 msg
+        - generic [ref=e298] [cursor=pointer]:
+          - generic [ref=e299]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e300]: 4 g fa · 18 s · tmp · 3 msg
+        - generic [ref=e301] [cursor=pointer]:
+          - generic [ref=e302]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e303]: 4 g fa · 30 s · tmp · 3 msg
+        - generic [ref=e304] [cursor=pointer]:
+          - generic [ref=e305]: You are a memory consolidation agent. Your job is mechanical compression — no creativity, no opinions, no new content.
+          - generic [ref=e306]: 5 g fa · 15 s · T · 3 msg
+        - generic [ref=e307] [cursor=pointer]:
+          - generic [ref=e308]: given 3495-non-flaky-agentic-test-execution.md produce a spec file in the same folder, follow the repo's guidelines first, grill me to ensur
+          - generic [ref=e309]: 6 g fa · 24 h 14 min · testing-camunda-agents · 231 msg
+        - generic [ref=e310] [cursor=pointer]:
+          - generic [ref=e311]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e312]: 6 g fa · 14 s · tmp · 3 msg
+        - generic [ref=e313] [cursor=pointer]:
+          - generic [ref=e314]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e315]: 6 g fa · 22 s · tmp · 3 msg
+        - generic [ref=e316] [cursor=pointer]:
+          - generic [ref=e317]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e318]: 5/25/2026 · 11 s · tmp · 3 msg
+        - generic [ref=e319] [cursor=pointer]:
+          - generic [ref=e320]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e321]: 5/25/2026 · 14 s · tmp · 3 msg
+        - generic [ref=e322] [cursor=pointer]:
+          - generic [ref=e323]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e324]: 5/25/2026 · 8 s · tmp · 3 msg
+        - generic [ref=e325] [cursor=pointer]:
+          - generic [ref=e326]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e327]: 5/25/2026 · 16 s · tmp · 3 msg
+        - generic [ref=e328] [cursor=pointer]:
+          - generic [ref=e329]: voglio un modo per poter debuggare, comprendere meglio, ispezionare, rivedere, eventualmente revertare, qualsiasi decisione presa da te o da
+          - generic [ref=e330]: 5/25/2026 · 2 h 56 min · .claude · 351 msg
+        - generic [ref=e331] [cursor=pointer]:
+          - generic [ref=e332]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e333]: 5/25/2026 · 15 s · tmp · 3 msg
+        - generic [ref=e334] [cursor=pointer]:
+          - generic [ref=e335]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e336]: 5/25/2026 · 38 s · tmp · 3 msg
+        - generic [ref=e337] [cursor=pointer]:
+          - generic [ref=e338]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e339]: 5/25/2026 · 27 s · tmp · 3 msg
+        - generic [ref=e340] [cursor=pointer]:
+          - generic [ref=e341]: sessione b2b815e2
+          - generic [ref=e342]: 5/25/2026 · 1 h 18 min · product-epics-pilot · 171 msg
+        - generic [ref=e343] [cursor=pointer]:
+          - generic [ref=e344]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e345]: 5/25/2026 · 11 s · tmp · 3 msg
+        - generic [ref=e346] [cursor=pointer]:
+          - generic [ref=e347]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e348]: 5/25/2026 · 16 s · tmp · 3 msg
+        - generic [ref=e349] [cursor=pointer]:
+          - generic [ref=e350]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e351]: 5/25/2026 · 20 s · tmp · 3 msg
+        - generic [ref=e352] [cursor=pointer]:
+          - generic [ref=e353]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e354]: 5/25/2026 · 31 s · tmp · 3 msg
+        - generic [ref=e355] [cursor=pointer]:
+          - generic [ref=e356]: You are a memory consolidation agent. Your job is mechanical compression — no creativity, no opinions, no new content.
+          - generic [ref=e357]: 5/25/2026 · 13 s · T · 3 msg
+        - generic [ref=e358] [cursor=pointer]:
+          - generic [ref=e359]: Produce a DRI status report now. For every spec in docs/specs/, compare its acceptance criteria and frontmatter status against the current c
+          - generic [ref=e360]: 5/24/2026 · 6 s · spexr · 2 msg
+        - generic [ref=e361] [cursor=pointer]:
+          - generic [ref=e362]: Produce a DRI status report now. For every spec in docs/specs/, compare its acceptance criteria and frontmatter status against the current c
+          - generic [ref=e363]: 5/24/2026 · 33 s · spexr · 23 msg
+        - generic [ref=e364] [cursor=pointer]:
+          - generic [ref=e365]: Produce a DRI status report now. For every spec in docs/specs/, compare its acceptance criteria and frontmatter status against the current c
+          - generic [ref=e366]: 5/24/2026 · 4 min · spexr · 63 msg
+        - generic [ref=e367] [cursor=pointer]:
+          - generic [ref=e368]: sessione 197928db
+          - generic [ref=e369]: 5/23/2026 · 23 s · test-spexr · 6 msg
+        - generic [ref=e370] [cursor=pointer]:
+          - generic [ref=e371]: sessione 67c8635f
+          - generic [ref=e372]: 5/22/2026 · 6 s · test-spexr · 3 msg
+        - generic [ref=e373] [cursor=pointer]:
+          - generic [ref=e374]: sessione 216b412b
+          - generic [ref=e375]: 5/22/2026 · 22 min · camunda-hub · 118 msg
+        - generic [ref=e376] [cursor=pointer]:
+          - generic [ref=e377]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e378]: 5/22/2026 · 21 s · tmp · 3 msg
+        - generic [ref=e379] [cursor=pointer]:
+          - generic [ref=e380]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e381]: 5/22/2026 · 14 s · tmp · 3 msg
+        - generic [ref=e382] [cursor=pointer]:
+          - generic [ref=e383]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e384]: 5/22/2026 · 14 s · tmp · 3 msg
+        - generic [ref=e385] [cursor=pointer]:
+          - generic [ref=e386]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e387]: 5/22/2026 · 27 s · tmp · 3 msg
+        - generic [ref=e388] [cursor=pointer]:
+          - generic [ref=e389]: sessione e71d8bc2
+          - generic [ref=e390]: 5/22/2026 · 19 min · camunda-hub · 73 msg
+        - generic [ref=e391] [cursor=pointer]:
+          - generic [ref=e392]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e393]: 5/22/2026 · 21 s · tmp · 3 msg
+        - generic [ref=e394] [cursor=pointer]:
+          - generic [ref=e395]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e396]: 5/22/2026 · 11 s · tmp · 3 msg
+        - generic [ref=e397] [cursor=pointer]:
+          - generic [ref=e398]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e399]: 5/22/2026 · 14 s · tmp · 3 msg
+        - generic [ref=e400] [cursor=pointer]:
+          - generic [ref=e401]: sessione d823952e
+          - generic [ref=e402]: 5/22/2026 · 21 min · camunda-hub · 37 msg
+        - generic [ref=e403] [cursor=pointer]:
+          - generic [ref=e404]: "Apply maximum non-destructive compression. Rules:"
+          - generic [ref=e405]: 5/22/2026 · 13 s · tmp · 3 msg
+        - generic [ref=e406] [cursor=pointer]:
+          - generic [ref=e407]: You are summarizing a Claude Code session for a daily memory log.
+          - generic [ref=e408]: 5/22/2026 · 15 s · tmp · 3 msg
+        - generic [ref=e409] [cursor=pointer]:
+          - generic [ref=e410]: what happens if I have the same skill on different levels on the system
+          - generic [ref=e411]: 5/21/2026 · 2 min · skills · 11 msg
+        - generic [ref=e412] [cursor=pointer]:
+          - generic [ref=e413]: can I add skills to my ~/.claude folder so that they are accessible globally?
+          - generic [ref=e414]: 5/21/2026 · 7 min · .claude · 18 msg
+        - generic [ref=e415] [cursor=pointer]:
+          - generic [ref=e416]: add a point to my local CLAUDE that instructs the agent to always use plan mode autonomously when big topics are being discussed or if new t
+          - generic [ref=e417]: 5/21/2026 · 19 min · marcello.barile · 55 msg
+        - generic [ref=e418] [cursor=pointer]:
+          - generic [ref=e419]: the PR now contains 2 solution proposals, a global/generic spec file, a spec file for implementing branch 2. It looks a bit chaotic; how cou
+          - generic [ref=e420]: 5/21/2026 · 22 h 25 min · product-epics-pilot · 91 msg
+        - generic [ref=e421] [cursor=pointer]:
+          - generic [ref=e422]: recupera ultima sessione
+          - generic [ref=e423]: 5/20/2026 · 47 h 12 min · camunda-hub · 945 msg
+        - generic [ref=e424] [cursor=pointer]:
+          - generic [ref=e425]: "ci sono un po' di aggiornamenti: const results = await Promise.all("
+          - generic [ref=e426]: 5/18/2026 · 5 h 42 min · camunda-hub · 789 msg
+        - generic [ref=e427] [cursor=pointer]:
+          - generic [ref=e428]: vorrei inserire un agente nel mio sistema che faccia audit di cybersecurity a richiesta, cosa mi consigli; deve essere in condvisione con tu
+          - generic [ref=e429]: 5/18/2026 · 8 min · marcello.barile · 19 msg
+        - generic [ref=e430] [cursor=pointer]:
+          - generic [ref=e431]: considerando /Users/marcello.barile/src/product-epics-pilot/initiatives/testing-camunda-agents/3499-low-code-test-bpmn-coverage-branch2.spec
+          - generic [ref=e432]: 5/15/2026 · 42 h 9 min · camunda-hub · 1618 msg
+        - generic [ref=e433] [cursor=pointer]:
+          - generic [ref=e434]: sessione 319dab42
+          - generic [ref=e435]: 5/13/2026 · 2 h 26 min · testing-camunda-agents · 96 msg
+        - generic [ref=e436] [cursor=pointer]:
+          - generic [ref=e437]: I'm proceeding with the implementation of branch 1 tasks, and I want to start preparing the branch 2. If I remember correctly there are cros
+          - generic [ref=e438]: 5/13/2026 · 193 h 41 min · testing-camunda-agents · 47 msg
+        - generic [ref=e439] [cursor=pointer]:
+          - generic [ref=e440]: "is } from \"bpmn-js/lib/util/ModelUtil\"; sometimes matches lowercase others PascalCase. Expain why"
+          - generic [ref=e441]: 5/12/2026 · 8 min · camunda-hub · 45 msg
+        - generic [ref=e442] [cursor=pointer]:
+          - generic [ref=e443]: https://github.com/camunda/camunda-hub/pull/23877 there are a bunch of minor comments from copilot that are worth being picked up - do not c
+          - generic [ref=e444]: 5/11/2026 · 12 min · camunda-hub · 49 msg
+        - generic [ref=e445] [cursor=pointer]:
+          - generic [ref=e446]: sessione 7fff9e4e
+          - generic [ref=e447]: 5/8/2026 · 26 min · camunda-hub · 25 msg
+        - generic [ref=e448] [cursor=pointer]:
+          - generic [ref=e449]: sessione 0bbcc910
+          - generic [ref=e450]: 5/8/2026 · 4 h 35 min · camunda-hub · 657 msg
+        - generic [ref=e451] [cursor=pointer]:
+          - generic [ref=e452]: this pr https://github.com/camunda/camunda-hub/pull/23877 was already polished, but Sara and copilot still have comments to tackle
+          - generic [ref=e453]: 5/8/2026 · 27 min · camunda-hub · 98 msg
+        - generic [ref=e454] [cursor=pointer]:
+          - generic [ref=e455]: sessione 195439d8
+          - generic [ref=e456]: 5/8/2026 · 20 h 23 min · camunda-hub · 670 msg
+        - generic [ref=e457] [cursor=pointer]:
+          - generic [ref=e458]: ho provato a caricare una prima foto, tutto sembra funzionare, la vedo caricata sul filesystem, ma le query GET (quindi nella dashboard di a
+          - generic [ref=e459]: 5/6/2026 · 5 h 6 min · sguardo-a-nord · 112 msg
+        - generic [ref=e460] [cursor=pointer]:
+          - generic [ref=e461]: as a followup of supporting feel on certain fields and end execution listeners, we can try tackling https://github.com/camunda/camunda-hub/i
+          - generic [ref=e462]: 5/6/2026 · 31 h 47 min · camunda-hub · 1451 msg
+        - generic [ref=e463] [cursor=pointer]:
+          - generic [ref=e464]: how to configure caveman to speak italian
+          - generic [ref=e465]: 5/6/2026 · 2 min · camunda-hub · 17 msg
+        - generic [ref=e466] [cursor=pointer]:
+          - generic [ref=e467]: sto testando la skill caveman
+          - generic [ref=e468]: 5/6/2026 · 1 min · camunda-hub · 7 msg
+        - generic [ref=e469] [cursor=pointer]:
+          - generic [ref=e470]: ho caricato 36 foto ma ne vedo solo 6 nella chat e l'agente ne ha contate 4
+          - generic [ref=e471]: 5/6/2026 · 56 min · local-agents · 174 msg
+        - generic [ref=e472] [cursor=pointer]:
+          - generic [ref=e473]: sessione f6918488
+          - generic [ref=e474]: 5/5/2026 · 23 s · camunda-hub · 18 msg
+        - generic [ref=e475] [cursor=pointer]:
+          - generic [ref=e476]: during benchmarks, always unload models first and then load the benchmarked one - ensure that the full system resource is available
+          - generic [ref=e477]: 5/4/2026 · 1 h 2 min · local-agents · 97 msg
+        - generic [ref=e478] [cursor=pointer]:
+          - generic [ref=e479]: after the merge, the demo bpmn that I was using (
+          - generic [ref=e480]: 5/4/2026 · 2 h 31 min · camunda-hub · 525 msg
+        - generic [ref=e481] [cursor=pointer]:
+          - generic [ref=e482]: how to use two claude accounts on the same machine
+          - generic [ref=e483]: 5/4/2026 · 50 s · play · 5 msg
+        - generic [ref=e484] [cursor=pointer]:
+          - generic [ref=e485]: running npm run playwright -- e2e/tests there are tests that are failing
+          - generic [ref=e486]: 5/4/2026 · 95 h 4 min · camunda-hub · 341 msg
+        - generic [ref=e487] [cursor=pointer]:
+          - generic [ref=e488]: when rebasing this with main there are conflicts hard to handle manually without invlving the engineer that made the changes. Can you help m
+          - generic [ref=e489]: 5/4/2026 · 1 h 15 min · play · 177 msg
+        - generic [ref=e490] [cursor=pointer]:
+          - generic [ref=e491]: the router can redirect complex prompts to cloud models but I don't see a place in the models section to configure those remote ones as fall
+          - generic [ref=e492]: 5/3/2026 · 7 min · local-agents · 80 msg
+        - generic [ref=e493] [cursor=pointer]:
+          - generic [ref=e494]: test
+          - generic [ref=e495]: 5/3/2026 · 4 min · local-agents · 6 msg
+        - generic [ref=e496] [cursor=pointer]:
+          - generic [ref=e497]: test
+          - generic [ref=e498]: 5/3/2026 · 2 min · local-agents · 1 msg
+        - generic [ref=e499] [cursor=pointer]:
+          - generic [ref=e500]: test
+          - generic [ref=e501]: 5/3/2026 · 4 s · local-agents · 2 msg
+        - generic [ref=e502] [cursor=pointer]:
+          - generic [ref=e503]: I ran a new claude session but I still see Opus 4.7 as a model, I was expecting my local LMStudio one to be used
+          - generic [ref=e504]: 5/3/2026 · 5 min · local-agents · 34 msg
+        - generic [ref=e505] [cursor=pointer]:
+          - generic [ref=e506]: echo $ANTHROPIC_BASE_URL shows nothing despite I have the .envrc file created
+          - generic [ref=e507]: 5/3/2026 · 11 min · local-agents · 46 msg
+        - generic [ref=e508] [cursor=pointer]:
+          - generic [ref=e509]: can I run the docker on my chateau 5g r17 ax ?
+          - generic [ref=e510]: 5/3/2026 · 19 h 28 min · local-agents · 76 msg
+        - generic [ref=e511] [cursor=pointer]:
+          - generic [ref=e512]: sessione 8f0bb88b
+          - generic [ref=e513]: 0 msg
+      - separator "Resize list pane" [ref=e514]
+      - generic [ref=e517]:
+        - heading "/sync-skills" [level=2] [ref=e519]
+        - generic "-Users-marcello-barile-src" [ref=e520]: ~/src · 14e9c387-a2d6-4ae0-a7ea-4b690a208be5
+        - generic [ref=e521]:
+          - term [ref=e522]: first
+          - definition [ref=e523]: 5/29/2026, 11:16:03 PM
+          - term [ref=e524]: last
+          - definition [ref=e525]: 5/31/2026, 6:55:09 PM
+          - term [ref=e526]: cwd
+          - definition [ref=e527]: /Users/marcello.barile/src
+          - term [ref=e528]: git branch
+          - definition [ref=e529]: HEAD
+          - term [ref=e530]: models
+          - definition [ref=e531]: claude-sonnet-4-6
+          - term [ref=e532]: messages
+          - definition [ref=e533]: user 6 · assistant 9 · sidechain 0
+          - term [ref=e534]: tool calls
+          - definition [ref=e535]: "3"
+          - term [ref=e536]: subagents
+          - definition [ref=e537]: "0"
+          - term [ref=e538]: tokens
+          - definition [ref=e539]: "1854"
+        - generic [ref=e540]:
+          - heading "Timeline" [level=3] [ref=e541]
+          - generic [ref=e542]:
+            - button "Timeline" [ref=e543] [cursor=pointer]
+            - button "Events" [ref=e544] [cursor=pointer]
+            - button "Graph" [ref=e545] [cursor=pointer]
+        - generic [ref=e546]:
+          - generic [ref=e549]:
+            - generic:
+              - generic: ⋯ 18.4 s
+            - generic:
+              - generic: ⋯ 2616m 14s
+            - generic "user · user" [ref=e551] [cursor=pointer]:
+              - generic [ref=e553]: user
+              - generic [ref=e554]: user
+            - generic "user · user" [ref=e558] [cursor=pointer]:
+              - generic [ref=e560]: user
+              - generic [ref=e561]: user
+            - generic "thinking · think" [ref=e565] [cursor=pointer]:
+              - generic [ref=e567]: thinking
+              - generic [ref=e568]: think
+            - generic "text · say" [ref=e572] [cursor=pointer]:
+              - generic [ref=e574]: text
+              - generic [ref=e575]: say
+            - generic [ref=e578] [cursor=pointer]:
+              - generic "tool_use · Bash" [ref=e579]:
+                - generic [ref=e581]: tool_use
+                - generic [ref=e582]: Bash
+              - generic [ref=e583]:
+                - generic: 4.60 s
+            - generic [ref=e585] [cursor=pointer]:
+              - generic "tool_use · Bash" [ref=e586]:
+                - generic [ref=e588]: tool_use
+                - generic [ref=e589]: Bash
+              - generic [ref=e590]:
+                - generic: 7.57 s
+            - generic "tool_result · ok" [ref=e593] [cursor=pointer]:
+              - generic [ref=e595]: tool_result
+              - generic [ref=e596]: ok
+            - generic "tool_result · ok" [ref=e600] [cursor=pointer]:
+              - generic [ref=e602]: tool_result
+              - generic [ref=e603]: ok
+            - generic "thinking · think" [ref=e607] [cursor=pointer]:
+              - generic [ref=e609]: thinking
+              - generic [ref=e610]: think
+            - generic "text · say" [ref=e614] [cursor=pointer]:
+              - generic [ref=e616]: text
+              - generic [ref=e617]: say
+            - generic [ref=e620] [cursor=pointer]:
+              - generic "tool_use · Bash" [ref=e621]:
+                - generic [ref=e623]: tool_use
+                - generic [ref=e624]: Bash
+              - generic [ref=e625]:
+                - generic: 18.4 s
+            - generic "tool_result · ok" [ref=e628] [cursor=pointer]:
+              - generic [ref=e630]: tool_result
+              - generic [ref=e631]: ok
+            - generic "thinking · think" [ref=e635] [cursor=pointer]:
+              - generic [ref=e637]: thinking
+              - generic [ref=e638]: think
+            - generic "text · say" [ref=e642] [cursor=pointer]:
+              - generic [ref=e644]: text
+              - generic [ref=e645]: say
+            - generic "user · user" [ref=e649] [cursor=pointer]:
+              - generic [ref=e651]: user
+              - generic [ref=e652]: user
+          - generic [ref=e655]: Click su una riga per i dettagli. Doppio click per saltare all'evento. I tratti ⋯ sono pause compresse.
+          - generic [ref=e656]:
+            - generic [ref=e657]: thinking
+            - generic [ref=e659]: text
+            - generic [ref=e661]: user
+            - generic [ref=e663]: tool_use
+            - generic [ref=e665]: tool_result
+            - generic [ref=e667]: subagent_spawn
+            - generic [ref=e669]: skill_use
+            - generic [ref=e671]: meta
+  - separator "Resize event stream" [ref=e152]
+  - complementary [ref=e154]:
+    - generic [ref=e155]:
+      - heading "EVENT STREAM" [level=4] [ref=e156]
+      - generic [ref=e157]: live
+    - generic [ref=e159]:
+      - combobox "Filter by project slug" [ref=e160]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]: Connected · 2 client(s)

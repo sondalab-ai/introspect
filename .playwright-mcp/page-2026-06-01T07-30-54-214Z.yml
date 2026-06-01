@@ -1,0 +1,168 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]: ◇ introspect
+    - generic [ref=e6]:
+      - generic [ref=e7]: Realtime
+      - generic [ref=e8] [cursor=pointer]:
+        - generic [ref=e9]: Live graph
+        - generic [ref=e10]: ●
+    - generic [ref=e11]:
+      - generic [ref=e12]: Configurazione
+      - generic [ref=e14] [cursor=pointer]: System prompt
+      - generic [ref=e16] [cursor=pointer]: Skills
+      - generic [ref=e18] [cursor=pointer]: Agents
+      - generic [ref=e20] [cursor=pointer]: Commands
+      - generic [ref=e22] [cursor=pointer]: Memories
+      - generic [ref=e24] [cursor=pointer]: Hooks · Perms · Env
+      - generic [ref=e26] [cursor=pointer]: Plugins
+    - generic [ref=e27]:
+      - generic [ref=e28]: Workspace
+      - generic [ref=e30] [cursor=pointer]: Projects
+      - generic [ref=e32] [cursor=pointer]: Sessions · History
+      - generic [ref=e34] [cursor=pointer]: Debug
+    - generic [ref=e35]:
+      - generic [ref=e36]: Portabilità
+      - generic [ref=e38] [cursor=pointer]: Export bundle
+    - generic [ref=e39]:
+      - button "☾ dark" [ref=e40] [cursor=pointer]
+      - generic "Dimensione interfaccia" [ref=e41]:
+        - button "Riduci" [ref=e42] [cursor=pointer]: A−
+        - button "120%" [ref=e43] [cursor=pointer]
+        - button "Aumenta" [ref=e44] [cursor=pointer]: A+
+  - separator "Resize navigation" [ref=e45]
+  - generic [ref=e47]:
+    - generic [ref=e48]: Live graph
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - heading "Live graph" [level=2] [ref=e166]
+        - generic [ref=e167]: live
+      - generic [ref=e169]:
+        - generic [ref=e170]: session
+        - combobox [ref=e171]:
+          - option "auto (ultima attiva)" [selected]
+          - option "/sync-skills — 15 h fa · 43 h 39 min · src"
+          - option "sessione 037d59bf — 2 g fa · 11 min · src"
+          - option "You are summarizing a Claude Code session for a daily me — 2 g fa · 17 s · tmp"
+          - option "/sync-skills — 2 g fa · 13 min · src"
+          - option "instead of asking separate steps for owner/repo and path — 2 g fa · 19 min · sync-skills-plugin"
+          - option "You are summarizing a Claude Code session for a daily me — 2 g fa · 10 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 2 g fa · 18 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 2 g fa · 11 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 2 g fa · 23 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 2 g fa · 13 s · tmp"
+          - option "sessione 418105d9 — 2 g fa · 9 h 3 min · src"
+          - 'option "Apply maximum non-destructive compression. Rules: — 3 g fa · 24 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 38 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 9 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 3 g fa · 11 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 15 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 5 s · tmp"
+          - 'option "A colleague of mine complains that ## Vision and strateg — 3 g fa · 24 h 17 min · product-epics-pilot"'
+          - 'option "Apply maximum non-destructive compression. Rules: — 3 g fa · 9 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 23 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 28 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 3 g fa · 12 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 29 s · tmp"
+          - option "You are a memory consolidation agent. Your job is mechan — 3 g fa · 23 s · T"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 3 h 24 min · tmp"
+          - option "You are a memory consolidation agent. Your job is mechan — 3 g fa · 3 h 9 min · T"
+          - option "You are a memory consolidation agent. Your job is mechan — 3 g fa · 3 h 9 min · T"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 1 h 34 min · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 3 g fa · 16 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 17 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 23 s · tmp"
+          - option "restore — 3 g fa · 1 s · product-epics-pilot"
+          - option "resume — 3 g fa · 32 s · product-epics-pilot"
+          - option "You are summarizing a Claude Code session for a daily me — 3 g fa · 26 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 4 g fa · 32 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 11 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 18 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 4 g fa · 12 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 33 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 14 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 4 g fa · 19 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 12 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 14 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 4 g fa · 18 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 4 g fa · 30 s · tmp"
+          - option "You are a memory consolidation agent. Your job is mechan — 5 g fa · 15 s · T"
+          - option "given 3495-non-flaky-agentic-test-execution.md produce a — 6 g fa · 24 h 14 min · testing-camunda-agents"
+          - 'option "Apply maximum non-destructive compression. Rules: — 6 g fa · 14 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 6 g fa · 22 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/25/2026 · 11 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 14 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/25/2026 · 8 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 16 s · tmp"
+          - option "voglio un modo per poter debuggare, comprendere meglio, — 5/25/2026 · 2 h 56 min · .claude"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/25/2026 · 15 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 38 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 27 s · tmp"
+          - option "sessione b2b815e2 — 5/25/2026 · 1 h 18 min · product-epics-pilot"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/25/2026 · 11 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 16 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/25/2026 · 20 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/25/2026 · 31 s · tmp"
+          - option "You are a memory consolidation agent. Your job is mechan — 5/25/2026 · 13 s · T"
+          - option "Produce a DRI status report now. For every spec in docs/ — 5/24/2026 · 6 s · spexr"
+          - option "Produce a DRI status report now. For every spec in docs/ — 5/24/2026 · 33 s · spexr"
+          - option "Produce a DRI status report now. For every spec in docs/ — 5/24/2026 · 4 min · spexr"
+          - option "sessione 197928db — 5/23/2026 · 23 s · test-spexr"
+          - option "sessione 67c8635f — 5/22/2026 · 6 s · test-spexr"
+          - option "sessione 216b412b — 5/22/2026 · 22 min · camunda-hub"
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 21 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 14 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 14 s · tmp"
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 27 s · tmp"
+          - option "sessione e71d8bc2 — 5/22/2026 · 19 min · camunda-hub"
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 21 s · tmp"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/22/2026 · 11 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 14 s · tmp"
+          - option "sessione d823952e — 5/22/2026 · 21 min · camunda-hub"
+          - 'option "Apply maximum non-destructive compression. Rules: — 5/22/2026 · 13 s · tmp"'
+          - option "You are summarizing a Claude Code session for a daily me — 5/22/2026 · 15 s · tmp"
+          - option "what happens if I have the same skill on different level — 5/21/2026 · 2 min · skills"
+          - option "can I add skills to my ~/.claude folder so that they are — 5/21/2026 · 7 min · .claude"
+          - option "add a point to my local CLAUDE that instructs the agent — 5/21/2026 · 19 min · marcello.barile"
+          - option "the PR now contains 2 solution proposals, a global/gener — 5/21/2026 · 22 h 25 min · product-epics-pilot"
+          - option "recupera ultima sessione — 5/20/2026 · 47 h 12 min · camunda-hub"
+          - 'option "ci sono un po'' di aggiornamenti: const results = await P — 5/18/2026 · 5 h 42 min · camunda-hub"'
+          - option "vorrei inserire un agente nel mio sistema che faccia aud — 5/18/2026 · 8 min · marcello.barile"
+          - option "considerando /Users/marcello.barile/src/product-epics-pi — 5/15/2026 · 42 h 9 min · camunda-hub"
+          - option "sessione 319dab42 — 5/13/2026 · 2 h 26 min · testing-camunda-agents"
+          - option "I'm proceeding with the implementation of branch 1 tasks — 5/13/2026 · 193 h 41 min · testing-camunda-agents"
+          - 'option "is } from \"bpmn-js/lib/util/ModelUtil\"; sometimes matche — 5/12/2026 · 8 min · camunda-hub"'
+          - option "https://github.com/camunda/camunda-hub/pull/23877 there — 5/11/2026 · 12 min · camunda-hub"
+          - option "sessione 7fff9e4e — 5/8/2026 · 26 min · camunda-hub"
+          - option "sessione 0bbcc910 — 5/8/2026 · 4 h 35 min · camunda-hub"
+          - option "this pr https://github.com/camunda/camunda-hub/pull/2387 — 5/8/2026 · 27 min · camunda-hub"
+          - option "sessione 195439d8 — 5/8/2026 · 20 h 23 min · camunda-hub"
+          - option "ho provato a caricare una prima foto, tutto sembra funzi — 5/6/2026 · 5 h 6 min · sguardo-a-nord"
+          - option "as a followup of supporting feel on certain fields and e — 5/6/2026 · 31 h 47 min · camunda-hub"
+          - option "how to configure caveman to speak italian — 5/6/2026 · 2 min · camunda-hub"
+          - option "sto testando la skill caveman — 5/6/2026 · 1 min · camunda-hub"
+          - option "ho caricato 36 foto ma ne vedo solo 6 nella chat e l'age — 5/6/2026 · 56 min · local-agents"
+          - option "sessione f6918488 — 5/5/2026 · 23 s · camunda-hub"
+          - option "during benchmarks, always unload models first and then l — 5/4/2026 · 1 h 2 min · local-agents"
+          - option "after the merge, the demo bpmn that I was using ( — 5/4/2026 · 2 h 31 min · camunda-hub"
+          - option "how to use two claude accounts on the same machine — 5/4/2026 · 50 s · play"
+          - option "running npm run playwright -- e2e/tests there are tests — 5/4/2026 · 95 h 4 min · camunda-hub"
+          - option "when rebasing this with main there are conflicts hard to — 5/4/2026 · 1 h 15 min · play"
+          - option "the router can redirect complex prompts to cloud models — 5/3/2026 · 7 min · local-agents"
+          - option "test — 5/3/2026 · 4 min · local-agents"
+          - option "test — 5/3/2026 · 2 min · local-agents"
+          - option "test — 5/3/2026 · 4 s · local-agents"
+          - option "I ran a new claude session but I still see Opus 4.7 as a — 5/3/2026 · 5 min · local-agents"
+          - option "echo $ANTHROPIC_BASE_URL shows nothing despite I have th — 5/3/2026 · 11 min · local-agents"
+          - option "can I run the docker on my chateau 5g r17 ax ? — 5/3/2026 · 19 h 28 min · local-agents"
+          - option "sessione 8f0bb88b"
+      - generic [ref=e172]: in attesa di eventi live… (oppure scegli una sessione esistente)
+  - separator "Resize event stream" [ref=e152]
+  - complementary [ref=e154]:
+    - generic [ref=e155]:
+      - heading "EVENT STREAM" [level=4] [ref=e156]
+      - generic [ref=e157]: live
+    - generic [ref=e159]:
+      - combobox "Filter by project slug" [ref=e160]:
+        - option "tutti i progetti" [selected]
+      - button "❚❚" [ref=e161] [cursor=pointer]
+    - generic [ref=e163]: Connected · 2 client(s)

@@ -9,8 +9,9 @@ import { readMemories } from "../readers/memories.js";
 import { readPlugins } from "../readers/plugins.js";
 import { readSettings } from "../readers/settings.js";
 import { readProjects } from "../readers/projects.js";
-import { readSessions, readSession } from "../readers/sessions.js";
+import { readSessions, readSession, readAllSessions } from "../readers/sessions.js";
 import { defaultProfilePath, loadProfile } from "../discovery/profile.js";
+import { createBundleStream } from "../export/bundle.js";
 
 /** Build the read-only API. `opts` are forwarded to the source resolver. */
 export function buildServer(opts: ResolveOptions = {}): FastifyInstance {
@@ -31,6 +32,21 @@ export function buildServer(opts: ResolveOptions = {}): FastifyInstance {
   app.get("/settings", async () => readSettings(resolveSources(opts)));
 
   app.get("/projects", async () => readProjects(resolveSources(opts)));
+  app.get("/sessions", async () => readAllSessions(resolveSources(opts)));
+
+  app.get("/profile", async () => {
+    const path = defaultProfilePath();
+    return { path, profile: loadProfile(path) };
+  });
+
+  app.get("/export", async (_req, reply) => {
+    const roots = resolveSources(opts);
+    const { stream, filename, finalize } = createBundleStream(roots, defaultProfilePath());
+    reply.header("Content-Type", "application/zip");
+    reply.header("Content-Disposition", `attachment; filename="${filename}"`);
+    finalize();
+    return reply.send(stream);
+  });
 
   app.get<{ Params: { slug: string } }>("/projects/:slug/sessions", async (req) =>
     readSessions(resolveSources(opts), req.params.slug),

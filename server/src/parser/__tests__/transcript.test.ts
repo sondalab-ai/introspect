@@ -46,4 +46,32 @@ describe("readTranscript", () => {
     expect(t.meta.messageCounts.assistant).toBe(2);
     expect(t.meta.messageCounts.user).toBe(1);
   });
+
+  it("titles a session from its first user prompt, skipping injected <…> lines", () => {
+    const f = join(dir, "t1.jsonl");
+    writeFileSync(f, [
+      JSON.stringify({ type: "user", uuid: "u", timestamp: "2026-05-28T10:00:00Z",
+        message: { content: "<system-reminder>noise</system-reminder>\nFix the auth bug please" } }),
+    ].join("\n") + "\n");
+    expect(readTranscript(f).meta.title).toBe("Fix the auth bug please");
+  });
+
+  it("surfaces the slash command name as the title", () => {
+    const f = join(dir, "t3.jsonl");
+    writeFileSync(f, [
+      JSON.stringify({ type: "user", uuid: "u", timestamp: "2026-05-28T10:00:00Z",
+        message: { content: "<command-name>sync-skills</command-name><command-message>sync-skills</command-message>" } }),
+    ].join("\n") + "\n");
+    expect(readTranscript(f).meta.title).toBe("/sync-skills");
+  });
+
+  it("prefers an explicit summary line over the first prompt", () => {
+    const f = join(dir, "t2.jsonl");
+    writeFileSync(f, [
+      JSON.stringify({ type: "summary", summary: "Refactor readers" }),
+      JSON.stringify({ type: "user", uuid: "u", timestamp: "2026-05-28T10:00:00Z",
+        message: { content: "do the thing" } }),
+    ].join("\n") + "\n");
+    expect(readTranscript(f).meta.title).toBe("Refactor readers");
+  });
 });
