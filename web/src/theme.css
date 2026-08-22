@@ -2,12 +2,12 @@
 @import "./sondalab-tokens.css";
 
 :root {
-  --bg: #06070a;
-  --line: #14202b;
+  --bg: #070A0D;
+  --line: #1C2830;
   --cy: #2ee6c0;
   --cy2: #5ad1ff;
-  --txt: #cdd9e1;
-  --mut: #52656f;
+  --txt: #DAE3E4;
+  --mut: #6E8088;
   --glass-bg-top: rgba(18, 28, 36, 0.55);
   --glass-bg-bot: rgba(8, 12, 16, 0.55);
   --glass-border: rgba(90, 209, 200, 0.14);
@@ -30,12 +30,12 @@
 
 /* Soft light theme — warm off-white paper, not a glaring pure white. */
 :root[data-theme="light"] {
-  --bg: #e9e5db;
-  --line: #cfc7b6;
+  --bg: #ECE4D4;
+  --line: #D8CEBC;
   --cy: #0e9c84;
   --cy2: #2a82b8;
-  --txt: #2c3138;
-  --mut: #837c6e;
+  --txt: #15211F;
+  --mut: #6E7B78;
   --glass-bg-top: rgba(255, 253, 248, 0.66);
   --glass-bg-bot: rgba(236, 232, 222, 0.66);
   --glass-border: rgba(14, 156, 132, 0.22);
