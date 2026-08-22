@@ -22,7 +22,7 @@ export function CommandsPage() {
         storageKey="commands"
         items={items}
         listTitle="Slash commands"
-        emptyMessage="Nessun command trovato."
+        emptyMessage="No commands found."
         renderDetail={(item) => (
           <>
             <h2>/{item.raw.name}</h2>

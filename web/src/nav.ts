@@ -11,7 +11,7 @@ export interface NavGroup {
 export const NAV_GROUPS: NavGroup[] = [
   { title: "Realtime", items: [{ label: "Live graph", badge: "●" }] },
   {
-    title: "Configurazione",
+    title: "Configuration",
     items: [
       { label: "System prompt" },
       { label: "Skills" },

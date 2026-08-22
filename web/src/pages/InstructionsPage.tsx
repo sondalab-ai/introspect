@@ -21,7 +21,7 @@ export function InstructionsPage() {
         storageKey="instructions"
         items={items}
         listTitle="CLAUDE.md per config root"
-        emptyMessage="Nessun CLAUDE.md trovato."
+        emptyMessage="No CLAUDE.md found."
         renderDetail={(item) => (
           <>
             <h2>{item.title}</h2>

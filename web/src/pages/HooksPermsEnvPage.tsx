@@ -20,7 +20,7 @@ export function HooksPermsEnvPage() {
         storageKey="settings"
         items={items}
         listTitle="Settings"
-        emptyMessage="Nessun settings.json trovato."
+        emptyMessage="No settings.json found."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.fileName}</h2>

@@ -62,13 +62,13 @@ export function ProjectsPage() {
         storageKey="projects"
         items={items}
         listTitle={`Projects (${items.length})`}
-        emptyMessage="Nessun progetto trovato."
+        emptyMessage="No projects found."
         renderDetail={(item) => (
           <>
             <h2>{prettyProjectName(item.raw.cwd, item.raw.slug)}</h2>
             <div className="meta" title={item.raw.slug}>
               {item.raw.cwd ?? item.raw.slug}
-              {item.raw.cwdExists === false ? " · ⚠ cartella non più esistente" : ""}
+              {item.raw.cwdExists === false ? " · ⚠ folder no longer exists" : ""}
             </div>
             <ProjectSessions key={item.raw.slug} slug={item.raw.slug} />
           </>

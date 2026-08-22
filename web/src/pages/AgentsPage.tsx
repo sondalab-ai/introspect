@@ -22,7 +22,7 @@ export function AgentsPage() {
         storageKey="agents"
         items={items}
         listTitle="Subagenti"
-        emptyMessage="Nessun agente trovato."
+        emptyMessage="No agents found."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.name}</h2>

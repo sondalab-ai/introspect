@@ -97,7 +97,7 @@ export function MemoriesPage() {
         storageKey="memories"
         items={items}
         listTitle={`Memories (${items.length})`}
-        emptyMessage="Nessuna memoria trovata."
+        emptyMessage="No memories found."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.name}</h2>

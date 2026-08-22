@@ -109,16 +109,16 @@ export function App() {
           <button
             className="pref-btn"
             onClick={prefs.toggleTheme}
-            title={prefs.theme === "dark" ? "Tema chiaro" : "Tema scuro"}
+            title={prefs.theme === "dark" ? "Light theme" : "Dark theme"}
           >
             {prefs.theme === "dark" ? "☀ light" : "☾ dark"}
           </button>
-          <div className="pref-font" title="Dimensione interfaccia">
-            <button className="pref-btn" onClick={() => prefs.bumpScale(-SCALE_STEP)} aria-label="Riduci">A−</button>
-            <button className="pref-pct" onClick={prefs.resetScale} title="Reset 100%">
+          <div className="pref-font" title="Interface size">
+            <button className="pref-btn" onClick={() => prefs.bumpScale(-SCALE_STEP)} aria-label="Decrease">A−</button>
+            <button className="pref-pct" onClick={prefs.resetScale} title="Reset to 100%">
               {Math.round(prefs.scale * 100)}%
             </button>
-            <button className="pref-btn" onClick={() => prefs.bumpScale(SCALE_STEP)} aria-label="Aumenta">A+</button>
+            <button className="pref-btn" onClick={() => prefs.bumpScale(SCALE_STEP)} aria-label="Increase">A+</button>
           </div>
         </div>
       </nav>

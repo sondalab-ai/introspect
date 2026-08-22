@@ -20,7 +20,7 @@ export function PluginsPage() {
         storageKey="plugins"
         items={items}
         listTitle="Plugin installati"
-        emptyMessage="Nessun plugin trovato."
+        emptyMessage="No plugins found."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.id}</h2>

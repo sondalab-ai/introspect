@@ -23,7 +23,7 @@ export function SessionsHistoryPage() {
         storageKey="sessions-history"
         items={items}
         listTitle={`Sessions (${items.length})`}
-        emptyMessage="Nessuna sessione."
+        emptyMessage="No sessions."
         renderDetail={(item) => (
           <SessionDetailPage slug={item.raw.slug} sessionId={item.raw.sessionId} embedded />
         )}

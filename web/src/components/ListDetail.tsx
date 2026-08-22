@@ -73,7 +73,7 @@ export function ListDetail<T extends ListDetailItem>({
         {searchable ? (
           <input
             className="ld-search"
-            placeholder="Cerca…"
+            placeholder="Search…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             spellCheck={false}
@@ -82,7 +82,7 @@ export function ListDetail<T extends ListDetailItem>({
           />
         ) : null}
         {filtered.length === 0 ? (
-          <div className="ld-empty">{query.trim() ? "Nessun risultato." : emptyMessage}</div>
+          <div className="ld-empty">{query.trim() ? "No results." : emptyMessage}</div>
         ) : (
           filtered.map((item) => {
             const lvl = item.level ?? 0;

@@ -22,7 +22,7 @@ export function SkillsPage() {
         storageKey="skills"
         items={items}
         listTitle="Skills"
-        emptyMessage="Nessuna skill trovata."
+        emptyMessage="No skills found."
         renderDetail={(item) => (
           <>
             <h2>{item.raw.name}</h2>

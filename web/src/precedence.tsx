@@ -26,7 +26,7 @@ export function PrecedenceBadges({ p }: { p: Precedence }) {
         </span>
       ) : null}
       {p.duplicate ? (
-        <span className="tool-chip" title="Esiste un'altra copia con lo stesso nome e la stessa origine: probabile ridondanza o errore.">
+        <span className="tool-chip" title="Another copy exists with the same name and origin: likely a duplicate or an error.">
           ⚠ duplicato
         </span>
       ) : null}

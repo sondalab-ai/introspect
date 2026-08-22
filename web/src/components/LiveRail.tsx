@@ -119,7 +119,7 @@ function FrameRow({ frame, isExpanded, onToggle, showSlug, toolStatus }: FrameRo
         <span className={`lr-kind k-${ev.kind}`}>{ev.kind}</span>
         <span className="lr-time">{timeLabel(ev.ts)}</span>
         <span className="lr-label" title={eventLabel(frame)}>{eventLabel(frame)}</span>
-        {isRunningToolUse ? <span className="lr-running" title="In esecuzione">●</span> : null}
+        {isRunningToolUse ? <span className="lr-running" title="Running">●</span> : null}
       </div>
       {showSlug ? (
         <div className="lr-row-meta-line" title={`${frame.slug} / ${frame.sessionId}`}>
@@ -292,7 +292,7 @@ export function LiveRail() {
         {recent.length === 0 ? (
           <div className="lr-empty">
             {status === "open"
-              ? (filter === ALL ? "in attesa di eventi…" : "nessun evento per questo filtro")
+              ? (filter === ALL ? "in attesa di eventi…" : "no events for this filter")
               : "—"}
           </div>
         ) : (
