@@ -2,6 +2,13 @@
   "name": "introspect",
   "private": true,
   "version": "0.0.0",
+  "description": "A local, read-only dashboard to audit and observe how your coding agent is configured and how it runs — in replay and in real time.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sondalab-ai/introspect.git"
+  },
+  "license": "MIT",
+  "author": "Marcello Barile <marcello.barile@gmail.com>",
   "workspaces": ["server", "web"],
   "scripts": {
     "test": "npm run test --workspace server",
