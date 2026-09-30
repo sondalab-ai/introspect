@@ -25,6 +25,25 @@
   color-scheme: dark;
   /* UI zoom factor driven by the font +/- controls. */
   --ui-scale: 1;
+
+  /* Kit theme values introspect pins itself: status, code and viz exist only
+     in the kit's themes/*.css, scoped to the kit's own theme attribute, which
+     this app does not load (it themes via data-theme). Dark values here, light
+     below; the dark --sl-viz-* ramp already comes from tokens.css :root. */
+  --sl-status-success: #98b958;
+  --sl-status-warning: #db9e2e;
+  --sl-status-danger:  #fe8263;
+  --sl-status-info:    #87a7fd;
+  --sl-code-fg:        #DAE3E4;
+  --sl-code-comment:   #687475;
+  --sl-code-keyword:   #87a7fd;
+  --sl-code-string:    #99b860;
+  --sl-code-number:    #f5886c;
+  --sl-code-boolean:   #f5886c;
+  --sl-code-function:  #6db3e4;
+  --sl-code-tag:       #fe8263;
+  --sl-code-builtin:   #d4a14a;
+  --sl-code-null:      #687475;
 }
 
 /* Light theme — the Sondalab Prism light ground (cool near-white, kit 0.21);
@@ -48,6 +67,30 @@
   /* Kit text-secondary; dark keeps secondary = muted (mapping below). */
   --slc-text-secondary: #454857;
   color-scheme: light;
+
+  /* Kit light status, code and viz values (see the dark block). */
+  --sl-status-success: #4a6205;
+  --sl-status-warning: #795305;
+  --sl-status-danger:  #a72b05;
+  --sl-status-info:    #3853af;
+  --sl-code-fg:        #383a42;
+  --sl-code-comment:   #727e7f;
+  --sl-code-keyword:   #4460b6;
+  --sl-code-string:    #536d0b;
+  --sl-code-number:    #aa442b;
+  --sl-code-boolean:   #aa442b;
+  --sl-code-function:  #1f6a96;
+  --sl-code-tag:       #b33c1e;
+  --sl-code-builtin:   #865d06;
+  --sl-code-null:      #727e7f;
+  --sl-viz-0: #E0405E;
+  --sl-viz-1: #2F6FE0;
+  --sl-viz-2: #0E958A;
+  --sl-viz-3: #D26A00;
+  --sl-viz-4: #7A35E0;
+  --sl-viz-5: #2E8540;
+  --sl-viz-6: #A57C00;
+  --sl-viz-7: #C93FC4;
 }
 
 /* Sondalab component role-vars (--slc-*) mapped once onto introspect's own
@@ -74,7 +117,7 @@
   --sl-font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* JSON view syntax — adopt the shared DS atom-one palette (--sl-code-*,
-     flips per [data-theme]). One mapping covers both themes. */
+     pinned per [data-theme] above). One mapping covers both themes. */
   --jv-base:   var(--sl-code-fg);
   --jv-string: var(--sl-code-string);
   --jv-number: var(--sl-code-number);
