@@ -17,6 +17,9 @@
   --glass-border: rgba(90, 209, 200, 0.14);
   --grid: #162535;
   --glow: rgba(46, 230, 192, 0.06);
+  /* Row and kind-chip tint in the event stream and live rail, mixed at
+     2-8% over the ground. Each theme tints with its own accent. */
+  --tint: var(--cy);
   /* Interactive field surfaces (search, selects, pause) and the scrollbar. */
   --field: rgba(8, 12, 16, 0.55);
   --field-strong: rgba(8, 12, 16, 0.7);
@@ -79,6 +82,9 @@
   --glass-border: rgba(14, 156, 132, 0.22);
   --grid: rgba(28, 29, 34, 0.05);
   --glow: rgba(14, 156, 132, 0.05);
+  /* Light accent, not the dark teal: at 2-8% it reads as a faint cool
+     wash, like --glow and the glass border above. */
+  --tint: var(--cy);
   --field: rgba(255, 255, 255, 0.7);
   --field-strong: rgba(255, 255, 255, 0.95);
   --code-bg: rgba(28, 29, 34, 0.06);
@@ -286,10 +292,10 @@ body {
 .lr-empty { color: var(--mut); font-size: 11px; padding: 8px 4px; font-style: italic; }
 .lr-row { display: block; font-family: "IBM Plex Mono"; font-size: 10.5px;
   padding: 4px 6px; border: 1px solid var(--line); border-radius: 5px;
-  background: rgba(46,230,192,.02); }
+  background: color-mix(in srgb, var(--tint) 2%, transparent); }
 .lr-row-clickable { cursor: pointer; transition: background .12s ease, border-color .12s ease; }
-.lr-row-clickable:hover { background: rgba(46,230,192,.06); border-color: rgba(46,230,192,.2); }
-.lr-row.expanded { background: rgba(46,230,192,.08); border-color: rgba(46,230,192,.3); }
+.lr-row-clickable:hover { background: color-mix(in srgb, var(--tint) 6%, transparent); border-color: color-mix(in srgb, var(--tint) 20%, transparent); }
+.lr-row.expanded { background: color-mix(in srgb, var(--tint) 8%, transparent); border-color: color-mix(in srgb, var(--tint) 30%, transparent); }
 .lr-row-head { display: grid; grid-template-columns: 80px 48px 1fr auto; gap: 6px;
   align-items: center; }
 .lr-row-meta { display: block; color: var(--mut); font-style: italic; cursor: default; }
@@ -343,9 +349,9 @@ body {
 .lr-kind-toggle { font-family: "IBM Plex Mono"; font-size: 9.5px;
   letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px;
   border: 1px solid var(--line); border-radius: 4px;
-  background: rgba(46,230,192,.04); color: var(--slc-text-secondary); cursor: pointer;
+  background: color-mix(in srgb, var(--tint) 4%, transparent); color: var(--slc-text-secondary); cursor: pointer;
   transition: color .12s ease, border-color .12s ease, opacity .12s ease; }
-.lr-kind-toggle:hover { color: var(--txt); border-color: rgba(46,230,192,.3); }
+.lr-kind-toggle:hover { color: var(--txt); border-color: color-mix(in srgb, var(--tint) 30%, transparent); }
 .lr-kind-toggle.off { opacity: 0.4; }
 @keyframes lr-pulse {
   0%, 100% { opacity: 1; }
@@ -487,7 +493,7 @@ body {
 .evs { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column;
   gap: 10px; }
 .ev-row { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
-  background: rgba(46,230,192,.02); }
+  background: color-mix(in srgb, var(--tint) 2%, transparent); }
 .ev-row.is-side { border-left: 2px solid var(--sl-viz-0); }
 .ev-head { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono";
   font-size: 11px; color: var(--mut); margin-bottom: 6px; }
@@ -496,7 +502,7 @@ body {
 .ev-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .05em;
   text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
   border: 1px solid var(--line); color: #8fa3b0;
-  background: rgba(46,230,192,.04); }
+  background: color-mix(in srgb, var(--tint) 4%, transparent); }
 .ev-kind[class*=" k-"] { color: var(--txt); border-color: color-mix(in srgb, var(--k) 40%, transparent); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
 .ev-body .markdown { font-size: 13px; }
