@@ -48,16 +48,18 @@
   --sl-shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 10px 28px rgba(0,0,0,0.31);
   --sl-shadow-lg: 0 4px 8px rgba(0,0,0,0.21), 0 28px 72px rgba(0,0,0,0.57);
 
-  /* Event-kind palette (graph nodes, waterfall bars, legend, detail chip).
-     Kit roles, re-pointed per theme where the dark pick fails on light;
-     --k-on is the chip label and holds >=4.5:1 on every fill. */
-  --k-thinking:       var(--sl-viz-7);
+  /* Event-kind palette: the one source for every kind mark (graph nodes,
+     waterfall, legends, detail chip, stream and live-rail dots). Kit roles,
+     re-pointed per theme where the dark pick fails on light. Per theme the
+     nine kinds sit >=0.08 apart in OKLab, every mark holds >=3:1 on the
+     ground and --k-on (chip label) holds >=4.5:1 on every fill. */
+  --k-thinking:       var(--sl-viz-4);
   --k-text:           var(--txt);
   --k-user:           var(--sl-status-info);
   --k-tool_use:       var(--cy);
   --k-tool_result:    #9AA9AD;
   --k-subagent_spawn: var(--sl-viz-3);
-  --k-skill_use:      var(--sl-viz-1);
+  --k-skill_use:      var(--sl-viz-2);
   --k-meta:           var(--mut);
   --k-error:          var(--sl-status-danger);
   --k-on:             var(--bg);
@@ -114,12 +116,13 @@
   --sl-shadow-sm: 0 1px 2px rgba(28,29,34,0.08), 0 0 0 1px rgba(28,29,34,0.03);
   --sl-shadow-md: 0 2px 4px rgba(28,29,34,0.06), 0 10px 28px rgba(28,29,34,0.12);
   --sl-shadow-lg: 0 4px 8px rgba(28,29,34,0.08), 0 28px 72px rgba(28,29,34,0.22);
-  /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light viz-4,
-     accent-depth, spectrum-ink-1 and text-secondary. */
-  --k-thinking:       var(--sl-viz-4);
+  /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light
+     accent-depth, code-builtin (a warm tint, so tool_result no longer reads
+     as a second dark grey beside text), spectrum-ink-1 and viz-5. */
   --k-tool_use:       #14606C;
-  --k-tool_result:    #454857;
+  --k-tool_result:    var(--sl-code-builtin);
   --k-subagent_spawn: #B85A00;
+  --k-skill_use:      var(--sl-viz-5);
   --k-on:             #FFFFFF;
 }
 
@@ -312,29 +315,38 @@ body {
   border-radius: 5px; background: color-mix(in srgb, var(--sl-status-warning) 5%, transparent);
   display: flex; align-items: center; gap: 6px; }
 
+/* Event-kind marks in the stream and the live rail: the label stays neutral
+   text and the kind colour rides on a leading dot, read from the same --k-*
+   palette as the graph and waterfall. Kind-coloured 10px text can't hold
+   4.5:1 on the light ground with nine distinct kit hues; a >=3:1 dot can. */
+.k-thinking       { --k: var(--k-thinking); }
+.k-text           { --k: var(--k-text); }
+.k-user           { --k: var(--k-user); }
+.k-tool_use       { --k: var(--k-tool_use); }
+.k-tool_result    { --k: var(--k-tool_result); }
+.k-subagent_spawn { --k: var(--k-subagent_spawn); }
+.k-skill_use      { --k: var(--k-skill_use); }
+.k-meta           { --k: var(--k-meta); }
+:is(.ev-kind, .lr-kind, .lr-kind-toggle)[class*=" k-"]::before {
+  content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--k); margin-right: 5px; vertical-align: 0; }
+
 /* Per-kind visibility toggles. */
 .lr-kinds { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
 .lr-kind-toggle { font-family: "IBM Plex Mono"; font-size: 9.5px;
   letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px;
   border: 1px solid var(--line); border-radius: 4px;
-  background: rgba(46,230,192,.04); color: #8fa3b0; cursor: pointer;
+  background: rgba(46,230,192,.04); color: var(--slc-text-secondary); cursor: pointer;
   transition: color .12s ease, border-color .12s ease, opacity .12s ease; }
 .lr-kind-toggle:hover { color: var(--txt); border-color: rgba(46,230,192,.3); }
 .lr-kind-toggle.off { opacity: 0.4; }
-.lr-kind-toggle.k-tool_use { color: var(--cy); }
-.lr-kind-toggle.k-thinking { color: var(--sl-viz-0); }
-.lr-kind-toggle.k-subagent_spawn { color: var(--sl-viz-2); }
-.lr-kind-toggle.k-skill_use { color: var(--sl-viz-1); }
 @keyframes lr-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
 }
 .lr-kind { color: var(--mut); text-transform: uppercase; letter-spacing: .05em;
-  font-size: 9.5px; }
-.lr-kind.k-tool_use { color: var(--cy); }
-.lr-kind.k-subagent_spawn { color: var(--sl-viz-2); }
-.lr-kind.k-thinking { color: var(--sl-viz-0); }
-.lr-kind.k-skill_use { color: var(--sl-viz-1); }
+  font-size: 9.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lr-kind[class*=" k-"] { color: var(--slc-text-secondary); }
 .lr-time { color: var(--mut); font-size: 10px; }
 .lr-label { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
@@ -478,13 +490,7 @@ body {
   text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
   border: 1px solid var(--line); color: #8fa3b0;
   background: rgba(46,230,192,.04); }
-.ev-kind.k-thinking { color: var(--sl-viz-0); border-color: color-mix(in srgb, var(--sl-viz-0) 30%, transparent); }
-.ev-kind.k-tool_use { color: var(--cy); border-color: rgba(46,230,192,.3); }
-.ev-kind.k-tool_result { color: var(--txt); }
-.ev-kind.k-subagent_spawn { color: var(--sl-viz-2); border-color: color-mix(in srgb, var(--sl-viz-2) 30%, transparent); }
-.ev-kind.k-skill_use { color: var(--sl-viz-1); border-color: color-mix(in srgb, var(--sl-viz-1) 30%, transparent); }
-.ev-kind.k-user { color: var(--cy2); border-color: color-mix(in srgb, var(--sl-status-info) 30%, transparent); }
-.ev-kind.k-meta { color: var(--mut); }
+.ev-kind[class*=" k-"] { color: var(--txt); border-color: color-mix(in srgb, var(--k) 40%, transparent); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
 .ev-body .markdown { font-size: 13px; }
 .ev-input { display: inline-block; font-family: "IBM Plex Mono"; font-size: 11.5px;
