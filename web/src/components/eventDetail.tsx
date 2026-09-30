@@ -2,16 +2,21 @@ import { Markdown } from "./Markdown.js";
 import { JsonView } from "./JsonView.js";
 import type { SessionEvent } from "../api.js";
 
+/** Per-kind colour as a CSS var (defined per theme in theme.css). Usable in
+ *  `style` only — SVG presentation attributes don't resolve var(). */
 export const KIND_COLOR: Record<SessionEvent["kind"], string> = {
-  thinking: "#b08cff",
-  text: "#cfe1dd",
-  user: "#7cc4ff",
-  tool_use: "#2ee6c0",
-  tool_result: "#8fa3b0",
-  subagent_spawn: "#ffb87c",
-  skill_use: "#7cc4ff",
-  meta: "#7C8D95",
+  thinking: "var(--k-thinking)",
+  text: "var(--k-text)",
+  user: "var(--k-user)",
+  tool_use: "var(--k-tool_use)",
+  tool_result: "var(--k-tool_result)",
+  subagent_spawn: "var(--k-subagent_spawn)",
+  skill_use: "var(--k-skill_use)",
+  meta: "var(--k-meta)",
 };
+
+/** Failed tool_result colour (kit status-danger per theme). */
+export const ERROR_COLOR = "var(--k-error)";
 
 /** Short human label for an event, used in graph nodes, waterfall rows, and detail. */
 export function eventLabel(ev: SessionEvent): string {
@@ -98,7 +103,7 @@ export function EventDetail({ ev }: { ev: SessionEvent }) {
   return (
     <div className="exec-detail">
       <div className="exec-detail-head">
-        <span className="exec-detail-kind" style={{ background: KIND_COLOR[ev.kind], color: "#0a1014" }}>
+        <span className="exec-detail-kind" style={{ background: KIND_COLOR[ev.kind], color: "var(--k-on)" }}>
           {ev.kind}
         </span>
         <span className="exec-detail-label">{eventLabel(ev)}</span>

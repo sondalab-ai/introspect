@@ -44,6 +44,20 @@
   --sl-code-tag:       #fe8263;
   --sl-code-builtin:   #d4a14a;
   --sl-code-null:      #687475;
+
+  /* Event-kind palette (graph nodes, waterfall bars, legend, detail chip).
+     Kit roles, re-pointed per theme where the dark pick fails on light;
+     --k-on is the chip label and holds >=4.5:1 on every fill. */
+  --k-thinking:       var(--sl-viz-7);
+  --k-text:           var(--txt);
+  --k-user:           var(--sl-status-info);
+  --k-tool_use:       var(--cy);
+  --k-tool_result:    #9AA9AD;
+  --k-subagent_spawn: var(--sl-viz-3);
+  --k-skill_use:      var(--sl-viz-1);
+  --k-meta:           var(--mut);
+  --k-error:          var(--sl-status-danger);
+  --k-on:             var(--bg);
 }
 
 /* Light theme — the Sondalab Prism light ground (cool near-white, kit 0.21);
@@ -91,6 +105,13 @@
   --sl-viz-5: #2E8540;
   --sl-viz-6: #A57C00;
   --sl-viz-7: #C93FC4;
+  /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light viz-4,
+     accent-depth, spectrum-ink-1 and text-secondary. */
+  --k-thinking:       var(--sl-viz-4);
+  --k-tool_use:       #14606C;
+  --k-tool_result:    #454857;
+  --k-subagent_spawn: #B85A00;
+  --k-on:             #FFFFFF;
 }
 
 /* Sondalab component role-vars (--slc-*) mapped once onto introspect's own

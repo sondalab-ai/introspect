@@ -1,5 +1,5 @@
 import { useMemo, useState, type CSSProperties } from "react";
-import { KIND_COLOR, eventLabel, EventDetail } from "./eventDetail.js";
+import { KIND_COLOR, ERROR_COLOR, eventLabel, EventDetail } from "./eventDetail.js";
 import { useResizableWidth } from "../useResizableWidth.js";
 import type { SessionEvent } from "../api.js";
 
@@ -155,7 +155,7 @@ export function ExecutionWaterfall({ events, onSelectEvent }: ExecutionWaterfall
             : null}
           {rows.map((r) => {
             const isErr = r.ev.kind === "tool_result" && !r.ev.ok;
-            const color = isErr ? "#ff6b6b" : KIND_COLOR[r.ev.kind];
+            const color = isErr ? ERROR_COLOR : KIND_COLOR[r.ev.kind];
             const widthPct = Math.max((r.endFrac - r.startFrac) * 100, 0);
             return (
               <div
