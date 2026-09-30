@@ -231,10 +231,9 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                   {isHov ? (
                     <text
                       x={12} y={4}
-                      fill="var(--txt)"
                       fontSize="11"
                       fontFamily="IBM Plex Mono"
-                      style={{ pointerEvents: "none" }}
+                      style={{ fill: "var(--txt)", pointerEvents: "none" }}
                     >
                       {n.kind}:{n.label}
                     </text>
