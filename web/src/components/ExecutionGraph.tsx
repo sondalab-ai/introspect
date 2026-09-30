@@ -204,16 +204,18 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                       className="exec-node-ring"
                       r={r + 3.5}
                       fill="none"
-                      stroke={KIND_COLOR[n.kind]}
+                      style={{ stroke: KIND_COLOR[n.kind] }}
                       strokeOpacity={0.55}
                       strokeWidth={1}
                     />
                   ) : null}
                   <circle
                     r={r}
-                    fill={KIND_COLOR[n.kind]}
+                    style={{
+                      fill: KIND_COLOR[n.kind],
+                      stroke: n.id === selected || isHov ? "var(--cy)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
+                    }}
                     fillOpacity={n.isSidechain ? 0.55 : 0.9}
-                    stroke={n.id === selected ? "#2ee6c0" : isHov ? "#2ee6c0" : "rgba(8,12,16,.6)"}
                     strokeWidth={n.id === selected ? 2.5 : isHov ? 2 : 1}
                   />
                   {isHov ? (

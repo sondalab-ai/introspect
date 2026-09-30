@@ -11,7 +11,7 @@
   --cy: #2ee6c0;
   --cy2: var(--sl-status-info);
   --txt: #DAE3E4;
-  --mut: #6E8088;
+  --mut: #7C8D95;
   --glass-bg-top: rgba(18, 28, 36, 0.55);
   --glass-bg-bot: rgba(8, 12, 16, 0.55);
   --glass-border: rgba(90, 209, 200, 0.14);
@@ -25,26 +25,102 @@
   color-scheme: dark;
   /* UI zoom factor driven by the font +/- controls. */
   --ui-scale: 1;
+
+  /* Kit theme values introspect pins itself: status, code and viz exist only
+     in the kit's themes/*.css, scoped to the kit's own theme attribute, which
+     this app does not load (it themes via data-theme). Dark values here, light
+     below; the dark --sl-viz-* ramp already comes from tokens.css :root. */
+  --sl-status-success: #98b958;
+  --sl-status-warning: #db9e2e;
+  --sl-status-danger:  #fe8263;
+  --sl-status-info:    #87a7fd;
+  --sl-code-fg:        #DAE3E4;
+  --sl-code-comment:   #687475;
+  --sl-code-keyword:   #87a7fd;
+  --sl-code-string:    #99b860;
+  --sl-code-number:    #f5886c;
+  --sl-code-boolean:   #f5886c;
+  --sl-code-function:  #6db3e4;
+  --sl-code-tag:       #fe8263;
+  --sl-code-builtin:   #d4a14a;
+  --sl-code-null:      #687475;
+  --sl-shadow-sm: 0 1px 2px rgba(0,0,0,0.21), 0 0 0 1px rgba(0,0,0,0.08);
+  --sl-shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 10px 28px rgba(0,0,0,0.31);
+  --sl-shadow-lg: 0 4px 8px rgba(0,0,0,0.21), 0 28px 72px rgba(0,0,0,0.57);
+
+  /* Event-kind palette (graph nodes, waterfall bars, legend, detail chip).
+     Kit roles, re-pointed per theme where the dark pick fails on light;
+     --k-on is the chip label and holds >=4.5:1 on every fill. */
+  --k-thinking:       var(--sl-viz-7);
+  --k-text:           var(--txt);
+  --k-user:           var(--sl-status-info);
+  --k-tool_use:       var(--cy);
+  --k-tool_result:    #9AA9AD;
+  --k-subagent_spawn: var(--sl-viz-3);
+  --k-skill_use:      var(--sl-viz-1);
+  --k-meta:           var(--mut);
+  --k-error:          var(--sl-status-danger);
+  --k-on:             var(--bg);
 }
 
-/* Soft light theme — warm off-white paper, not a glaring pure white. */
+/* Light theme — the Sondalab Prism light ground (cool near-white, kit 0.21);
+   lines, glass and grid are the kit's ink (#1C1D22) at alpha. */
 :root[data-theme="light"] {
-  --bg: #ECE4D4;
-  --line: #D8CEBC;
+  --bg: #F4F4F8;
+  --line: rgba(28, 29, 34, 0.16);
   --cy: #0e9c84;
   --cy2: var(--sl-status-info);
-  --txt: #15211F;
-  --mut: #6E7B78;
-  --glass-bg-top: rgba(255, 253, 248, 0.66);
-  --glass-bg-bot: rgba(236, 232, 222, 0.66);
+  --txt: #1C1D22;
+  --mut: #5F6374;
+  --glass-bg-top: rgba(255, 255, 255, 0.66);
+  --glass-bg-bot: rgba(244, 244, 248, 0.66);
   --glass-border: rgba(14, 156, 132, 0.22);
-  --grid: rgba(60, 52, 38, 0.05);
+  --grid: rgba(28, 29, 34, 0.05);
   --glow: rgba(14, 156, 132, 0.05);
   --field: rgba(255, 255, 255, 0.7);
   --field-strong: rgba(255, 255, 255, 0.95);
-  --code-bg: rgba(45, 40, 30, 0.06);
-  --scroll: #c7bfae;
+  --code-bg: rgba(28, 29, 34, 0.06);
+  --scroll: rgba(28, 29, 34, 0.28);
+  /* Kit text-secondary and overlay; dark keeps secondary = muted and the
+     kit's dark overlay (mapping below). */
+  --slc-text-secondary: #454857;
+  --slc-overlay: rgba(28,29,34,0.4);
   color-scheme: light;
+
+  /* Kit light status, code and viz values (see the dark block). */
+  --sl-status-success: #4a6205;
+  --sl-status-warning: #795305;
+  --sl-status-danger:  #a72b05;
+  --sl-status-info:    #3853af;
+  --sl-code-fg:        #383a42;
+  --sl-code-comment:   #727e7f;
+  --sl-code-keyword:   #4460b6;
+  --sl-code-string:    #536d0b;
+  --sl-code-number:    #aa442b;
+  --sl-code-boolean:   #aa442b;
+  --sl-code-function:  #1f6a96;
+  --sl-code-tag:       #b33c1e;
+  --sl-code-builtin:   #865d06;
+  --sl-code-null:      #727e7f;
+  --sl-viz-0: #E0405E;
+  --sl-viz-1: #2F6FE0;
+  --sl-viz-2: #0E958A;
+  --sl-viz-3: #D26A00;
+  --sl-viz-4: #7A35E0;
+  --sl-viz-5: #2E8540;
+  --sl-viz-6: #A57C00;
+  --sl-viz-7: #C93FC4;
+  /* Re-declared: the dark :root block above overrides tokens.css. */
+  --sl-shadow-sm: 0 1px 2px rgba(28,29,34,0.08), 0 0 0 1px rgba(28,29,34,0.03);
+  --sl-shadow-md: 0 2px 4px rgba(28,29,34,0.06), 0 10px 28px rgba(28,29,34,0.12);
+  --sl-shadow-lg: 0 4px 8px rgba(28,29,34,0.08), 0 28px 72px rgba(28,29,34,0.22);
+  /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light viz-4,
+     accent-depth, spectrum-ink-1 and text-secondary. */
+  --k-thinking:       var(--sl-viz-4);
+  --k-tool_use:       #14606C;
+  --k-tool_result:    #454857;
+  --k-subagent_spawn: #B85A00;
+  --k-on:             #FFFFFF;
 }
 
 /* Sondalab component role-vars (--slc-*) mapped once onto introspect's own
@@ -57,6 +133,7 @@
   --slc-accent-active:  var(--cy);
   --slc-accent-subtle:  color-mix(in srgb, var(--cy) 14%, transparent);
   --slc-on-accent:      var(--bg);
+  --slc-canvas:         var(--bg);
   --slc-surface:        var(--field);
   --slc-raised:         var(--field-strong);
   --slc-overlay:        rgba(0, 0, 0, 0.6);
@@ -67,17 +144,23 @@
   --slc-border-subtle:  var(--line);
   --slc-border-strong:  var(--cy);
   --slc-focus:          var(--cy);
+  --slc-success:        var(--sl-status-success);
+  --slc-warning:        var(--sl-status-warning);
+  --slc-danger:         var(--sl-status-danger);
+  --slc-info:           var(--sl-status-info);
+  --slc-shadow-sm:      var(--sl-shadow-sm);
+  --slc-shadow-md:      var(--sl-shadow-md);
+  --slc-shadow-lg:      var(--sl-shadow-lg);
   /* introspect's blessed mono is IBM Plex — the shared components adopt it. */
   --sl-font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* JSON view syntax — adopt the shared DS atom-one palette (--sl-code-*,
-     flips per [data-theme]). One mapping covers both themes. */
+     pinned per [data-theme] above). One mapping covers both themes. */
   --jv-base:   var(--sl-code-fg);
   --jv-string: var(--sl-code-string);
   --jv-number: var(--sl-code-number);
   --jv-bool:   var(--sl-code-boolean);
   --jv-null:   var(--sl-code-null);
-  /* status roles fall back to the package's semantic literals (unused yet). */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -172,7 +255,7 @@ body {
   padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .lr-status { display: inline-flex; align-items: center; gap: 5px;
   font-family: "IBM Plex Mono"; font-size: 10px; color: var(--mut); }
-.lr-dot { width: 6px; height: 6px; border-radius: 50%; background: #6e8088;
+.lr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mut);
   box-shadow: 0 0 4px rgba(0,0,0,.4); }
 .lr-status-open .lr-dot { background: var(--cy); box-shadow: 0 0 6px var(--cy); }
 .lr-status-connecting .lr-dot { background: var(--sl-status-warning); box-shadow: 0 0 4px var(--sl-status-warning); }
@@ -252,7 +335,7 @@ body {
 .lr-kind.k-subagent_spawn { color: var(--sl-viz-2); }
 .lr-kind.k-thinking { color: var(--sl-viz-0); }
 .lr-kind.k-skill_use { color: var(--sl-viz-1); }
-.lr-time { color: #6e8088; font-size: 10px; }
+.lr-time { color: var(--mut); font-size: 10px; }
 .lr-label { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
 .lr-slug { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
@@ -389,7 +472,7 @@ body {
 .ev-row.is-side { border-left: 2px solid color-mix(in srgb, var(--sl-viz-0) 50%, transparent); }
 .ev-head { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono";
   font-size: 11px; color: var(--mut); margin-bottom: 6px; }
-.ev-time { color: #6e8088; }
+.ev-time { color: var(--mut); }
 .ev-side { color: var(--sl-viz-0); }
 .ev-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .05em;
   text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
@@ -401,7 +484,7 @@ body {
 .ev-kind.k-subagent_spawn { color: var(--sl-viz-2); border-color: color-mix(in srgb, var(--sl-viz-2) 30%, transparent); }
 .ev-kind.k-skill_use { color: var(--sl-viz-1); border-color: color-mix(in srgb, var(--sl-viz-1) 30%, transparent); }
 .ev-kind.k-user { color: var(--cy2); border-color: color-mix(in srgb, var(--sl-status-info) 30%, transparent); }
-.ev-kind.k-meta { color: #6e8088; }
+.ev-kind.k-meta { color: var(--mut); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
 .ev-body .markdown { font-size: 13px; }
 .ev-input { display: inline-block; font-family: "IBM Plex Mono"; font-size: 11.5px;
