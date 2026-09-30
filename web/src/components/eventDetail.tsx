@@ -10,7 +10,7 @@ export const KIND_COLOR: Record<SessionEvent["kind"], string> = {
   tool_result: "#8fa3b0",
   subagent_spawn: "#ffb87c",
   skill_use: "#7cc4ff",
-  meta: "#6e8088",
+  meta: "#7C8D95",
 };
 
 /** Short human label for an event, used in graph nodes, waterfall rows, and detail. */

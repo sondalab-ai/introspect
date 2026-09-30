@@ -11,7 +11,7 @@
   --cy: #2ee6c0;
   --cy2: var(--sl-status-info);
   --txt: #DAE3E4;
-  --mut: #6E8088;
+  --mut: #7C8D95;
   --glass-bg-top: rgba(18, 28, 36, 0.55);
   --glass-bg-bot: rgba(8, 12, 16, 0.55);
   --glass-border: rgba(90, 209, 200, 0.14);
@@ -27,23 +27,26 @@
   --ui-scale: 1;
 }
 
-/* Soft light theme — warm off-white paper, not a glaring pure white. */
+/* Light theme — the Sondalab Prism light ground (cool near-white, kit 0.21);
+   lines, glass and grid are the kit's ink (#1C1D22) at alpha. */
 :root[data-theme="light"] {
-  --bg: #ECE4D4;
-  --line: #D8CEBC;
+  --bg: #F4F4F8;
+  --line: rgba(28, 29, 34, 0.16);
   --cy: #0e9c84;
   --cy2: var(--sl-status-info);
-  --txt: #15211F;
-  --mut: #6E7B78;
-  --glass-bg-top: rgba(255, 253, 248, 0.66);
-  --glass-bg-bot: rgba(236, 232, 222, 0.66);
+  --txt: #1C1D22;
+  --mut: #5F6374;
+  --glass-bg-top: rgba(255, 255, 255, 0.66);
+  --glass-bg-bot: rgba(244, 244, 248, 0.66);
   --glass-border: rgba(14, 156, 132, 0.22);
-  --grid: rgba(60, 52, 38, 0.05);
+  --grid: rgba(28, 29, 34, 0.05);
   --glow: rgba(14, 156, 132, 0.05);
   --field: rgba(255, 255, 255, 0.7);
   --field-strong: rgba(255, 255, 255, 0.95);
-  --code-bg: rgba(45, 40, 30, 0.06);
-  --scroll: #c7bfae;
+  --code-bg: rgba(28, 29, 34, 0.06);
+  --scroll: rgba(28, 29, 34, 0.28);
+  /* Kit text-secondary; dark keeps secondary = muted (mapping below). */
+  --slc-text-secondary: #454857;
   color-scheme: light;
 }
 
@@ -172,7 +175,7 @@ body {
   padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .lr-status { display: inline-flex; align-items: center; gap: 5px;
   font-family: "IBM Plex Mono"; font-size: 10px; color: var(--mut); }
-.lr-dot { width: 6px; height: 6px; border-radius: 50%; background: #6e8088;
+.lr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mut);
   box-shadow: 0 0 4px rgba(0,0,0,.4); }
 .lr-status-open .lr-dot { background: var(--cy); box-shadow: 0 0 6px var(--cy); }
 .lr-status-connecting .lr-dot { background: var(--sl-status-warning); box-shadow: 0 0 4px var(--sl-status-warning); }
@@ -252,7 +255,7 @@ body {
 .lr-kind.k-subagent_spawn { color: var(--sl-viz-2); }
 .lr-kind.k-thinking { color: var(--sl-viz-0); }
 .lr-kind.k-skill_use { color: var(--sl-viz-1); }
-.lr-time { color: #6e8088; font-size: 10px; }
+.lr-time { color: var(--mut); font-size: 10px; }
 .lr-label { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
 .lr-slug { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
@@ -389,7 +392,7 @@ body {
 .ev-row.is-side { border-left: 2px solid color-mix(in srgb, var(--sl-viz-0) 50%, transparent); }
 .ev-head { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono";
   font-size: 11px; color: var(--mut); margin-bottom: 6px; }
-.ev-time { color: #6e8088; }
+.ev-time { color: var(--mut); }
 .ev-side { color: var(--sl-viz-0); }
 .ev-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .05em;
   text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
@@ -401,7 +404,7 @@ body {
 .ev-kind.k-subagent_spawn { color: var(--sl-viz-2); border-color: color-mix(in srgb, var(--sl-viz-2) 30%, transparent); }
 .ev-kind.k-skill_use { color: var(--sl-viz-1); border-color: color-mix(in srgb, var(--sl-viz-1) 30%, transparent); }
 .ev-kind.k-user { color: var(--cy2); border-color: color-mix(in srgb, var(--sl-status-info) 30%, transparent); }
-.ev-kind.k-meta { color: #6e8088; }
+.ev-kind.k-meta { color: var(--mut); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
 .ev-body .markdown { font-size: 13px; }
 .ev-input { display: inline-block; font-family: "IBM Plex Mono"; font-size: 11.5px;
