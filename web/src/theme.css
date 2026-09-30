@@ -32,6 +32,9 @@
   --cy-text: var(--cy);
   --ring: color-mix(in srgb, var(--cy) 40%, transparent);
   --edge-shade: rgba(0, 0, 0, 0.4);
+  /* Stream kind chip without a known kind: kit dark text-secondary. Kit
+     text-muted would be 4.45:1 on the dark tinted chip. */
+  --kind-fallback: #9AA9AD;
   /* Interactive field surfaces (search, selects, pause) and the scrollbar. */
   --field: rgba(8, 12, 16, 0.55);
   --field-strong: rgba(8, 12, 16, 0.7);
@@ -111,6 +114,7 @@
   --cy-text: #14606C;
   --ring: var(--cy);
   --edge-shade: rgba(28, 29, 34, 0.08);
+  --kind-fallback: var(--mut);
   --field: rgba(255, 255, 255, 0.7);
   --field-strong: rgba(255, 255, 255, 0.95);
   --code-bg: rgba(28, 29, 34, 0.06);
@@ -531,7 +535,7 @@ body {
 .ev-side { color: var(--sl-viz-0); }
 .ev-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .05em;
   text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
-  border: 1px solid var(--line); color: #8fa3b0;
+  border: 1px solid var(--line); color: var(--kind-fallback);
   background: color-mix(in srgb, var(--tint) 4%, transparent); }
 .ev-kind[class*=" k-"] { color: var(--txt); border-color: color-mix(in srgb, var(--k) 40%, transparent); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
