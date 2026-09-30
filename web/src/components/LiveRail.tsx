@@ -4,6 +4,7 @@ import { JsonView } from "./JsonView.js";
 import { useLiveEvents, type LiveStatus } from "../useLiveEvents.js";
 import type { LiveFrame, LiveEvent, SessionEvent } from "../api.js";
 import { prettyProjectName } from "../projectName.js";
+import { kindKey } from "./eventDetail.js";
 
 const STATUS_LABEL: Record<LiveStatus, string> = {
   connecting: "connecting…",
@@ -116,7 +117,7 @@ function FrameRow({ frame, isExpanded, onToggle, showSlug, toolStatus }: FrameRo
       onClick={onToggle}
     >
       <div className="lr-row-head">
-        <span className={`lr-kind k-${ev.kind}`}>{ev.kind}</span>
+        <span className={`lr-kind k-${kindKey(ev)}`}>{ev.kind}</span>
         <span className="lr-time">{timeLabel(ev.ts)}</span>
         <span className="lr-label" title={eventLabel(frame)}>{eventLabel(frame)}</span>
         {isRunningToolUse ? <span className="lr-running" title="Running">●</span> : null}
