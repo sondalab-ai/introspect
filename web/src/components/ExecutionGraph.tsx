@@ -11,7 +11,7 @@ import {
 } from "d3-force";
 import { select } from "d3-selection";
 import { zoom, zoomIdentity, type ZoomBehavior } from "d3-zoom";
-import { KIND_COLOR, eventLabel, EventDetail } from "./eventDetail.js";
+import { KIND_COLOR, eventColor, eventLabel, EventDetail } from "./eventDetail.js";
 import type { ExecutionNode, SessionEvent } from "../api.js";
 
 interface GraphNode extends SimulationNodeDatum {
@@ -204,7 +204,7 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                       className="exec-node-ring"
                       r={r + 3.5}
                       fill="none"
-                      style={{ stroke: KIND_COLOR[n.kind] }}
+                      style={{ stroke: eventColor(n.ev) }}
                       strokeWidth={1}
                     />
                   ) : null}
@@ -215,14 +215,14 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                     // Sidechain: hollow full-colour ring (opacity dimming fell below 3:1 on light).
                     <circle
                       r={r - 0.75}
-                      style={{ fill: "var(--bg)", stroke: KIND_COLOR[n.kind] }}
+                      style={{ fill: "var(--bg)", stroke: eventColor(n.ev) }}
                       strokeWidth={2.5}
                     />
                   ) : (
                     <circle
                       r={r}
                       style={{
-                        fill: KIND_COLOR[n.kind],
+                        fill: eventColor(n.ev),
                         stroke: n.id === selected || isHov ? "var(--cy)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
                       }}
                       strokeWidth={n.id === selected ? 2.5 : isHov ? 2 : 1}

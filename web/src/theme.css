@@ -333,6 +333,7 @@ body {
 .k-subagent_spawn { --k: var(--k-subagent_spawn); }
 .k-skill_use      { --k: var(--k-skill_use); }
 .k-meta           { --k: var(--k-meta); }
+.k-error          { --k: var(--k-error); }
 :is(.ev-kind, .lr-kind, .lr-kind-toggle)[class*=" k-"]::before {
   content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
   background: var(--k); margin-right: 5px; vertical-align: 0; }

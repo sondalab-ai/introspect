@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Markdown } from "./Markdown.js";
 import type { SessionEvent } from "../api.js";
+import { kindKey } from "./eventDetail.js";
 
 function truncate(s: string, n = 240): string {
   if (s.length <= n) return s;
@@ -17,8 +18,8 @@ function previewInput(input: unknown): string {
   }
 }
 
-function kindClass(kind: SessionEvent["kind"]): string {
-  return `ev-kind k-${kind}`;
+function kindClass(ev: SessionEvent): string {
+  return `ev-kind k-${kindKey(ev)}`;
 }
 
 function EventRow({ ev, focused }: { ev: SessionEvent; focused: boolean }) {
@@ -30,7 +31,7 @@ function EventRow({ ev, focused }: { ev: SessionEvent; focused: boolean }) {
       className={`ev-row ev-${ev.kind}${ev.isSidechain ? " is-side" : ""}${focused ? " is-focus" : ""}`}
     >
       <div className="ev-head">
-        <span className={kindClass(ev.kind)}>{ev.kind}</span>
+        <span className={kindClass(ev)}>{ev.kind}</span>
         {time ? <span className="ev-time">{time}</span> : null}
         {sidechain}
       </div>

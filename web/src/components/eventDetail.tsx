@@ -18,6 +18,19 @@ export const KIND_COLOR: Record<SessionEvent["kind"], string> = {
 /** Failed tool_result colour (kit status-danger per theme). */
 export const ERROR_COLOR = "var(--k-error)";
 
+/** Palette key for an event: its kind, or "error" for a failed tool_result.
+ *  Every surface colours through this (`--k-<key>` / `.k-<key>`), so a failed
+ *  result reads as error in the graph, waterfall, detail, stream and rail. */
+export function kindKey(ev: SessionEvent): SessionEvent["kind"] | "error" {
+  return ev.kind === "tool_result" && !ev.ok ? "error" : ev.kind;
+}
+
+/** CSS colour for an event, per kindKey. Usable in `style` only. */
+export function eventColor(ev: SessionEvent): string {
+  const k = kindKey(ev);
+  return k === "error" ? ERROR_COLOR : KIND_COLOR[k];
+}
+
 /** Short human label for an event, used in graph nodes, waterfall rows, and detail. */
 export function eventLabel(ev: SessionEvent): string {
   switch (ev.kind) {
@@ -103,7 +116,7 @@ export function EventDetail({ ev }: { ev: SessionEvent }) {
   return (
     <div className="exec-detail">
       <div className="exec-detail-head">
-        <span className="exec-detail-kind" style={{ background: KIND_COLOR[ev.kind], color: "var(--k-on)" }}>
+        <span className="exec-detail-kind" style={{ background: eventColor(ev), color: "var(--k-on)" }}>
           {ev.kind}
         </span>
         <span className="exec-detail-label">{eventLabel(ev)}</span>
