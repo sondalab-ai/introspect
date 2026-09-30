@@ -123,10 +123,11 @@
   --sl-shadow-md: 0 2px 4px rgba(28,29,34,0.06), 0 10px 28px rgba(28,29,34,0.12);
   --sl-shadow-lg: 0 4px 8px rgba(28,29,34,0.08), 0 28px 72px rgba(28,29,34,0.22);
   /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light
-     accent-depth, code-builtin (a warm tint, so tool_result no longer reads
-     as a second dark grey beside text), spectrum-ink-1 and viz-5. */
+     accent-depth, status-success, spectrum-ink-1 and viz-5. tool_result is
+     the olive status-success, not a second dark grey beside text and not
+     code-builtin amber, which sat 0.093 OKLab from the subagent orange. */
   --k-tool_use:       #14606C;
-  --k-tool_result:    var(--sl-code-builtin);
+  --k-tool_result:    var(--sl-status-success);
   --k-subagent_spawn: #B85A00;
   --k-skill_use:      var(--sl-viz-5);
   --k-on:             #FFFFFF;
