@@ -158,6 +158,9 @@
      ink holds >=4.5:1 on both the accent and its hover. */
   --slc-accent-hover:   color-mix(in srgb, var(--cy) 89%, black);
   --slc-on-accent:      #0A0A0B;
+  /* Caps the kit's derived --slc-accent-text (tags, pressed toggles and chips,
+     nav edge) at oklch L 0.5, as the kit's own light theme does. */
+  --sl-accent-text-lmax: 0.5;
 }
 
 /* Sondalab component role-vars (--slc-*) mapped once onto introspect's own
@@ -246,11 +249,6 @@ body {
 /* Signature mono wordmark — tracked, matches the Sondalab family header. */
 .brand { padding: 0 18px 18px; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14px; letter-spacing: .12em; color: var(--txt); }
 .brand b { color: var(--cy); }
-/* sl-nav__item ships no <button> reset (sl-list__row does). 0,1,1 beats the
-   kit's base but loses to its :hover / [aria-current] (0,2,0), and the left
-   border — the current-item accent edge — is left to the kit. */
-button.sl-nav__item { appearance: none; width: 100%; text-align: left;
-  background-color: transparent; border-top: 0; border-right: 0; border-bottom: 0; }
 
 /* Preferences footer (theme + UI zoom). */
 .nav-foot { margin-top: auto; padding: 12px 14px 2px; display: flex; flex-direction: column;
@@ -282,9 +280,10 @@ button.sl-nav__item { appearance: none; width: 100%; text-align: left;
 .lr-status-closed .lr-dot { background: var(--sl-status-danger); }
 .lr-controls { display: flex; gap: 6px; align-items: stretch; margin-bottom: 8px; }
 .lr-filter { flex: 1; min-width: 0; }
-/* The kit paints pressed toggles in --slc-accent on --slc-accent-subtle. The
-   light accent is ~3:1 there, so pressed text takes --cy-text (>=5.8:1 light,
-   the accent itself in dark). */
+/* Pressed toggles and chips: the kit's --slc-accent-text capped at L 0.5
+   measures 4.48:1 on introspect's 14% pressed wash over the light rail, so
+   pressed text keeps --cy-text (5.85:1 there; the accent itself in dark,
+   where the kit value is identical). */
 :is(.sl-chip, .sl-btn:not(.sl-btn--primary), .sl-icon-btn)[aria-pressed="true"] { color: var(--cy-text); }
 .lr-list { flex: 1; min-height: 0; overflow-y: auto; padding-right: 4px;
   /* Kind column: fits the longest name (SUBAGENT_SPAWN, 98px with its dot)
