@@ -289,7 +289,10 @@ body {
 .lr-pause.on { color: var(--cy); border-color: rgba(46,230,192,.4);
   background: rgba(46,230,192,.08); }
 .lr-list { flex: 1; min-height: 0; overflow-y: auto; display: flex;
-  flex-direction: column; gap: 4px; padding-right: 4px; }
+  flex-direction: column; gap: 4px; padding-right: 4px;
+  /* Kind column: fits the longest name (SUBAGENT_SPAWN, 98px with its dot)
+     so no kind is ellipsised. One width for every row keeps columns aligned. */
+  --lr-kind-w: 100px; }
 .lr-empty { color: var(--mut); font-size: 11px; padding: 8px 4px; font-style: italic; }
 .lr-row { display: block; font-family: "IBM Plex Mono"; font-size: 10.5px;
   padding: 4px 6px; border: 1px solid var(--line); border-radius: 5px;
@@ -297,11 +300,11 @@ body {
 .lr-row-clickable { cursor: pointer; transition: background .12s ease, border-color .12s ease; }
 .lr-row-clickable:hover { background: color-mix(in srgb, var(--tint) 6%, transparent); border-color: color-mix(in srgb, var(--tint) 20%, transparent); }
 .lr-row.expanded { background: color-mix(in srgb, var(--tint) 8%, transparent); border-color: color-mix(in srgb, var(--tint) 30%, transparent); }
-.lr-row-head { display: grid; grid-template-columns: 80px 48px 1fr auto; gap: 6px;
+.lr-row-head { display: grid; grid-template-columns: var(--lr-kind-w) 48px 1fr auto; gap: 6px;
   align-items: center; }
 .lr-row-meta { display: block; color: var(--mut); font-style: italic; cursor: default; }
 .lr-row-meta-line { color: var(--mut); font-size: 9.5px; margin-top: 2px;
-  padding-left: 86px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  padding-left: calc(var(--lr-kind-w) + 6px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-row-start { display: grid; grid-template-columns: 56px 1fr 80px; gap: 6px;
   align-items: center; color: var(--cy); cursor: default; }
 .lr-expand { margin: 6px 0 0; padding: 8px 10px; background: var(--code-bg);
