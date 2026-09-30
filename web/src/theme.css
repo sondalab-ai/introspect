@@ -290,11 +290,11 @@ body {
 .lr-row-clickable { cursor: pointer; transition: background .12s ease, border-color .12s ease; }
 .lr-row-clickable:hover { background: rgba(46,230,192,.06); border-color: rgba(46,230,192,.2); }
 .lr-row.expanded { background: rgba(46,230,192,.08); border-color: rgba(46,230,192,.3); }
-.lr-row-head { display: grid; grid-template-columns: 56px 48px 1fr auto; gap: 6px;
+.lr-row-head { display: grid; grid-template-columns: 80px 48px 1fr auto; gap: 6px;
   align-items: center; }
 .lr-row-meta { display: block; color: var(--mut); font-style: italic; cursor: default; }
 .lr-row-meta-line { color: var(--mut); font-size: 9.5px; margin-top: 2px;
-  padding-left: 62px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  padding-left: 86px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-row-start { display: grid; grid-template-columns: 56px 1fr 80px; gap: 6px;
   align-items: center; color: var(--cy); cursor: default; }
 .lr-expand { margin: 6px 0 0; padding: 8px 10px; background: var(--code-bg);
