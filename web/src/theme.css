@@ -124,15 +124,21 @@
   --k-subagent_spawn: #B85A00;
   --k-skill_use:      var(--sl-viz-5);
   --k-on:             #FFFFFF;
+  /* Kit light accent hover recipe over introspect's accent. The kit's light
+     on-accent (white) is only 3.44:1 on this lighter teal; its dark on-accent
+     ink holds >=4.5:1 on both the accent and its hover. */
+  --slc-accent-hover:   color-mix(in srgb, var(--cy) 89%, black);
+  --slc-on-accent:      #0A0A0B;
 }
 
 /* Sondalab component role-vars (--slc-*) mapped once onto introspect's own
    colour layer. Those product vars flip under [data-theme], so this single
-   block covers both light and dark. This is the entire integration surface
-   for @sondalab/ui-kit components — bump the package and the update lands. */
+   block covers both light and dark; the light block above re-points the few
+   that need a light value (secondary text, overlay, accent hover, on-accent).
+   This is the entire integration surface for @sondalab/ui-kit components — bump the package and the update lands. */
 :root {
   --slc-accent:         var(--cy);
-  --slc-accent-hover:   var(--cy2);
+  --slc-accent-hover:   color-mix(in srgb, var(--cy) 80%, white);
   --slc-accent-active:  var(--cy);
   --slc-accent-subtle:  color-mix(in srgb, var(--cy) 14%, transparent);
   --slc-on-accent:      var(--bg);
