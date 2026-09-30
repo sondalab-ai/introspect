@@ -9,7 +9,6 @@
      these slates carry a blue undertone those near-neutral tokens can't derive. */
   --line: #1C2830;
   --cy: #2ee6c0;
-  --cy2: var(--sl-status-info);
   --txt: #DAE3E4;
   --mut: #7C8D95;
   --glass-bg-top: rgba(18, 28, 36, 0.55);
@@ -24,18 +23,15 @@
      re-points them to kit text roles and ink below. */
   --txt-soft: #b5c5cd;
   --txt-sub:  #8fa3b0;
-  --txt-nav:  #7d909e;
   --txt-dim:  #3f5260;
   --hair: rgba(255, 255, 255, 0.03);
-  --chip-inset: rgba(8, 12, 16, 0.4);
-  /* Accent as text, the keyboard focus ring and the nav/rail inner edge. */
+  /* Accent as text and the nav/rail inner edge. */
   --cy-text: var(--cy);
-  --ring: color-mix(in srgb, var(--cy) 40%, transparent);
   --edge-shade: rgba(0, 0, 0, 0.4);
   /* Stream kind chip without a known kind: kit dark text-secondary. Kit
      text-muted would be 4.45:1 on the dark tinted chip. */
   --kind-fallback: #9AA9AD;
-  /* Interactive field surfaces (search, selects, pause) and the scrollbar. */
+  /* Kit surface/raised grounds (fields, selects, segmented) and the scrollbar. */
   --field: rgba(8, 12, 16, 0.55);
   --field-strong: rgba(8, 12, 16, 0.7);
   --code-bg: rgba(8, 12, 16, 0.6);
@@ -89,7 +85,6 @@
   --bg: #F4F4F8;
   --line: rgba(28, 29, 34, 0.16);
   --cy: #0e9c84;
-  --cy2: var(--sl-status-info);
   --txt: #1C1D22;
   --mut: #5F6374;
   --glass-bg-top: rgba(255, 255, 255, 0.66);
@@ -104,15 +99,12 @@
      2.3-2.9:1 on the light ground. */
   --txt-soft: var(--slc-text-secondary);
   --txt-sub:  var(--mut);
-  --txt-nav:  var(--mut);
   --txt-dim:  var(--mut);
   --hair: rgba(28, 29, 34, 0.05);
-  --chip-inset: rgba(255, 255, 255, 0.5);
   /* The light accent is 2.9-3.1:1 as text on its tints; accent text takes
-     the kit light accent-depth (>=5.8:1). The focus ring is the full accent
-     (>=3.1:1), and the inner edge is kit ink at low alpha. */
+     the kit light accent-depth (>=5.8:1); the inner edge is kit ink at low
+     alpha. */
   --cy-text: #14606C;
-  --ring: var(--cy);
   --edge-shade: rgba(28, 29, 34, 0.08);
   --kind-fallback: var(--mut);
   --field: rgba(255, 255, 255, 0.7);
@@ -240,17 +232,8 @@ body {
 
 /* zoom scales the whole UI (incl. px sizes); height is divided back so the
    zoomed grid still fills exactly one viewport without clipping. */
-.app { display: grid; grid-template-columns: 222px 8px 1fr 300px;
+.app { display: grid; grid-template-columns: 222px 9px 1fr 9px 300px;
   height: calc(100vh / var(--ui-scale)); zoom: var(--ui-scale); }
-
-/* Generic resizer: vertical handle dragged on the X axis to resize the column.
-   Used by the main nav and by ListDetail's list pane. Applies to every sidebar. */
-.resizer { position: relative; cursor: col-resize; user-select: none;
-  display: flex; align-items: stretch; justify-content: center; }
-.resizer-grip { width: 1px; background: var(--line);
-  transition: width .12s ease, background .12s ease, box-shadow .12s ease; }
-.resizer:hover .resizer-grip { width: 2px; background: var(--cy); box-shadow: 0 0 6px var(--cy); }
-.resizer:active .resizer-grip { width: 2px; background: var(--cy); box-shadow: 0 0 10px var(--cy); }
 
 .glass {
   background: linear-gradient(180deg, var(--glass-bg-top), var(--glass-bg-bot));
@@ -263,24 +246,15 @@ body {
 /* Signature mono wordmark — tracked, matches the Sondalab family header. */
 .brand { padding: 0 18px 18px; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14px; letter-spacing: .12em; color: var(--txt); }
 .brand b { color: var(--cy); }
-/* Group titles read as mono structural eyebrows (the strongest family signal). */
-.grp { font-size: 9px; letter-spacing: .2em; color: var(--mut); text-transform: uppercase; padding: 14px 18px 6px; }
-.item { padding: 7px 18px; font-size: 12px; color: var(--txt-nav); cursor: pointer;
-  border-left: 2px solid transparent; display: flex; justify-content: space-between; }
-.item:hover { color: var(--txt); }
-.item.on { color: var(--txt); border-left-color: var(--cy);
-  background: linear-gradient(90deg, color-mix(in srgb, var(--tint) 10%, transparent), transparent); }
-.item .n { font-size: 9px; color: var(--txt-dim); }
+/* sl-nav__item ships no <button> reset (sl-list__row does). 0,1,1 beats the
+   kit's base but loses to its :hover / [aria-current] (0,2,0), and the left
+   border — the current-item accent edge — is left to the kit. */
+button.sl-nav__item { appearance: none; width: 100%; text-align: left;
+  background-color: transparent; border-top: 0; border-right: 0; border-bottom: 0; }
 
 /* Preferences footer (theme + UI zoom). */
 .nav-foot { margin-top: auto; padding: 12px 14px 2px; display: flex; flex-direction: column;
   gap: 8px; border-top: 1px solid var(--line); }
-.pref-font { display: flex; align-items: center; gap: 6px; }
-.pref-btn, .pref-pct { font-family: "IBM Plex Mono"; font-size: 10.5px; color: var(--mut);
-  background: var(--glass-bg-bot); border: 1px solid var(--line); border-radius: 5px;
-  padding: 4px 8px; cursor: pointer; transition: color .12s ease, border-color .12s ease; }
-.pref-btn:hover, .pref-pct:hover { color: var(--cy-text); border-color: var(--glass-border); }
-.pref-pct { flex: 1; text-align: center; }
 
 .canvas { padding: 18px 22px; overflow: hidden; }
 /* Page header reads as a mono structural label, not sans body. */
@@ -306,35 +280,26 @@ body {
 .lr-status-open .lr-dot { background: var(--cy); box-shadow: 0 0 6px var(--cy); }
 .lr-status-connecting .lr-dot { background: var(--sl-status-warning); box-shadow: 0 0 4px var(--sl-status-warning); }
 .lr-status-closed .lr-dot { background: var(--sl-status-danger); }
-.lr-controls { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; }
-.lr-filter { flex: 1; min-width: 0; font-family: "IBM Plex Mono"; font-size: 10.5px;
-  color: var(--txt); background: var(--field); border: 1px solid var(--line);
-  border-radius: 5px; padding: 4px 6px; outline: none; }
-.lr-filter:focus { border-color: var(--ring); }
-.lr-pause { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--mut);
-  background: var(--field); border: 1px solid var(--line);
-  border-radius: 5px; padding: 3px 9px; cursor: pointer;
-  transition: color .12s ease, border-color .12s ease, background .12s ease; }
-.lr-pause:hover { color: var(--txt); }
-.lr-pause.on { color: var(--cy-text); border-color: color-mix(in srgb, var(--tint) 40%, transparent);
-  background: color-mix(in srgb, var(--tint) 8%, transparent); }
-.lr-list { flex: 1; min-height: 0; overflow-y: auto; display: flex;
-  flex-direction: column; gap: 4px; padding-right: 4px;
+.lr-controls { display: flex; gap: 6px; align-items: stretch; margin-bottom: 8px; }
+.lr-filter { flex: 1; min-width: 0; }
+/* The kit paints pressed toggles in --slc-accent on --slc-accent-subtle. The
+   light accent is ~3:1 there, so pressed text takes --cy-text (>=5.8:1 light,
+   the accent itself in dark). */
+:is(.sl-chip, .sl-btn:not(.sl-btn--primary), .sl-icon-btn)[aria-pressed="true"] { color: var(--cy-text); }
+.lr-list { flex: 1; min-height: 0; overflow-y: auto; padding-right: 4px;
   /* Kind column: fits the longest name (SUBAGENT_SPAWN, 98px with its dot)
      so no kind is ellipsised. One width for every row keeps columns aligned. */
   --lr-kind-w: 100px; }
 .lr-empty { color: var(--mut); font-size: 11px; padding: 8px 4px; font-style: italic; }
-.lr-row { display: block; font-family: "IBM Plex Mono"; font-size: 10.5px;
-  padding: 4px 6px; border: 1px solid var(--line); border-radius: 5px;
-  background: color-mix(in srgb, var(--tint) 2%, transparent); }
-.lr-row-clickable { cursor: pointer; transition: background .12s ease, border-color .12s ease; }
-.lr-row-clickable:hover { background: color-mix(in srgb, var(--tint) 6%, transparent); border-color: color-mix(in srgb, var(--tint) 20%, transparent); }
-.lr-row.expanded { background: color-mix(in srgb, var(--tint) 8%, transparent); border-color: color-mix(in srgb, var(--tint) 30%, transparent); }
-.lr-row-head { display: grid; grid-template-columns: var(--lr-kind-w) 48px 1fr auto; gap: 6px;
-  align-items: center; }
-.lr-row-meta { display: block; color: var(--mut); font-style: italic; cursor: default; }
-.lr-row-meta-line { color: var(--mut); font-size: 9.5px; margin-top: 2px;
-  padding-left: calc(var(--lr-kind-w) + 6px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Expanded state is read from the disclosure's aria-expanded, not a class. */
+.lr-row:has(> [aria-expanded="true"]) { background-color: var(--slc-accent-subtle);
+  border-color: color-mix(in srgb, var(--slc-accent) 35%, transparent); }
+/* The disclosure head carries the row's columns; its chevron takes the first. */
+.lr-row-head { display: grid; grid-template-columns: auto var(--lr-kind-w) 48px minmax(0, 1fr) auto;
+  gap: 6px; align-items: center; width: 100%; text-align: left; }
+.lr-row-meta { color: var(--mut); font-style: italic; cursor: default; }
+.lr-row-meta-line { grid-column: 3 / -1; min-width: 0; color: var(--mut); font-size: 9.5px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-row-start { display: grid; grid-template-columns: 56px 1fr 80px; gap: 6px;
   align-items: center; color: var(--cy-text); cursor: default; }
 .lr-expand { margin: 6px 0 0; padding: 8px 10px; background: var(--code-bg);
@@ -374,19 +339,14 @@ body {
 .k-skill_use      { --k: var(--k-skill_use); }
 .k-meta           { --k: var(--k-meta); }
 .k-error          { --k: var(--k-error); }
-:is(.ev-kind, .lr-kind, .lr-kind-toggle)[class*=" k-"]::before {
+:is(.ev-kind, .lr-kind)[class*=" k-"]::before {
   content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%;
   background: var(--k); margin-right: 5px; vertical-align: 0; }
 
-/* Per-kind visibility toggles. */
-.lr-kinds { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
-.lr-kind-toggle { font-family: "IBM Plex Mono"; font-size: 9.5px;
-  letter-spacing: .04em; text-transform: uppercase; padding: 2px 7px;
-  border: 1px solid var(--line); border-radius: 4px;
-  background: color-mix(in srgb, var(--tint) 4%, transparent); color: var(--slc-text-secondary); cursor: pointer;
-  transition: color .12s ease, border-color .12s ease, opacity .12s ease; }
-.lr-kind-toggle:hover { color: var(--txt); border-color: color-mix(in srgb, var(--tint) 30%, transparent); }
-.lr-kind-toggle.off { opacity: 0.4; }
+/* Per-kind visibility chips: the kit's hollow/filled dot takes the kind colour. */
+.lr-kinds { margin-bottom: 8px; }
+.sl-chip[class*=" k-"]::before { box-shadow: inset 0 0 0 1px var(--k); }
+.sl-chip[class*=" k-"][aria-pressed="true"]::before { background-color: var(--k); }
 @keyframes lr-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
@@ -403,38 +363,23 @@ body {
 
 /* 3-col grid: list pane | resizer | detail. Width comes from inline style. */
 .ld { display: grid; grid-template-columns: 300px 8px 1fr; height: 100%; gap: 0; min-height: 0; }
-/* Inner padding gives the rounded items' glow room before scroll clipping. */
+/* Inner padding gives the rows' focus ring room before scroll clipping. */
 .ld-list { padding: 8px 12px 12px 8px; overflow-y: auto; min-width: 0; }
-.ld-search { display: block; width: 100%; box-sizing: border-box; margin-bottom: 10px;
-  padding: 8px 11px; font-family: "IBM Plex Mono"; font-size: 12px; color: var(--txt);
-  background: var(--field); border: 1px solid var(--glass-border);
-  border-radius: 6px; outline: none;
-  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease; }
-.ld-search::placeholder { color: var(--mut); }
-.ld-search:focus { border-color: var(--cy); box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint) 25%, transparent);
-  background: var(--field-strong); }
+.ld-search { margin-bottom: 10px; }
 .ld-list-title { font-family: var(--sl-font-sans); font-size: 11px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--mut); padding-bottom: 10px;
   border-bottom: 1px solid var(--line); margin-bottom: 8px; }
-.ld-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; margin: 2px 0; }
-.ld-item:hover { background: color-mix(in srgb, var(--tint) 5%, transparent); }
-/* Rounded clickable items use a glow ring on active (no left inset bar). */
-.ld-item.on { background: linear-gradient(90deg, color-mix(in srgb, var(--tint) 12%, transparent), color-mix(in srgb, var(--tint) 2%, transparent));
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint) 35%, transparent), 0 0 9px color-mix(in srgb, var(--tint) 22%, transparent); }
-/* Indented child item under a MEMORY.md header — subtle hierarchy guide. */
-.ld-item.is-child { position: relative; }
-.ld-item.is-child::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0;
-  width: 1px; background: var(--line); }
-.ld-item-title { font-size: 12px; color: var(--txt); }
-.ld-item-sub { font-size: 10px; color: var(--mut); margin-top: 2px;
-  text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+/* Indented child row under a MEMORY.md header — subtle hierarchy guide. */
+.sl-list__row.is-child { position: relative; }
+.sl-list__row.is-child::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0;
+  width: 1px; background: var(--slc-border-subtle); }
 .ld-empty { color: var(--mut); font-size: 12px; padding: 12px 4px; }
 /* Detail panel — wraps content in a readable column on large screens. */
 .ld-detail { overflow-y: auto; padding: 6px 24px 32px 6px; line-height: 1.6; }
 /* Text elements stay at readable width; graph/waterfall containers are unconstrained. */
 .ld-detail h2, .ld-detail h3 { max-width: 80ch; }
 .ld-detail .meta { max-width: 80ch; }
-.ld-detail dl, .ld-detail .kv { max-width: 80ch; }
+.ld-detail dl { max-width: 80ch; }
 .ld-detail .markdown { max-width: 80ch; }
 .ld-detail pre { max-width: 100ch; }
 .ld-detail h2 { font-family: var(--sl-font-sans); font-size: 22px; color: var(--txt);
@@ -483,41 +428,21 @@ body {
 .markdown em { color: var(--txt); }
 /* Task list checkboxes from remark-gfm. */
 .markdown input[type="checkbox"] { accent-color: var(--cy); margin-right: 4px; }
-.kv { display: grid; grid-template-columns: 160px 1fr; gap: 10px 16px;
-  font-size: 13px; line-height: 1.55; margin-bottom: 4px; }
-.kv dt { color: var(--mut); }
-.kv dd { color: var(--txt); word-break: break-word; margin: 0; }
 
 /* Stand-alone description shown above the body — no "description:" label needed. */
 .detail-lead { font-family: var(--sl-font-sans); font-size: 14.5px; color: var(--txt);
   line-height: 1.55; margin: -2px 0 20px; padding: 4px 0 4px 14px;
   border-left: 2px solid var(--cy); }
 
-/* Inline tag list (e.g. agent tools) shown as compact chips. */
+/* Inline tag list (e.g. agent tools, precedence badges). */
 .tools-row { display: flex; flex-wrap: wrap; gap: 6px; margin: -8px 0 18px; }
-.tool-chip { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--txt-sub);
-  background: color-mix(in srgb, var(--tint) 4%, transparent); border: 1px solid var(--line);
-  padding: 3px 8px; border-radius: 4px; letter-spacing: .02em;
-  transition: color .12s ease, border-color .12s ease, background .12s ease; }
-.tool-chip:hover { color: var(--txt); border-color: color-mix(in srgb, var(--tint) 30%, transparent);
-  background: color-mix(in srgb, var(--tint) 8%, transparent); }
 
-/* Glass pill used for scope tags (e.g. memories' project / global / discovered). */
-.glass-chip { display: inline-flex; align-items: center; gap: 6px;
-  padding: 4px 11px; font-family: "IBM Plex Mono"; font-size: 11px;
-  letter-spacing: .02em; color: var(--txt); border-radius: 999px;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--tint) 10%, transparent), color-mix(in srgb, var(--tint) 4%, transparent));
-  border: 1px solid color-mix(in srgb, var(--tint) 18%, transparent);
-  box-shadow: 0 0 0 1px var(--chip-inset) inset;
-  backdrop-filter: blur(8px) saturate(140%);
-  -webkit-backdrop-filter: blur(8px) saturate(140%);
-  max-width: 100%; }
-.glass-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
-  background: var(--cy); box-shadow: 0 0 6px var(--cy); flex: 0 0 auto; }
-.glass-chip.is-global::before { background: var(--cy2); box-shadow: 0 0 6px var(--cy2); }
-.glass-chip.is-discovered::before { background: var(--sl-viz-0);
-  box-shadow: 0 0 6px var(--sl-viz-0); }
-.glass-chip .chip-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+/* Memories' scope tag: the plain tag's dot carries the scope. */
+.scope-tag { max-width: 100%; }
+.scope-tag.is-project::before { background: var(--slc-accent); }
+.scope-tag.is-global::before { background: var(--slc-info); }
+.scope-tag.is-discovered::before { background: var(--sl-viz-0); }
+.scope-tag .chip-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   max-width: 60ch; }
 .canvas-body { height: calc(100% - 40px); margin-top: 12px; }
 .loading, .error { color: var(--mut); font-size: 12px; padding: 12px 4px; }
@@ -544,10 +469,6 @@ body {
   color: var(--txt); background: var(--code-bg); border: 1px solid var(--line);
   padding: 3px 8px; border-radius: 4px; margin-left: 6px;
   white-space: pre-wrap; word-break: break-word; max-width: 100%; }
-.ev-status { font-family: "IBM Plex Mono"; font-size: 11px; padding: 2px 7px;
-  border-radius: 4px; border: 1px solid var(--line); }
-.ev-status.ok { color: var(--sl-status-success); border-color: color-mix(in srgb, var(--sl-status-success) 30%, transparent); }
-.ev-status.err { color: var(--sl-status-danger); border-color: color-mix(in srgb, var(--sl-status-danger) 30%, transparent); }
 .ev-empty { color: var(--mut); font-style: italic; font-size: 12px; }
 .ev-row.is-focus { border-color: var(--cy); box-shadow: 0 0 0 1px var(--cy) inset, 0 0 14px color-mix(in srgb, var(--tint) 18%, transparent); }
 .exec-controls { display: flex; gap: 8px; padding-top: 6px; align-items: center; }
@@ -562,8 +483,7 @@ body {
 .exec-detail-label { font-family: "IBM Plex Mono"; font-size: 13px; color: var(--txt); }
 .exec-detail-tag { font-family: "IBM Plex Mono"; font-size: 10px; color: var(--sl-viz-0);
   border: 1px solid color-mix(in srgb, var(--sl-viz-0) 40%, transparent); border-radius: 4px; padding: 2px 7px; }
-.exec-detail-kv { grid-template-columns: 100px 1fr; font-size: 12px; gap: 6px 14px;
-  margin-bottom: 10px; }
+.exec-detail-kv { margin-bottom: 10px; }
 .exec-detail-kv code { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--txt);
   word-break: break-all; background: transparent; border: 0; padding: 0; border-radius: 0; }
 .exec-detail-body { margin: 0; padding: 8px 10px; background: var(--code-bg);
@@ -591,16 +511,6 @@ body {
 .jv .jv-bool { color: var(--jv-bool); font-weight: 600; }
 .jv .jv-null { color: var(--jv-null); font-style: italic; }
 
-/* View toggle (Events | Graph). */
-.view-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 6px;
-  overflow: hidden; }
-.view-toggle-btn { font-family: "IBM Plex Mono"; font-size: 11px; letter-spacing: .04em;
-  text-transform: uppercase; padding: 4px 12px; background: transparent;
-  border: none; color: var(--txt-sub); cursor: pointer;
-  transition: color .12s ease, background .12s ease; }
-.view-toggle-btn:hover { color: var(--txt); }
-.view-toggle-btn.on { color: var(--cy-text); background: color-mix(in srgb, var(--tint) 8%, transparent); }
-
 /* Execution graph SVG container + legend. */
 .exec-graph { display: flex; flex-direction: column; gap: 10px;
   border: 1px solid var(--line); border-radius: 8px;
@@ -624,12 +534,9 @@ body {
 .exec-wf { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; position: relative; }
 .exec-wf-scroll { max-height: 560px; overflow: auto; }
 .exec-wf-rows { position: relative; }
-/* Sits over the scroll at the label/track boundary; doesn't move with scroll. */
-.exec-wf-resizer { position: absolute; top: 0; bottom: 0; width: 9px; transform: translateX(-50%);
-  cursor: col-resize; z-index: 5; }
-.exec-wf-resizer::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
-  background: var(--line); transition: background .12s ease, box-shadow .12s ease; }
-.exec-wf-resizer:hover::after { background: var(--cy); box-shadow: 0 0 6px var(--cy); }
+/* sl-resizer placed over the scroll at the label/track boundary; doesn't move
+   with scroll. Must stay after the kit import: it overrides position: relative. */
+.exec-wf-resizer { position: absolute; top: 0; bottom: 0; transform: translateX(-50%); z-index: 5; }
 /* Track gets a comfortable min width → horizontal scroll; the label column is
    frozen (sticky) so only the timeline scrolls under it. */
 .exec-wf-row { display: grid; grid-template-columns: var(--wf-label, 210px) minmax(560px, 1fr);

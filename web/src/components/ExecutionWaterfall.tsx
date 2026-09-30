@@ -140,7 +140,15 @@ export function ExecutionWaterfall({ events, onSelectEvent }: ExecutionWaterfall
   return (
     <div className="exec-graph">
       <div className="exec-wf" style={{ "--wf-label": `${label.width}px` } as CSSProperties}>
-        <div className="exec-wf-resizer" style={{ left: label.width }} {...label.handlers} title="Trascina per ridimensionare" />
+        <div
+          className="sl-resizer exec-wf-resizer"
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="Resize the label column"
+          style={{ left: label.width }}
+          {...label.handlers}
+          title="Trascina per ridimensionare"
+        />
         {degenerate ? (
           <div className="exec-hint">Timestamp non disponibili o troppo ravvicinati — righe in ordine di sequenza.</div>
         ) : null}

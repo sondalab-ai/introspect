@@ -67,49 +67,55 @@ export function ListDetail<T extends ListDetailItem>({
   const selected = filtered.find((i) => i.id === selectedId) ?? filtered[0];
 
   return (
-    <div className="ld" style={{ gridTemplateColumns: `${width}px 8px 1fr` }}>
+    <div className="ld" style={{ gridTemplateColumns: `${width}px 9px 1fr` }}>
       <div className="ld-list">
         <div className="ld-list-title">{listTitle}</div>
         {searchable ? (
-          <input
-            className="ld-search"
-            placeholder="Search…"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            spellCheck={false}
-            autoCorrect="off"
-            autoCapitalize="off"
-          />
+          <div className="sl-field ld-search">
+            <input
+              className="sl-field__input"
+              aria-label="Search"
+              placeholder="Search…"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              spellCheck={false}
+              autoCorrect="off"
+              autoCapitalize="off"
+            />
+          </div>
         ) : null}
         {filtered.length === 0 ? (
           <div className="ld-empty">{query.trim() ? "No results." : emptyMessage}</div>
         ) : (
-          filtered.map((item) => {
-            const lvl = item.level ?? 0;
-            const padLeft = 10 + lvl * 16;
-            return (
-              <div
-                key={item.id}
-                className={`ld-item${item.id === (selected?.id ?? "") ? " on" : ""}${lvl > 0 ? " is-child" : ""}`}
-                style={{ paddingLeft: padLeft }}
-                onClick={() => setSelectedId(item.id)}
-              >
-                <div className="ld-item-title">{item.title}</div>
-                {item.subtitle ? <div className="ld-item-sub">{item.subtitle}</div> : null}
-              </div>
-            );
-          })
+          <div className="sl-list sl-list--dense" role="listbox" aria-label={listTitle}>
+            {filtered.map((item) => {
+              const lvl = item.level ?? 0;
+              const padLeft = 10 + lvl * 16;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="option"
+                  aria-selected={item.id === (selected?.id ?? "")}
+                  className={`sl-list__row${lvl > 0 ? " is-child" : ""}`}
+                  style={{ paddingLeft: padLeft }}
+                  onClick={() => setSelectedId(item.id)}
+                >
+                  {item.title}
+                  {item.subtitle ? <span className="sl-list__meta">{item.subtitle}</span> : null}
+                </button>
+              );
+            })}
+          </div>
         )}
       </div>
       <div
-        className="resizer"
+        className="sl-resizer"
         role="separator"
         aria-orientation="vertical"
         aria-label="Resize list pane"
         {...handlers}
-      >
-        <div className="resizer-grip" />
-      </div>
+      />
       <div className="ld-detail">{selected ? renderDetail(selected) : null}</div>
     </div>
   );

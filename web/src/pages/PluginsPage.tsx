@@ -25,7 +25,7 @@ export function PluginsPage() {
           <>
             <h2>{item.raw.id}</h2>
             <div className="meta">{item.raw.rootPath}</div>
-            <dl className="kv">
+            <dl className="sl-kv">
               <dt>source</dt><dd>{item.raw.source || "—"}</dd>
               <dt>version</dt><dd>{item.raw.version || "—"}</dd>
               <dt>enabled</dt><dd>{String(item.raw.enabled)}</dd>

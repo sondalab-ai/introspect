@@ -21,7 +21,7 @@ function ProjectSessions({ slug }: { slug: string }) {
   if (sessionId) {
     return (
       <div style={{ marginTop: 14 }}>
-        <button className="tool-chip" style={{ cursor: "pointer", marginBottom: 10 }} onClick={() => setSessionId(null)}>
+        <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" style={{ marginBottom: 10 }} onClick={() => setSessionId(null)}>
           ← sessioni
         </button>
         <SessionDetailPage slug={slug} sessionId={sessionId} embedded />
@@ -34,12 +34,14 @@ function ProjectSessions({ slug }: { slug: string }) {
   return (
     <div style={{ marginTop: 18 }}>
       <div className="ld-list-title">Sessions ({state.data.length})</div>
-      {state.data.map((s) => (
-        <div key={s.sessionId} className="ld-item" onClick={() => setSessionId(s.sessionId)}>
-          <div className="ld-item-title">{sessionTitle(s)}</div>
-          <div className="ld-item-sub">{sessionContext(s)}</div>
-        </div>
-      ))}
+      <div className="sl-list sl-list--dense">
+        {state.data.map((s) => (
+          <button key={s.sessionId} type="button" className="sl-list__row" onClick={() => setSessionId(s.sessionId)}>
+            {sessionTitle(s)}
+            <span className="sl-list__meta">{sessionContext(s)}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

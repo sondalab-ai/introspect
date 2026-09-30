@@ -14,14 +14,25 @@ export interface ResizableOpts {
 
 export interface ResizableHandle {
   width: number;
-  /** Pointer handlers to spread onto the visible resizer element. */
+  /**
+   * Pointer + keyboard handlers and separator ARIA values to spread onto the
+   * `sl-resizer` element. Left/Right arrows move it by KEY_STEP px (mirrored
+   * when `invert` is set), and aria-valuenow tracks the width.
+   */
   handlers: {
     onPointerDown: (e: React.PointerEvent) => void;
     onPointerMove: (e: React.PointerEvent) => void;
     onPointerUp: (e: React.PointerEvent) => void;
     onPointerCancel: (e: React.PointerEvent) => void;
+    onKeyDown: (e: React.KeyboardEvent) => void;
+    tabIndex: 0;
+    "aria-valuenow": number;
+    "aria-valuemin": number;
+    "aria-valuemax": number;
   };
 }
+
+const KEY_STEP = 10;
 
 /** Resize an X-axis dimension by dragging a vertical handle. Persists across sessions. */
 export function useResizableWidth(opts: ResizableOpts): ResizableHandle {
@@ -50,6 +61,16 @@ export function useResizableWidth(opts: ResizableOpts): ResizableHandle {
   }
 
   const handlers: ResizableHandle["handlers"] = {
+    tabIndex: 0,
+    "aria-valuenow": width,
+    "aria-valuemin": opts.min,
+    "aria-valuemax": opts.max,
+    onKeyDown(e) {
+      const dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (dir === 0) return;
+      e.preventDefault();
+      setWidth((w) => clamp(w + (opts.invert ? -dir : dir) * KEY_STEP));
+    },
     onPointerDown(e) {
       dragRef.current = { startX: e.clientX, startW: width };
       (e.currentTarget as Element).setPointerCapture(e.pointerId);

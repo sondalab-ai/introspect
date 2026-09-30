@@ -89,19 +89,21 @@ function expandedBody(ev: SessionEvent): ExpandedBody | null {
 
 interface FrameRowProps {
   frame: LiveFrame;
+  /** Unique per row (uuids repeat across one message's events); names the panel id. */
+  rowKey: string;
   isExpanded: boolean;
   onToggle: () => void;
   showSlug: boolean;
   toolStatus: Map<string, ToolStatus>;
 }
 
-function FrameRow({ frame, isExpanded, onToggle, showSlug, toolStatus }: FrameRowProps) {
+function FrameRow({ frame, rowKey, isExpanded, onToggle, showSlug, toolStatus }: FrameRowProps) {
   if (frame.type === "hello") {
-    return <div className="lr-row lr-row-meta">Connected · {frame.clients} client(s)</div>;
+    return <div className="sl-list__row lr-row lr-row-meta">Connected · {frame.clients} client(s)</div>;
   }
   if (frame.type === "session-start") {
     return (
-      <div className="lr-row lr-row-start">
+      <div className="sl-list__row lr-row lr-row-start">
         <span className="lr-kind">start</span>
         <span className="lr-slug" title={frame.slug}>{shortSlug(frame.slug, 24)}</span>
         <span className="lr-sid" title={frame.sessionId}>{frame.sessionId.slice(0, 8)}</span>
@@ -111,39 +113,37 @@ function FrameRow({ frame, isExpanded, onToggle, showSlug, toolStatus }: FrameRo
   const ev = frame.event;
   const isRunningToolUse = ev.kind === "tool_use" && toolStatus.get(ev.toolUseId) === "running";
   const body = isExpanded ? expandedBody(ev) : null;
+  const panelId = `lr-panel-${rowKey}`;
   return (
-    <div
-      className={`lr-row lr-row-clickable${isExpanded ? " expanded" : ""}`}
-      onClick={onToggle}
-    >
-      <div className="lr-row-head">
+    <div className="sl-list__row lr-row">
+      <button
+        type="button"
+        className="sl-disclosure lr-row-head"
+        aria-expanded={isExpanded}
+        aria-controls={body ? panelId : undefined}
+        onClick={onToggle}
+      >
         <span className={`lr-kind k-${kindKey(ev)}`}>{ev.kind}</span>
         <span className="lr-time">{timeLabel(ev.ts)}</span>
         <span className="lr-label" title={eventLabel(frame)}>{eventLabel(frame)}</span>
         {isRunningToolUse ? <span className="lr-running" title="Running">●</span> : null}
-      </div>
-      {showSlug ? (
-        <div className="lr-row-meta-line" title={`${frame.slug} / ${frame.sessionId}`}>
-          {shortSlug(frame.slug, 28)}
-        </div>
-      ) : null}
+        {showSlug ? (
+          <span className="lr-row-meta-line" title={`${frame.slug} / ${frame.sessionId}`}>
+            {shortSlug(frame.slug, 28)}
+          </span>
+        ) : null}
+      </button>
       {body ? (
         body.mode === "md" ? (
-          <div
-            className="lr-expand lr-expand-md"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div id={panelId} className="lr-expand lr-expand-md">
             <Markdown>{body.value}</Markdown>
           </div>
         ) : body.mode === "json" ? (
-          <div onClick={(e) => e.stopPropagation()}>
+          <div id={panelId}>
             <JsonView value={body.data} className="lr-expand lr-expand-json" />
           </div>
         ) : (
-          <pre
-            className="lr-expand"
-            onClick={(e) => e.stopPropagation()}
-          >{body.value}</pre>
+          <pre id={panelId} className="lr-expand">{body.value}</pre>
         )
       ) : null}
     </div>
@@ -250,23 +250,29 @@ export function LiveRail() {
         </span>
       </div>
       <div className="lr-controls">
-        <select
-          className="lr-filter"
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          title="Filter by project slug"
-        >
-          <option value={ALL}>tutti i progetti</option>
-          {slugs.map((s) => (
-            <option key={s} value={s}>{shortSlug(s, 28)}</option>
-          ))}
-        </select>
+        <span className="sl-field__control sl-select lr-filter">
+          <select
+            className="sl-field__input"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            aria-label="Filter by project slug"
+            title="Filter by project slug"
+          >
+            <option value={ALL}>tutti i progetti</option>
+            {slugs.map((s) => (
+              <option key={s} value={s}>{shortSlug(s, 28)}</option>
+            ))}
+          </select>
+        </span>
         <button
-          className={`lr-pause${paused ? " on" : ""}`}
+          type="button"
+          className="sl-btn sl-btn--ghost sl-btn--sm"
+          aria-pressed={paused}
+          aria-label="Pause"
           onClick={() => setPaused((p) => !p)}
           title={paused ? "Resume" : "Pause"}
         >
-          {paused ? "▶" : "❚❚"}
+          ❚❚
         </button>
       </div>
       {runningCount > 0 ? (
@@ -275,13 +281,15 @@ export function LiveRail() {
         </div>
       ) : null}
       {seenKinds.length > 0 ? (
-        <div className="lr-kinds">
+        <div className="sl-chips lr-kinds" role="group" aria-label="Event kinds">
           {seenKinds.map((k) => {
             const off = hiddenKinds.has(k);
             return (
               <button
                 key={k}
-                className={`lr-kind-toggle k-${k}${off ? " off" : ""}`}
+                type="button"
+                className={`sl-chip k-${k}`}
+                aria-pressed={!off}
                 onClick={() => toggleKind(k)}
                 title={off ? `Mostra ${k}` : `Nascondi ${k}`}
               >{k}</button>
@@ -289,7 +297,7 @@ export function LiveRail() {
           })}
         </div>
       ) : null}
-      <div className="lr-list">
+      <div className="sl-list sl-list--dense lr-list">
         {recent.length === 0 ? (
           <div className="lr-empty">
             {status === "open"
@@ -303,6 +311,7 @@ export function LiveRail() {
             return (
               <FrameRow
                 key={key}
+                rowKey={key.replace(/[^A-Za-z0-9_-]/g, "_")}
                 frame={f}
                 isExpanded={!!uuid && expanded.has(uuid)}
                 onToggle={() => uuid && toggle(uuid)}

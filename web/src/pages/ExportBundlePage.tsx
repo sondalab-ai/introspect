@@ -10,7 +10,7 @@ export function ExportBundlePage() {
         <br />
         prompt, agents, commands, skills, memorie globali + per-progetto.
       </p>
-      <dl className="kv">
+      <dl className="sl-kv">
         <dt>Contenuto</dt>
         <dd>
           CLAUDE.md, agents/, commands/, skills/, memory/, plugins.json, settings.json
@@ -23,7 +23,7 @@ export function ExportBundlePage() {
         <dt>Formato</dt>
         <dd>ZIP standard, scompattabile con <code>unzip</code>.</dd>
       </dl>
-      <button className="tool-chip" style={{ cursor: "pointer", marginTop: 12 }} onClick={download}>
+      <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" style={{ marginTop: 12 }} onClick={download}>
         Scarica bundle.zip →
       </button>
     </div>

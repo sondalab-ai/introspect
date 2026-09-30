@@ -245,18 +245,18 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
         </g>
       </svg>
       <div className="exec-controls">
-        <button className="tool-chip" style={{ cursor: "pointer" }} onClick={resetZoom}>
+        <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={resetZoom}>
           Reset zoom
         </button>
         {selected ? (
-          <button className="tool-chip" style={{ cursor: "pointer" }} onClick={() => setSelected(null)}>
+          <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => setSelected(null)}>
             Deseleziona
           </button>
         ) : null}
         {selected && onSelectEvent ? (
           <button
-            className="tool-chip"
-            style={{ cursor: "pointer" }}
+            type="button"
+            className="sl-btn sl-btn--ghost sl-btn--sm"
             onClick={() => {
               const node = layout.nodes.find((n) => n.id === selected);
               if (node) onSelectEvent(node.ev.uuid);
