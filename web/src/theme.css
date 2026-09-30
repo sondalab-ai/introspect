@@ -481,7 +481,7 @@ body {
   gap: 10px; }
 .ev-row { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
   background: rgba(46,230,192,.02); }
-.ev-row.is-side { border-left: 2px solid color-mix(in srgb, var(--sl-viz-0) 50%, transparent); }
+.ev-row.is-side { border-left: 2px solid var(--sl-viz-0); }
 .ev-head { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono";
   font-size: 11px; color: var(--mut); margin-bottom: 6px; }
 .ev-time { color: var(--mut); }
@@ -571,8 +571,8 @@ body {
 @media (prefers-reduced-motion: reduce) { .exec-edge-flow { animation: none; opacity: 0; } }
 .exec-node { transition: transform .25s cubic-bezier(.22,.61,.36,1); }
 /* Concentric ring on pass-through nodes (both input and output edges). */
-.exec-node-ring { transition: stroke-opacity .15s ease; }
-.exec-node:hover .exec-node-ring { stroke-opacity: .9; }
+.exec-node-ring { transition: stroke-width .15s ease; }
+.exec-node:hover .exec-node-ring { stroke-width: 1.6; }
 /* Waterfall / timeline view */
 .exec-wf { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; position: relative; }
 .exec-wf-scroll { max-height: 560px; overflow: auto; }
@@ -594,14 +594,20 @@ body {
   padding: 2px 8px 2px 6px; border-right: 1px solid var(--line); height: 100%;
   position: sticky; left: 0; z-index: 2; background: var(--bg); }
 .exec-wf-row.sel .exec-wf-label { box-shadow: inset 2px 0 0 var(--cy); }
-.exec-wf-dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
+.exec-wf-dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto;
+  background: currentColor; }
 .exec-wf-kind { font-family: "IBM Plex Mono"; font-size: 9.5px; letter-spacing: .04em;
   color: var(--mut); flex: 0 0 auto; }
 .exec-wf-name { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--txt);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .exec-wf-track { position: relative; height: 18px; }
 .exec-wf-bar { position: absolute; top: 5px; height: 8px; min-width: 5px;
-  border-radius: 3px; box-shadow: 0 0 4px rgba(0,0,0,.3); }
+  border-radius: 3px; box-shadow: 0 0 4px rgba(0,0,0,.3); background: currentColor; }
+/* Sidechain rows: hollow, full-colour outline instead of dimmed opacity, so
+   the mark keeps >=3:1 on the light ground. Legends mirror it. */
+.exec-wf-dot.is-side, .exec-wf-bar.is-side { background: transparent;
+  border: 2px solid currentColor; box-shadow: none; }
+.legend-dot.is-side { background: transparent; border: 2px solid var(--mut); }
 .exec-wf-dur { position: absolute; top: 3px; margin-left: 5px;
   font-family: "IBM Plex Mono"; font-size: 9px; color: var(--mut); white-space: nowrap;
   pointer-events: none; }

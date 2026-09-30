@@ -165,18 +165,17 @@ export function ExecutionWaterfall({ events, onSelectEvent }: ExecutionWaterfall
                 onDoubleClick={() => onSelectEvent?.(r.ev.uuid)}
               >
                 <div className="exec-wf-label" style={{ paddingLeft: 6 + r.depth * 12 }} title={`${r.ev.kind} · ${eventLabel(r.ev)}`}>
-                  <span className="exec-wf-dot" style={{ background: color, opacity: r.ev.isSidechain ? 0.55 : 1 }} />
+                  <span className={`exec-wf-dot${r.ev.isSidechain ? " is-side" : ""}`} style={{ color }} />
                   <span className="exec-wf-kind">{r.ev.kind}</span>
                   <span className="exec-wf-name">{eventLabel(r.ev)}</span>
                 </div>
                 <div className="exec-wf-track">
                   <div
-                    className="exec-wf-bar"
+                    className={`exec-wf-bar${r.ev.isSidechain ? " is-side" : ""}`}
                     style={{
                       left: `${r.startFrac * 100}%`,
                       width: `${widthPct}%`,
-                      background: color,
-                      opacity: r.ev.isSidechain ? 0.5 : 0.92,
+                      color,
                     }}
                   />
                   {r.durMs != null ? (
@@ -201,6 +200,10 @@ export function ExecutionWaterfall({ events, onSelectEvent }: ExecutionWaterfall
             {k}
           </span>
         ))}
+        <span className="legend-item">
+          <span className="legend-dot is-side" />
+          sidechain
+        </span>
       </div>
     </div>
   );

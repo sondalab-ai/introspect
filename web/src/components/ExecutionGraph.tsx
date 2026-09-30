@@ -205,19 +205,29 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                       r={r + 3.5}
                       fill="none"
                       style={{ stroke: KIND_COLOR[n.kind] }}
-                      strokeOpacity={0.55}
                       strokeWidth={1}
                     />
                   ) : null}
-                  <circle
-                    r={r}
-                    style={{
-                      fill: KIND_COLOR[n.kind],
-                      stroke: n.id === selected || isHov ? "var(--cy)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
-                    }}
-                    fillOpacity={n.isSidechain ? 0.55 : 0.9}
-                    strokeWidth={n.id === selected ? 2.5 : isHov ? 2 : 1}
-                  />
+                  {n.isSidechain && (n.id === selected || isHov) ? (
+                    <circle r={r + 2.5} fill="none" style={{ stroke: "var(--cy)" }} strokeWidth={n.id === selected ? 2 : 1.5} />
+                  ) : null}
+                  {n.isSidechain ? (
+                    // Sidechain: hollow full-colour ring (opacity dimming fell below 3:1 on light).
+                    <circle
+                      r={r - 0.75}
+                      style={{ fill: "var(--bg)", stroke: KIND_COLOR[n.kind] }}
+                      strokeWidth={2.5}
+                    />
+                  ) : (
+                    <circle
+                      r={r}
+                      style={{
+                        fill: KIND_COLOR[n.kind],
+                        stroke: n.id === selected || isHov ? "var(--cy)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
+                      }}
+                      strokeWidth={n.id === selected ? 2.5 : isHov ? 2 : 1}
+                    />
+                  )}
                   {isHov ? (
                     <text
                       x={12} y={4}
@@ -271,6 +281,10 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
             {k}
           </span>
         ))}
+        <span className="legend-item">
+          <span className="legend-dot is-side" />
+          sidechain
+        </span>
       </div>
     </div>
   );
