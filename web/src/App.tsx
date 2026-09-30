@@ -67,7 +67,7 @@ function useAppPrefs() {
   return {
     theme,
     scale,
-    toggleTheme: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
+    setTheme,
     bumpScale: (d: number) => setScale((s) => clampScale(s + d)),
     resetScale: () => setScale(1),
   };
@@ -84,49 +84,58 @@ export function App() {
   return (
     <div
       className="app"
-      style={{ gridTemplateColumns: `${nav.width}px 8px 1fr 8px ${rail.width}px` }}
+      style={{ gridTemplateColumns: `${nav.width}px 9px 1fr 9px ${rail.width}px` }}
     >
       <nav className="nav glass">
         <div className="brand">
           <b>◇</b> intro<b>spect</b>
         </div>
-        {NAV_GROUPS.map((group) => (
-          <div key={group.title}>
-            <div className="grp">{group.title}</div>
-            {group.items.map((item) => (
-              <div
-                key={item.label}
-                className={`item${item.label === active ? " on" : ""}`}
-                onClick={() => setActive(item.label)}
-              >
-                <span>{item.label}</span>
-                {item.badge ? <span className="n">{item.badge}</span> : null}
-              </div>
-            ))}
-          </div>
-        ))}
+        <div className="sl-nav">
+          {NAV_GROUPS.map((group) => (
+            <div key={group.title}>
+              <div className="sl-nav__group">{group.title}</div>
+              {group.items.map((item) => (
+                <button
+                  key={item.label}
+                  type="button"
+                  className="sl-nav__item"
+                  aria-current={item.label === active ? "page" : undefined}
+                  onClick={() => setActive(item.label)}
+                >
+                  <span>{item.label}</span>
+                  {item.badge ? <span className="sl-nav__count">{item.badge}</span> : null}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
         <div className="nav-foot">
-          <button
-            className="pref-btn"
-            onClick={prefs.toggleTheme}
-            title={prefs.theme === "dark" ? "Light theme" : "Dark theme"}
-          >
-            {prefs.theme === "dark" ? "☀ light" : "☾ dark"}
-          </button>
-          <div className="pref-font" title="Interface size">
-            <button className="pref-btn" onClick={() => prefs.bumpScale(-SCALE_STEP)} aria-label="Decrease">A−</button>
-            <button className="pref-pct" onClick={prefs.resetScale} title="Reset to 100%">
+          <div className="sl-segmented" role="group" aria-label="Theme">
+            <button
+              type="button"
+              className="sl-segmented__item"
+              aria-pressed={prefs.theme === "light"}
+              onClick={() => prefs.setTheme("light")}
+            >☀ light</button>
+            <button
+              type="button"
+              className="sl-segmented__item"
+              aria-pressed={prefs.theme === "dark"}
+              onClick={() => prefs.setTheme("dark")}
+            >☾ dark</button>
+          </div>
+          <div className="sl-btn-group" role="group" aria-label="Interface size" title="Interface size">
+            <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => prefs.bumpScale(-SCALE_STEP)} aria-label="Decrease">A−</button>
+            <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={prefs.resetScale} title="Reset to 100%">
               {Math.round(prefs.scale * 100)}%
             </button>
-            <button className="pref-btn" onClick={() => prefs.bumpScale(SCALE_STEP)} aria-label="Increase">A+</button>
+            <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => prefs.bumpScale(SCALE_STEP)} aria-label="Increase">A+</button>
           </div>
         </div>
       </nav>
 
-      <div className="resizer" role="separator" aria-orientation="vertical"
-           aria-label="Resize navigation" {...nav.handlers}>
-        <div className="resizer-grip" />
-      </div>
+      <div className="sl-resizer" role="separator" aria-orientation="vertical"
+           aria-label="Resize navigation" {...nav.handlers} />
 
       <section className="canvas">
         <div className="l">{active}</div>
@@ -134,14 +143,12 @@ export function App() {
       </section>
 
       <div
-        className="resizer"
+        className="sl-resizer"
         role="separator"
         aria-orientation="vertical"
         aria-label="Resize event stream"
         {...rail.handlers}
-      >
-        <div className="resizer-grip" />
-      </div>
+      />
 
       <aside className="rail glass">
         <LiveRail />

@@ -38,7 +38,7 @@ export function AgentsPage() {
                   .map((t) => t.trim())
                   .filter(Boolean)
                   .map((t) => (
-                    <span className="tool-chip" key={t}>{t}</span>
+                    <span className="sl-tag sl-tag--plain" key={t}>{t}</span>
                   ))}
               </div>
             ) : null}

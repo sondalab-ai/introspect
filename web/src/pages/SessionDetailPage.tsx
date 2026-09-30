@@ -9,6 +9,12 @@ import { sessionTitle } from "../sessionLabel.js";
 
 type View = "timeline" | "events" | "graph";
 
+const VIEW_TAB: Record<View, string> = {
+  timeline: "Timeline",
+  events: "Events",
+  graph: "Graph",
+};
+
 const VIEW_TITLE: Record<View, string> = {
   timeline: "Timeline",
   events: "Events",
@@ -51,12 +57,12 @@ export function SessionDetailPage({ slug, sessionId, onBack, embedded }: Session
     <div className={embedded ? "" : "canvas-body"} style={containerStyle}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
         {onBack ? (
-          <button className="tool-chip" onClick={onBack} style={{ cursor: "pointer" }}>← back</button>
+          <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={onBack}>← back</button>
         ) : null}
         <h2 style={{ margin: 0 }}>{sessionTitle(meta)}</h2>
       </div>
       <div className="meta" title={slug}>{prettyProjectName(meta.cwd, slug)} · {meta.sessionId}</div>
-      <dl className="kv">
+      <dl className="sl-kv">
         <dt>first</dt><dd>{formatDate(meta.firstTs)}</dd>
         <dt>last</dt><dd>{formatDate(meta.lastTs)}</dd>
         <dt>cwd</dt><dd>{meta.cwd ?? "—"}</dd>
@@ -75,19 +81,17 @@ export function SessionDetailPage({ slug, sessionId, onBack, embedded }: Session
         <h3 style={{ margin: 0 }}>
           {view === "events" ? `Events (${events.length})` : VIEW_TITLE[view]}
         </h3>
-        <div className="view-toggle">
-          <button
-            className={`view-toggle-btn${view === "timeline" ? " on" : ""}`}
-            onClick={() => setView("timeline")}
-          >Timeline</button>
-          <button
-            className={`view-toggle-btn${view === "events" ? " on" : ""}`}
-            onClick={() => setView("events")}
-          >Events</button>
-          <button
-            className={`view-toggle-btn${view === "graph" ? " on" : ""}`}
-            onClick={() => setView("graph")}
-          >Graph</button>
+        <div className="sl-segmented" role="tablist" aria-label="Session view">
+          {(["timeline", "events", "graph"] as const).map((v) => (
+            <button
+              key={v}
+              type="button"
+              role="tab"
+              className="sl-segmented__item"
+              aria-selected={view === v}
+              onClick={() => setView(v)}
+            >{VIEW_TAB[v]}</button>
+          ))}
         </div>
       </div>
       {view === "timeline" ? (

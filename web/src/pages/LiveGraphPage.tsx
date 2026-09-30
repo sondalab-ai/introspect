@@ -113,26 +113,28 @@ export function LiveGraphPage() {
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
         <span className="meta" style={{ flex: "0 0 auto" }}>session</span>
-        <select
-          className="lr-filter"
-          value={pinned ? `${pinned.slug}::${pinned.sessionId}` : ""}
-          onChange={(e) => {
-            const v = e.target.value;
-            if (!v) { setPinned(null); return; }
-            const [slug, sessionId] = v.split("::");
-            if (slug && sessionId) setPinned({ slug, sessionId });
-          }}
-          style={{ maxWidth: 540 }}
-        >
-          <option value="">auto (ultima attiva)</option>
-          {options.map((s) => (
-            <option key={`${s.slug}::${s.sessionId}`} value={`${s.slug}::${s.sessionId}`}>
-              {s.label}{s.live ? " · live" : ""}
-            </option>
-          ))}
-        </select>
+        <span className="sl-field__control sl-select lr-filter" style={{ maxWidth: 540 }}>
+          <select
+            className="sl-field__input"
+            aria-label="Session"
+            value={pinned ? `${pinned.slug}::${pinned.sessionId}` : ""}
+            onChange={(e) => {
+              const v = e.target.value;
+              if (!v) { setPinned(null); return; }
+              const [slug, sessionId] = v.split("::");
+              if (slug && sessionId) setPinned({ slug, sessionId });
+            }}
+          >
+            <option value="">auto (ultima attiva)</option>
+            {options.map((s) => (
+              <option key={`${s.slug}::${s.sessionId}`} value={`${s.slug}::${s.sessionId}`}>
+                {s.label}{s.live ? " · live" : ""}
+              </option>
+            ))}
+          </select>
+        </span>
         {pinned ? (
-          <button className="tool-chip" style={{ cursor: "pointer" }} onClick={() => setPinned(null)}>
+          <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => setPinned(null)}>
             unpin
           </button>
         ) : null}

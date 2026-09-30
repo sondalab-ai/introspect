@@ -122,7 +122,7 @@ export function EventDetail({ ev }: { ev: SessionEvent }) {
         <span className="exec-detail-label">{eventLabel(ev)}</span>
         {ev.isSidechain ? <span className="exec-detail-tag">sidechain</span> : null}
       </div>
-      <dl className="kv exec-detail-kv">
+      <dl className="sl-kv exec-detail-kv">
         <dt>time</dt><dd>{fmtTime(ev.ts)}</dd>
         <dt>uuid</dt><dd><code>{ev.uuid}</code></dd>
         {ev.parentUuid ? (<><dt>parent</dt><dd><code>{ev.parentUuid}</code></dd></>) : null}

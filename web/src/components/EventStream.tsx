@@ -52,26 +52,26 @@ function renderBody(ev: SessionEvent) {
     case "tool_use":
       return (
         <>
-          <span className="tool-chip">{ev.name}</span>
+          <span className="sl-tag sl-tag--plain">{ev.name}</span>
           <code className="ev-input">{previewInput(ev.input)}</code>
         </>
       );
     case "tool_result":
       return (
         <>
-          <span className={`ev-status ${ev.ok ? "ok" : "err"}`}>{ev.ok ? "ok" : "error"}</span>
+          <span className={`sl-badge ${ev.ok ? "sl-badge--success" : "sl-badge--danger"}`}>{ev.ok ? "ok" : "error"}</span>
           {ev.preview ? <code className="ev-input">{truncate(ev.preview)}</code> : null}
         </>
       );
     case "subagent_spawn":
       return (
         <>
-          <span className="tool-chip">{ev.subagentType}</span>
+          <span className="sl-tag sl-tag--plain">{ev.subagentType}</span>
           <code className="ev-input">{truncate(ev.description)}</code>
         </>
       );
     case "skill_use":
-      return <span className="tool-chip">{ev.skill}</span>;
+      return <span className="sl-tag sl-tag--plain">{ev.skill}</span>;
     case "meta":
       return (
         <code className="ev-input">

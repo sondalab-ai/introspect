@@ -21,7 +21,7 @@ function scopeLabel(m: Pick<MemoryItem, "scope" | "cwd">): string {
 
 function ScopeChip({ memory }: { memory: MemoryItem }) {
   return (
-    <span className={`glass-chip is-${scopeKind(memory.scope)}`} title={memory.cwd ?? memory.scope}>
+    <span className={`sl-tag sl-tag--plain scope-tag is-${scopeKind(memory.scope)}`} title={memory.cwd ?? memory.scope}>
       <span className="chip-text">{scopeLabel(memory)}</span>
     </span>
   );
