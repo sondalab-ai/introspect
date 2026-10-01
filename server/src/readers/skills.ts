@@ -1,8 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import matter from "gray-matter";
 import { realPathOr } from "./realPath.js";
-import { asString, bodyPreview } from "./frontmatter.js";
+import { asString, bodyPreview, parseFrontmatter } from "./frontmatter.js";
 import { pluginInstallPaths } from "./pluginPaths.js";
 import { annotatePrecedence, type ItemSource, type Precedence } from "./precedence.js";
 import type { ResolvedRoot } from "../sources/types.js";
@@ -60,9 +59,8 @@ export function readSkills(roots: ResolvedRoot[]): SkillItem[] {
       walk(dir, 0, files);
       for (const path of files) {
         const raw = readFileSync(path, "utf8");
-        const parsed = matter(raw);
-        const meta = parsed.data ?? {};
-        const body = parsed.content.trimStart();
+        const { meta, body: rawBody } = parseFrontmatter(raw);
+        const body = rawBody.trimStart();
         out.push({
           rootPath: root.realPath,
           path,

@@ -1,7 +1,6 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
-import matter from "gray-matter";
-import { bodyPreview } from "./frontmatter.js";
+import { bodyPreview, parseFrontmatter } from "./frontmatter.js";
 
 export interface MarkdownItem {
   /** Filename without the `.md` extension. */
@@ -33,12 +32,12 @@ export function readMarkdownDir(dirPath: string): MarkdownItem[] {
       // Entry vanished, broken symlink, or unreadable — skip.
       continue;
     }
-    const parsed = matter(raw);
-    const body = parsed.content.trimStart();
+    const parsed = parseFrontmatter(raw);
+    const body = parsed.body.trimStart();
     items.push({
       name: entry.slice(0, -3),
       path,
-      meta: parsed.data ?? {},
+      meta: parsed.meta,
       body,
       bodyPreview: bodyPreview(body),
     });
