@@ -58,4 +58,12 @@ describe("readMarkdownDir", () => {
     const items = readMarkdownDir(dir);
     expect(items.map((i) => i.name).sort()).toEqual(["ok"]);
   });
+
+  it("still lists a file whose frontmatter is not valid YAML", () => {
+    writeFileSync(join(dir, "bad.md"), "---\ndescription: d\nhint: [a] [b]\n---\nbody");
+    writeFileSync(join(dir, "good.md"), "---\nname: g\n---\nbody");
+    const items = readMarkdownDir(dir);
+    expect(items.map((i) => i.name)).toEqual(["bad", "good"]);
+    expect(items[0]!.meta.description).toBe("d");
+  });
 });

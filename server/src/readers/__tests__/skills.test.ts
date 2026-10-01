@@ -106,4 +106,10 @@ describe("readSkills", () => {
       rmSync(other, { recursive: true, force: true });
     }
   });
+
+  it("still lists a skill whose frontmatter is not valid YAML", () => {
+    mkdirSync(join(dir, "skills", "odd"), { recursive: true });
+    writeFileSync(join(dir, "skills", "odd", "SKILL.md"), "---\nname: odd\nhint: [a] [b]\n---\nbody");
+    expect(readSkills([rootOf(dir)]).map((i) => i.name)).toEqual(["odd"]);
+  });
 });
