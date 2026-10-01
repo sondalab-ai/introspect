@@ -1,5 +1,12 @@
 import type { SessionListItem, SessionMeta } from "./api.js";
 
+/** Format a large integer as human-readable: 308030 → "308K", 1200000 → "1.2M". */
+export function fmtNum(n: number): string {
+  if (n < 1_000) return String(n);
+  if (n < 1_000_000) return `${+(n / 1_000).toFixed(1)}K`;
+  return `${+(n / 1_000_000).toFixed(1)}M`;
+}
+
 /** Last path segment of a real cwd, e.g. /Users/x/src/camunda-hub → camunda-hub. */
 export function projectBasename(cwd?: string): string {
   if (!cwd) return "";
@@ -50,7 +57,7 @@ export function sessionContext(item: SessionListItem): string {
     relativeTime(item.lastTs),
     sessionDuration(item.firstTs, item.lastTs),
     projectBasename(item.cwd),
-    `${item.messageCounts.user + item.messageCounts.assistant} msg`,
+    `${fmtNum(item.messageCounts.user + item.messageCounts.assistant)} msg`,
   ].filter(Boolean);
   return parts.join(" · ");
 }

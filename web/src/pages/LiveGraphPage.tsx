@@ -2,9 +2,9 @@ import { useMemo, useState } from "react";
 import { ExecutionWaterfall } from "../components/ExecutionWaterfall.js";
 import { useLiveEvents } from "../useLiveEvents.js";
 import { useEndpoint } from "../useEndpoint.js";
-import { ENDPOINTS, type LiveFrame, type SessionEvent, type SessionListItem, type Transcript } from "../api.js";
+import { ENDPOINTS, type LiveFrame, type SessionListItem, type Transcript } from "../api.js";
 import { prettyProjectName } from "../projectName.js";
-import { sessionTitle, relativeTime, sessionDuration, projectBasename } from "../sessionLabel.js";
+import { sessionTitle, relativeTime, sessionDuration, projectBasename, fmtNum } from "../sessionLabel.js";
 
 interface Target {
   slug: string;
@@ -25,7 +25,63 @@ function pickActiveLive(frames: LiveFrame[]): Target | null {
   return null;
 }
 
-/** Fetch and render an existing session's full transcript: human header + waterfall. */
+/**
+ * Fetches full transcript from API and merges in any WS events not yet
+ * persisted (deduped by uuid). This means the view is always complete even
+ * when the WS connected after the session started.
+ */
+function LiveSession({ slug, sessionId, isLive, liveFrames }: Target & { isLive: boolean; liveFrames: LiveFrame[] }) {
+  const state = useEndpoint<Transcript>(ENDPOINTS.session(slug, sessionId));
+
+  const liveEvents = useMemo(() => {
+    return liveFrames
+      .filter((f): f is Extract<LiveFrame, { type: "event" }> =>
+        f.type === "event" && f.slug === slug && f.sessionId === sessionId)
+      .map((f) => f.event);
+  }, [liveFrames, slug, sessionId]);
+
+  const events = useMemo(() => {
+    const base = state.status === "ready" ? state.data.events : [];
+    if (liveEvents.length === 0) return base;
+    const seen = new Set(base.map((e) => e.uuid));
+    const fresh = liveEvents.filter((e) => !seen.has(e.uuid));
+    return fresh.length === 0 ? base : [...base, ...fresh];
+  }, [state, liveEvents]);
+
+  if (state.status === "loading" && events.length === 0) return <div className="loading">Caricamento…</div>;
+  if (state.status === "error") return <div className="error">Errore: {state.error}</div>;
+
+  const m = state.status === "ready" ? state.data.meta : null;
+  const ctx = m
+    ? [
+        relativeTime(m.lastTs),
+        sessionDuration(m.firstTs, m.lastTs),
+        projectBasename(m.cwd) || prettyProjectName(m.cwd, slug),
+        `${fmtNum(m.messageCounts.user + m.messageCounts.assistant)} msg`,
+        isLive ? "live" : "snapshot",
+      ]
+        .filter(Boolean)
+        .join(" · ")
+    : null;
+
+  return (
+    <>
+      {m && (
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ fontSize: 15, color: "var(--txt)" }} title={`${sessionId} · ${m.cwd ?? slug}`}>
+            {sessionTitle(m)}
+          </div>
+          {ctx && <div className="meta">{ctx}</div>}
+        </div>
+      )}
+      {events.length === 0
+        ? <div className="loading">Sessione senza eventi.</div>
+        : <ExecutionWaterfall events={events} />}
+    </>
+  );
+}
+
+/** Static pinned session — no live merge. */
 function PinnedSession({ slug, sessionId, live }: Target & { live: boolean }) {
   const state = useEndpoint<Transcript>(ENDPOINTS.session(slug, sessionId));
   if (state.status === "loading") return <div className="loading">Caricamento…</div>;
@@ -35,7 +91,7 @@ function PinnedSession({ slug, sessionId, live }: Target & { live: boolean }) {
     relativeTime(m.lastTs),
     sessionDuration(m.firstTs, m.lastTs),
     projectBasename(m.cwd) || prettyProjectName(m.cwd, slug),
-    `${m.messageCounts.user + m.messageCounts.assistant} msg`,
+    `${fmtNum(m.messageCounts.user + m.messageCounts.assistant)} msg`,
     live ? "live (snapshot)" : "",
   ].filter(Boolean).join(" · ");
   return (
@@ -58,14 +114,12 @@ export function LiveGraphPage() {
   const [pinned, setPinned] = useState<Target | null>(null);
   const allSessions = useEndpoint<SessionListItem[]>(ENDPOINTS.sessionsAll);
 
-  // Sessions currently streaming over the websocket (may not be in the cached list yet).
   const liveKeys = useMemo(() => {
     const set = new Set<string>();
     for (const f of frames) if (f.type !== "hello") set.add(`${f.slug}::${f.sessionId}`);
     return set;
   }, [frames]);
 
-  // Dropdown = every known session (history) ∪ live sessions, newest first.
   const options = useMemo(() => {
     const map = new Map<string, Option>();
     if (allSessions.status === "ready") {
@@ -89,18 +143,15 @@ export function LiveGraphPage() {
   }, [allSessions, liveKeys]);
 
   const activeLive = pickActiveLive(frames);
-  const autoEvents = useMemo(() => {
-    if (pinned || !activeLive) return [];
-    const evs: SessionEvent[] = [];
-    for (const f of frames) {
-      if (f.type === "event" && f.slug === activeLive.slug && f.sessionId === activeLive.sessionId) evs.push(f.event);
-    }
-    return evs;
-  }, [frames, pinned, activeLive]);
 
-  const liveOption = activeLive
-    ? options.find((o) => o.slug === activeLive.slug && o.sessionId === activeLive.sessionId)
-    : undefined;
+  // In auto mode: prefer the session receiving WS events; fall back to the most
+  // recently active session from history so the view is never blank on load.
+  const effectiveTarget = useMemo<Target | null>(() => {
+    if (activeLive) return activeLive;
+    const first = options[0];
+    if (first) return { slug: first.slug, sessionId: first.sessionId };
+    return null;
+  }, [activeLive, options]);
 
   return (
     <div className="canvas-body" style={{ overflow: "auto", padding: "0 4px" }}>
@@ -139,21 +190,25 @@ export function LiveGraphPage() {
           </button>
         ) : null}
       </div>
-      {!pinned && activeLive ? (
-        <div className="meta" style={{ marginBottom: 12 }} title={activeLive.sessionId}>
-          {liveOption?.label ?? `${prettyProjectName(undefined, activeLive.slug)} / ${activeLive.sessionId.slice(0, 8)}`} · live
-        </div>
-      ) : null}
       {pinned ? (
-        <PinnedSession slug={pinned.slug} sessionId={pinned.sessionId} live={liveKeys.has(`${pinned.slug}::${pinned.sessionId}`)} />
-      ) : autoEvents.length === 0 ? (
+        <PinnedSession
+          slug={pinned.slug}
+          sessionId={pinned.sessionId}
+          live={liveKeys.has(`${pinned.slug}::${pinned.sessionId}`)}
+        />
+      ) : effectiveTarget ? (
+        <LiveSession
+          slug={effectiveTarget.slug}
+          sessionId={effectiveTarget.sessionId}
+          isLive={!!activeLive}
+          liveFrames={frames}
+        />
+      ) : (
         <div className="loading">
           {status === "open"
             ? "in attesa di eventi live… (oppure scegli una sessione esistente)"
             : "WebSocket non connesso — scegli una sessione esistente dal menu."}
         </div>
-      ) : (
-        <ExecutionWaterfall events={autoEvents} />
       )}
     </div>
   );
