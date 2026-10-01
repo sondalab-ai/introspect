@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, writeFileSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, writeFileSync, rmSync, realpathSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readInstructions } from "../instructions.js";
@@ -42,6 +42,19 @@ describe("readInstructions", () => {
     try {
       const items = readInstructions([rootOf(a), rootOf(b)]);
       expect(items.map((i) => i.content).sort()).toEqual(["A", "B"]);
+    } finally {
+      rmSync(a, { recursive: true, force: true });
+      rmSync(b, { recursive: true, force: true });
+    }
+  });
+
+  it("reads a CLAUDE.md once when two roots symlink to it", () => {
+    const a = mkdtempSync(join(tmpdir(), "instr-a-"));
+    const b = mkdtempSync(join(tmpdir(), "instr-b-"));
+    writeFileSync(join(a, "CLAUDE.md"), "A");
+    symlinkSync(join(a, "CLAUDE.md"), join(b, "CLAUDE.md"));
+    try {
+      expect(readInstructions([rootOf(a), rootOf(b)])).toHaveLength(1);
     } finally {
       rmSync(a, { recursive: true, force: true });
       rmSync(b, { recursive: true, force: true });

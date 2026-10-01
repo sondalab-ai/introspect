@@ -1,14 +1,43 @@
-import { realpathSync, statSync } from "node:fs";
+import { readdirSync, realpathSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import type { ConfigRoot, ResolveOptions } from "./types.js";
 
-/** Build the ordered list of candidate root paths before resolution. */
+/**
+ * List the `.claude*` directories in `home` (e.g. `~/.claude`, `~/.claude-perso`),
+ * sorted by name so `~/.claude` comes first. Files such as `~/.claude.json` are skipped.
+ */
+function autoDiscoverClaudeDirs(home: string): string[] {
+  try {
+    return readdirSync(home, { withFileTypes: true })
+      .filter((e) => e.isDirectory() && e.name.startsWith(".claude"))
+      .map((e) => join(home, e.name))
+      .sort();
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Build the ordered list of candidate root paths before resolution.
+ *
+ * - CLAUDE_CONFIG_DIR set: that directory only.
+ * - CLAUDE_CONFIG_DIR unset: every `~/.claude*` directory, so a user with several
+ *   config dirs sees all of them; `~/.claude` when none exists yet.
+ * - extraRoots are always appended last.
+ */
 export function candidatePaths(opts: ResolveOptions = {}): string[] {
   const home = opts.homeDir ?? homedir();
   const env = opts.env ?? process.env;
-  const base = env.CLAUDE_CONFIG_DIR ?? join(home, ".claude");
-  return [base, ...(opts.extraRoots ?? [])];
+  const explicitDir = env.CLAUDE_CONFIG_DIR;
+  let bases: string[];
+  if (explicitDir) {
+    bases = [explicitDir];
+  } else {
+    const discovered = autoDiscoverClaudeDirs(home);
+    bases = discovered.length > 0 ? discovered : [join(home, ".claude")];
+  }
+  return [...bases, ...(opts.extraRoots ?? [])];
 }
 
 /**

@@ -1,4 +1,5 @@
 import { join } from "node:path";
+import { realPathOr } from "./realPath.js";
 import { readMarkdownDir } from "./markdownDir.js";
 import { asString } from "./frontmatter.js";
 import { pluginInstallPaths } from "./pluginPaths.js";
@@ -19,12 +20,16 @@ export interface AgentItem extends Precedence {
 /** Read agent definitions from `<root>/agents/*.md` and each plugin's `<installPath>/agents/*.md`. */
 export function readAgents(roots: ResolvedRoot[]): AgentItem[] {
   const out: Omit<AgentItem, keyof Precedence>[] = [];
+  const seenDirs = new Set<string>();
   for (const { root } of roots) {
     const dirs: { dir: string; source: ItemSource }[] = [
       { dir: join(root.realPath, "agents"), source: "user" },
       ...pluginInstallPaths(root.realPath).map((p) => ({ dir: join(p, "agents"), source: "plugin" as const })),
     ];
     for (const { dir, source } of dirs) {
+      const realDir = realPathOr(dir);
+      if (seenDirs.has(realDir)) continue;
+      seenDirs.add(realDir);
       for (const it of readMarkdownDir(dir)) {
         out.push({
           rootPath: root.realPath,

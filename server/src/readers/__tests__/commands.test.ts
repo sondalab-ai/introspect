@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readCommands } from "../commands.js";
@@ -52,5 +52,17 @@ describe("readCommands", () => {
 
     const names = readCommands([rootOf(dir)]).map((i) => i.name).sort();
     expect(names).toEqual(["commit", "decision"]);
+  });
+
+  it("reads a shared commands directory once when two roots symlink to it", () => {
+    mkdirSync(join(dir, "commands"), { recursive: true });
+    writeFileSync(join(dir, "commands", "solo.md"), "---\ndescription: d\n---\nb");
+    const other = mkdtempSync(join(tmpdir(), "commands-other-"));
+    try {
+      symlinkSync(join(dir, "commands"), join(other, "commands"));
+      expect(readCommands([rootOf(dir), rootOf(other)])).toHaveLength(1);
+    } finally {
+      rmSync(other, { recursive: true, force: true });
+    }
   });
 });

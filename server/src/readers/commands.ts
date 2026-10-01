@@ -1,4 +1,5 @@
 import { join } from "node:path";
+import { realPathOr } from "./realPath.js";
 import { readMarkdownDir } from "./markdownDir.js";
 import { asString } from "./frontmatter.js";
 import { pluginInstallPaths } from "./pluginPaths.js";
@@ -18,12 +19,16 @@ export interface CommandItem extends Precedence {
 /** Read slash commands from `<root>/commands/*.md` and each plugin's `<installPath>/commands/*.md`. */
 export function readCommands(roots: ResolvedRoot[]): CommandItem[] {
   const out: Omit<CommandItem, keyof Precedence>[] = [];
+  const seenDirs = new Set<string>();
   for (const { root } of roots) {
     const dirs: { dir: string; source: ItemSource }[] = [
       { dir: join(root.realPath, "commands"), source: "user" },
       ...pluginInstallPaths(root.realPath).map((p) => ({ dir: join(p, "commands"), source: "plugin" as const })),
     ];
     for (const { dir, source } of dirs) {
+      const realDir = realPathOr(dir);
+      if (seenDirs.has(realDir)) continue;
+      seenDirs.add(realDir);
       for (const it of readMarkdownDir(dir)) {
         out.push({
           rootPath: root.realPath,

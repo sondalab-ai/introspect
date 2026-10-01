@@ -1,5 +1,6 @@
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { realPathOr } from "./realPath.js";
 import { readMarkdownDir } from "./markdownDir.js";
 import { projectCwd } from "./projectCwd.js";
 import type { ResolvedRoot } from "../sources/types.js";
@@ -54,13 +55,25 @@ export function readMemories(
   extraDirs: string[] = [],
 ): MemoryItem[] {
   const out: MemoryItem[] = [];
+  const seenDirs = new Set<string>();
+  function addDir(dir: string): boolean {
+    const real = realPathOr(dir);
+    if (seenDirs.has(real)) return false;
+    seenDirs.add(real);
+    return true;
+  }
   for (const { root } of roots) {
-    out.push(...collectFrom(root.realPath, join(root.realPath, "memory"), "global"));
+    const globalMemDir = join(root.realPath, "memory");
+    if (addDir(globalMemDir)) {
+      out.push(...collectFrom(root.realPath, globalMemDir, "global"));
+    }
     const projectsDir = join(root.realPath, "projects");
     for (const slug of listSubdirs(projectsDir)) {
       const memoryDir = join(projectsDir, slug, "memory");
       if (!existsSync(memoryDir)) continue;
-      out.push(...collectFrom(root.realPath, memoryDir, slug, projectCwd(join(projectsDir, slug))));
+      if (addDir(memoryDir)) {
+        out.push(...collectFrom(root.realPath, memoryDir, slug, projectCwd(join(projectsDir, slug))));
+      }
     }
   }
   const seen = new Set<string>(out.map((i) => i.path));
