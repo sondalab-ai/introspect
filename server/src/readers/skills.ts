@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import matter from "gray-matter";
+import { realPathOr } from "./realPath.js";
 import { asString, bodyPreview } from "./frontmatter.js";
 import { pluginInstallPaths } from "./pluginPaths.js";
 import { annotatePrecedence, type ItemSource, type Precedence } from "./precedence.js";
@@ -45,12 +46,16 @@ function walk(dir: string, depth: number, out: string[]): void {
  */
 export function readSkills(roots: ResolvedRoot[]): SkillItem[] {
   const out: Omit<SkillItem, keyof Precedence>[] = [];
+  const seenDirs = new Set<string>();
   for (const { root } of roots) {
     const skillDirs: { dir: string; source: ItemSource }[] = [
       { dir: join(root.realPath, "skills"), source: "user" },
       ...pluginInstallPaths(root.realPath).map((p) => ({ dir: join(p, "skills"), source: "plugin" as const })),
     ];
     for (const { dir, source } of skillDirs) {
+      const realDir = realPathOr(dir);
+      if (seenDirs.has(realDir)) continue;
+      seenDirs.add(realDir);
       const files: string[] = [];
       walk(dir, 0, files);
       for (const path of files) {

@@ -5,7 +5,7 @@ import { ExecutionWaterfall } from "../components/ExecutionWaterfall.js";
 import { useEndpoint } from "../useEndpoint.js";
 import { ENDPOINTS, type Transcript } from "../api.js";
 import { prettyProjectName } from "../projectName.js";
-import { sessionTitle } from "../sessionLabel.js";
+import { sessionTitle, fmtNum } from "../sessionLabel.js";
 
 type View = "timeline" | "events" | "graph";
 
@@ -70,12 +70,12 @@ export function SessionDetailPage({ slug, sessionId, onBack, embedded }: Session
         <dt>models</dt><dd>{meta.models.join(", ") || "—"}</dd>
         <dt>messages</dt>
         <dd>
-          user {meta.messageCounts.user} · assistant {meta.messageCounts.assistant}
-          {" · "}sidechain {meta.messageCounts.sidechain}
+          user {fmtNum(meta.messageCounts.user)} · assistant {fmtNum(meta.messageCounts.assistant)}
+          {" · "}sidechain {fmtNum(meta.messageCounts.sidechain)}
         </dd>
-        <dt>tool calls</dt><dd>{totalTools}</dd>
-        <dt>subagents</dt><dd>{meta.subagentCount}</dd>
-        <dt>tokens</dt><dd>{meta.totalUsageTokens}</dd>
+        <dt>tool calls</dt><dd>{fmtNum(totalTools)}</dd>
+        <dt>subagents</dt><dd>{fmtNum(meta.subagentCount)}</dd>
+        <dt>tokens</dt><dd>{fmtNum(meta.totalUsageTokens)}</dd>
       </dl>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 24, marginBottom: 12 }}>
         <h3 style={{ margin: 0 }}>

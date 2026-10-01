@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readSkills } from "../skills.js";
@@ -93,5 +93,17 @@ describe("readSkills", () => {
     mkdirSync(deep, { recursive: true });
     writeFileSync(join(deep, "SKILL.md"), "---\nname: too-deep\n---\nx");
     expect(readSkills([rootOf(dir)])).toEqual([]);
+  });
+
+  it("reads a shared skills directory once when two roots symlink to it", () => {
+    mkdirSync(join(dir, "skills", "solo"), { recursive: true });
+    writeFileSync(join(dir, "skills", "solo", "SKILL.md"), "---\nname: solo\n---\nb");
+    const other = mkdtempSync(join(tmpdir(), "skills-other-"));
+    try {
+      symlinkSync(join(dir, "skills"), join(other, "skills"));
+      expect(readSkills([rootOf(dir), rootOf(other)])).toHaveLength(1);
+    } finally {
+      rmSync(other, { recursive: true, force: true });
+    }
   });
 });

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readAgents } from "../agents.js";
@@ -53,5 +53,17 @@ describe("readAgents", () => {
 
     const names = readAgents([rootOf(dir)]).map((i) => i.name).sort();
     expect(names).toEqual(["personal", "plugin-agent"]);
+  });
+
+  it("reads a shared agents directory once when two roots symlink to it", () => {
+    mkdirSync(join(dir, "agents"), { recursive: true });
+    writeFileSync(join(dir, "agents", "solo.md"), "---\nname: solo\n---\nb");
+    const other = mkdtempSync(join(tmpdir(), "agents-other-"));
+    try {
+      symlinkSync(join(dir, "agents"), join(other, "agents"));
+      expect(readAgents([rootOf(dir), rootOf(other)])).toHaveLength(1);
+    } finally {
+      rmSync(other, { recursive: true, force: true });
+    }
   });
 });

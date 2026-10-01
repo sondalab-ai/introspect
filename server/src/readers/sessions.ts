@@ -3,6 +3,7 @@ import { join, resolve, sep } from "node:path";
 import { readTranscript, type Transcript } from "../parser/transcript.js";
 import type { SessionMeta } from "../parser/types.js";
 import type { ResolvedRoot } from "../sources/types.js";
+import { realPathOr } from "./realPath.js";
 
 export interface SessionListItem extends SessionMeta {
   rootPath: string;
@@ -45,29 +46,38 @@ function listJsonl(projectDir: string): { name: string; path: string; size: numb
   return out;
 }
 
-function findProjectDir(roots: ResolvedRoot[], slug: string): { rootPath: string; dir: string } | null {
-  if (!isSafeSegment(slug)) return null;
+/**
+ * Every root's `projects/<slug>` dir that exists, in root order. A project can
+ * live in several config roots; dirs reached twice through symlinks are listed once.
+ */
+function findProjectDirs(roots: ResolvedRoot[], slug: string): { rootPath: string; dir: string }[] {
+  if (!isSafeSegment(slug)) return [];
+  const out: { rootPath: string; dir: string }[] = [];
+  const seen = new Set<string>();
   for (const { root } of roots) {
-    const base = join(root.realPath, "projects");
-    const dir = safeJoinUnder(base, slug);
-    if (dir && existsSync(dir)) return { rootPath: root.realPath, dir };
+    const dir = safeJoinUnder(join(root.realPath, "projects"), slug);
+    if (!dir || !existsSync(dir)) continue;
+    const real = realPathOr(dir);
+    if (seen.has(real)) continue;
+    seen.add(real);
+    out.push({ rootPath: root.realPath, dir });
   }
-  return null;
+  return out;
 }
 
 export function readSessions(roots: ResolvedRoot[], slug: string): SessionListItem[] {
-  const target = findProjectDir(roots, slug);
-  if (!target) return [];
   const out: SessionListItem[] = [];
-  for (const f of listJsonl(target.dir)) {
-    const t = readTranscript(f.path);
-    out.push({
-      ...t.meta,
-      rootPath: target.rootPath,
-      slug,
-      filePath: f.path,
-      fileSize: f.size,
-    });
+  for (const target of findProjectDirs(roots, slug)) {
+    for (const f of listJsonl(target.dir)) {
+      const t = readTranscript(f.path);
+      out.push({
+        ...t.meta,
+        rootPath: target.rootPath,
+        slug,
+        filePath: f.path,
+        fileSize: f.size,
+      });
+    }
   }
   out.sort((a, b) => (b.lastTs ?? "").localeCompare(a.lastTs ?? ""));
   return out;
@@ -107,9 +117,9 @@ export function readSession(
   roots: ResolvedRoot[], slug: string, sessionId: string,
 ): Transcript | null {
   if (!isSafeSegment(sessionId)) return null;
-  const target = findProjectDir(roots, slug);
-  if (!target) return null;
-  const path = safeJoinUnder(target.dir, `${sessionId}.jsonl`);
-  if (!path || !existsSync(path)) return null;
-  return readTranscript(path);
+  for (const target of findProjectDirs(roots, slug)) {
+    const path = safeJoinUnder(target.dir, `${sessionId}.jsonl`);
+    if (path && existsSync(path)) return readTranscript(path);
+  }
+  return null;
 }

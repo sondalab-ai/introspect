@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, realpathSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { readMemories } from "../memories.js";
@@ -83,5 +83,17 @@ describe("readMemories", () => {
     writeFileSync(file, "shared");
     const items = readMemories([rootOf(dir)], [join(dir, "projects", slug, "memory")]);
     expect(items.filter((i) => i.path === file)).toHaveLength(1);
+  });
+
+  it("reads a shared global memory directory once when two roots symlink to it", () => {
+    mkdirSync(join(dir, "memory"), { recursive: true });
+    writeFileSync(join(dir, "memory", "note.md"), "---\nname: note\n---\nbody");
+    const other = mkdtempSync(join(tmpdir(), "memory-other-"));
+    try {
+      symlinkSync(join(dir, "memory"), join(other, "memory"));
+      expect(readMemories([rootOf(dir), rootOf(other)])).toHaveLength(1);
+    } finally {
+      rmSync(other, { recursive: true, force: true });
+    }
   });
 });

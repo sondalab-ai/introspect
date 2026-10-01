@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdtempSync, mkdirSync, symlinkSync, rmSync, realpathSync } from "node:fs";
+import { mkdtempSync, mkdirSync, symlinkSync, rmSync, realpathSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { candidatePaths, discoverConfigRoots } from "../configRoots.js";
@@ -18,6 +18,32 @@ describe("candidatePaths", () => {
     const paths = candidatePaths({ env: {}, homeDir: "/home/u" });
     expect(paths).toEqual(["/home/u/.claude"]);
   });
+
+  it("discovers every <home>/.claude* directory, sorted, when env is unset", () => {
+    const home = mkdtempSync(join(tmpdir(), "introspect-home-"));
+    try {
+      mkdirSync(join(home, ".claude-perso"));
+      mkdirSync(join(home, ".claude"));
+      mkdirSync(join(home, ".config"));
+      writeFileSync(join(home, ".claude.json"), "{}");
+      const paths = candidatePaths({ env: {}, homeDir: home, extraRoots: ["/other/root"] });
+      expect(paths).toEqual([join(home, ".claude"), join(home, ".claude-perso"), "/other/root"]);
+    } finally {
+      rmSync(home, { recursive: true, force: true });
+    }
+  });
+
+  it("ignores sibling .claude* directories when CLAUDE_CONFIG_DIR is set", () => {
+    const home = mkdtempSync(join(tmpdir(), "introspect-home-"));
+    try {
+      mkdirSync(join(home, ".claude"));
+      mkdirSync(join(home, ".claude-perso"));
+      const paths = candidatePaths({ env: { CLAUDE_CONFIG_DIR: "/custom/claude" }, homeDir: home });
+      expect(paths).toEqual(["/custom/claude"]);
+    } finally {
+      rmSync(home, { recursive: true, force: true });
+    }
+  });
 });
 
 describe("discoverConfigRoots", () => {
@@ -35,7 +61,7 @@ describe("discoverConfigRoots", () => {
     const link = join(dir, "linked-claude");
     symlinkSync(real, link);
 
-    const roots = discoverConfigRoots({ env: { CLAUDE_CONFIG_DIR: link } });
+    const roots = discoverConfigRoots({ env: { CLAUDE_CONFIG_DIR: link }, homeDir: dir });
     expect(roots).toHaveLength(1);
     expect(roots[0]!.realPath).toBe(realpathSync(real));
     expect(roots[0]!.declaredPath).toBe(link);
@@ -50,6 +76,7 @@ describe("discoverConfigRoots", () => {
     const roots = discoverConfigRoots({
       env: { CLAUDE_CONFIG_DIR: real },
       extraRoots: [link],
+      homeDir: dir,
     });
     expect(roots).toHaveLength(1);
   });
@@ -60,6 +87,7 @@ describe("discoverConfigRoots", () => {
     const roots = discoverConfigRoots({
       env: { CLAUDE_CONFIG_DIR: real },
       extraRoots: [join(dir, "does-not-exist")],
+      homeDir: dir,
     });
     expect(roots).toHaveLength(1);
     expect(roots[0]!.realPath).toBe(realpathSync(real));
@@ -70,7 +98,7 @@ describe("discoverConfigRoots", () => {
     // realpathSync — not a missing-path code, so it must propagate.
     const badPath = `foo${String.fromCharCode(0)}bar`;
     expect(() =>
-      discoverConfigRoots({ env: { CLAUDE_CONFIG_DIR: badPath } })
+      discoverConfigRoots({ env: { CLAUDE_CONFIG_DIR: badPath }, homeDir: dir })
     ).toThrow(/ERR_INVALID_ARG_VALUE|null bytes/);
   });
 });
