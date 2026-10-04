@@ -7,9 +7,9 @@ import { prettyProjectName } from "../projectName.js";
 import { KIND_LABEL, kindKey } from "./eventDetail.js";
 
 const STATUS_LABEL: Record<LiveStatus, string> = {
-  connecting: "connecting…",
-  open: "live",
-  closed: "offline",
+  connecting: "Connecting…",
+  open: "Live",
+  closed: "Offline",
 };
 
 const ALL = "__all__";

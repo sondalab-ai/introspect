@@ -154,12 +154,12 @@ export function LiveGraphPage() {
   }, [activeLive, options]);
 
   return (
-    <div className="canvas-body" style={{ overflow: "auto", padding: "0 4px" }}>
+    <div className="canvas-body" style={{ overflow: "auto", padding: 8 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
         <h2 style={{ margin: 0 }}>Live graph</h2>
         <span className={`lr-status lr-status-${status}`}>
           <span className="lr-dot" />
-          {status === "open" ? "live" : status === "connecting" ? "connecting…" : "offline"}
+          {status === "open" ? "Live" : status === "connecting" ? "Connecting…" : "Offline"}
         </span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>

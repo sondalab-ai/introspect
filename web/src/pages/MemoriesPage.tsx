@@ -14,7 +14,7 @@ function scopeKind(s: string): ScopeKind {
 
 /** Human scope label: project scopes use the same pretty path as the Projects page. */
 function scopeLabel(m: Pick<MemoryItem, "scope" | "cwd">): string {
-  if (m.scope === "global") return "global";
+  if (m.scope === "global") return "Global";
   if (m.scope.startsWith("discovered:")) return m.scope.slice("discovered:".length);
   return prettyProjectName(m.cwd, m.scope);
 }

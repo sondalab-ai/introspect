@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test \"test/*.test.mjs\""
   },
   "dependencies": {
     "@sondalab/ui-kit": "^0.32.0",

@@ -209,7 +209,7 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                     />
                   ) : null}
                   {n.isSidechain && (n.id === selected || isHov) ? (
-                    <circle r={r + 2.5} fill="none" style={{ stroke: "var(--cy)" }} strokeWidth={n.id === selected ? 2 : 1.5} />
+                    <circle r={r + 2.5} fill="none" style={{ stroke: "var(--slc-accent-text)" }} strokeWidth={n.id === selected ? 2 : 1.5} />
                   ) : null}
                   {n.isSidechain ? (
                     // Sidechain: hollow full-colour ring (opacity dimming fell below 3:1 on light).
@@ -223,7 +223,7 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                       r={r}
                       style={{
                         fill: eventColor(n.ev),
-                        stroke: n.id === selected || isHov ? "var(--cy)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
+                        stroke: n.id === selected || isHov ? "var(--slc-accent-text)" : "color-mix(in srgb, var(--bg) 60%, transparent)",
                       }}
                       strokeWidth={n.id === selected ? 2.5 : isHov ? 2 : 1}
                     />
@@ -232,8 +232,7 @@ export function ExecutionGraph({ tree, onSelectEvent }: ExecutionGraphProps) {
                     <text
                       x={12} y={4}
                       fontSize="11"
-                      fontFamily="IBM Plex Mono"
-                      style={{ fill: "var(--txt)", pointerEvents: "none" }}
+                      style={{ fill: "var(--txt)", fontFamily: "var(--sl-font-mono)", pointerEvents: "none" }}
                     >
                       {n.kind}:{n.label}
                     </text>

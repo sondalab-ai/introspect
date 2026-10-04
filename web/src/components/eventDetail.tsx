@@ -134,7 +134,7 @@ export function EventDetail({ ev }: { ev: SessionEvent }) {
           {ev.kind}
         </span>
         <span className="exec-detail-label">{eventLabel(ev)}</span>
-        {ev.isSidechain ? <span className="exec-detail-tag">sidechain</span> : null}
+        {ev.isSidechain ? <span className="exec-detail-tag">Sidechain</span> : null}
       </div>
       <dl className="sl-kv exec-detail-kv">
         <dt>time</dt><dd>{fmtTime(ev.ts)}</dd>

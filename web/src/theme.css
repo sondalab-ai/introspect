@@ -53,7 +53,8 @@
   --line: var(--sl-border-default);
   --hair: var(--sl-border-subtle);
   --grid: var(--sl-border-subtle);
-  --scroll: var(--sl-border-strong);
+  /* The kit's own thumb: the one control edge, >= 3:1 on every ground. */
+  --scroll: var(--slc-edge-control);
   --cy: #2ee6c0;
   /* Accent tint for rows, chips, edges and the glow, mixed at 2-50% over
      the ground. Each theme tints with its own accent. */
@@ -158,6 +159,9 @@
   --k-tool_result:    var(--sl-status-success);
   --k-subagent_spawn: #B85A00;
   --k-skill_use:      var(--sl-viz-5);
+  /* Secondary ink, not muted: the tinted muted grey sat 0.064 OKLab from
+     the tool_use teal; secondary keeps every pair >= 0.093. */
+  --k-meta:           var(--sl-text-secondary);
   --k-on:             #FFFFFF;
 
   /* The three light-layer numbers the kit sets only under its own light
@@ -181,9 +185,11 @@
 :root {
   --slc-accent:         var(--cy);
   /* Hover and press step AWAY from the label, as the kit's danger tone
-     does: the label is dark on both themes, so each step is lighter. */
-  --slc-accent-hover:   oklch(from var(--cy) calc(l + 0.05) c h);
-  --slc-accent-active:  oklch(from var(--cy) calc(l + 0.1) c h);
+     does: the sign is read from the fill's lightness (a fill above oklch L
+     0.61 carries the dark label, so it steps lighter; below, darker). Both
+     introspect accents sit above it and carry a dark label. */
+  --slc-accent-hover:   oklch(from var(--cy) calc(l + 0.05 * clamp(-1, (l - 0.61) * 1000, 1)) c h);
+  --slc-accent-active:  oklch(from var(--cy) calc(l + 0.1 * clamp(-1, (l - 0.61) * 1000, 1)) c h);
   --slc-on-accent:      var(--bg);
   --slc-canvas:         var(--sl-bg-canvas);
   --slc-surface:        var(--sl-bg-surface);
@@ -273,9 +279,9 @@ body {
 
 .canvas { padding: 18px 22px; overflow: hidden; }
 /* The micro register (design-language L1): mono, uppercase, 10.5px, 500,
-   +0.06em, muted. The only uppercase in the app: each names a region (page
-   header, rail header, list title) or classifies a row (an event kind). */
-.canvas .l, .rail h4, .ld-list-title, .ld-section, .lr-kind, .ev-kind, .exec-detail-kind {
+   +0.06em, muted. The only uppercase in the app, and only where a label
+   names a region: page header, rail header, list titles, settings sections. */
+.canvas .l, .rail h4, .ld-list-title, .ld-section {
   font-family: var(--sl-font-mono); font-size: var(--sl-text-micro); font-weight: 500;
   letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
 /* Page header: a micro label over a hairline. */
@@ -300,26 +306,37 @@ body {
 .lr-status-closed .lr-dot { background: var(--sl-status-danger); }
 .lr-controls { display: flex; gap: 6px; align-items: stretch; margin-bottom: 8px; }
 .lr-filter { flex: 1; min-width: 0; }
-.lr-list { flex: 1; min-height: 0; overflow-y: auto; padding-right: 4px;
-  /* Kind column: fits the longest name (SUBAGENT_SPAWN, 109px with its dot
-     in the micro register) so no kind is ellipsised. One width for every row
+/* 8px inset, given back by the negative margin so rows stay aligned with
+   the controls above: a row's tile and its head's focus halo (7px) reach
+   outside the row, and this list scrolls. */
+.lr-list { flex: 1; min-height: 0; overflow-y: auto; padding: 8px; margin: -8px -8px 0;
+  /* Kind column: fits the longest kind (subagent_spawn, 103px with its dot)
+     so none is ellipsised, with 2px to spare. One width for every row
      keeps columns aligned. */
-  --lr-kind-w: 110px; }
+  --lr-kind-w: 106px; }
 .lr-empty { color: var(--mut); font-size: 11px; padding: 8px 4px; font-style: italic; }
-/* Expanded state is read from the disclosure's aria-expanded, not a class.
-   List rows are borderless since ui-kit 0.31, so the edge is an inset ring;
-   the row div is not focusable, so it never meets the focus halo. */
-.lr-row:has(> [aria-expanded="true"]) { background-color: var(--slc-accent-subtle);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--slc-accent) 35%, transparent); }
-/* The disclosure head carries the row's columns; its chevron takes the first. */
+/* An expanded row is lifted as the kit's selection tile (--slc-tile with
+   --slc-depth-tile); the state is read from the disclosure's aria-expanded.
+   The row div is not focusable, so its box-shadow never meets the focus rule. */
+.lr-row:has(> .lr-row-head[aria-expanded="true"]) { background-color: var(--slc-tile);
+  box-shadow: var(--slc-depth-tile); }
+/* The disclosure head is the row's whole top: the row's padding moves onto
+   it, so the head's focus ring lands on the row's own edge, over the tile's
+   ring, with no band of fill between them (design-language L6). Its grid
+   carries the row's columns; the chevron takes the first. */
+.lr-row:has(> .lr-row-head) { padding: 0; }
 .lr-row-head { display: grid; grid-template-columns: auto var(--lr-kind-w) 48px minmax(0, 1fr) auto;
-  gap: 6px; align-items: center; width: 100%; text-align: left; }
+  gap: 6px; align-items: center; width: 100%; text-align: left; border-radius: inherit;
+  padding: calc(var(--sl-space-1) + 1px) calc(var(--sl-space-2) + 1px); }
+/* The expanded body, under the head, inset as the row's padding was. A
+   margin, not padding: the body may be the .lr-expand box itself. */
+.lr-row:has(> .lr-row-head) > :not(.lr-row-head) { margin: 0 calc(var(--sl-space-2) + 1px) calc(var(--sl-space-1) + 1px); }
 .lr-row-meta { color: var(--mut); font-style: italic; cursor: default; }
 .lr-row-meta-line { grid-column: 3 / -1; min-width: 0; color: var(--mut); font-size: 9.5px;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-row-start { display: grid; grid-template-columns: 56px 1fr 80px; gap: 6px;
   align-items: center; color: var(--cy-text); cursor: default; }
-.lr-expand { margin: 6px 0 0; padding: 8px 10px; background: var(--code-bg);
+.lr-expand { margin: 0; padding: 8px 10px; background: var(--code-bg);
   border: 1px solid var(--line); border-radius: 5px; color: var(--txt);
   font-family: var(--sl-font-mono); font-size: 10.5px; line-height: 1.5;
   white-space: pre-wrap; word-break: break-word; max-height: 240px; overflow: auto; }
@@ -334,8 +351,7 @@ body {
 .lr-expand-md .markdown pre { font-size: 10.5px; padding: 6px 8px; margin: 4px 0; }
 .lr-expand-md .markdown ul,
 .lr-expand-md .markdown ol { margin: 4px 0; padding-left: 18px; }
-.lr-expand-json.jv { font-size: 10.5px; max-height: 240px; padding: 8px 10px;
-  margin-top: 6px; }
+.lr-expand-json.jv { font-size: 10.5px; max-height: 240px; padding: 8px 10px; }
 .lr-running { color: var(--sl-status-warning); font-size: 9px; line-height: 1;
   animation: lr-pulse 1.2s ease-in-out infinite; display: inline-block; }
 .lr-runbar { font-family: var(--sl-font-mono); font-size: 10px; color: var(--sl-status-warning);
@@ -368,7 +384,12 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
 }
-.lr-kind { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Event kinds are data identifiers: mono, as written (no case change),
+   lightly tracked like the tag (design-language L3). */
+.lr-kind, .ev-kind, .exec-detail-kind {
+  font-family: var(--sl-font-mono); font-size: var(--sl-text-micro); font-weight: 500;
+  letter-spacing: 0.02em; }
+.lr-kind { color: var(--mut); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-kind[class*=" k-"] { color: var(--slc-text-secondary); }
 .lr-time { color: var(--mut); font-size: 10px; }
 .lr-label { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
@@ -392,7 +413,9 @@ body {
   width: 1px; background: var(--slc-border-subtle); }
 .ld-empty { color: var(--mut); font-size: 12px; padding: 12px 4px; }
 /* Detail panel — wraps content in a readable column on large screens. */
-.ld-detail { overflow-y: auto; padding: 6px 24px 32px 6px; line-height: 1.6; }
+/* 8px left and top: a focused control's ring and halo reach 7px outside it,
+   and this pane scrolls, so it would clip them (ui-kit 0.32 halo). */
+.ld-detail { overflow-y: auto; padding: 8px 24px 32px 8px; line-height: 1.6; }
 /* Text elements stay at readable width; graph/waterfall containers are unconstrained. */
 .ld-detail h2, .ld-detail h3 { max-width: 80ch; }
 .ld-detail .meta { max-width: 80ch; }
@@ -486,7 +509,7 @@ body {
   padding: 3px 8px; border-radius: 4px; margin-left: 6px;
   white-space: pre-wrap; word-break: break-word; max-width: 100%; }
 .ev-empty { color: var(--mut); font-style: italic; font-size: 12px; }
-.ev-row.is-focus { border-color: var(--cy); box-shadow: 0 0 0 1px var(--cy) inset, 0 0 14px color-mix(in srgb, var(--tint) 18%, transparent); }
+.ev-row.is-focus { border-color: var(--slc-accent-text); box-shadow: 0 0 0 1px var(--slc-accent-text) inset, 0 0 14px color-mix(in srgb, var(--tint) 18%, transparent); }
 .exec-controls { display: flex; gap: 8px; padding-top: 6px; align-items: center; }
 .exec-hint { font-family: var(--sl-font-mono); font-size: 10.5px; color: var(--mut);
   padding: 6px 4px; font-style: italic; }
@@ -535,12 +558,14 @@ body {
 .exec-graph svg { width: 100%; height: auto; max-height: 600px; }
 .exec-edge { fill: none; stroke: color-mix(in srgb, var(--tint) 16%, transparent); stroke-width: 1;
   transition: stroke .15s ease, stroke-width .15s ease; }
-.exec-edge.on { stroke: var(--cy); stroke-width: 1.6; }
+/* State marks are the accent as a thin line (--slc-accent-text): the raw
+   light accent is 2.8:1 on the light canvas, under the 3:1 a mark needs. */
+.exec-edge.on { stroke: var(--slc-accent-text); stroke-width: 1.6; }
 /* Directional flow: dashes drift from parent toward child along the curve. */
 .exec-edge-flow { fill: none; stroke: color-mix(in srgb, var(--tint) 50%, transparent); stroke-width: 1.4;
   stroke-linecap: round; stroke-dasharray: 1 13;
   animation: exec-flow 1.6s linear infinite; opacity: .5; }
-.exec-edge-flow.on { stroke: var(--cy); opacity: .95; }
+.exec-edge-flow.on { stroke: var(--slc-accent-text); opacity: .95; }
 @keyframes exec-flow { to { stroke-dashoffset: -14; } }
 @media (prefers-reduced-motion: reduce) { .exec-edge-flow { animation: none; opacity: 0; } }
 .exec-node { transition: transform .25s cubic-bezier(.22,.61,.36,1); }
@@ -564,7 +589,7 @@ body {
 .exec-wf-label { display: flex; align-items: center; gap: 6px; overflow: hidden;
   padding: 2px 8px 2px 6px; border-right: 1px solid var(--line); height: 100%;
   position: sticky; left: 0; z-index: 2; background: var(--bg); }
-.exec-wf-row.sel .exec-wf-label { box-shadow: inset 2px 0 0 var(--cy); }
+.exec-wf-row.sel .exec-wf-label { box-shadow: inset 2px 0 0 var(--slc-accent-text); }
 .exec-wf-dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto;
   background: currentColor; }
 .exec-wf-kind { font-family: var(--sl-font-mono); font-size: 9.5px; letter-spacing: .04em;
