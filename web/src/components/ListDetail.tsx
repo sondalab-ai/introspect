@@ -90,7 +90,7 @@ export function ListDetail<T extends ListDetailItem>({
           <div className="sl-list sl-list--dense" role="listbox" aria-label={listTitle}>
             {filtered.map((item) => {
               const lvl = item.level ?? 0;
-              const padLeft = 10 + lvl * 16;
+              const padLeft = 11 + lvl * 16;
               return (
                 <button
                   key={item.id}

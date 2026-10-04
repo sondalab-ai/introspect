@@ -57,7 +57,7 @@ export function SessionDetailPage({ slug, sessionId, onBack, embedded }: Session
     <div className={embedded ? "" : "canvas-body"} style={containerStyle}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
         {onBack ? (
-          <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={onBack}>← back</button>
+          <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={onBack}>← Back</button>
         ) : null}
         <h2 style={{ margin: 0 }}>{sessionTitle(meta)}</h2>
       </div>

@@ -163,7 +163,7 @@ export function LiveGraphPage() {
         </span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-        <span className="meta" style={{ flex: "0 0 auto" }}>session</span>
+        <span className="meta" style={{ flex: "0 0 auto" }}>Session</span>
         <span className="sl-field__control sl-select lr-filter" style={{ maxWidth: 540 }}>
           <select
             className="sl-field__input"
@@ -176,7 +176,7 @@ export function LiveGraphPage() {
               if (slug && sessionId) setPinned({ slug, sessionId });
             }}
           >
-            <option value="">auto (ultima attiva)</option>
+            <option value="">Auto (ultima attiva)</option>
             {options.map((s) => (
               <option key={`${s.slug}::${s.sessionId}`} value={`${s.slug}::${s.sessionId}`}>
                 {s.label}{s.live ? " · live" : ""}
@@ -186,7 +186,7 @@ export function LiveGraphPage() {
         </span>
         {pinned ? (
           <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => setPinned(null)}>
-            unpin
+            Unpin
           </button>
         ) : null}
       </div>

@@ -1,55 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap");
+@import "@sondalab/ui-kit/fonts.css";
 @import "@sondalab/ui-kit/tokens.css";
 @import "@sondalab/ui-kit/components.css";
 
+/* Kit theme values introspect pins itself (Tier B): the kit declares them
+   only under its own theme attribute, which this app does not set (it themes
+   via data-theme). Dark here, light in the next block.
+   Neutrals (--sl-bg-*, --sl-text-*, --sl-border-*, the neutral code roles)
+   are introspect's generated rungs, copied verbatim from
+   @sondalab/ui-kit/neutrals.json → products.introspect.<theme>. Re-copy them
+   on a kit bump; nothing else in this file is a neutral literal. Status,
+   chromatic code, viz and casts are the kit's themes/<theme>.css values. */
 :root {
-  --bg: #070A0D;
-  /* Blue-slate editorial neutral layer — introspect's glassmorphism identity.
-     Kept as literals (blessed): --bg/--txt/--mut are the Sondalab tokens, but
-     these slates carry a blue undertone those near-neutral tokens can't derive. */
-  --line: #1C2830;
-  --cy: #2ee6c0;
-  --txt: #DAE3E4;
-  --mut: #7C8D95;
-  --glass-bg-top: rgba(18, 28, 36, 0.55);
-  --glass-bg-bot: rgba(8, 12, 16, 0.55);
-  --glass-border: rgba(90, 209, 200, 0.14);
-  --grid: #162535;
-  --glow: rgba(46, 230, 192, 0.06);
-  /* Accent tint for rows, chips, selections, edges and focus rings, mixed
-     at 2-50% over the ground. Each theme tints with its own accent. */
-  --tint: var(--cy);
-  /* Dark-only slate text steps and hairlines (blessed, like --line); light
-     re-points them to kit text roles and ink below. */
-  --txt-soft: #b5c5cd;
-  --txt-sub:  #8fa3b0;
-  --txt-dim:  #3f5260;
-  --hair: rgba(255, 255, 255, 0.03);
-  /* Accent as text and the nav/rail inner edge. */
-  --cy-text: var(--cy);
-  --edge-shade: rgba(0, 0, 0, 0.4);
-  /* Stream kind chip without a known kind: kit dark text-secondary. Kit
-     text-muted would be 4.45:1 on the dark tinted chip. */
-  --kind-fallback: #9AA9AD;
-  /* Kit surface/raised grounds (fields, selects, segmented) and the scrollbar. */
-  --field: rgba(8, 12, 16, 0.55);
-  --field-strong: rgba(8, 12, 16, 0.7);
-  --code-bg: rgba(8, 12, 16, 0.6);
-  --scroll: #1a2a36;
-  color-scheme: dark;
-  /* UI zoom factor driven by the font +/- controls. */
-  --ui-scale: 1;
+  --sl-bg-canvas:         #060908;
+  --sl-bg-surface:        #0e1211;
+  --sl-bg-surface-raised: #161b19;
+  --sl-bg-tile:           #1e2422;
+  --sl-bg-sunken:         #0a0d0c;
+  --sl-bg-overlay:        rgba(0,0,0,0.6);
+  --sl-text-primary:      #e7eceb;
+  --sl-text-secondary:    #b6bcba;
+  --sl-text-muted:        #959d9b;
+  --sl-border-subtle:     rgba(231,236,235,0.07);
+  --sl-border-default:    rgba(231,236,235,0.13);
+  --sl-border-strong:     rgba(231,236,235,0.28);
+  --sl-border-lit:        rgba(255,255,255,0.07);
+  --sl-code-fg:           #d9e0dd;
+  --sl-code-comment:      #919b98;
+  --sl-code-null:         #919b98;
 
-  /* Kit theme values introspect pins itself: status, code and viz exist only
-     in the kit's themes/*.css, scoped to the kit's own theme attribute, which
-     this app does not load (it themes via data-theme). Dark values here, light
-     below; the dark --sl-viz-* ramp already comes from tokens.css :root. */
   --sl-status-success: #98b958;
   --sl-status-warning: #db9e2e;
   --sl-status-danger:  #fe8263;
   --sl-status-info:    #87a7fd;
-  --sl-code-fg:        #DAE3E4;
-  --sl-code-comment:   #687475;
   --sl-code-keyword:   #87a7fd;
   --sl-code-string:    #99b860;
   --sl-code-number:    #f5886c;
@@ -57,10 +39,38 @@
   --sl-code-function:  #6db3e4;
   --sl-code-tag:       #fe8263;
   --sl-code-builtin:   #d4a14a;
-  --sl-code-null:      #687475;
-  --sl-shadow-sm: 0 1px 2px rgba(0,0,0,0.21), 0 0 0 1px rgba(0,0,0,0.08);
-  --sl-shadow-md: 0 2px 4px rgba(0,0,0,0.16), 0 10px 28px rgba(0,0,0,0.31);
-  --sl-shadow-lg: 0 4px 8px rgba(0,0,0,0.21), 0 28px 72px rgba(0,0,0,0.57);
+  --sl-shadow-sm:    0 1px 2px rgba(0,0,0,0.25), 0 4px 10px -4px rgba(0,0,0,0.35);
+  --sl-shadow-md:    0 2px 4px rgba(0,0,0,0.3), 0 8px 20px -8px rgba(0,0,0,0.5);
+  --sl-shadow-lg:    0 1px 2px rgba(0,0,0,0.3), 0 8px 18px -6px rgba(0,0,0,0.55), 0 32px 64px -24px rgba(0,0,0,0.7);
+  --sl-shadow-inset: inset 0 1px 2px rgba(0,0,0,0.2);
+  /* The dark --sl-viz-* ramp comes from tokens.css :root. */
+
+  /* introspect's own colour layer, read from the rungs above. */
+  --bg: var(--sl-bg-canvas);
+  --txt: var(--sl-text-primary);
+  --mut: var(--sl-text-muted);
+  --txt-soft: var(--sl-text-secondary);
+  --line: var(--sl-border-default);
+  --hair: var(--sl-border-subtle);
+  --grid: var(--sl-border-subtle);
+  --scroll: var(--sl-border-strong);
+  --cy: #2ee6c0;
+  /* Accent tint for rows, chips, edges and the glow, mixed at 2-50% over
+     the ground. Each theme tints with its own accent. */
+  --tint: var(--cy);
+  --glow: color-mix(in srgb, var(--cy) 6%, transparent);
+  --glass-bg-top: color-mix(in srgb, var(--sl-bg-surface) 55%, transparent);
+  --glass-bg-bot: color-mix(in srgb, var(--sl-bg-canvas) 55%, transparent);
+  --glass-border: color-mix(in srgb, var(--cy) 14%, transparent);
+  --code-bg: color-mix(in srgb, var(--sl-bg-canvas) 60%, transparent);
+  /* Accent as text, and the nav/rail inner cast. */
+  --cy-text: var(--cy);
+  --edge-shade: rgba(0, 0, 0, 0.4);
+  /* Stream kind chip without a known kind. */
+  --kind-fallback: var(--sl-text-secondary);
+  color-scheme: dark;
+  /* UI zoom factor driven by the font +/- controls. */
+  --ui-scale: 1;
 
   /* Event-kind palette: the one source for every kind mark (graph nodes,
      waterfall, legends, detail chip, stream and live-rail dots). Kit roles,
@@ -71,7 +81,7 @@
   --k-text:           var(--txt);
   --k-user:           var(--sl-status-info);
   --k-tool_use:       var(--cy);
-  --k-tool_result:    #9AA9AD;
+  --k-tool_result:    var(--sl-text-secondary);
   --k-subagent_spawn: var(--sl-viz-3);
   --k-skill_use:      var(--sl-viz-2);
   --k-meta:           var(--mut);
@@ -79,51 +89,30 @@
   --k-on:             var(--bg);
 }
 
-/* Light theme — the Sondalab Prism light ground (cool near-white, kit 0.21);
-   lines, glass and grid are the kit's ink (#1C1D22) at alpha. */
+/* Light theme: introspect's light rungs (neutrals.json) and the kit's light
+   status, code, viz and cast values. */
 :root[data-theme="light"] {
-  --bg: #F4F4F8;
-  --line: rgba(28, 29, 34, 0.16);
-  --cy: #0e9c84;
-  --txt: #1C1D22;
-  --mut: #5F6374;
-  --glass-bg-top: rgba(255, 255, 255, 0.66);
-  --glass-bg-bot: rgba(244, 244, 248, 0.66);
-  --glass-border: rgba(14, 156, 132, 0.22);
-  --grid: rgba(28, 29, 34, 0.05);
-  --glow: rgba(14, 156, 132, 0.05);
-  /* Light accent, not the dark teal: at 2-8% it reads as a faint cool
-     wash, like --glow and the glass border above. */
-  --tint: var(--cy);
-  /* Kit text-secondary / text-muted for the dark slate steps: the slates are
-     2.3-2.9:1 on the light ground. */
-  --txt-soft: var(--slc-text-secondary);
-  --txt-sub:  var(--mut);
-  --txt-dim:  var(--mut);
-  --hair: rgba(28, 29, 34, 0.05);
-  /* The light accent is 2.9-3.1:1 as text on its tints; accent text takes
-     the kit light accent-depth (>=5.8:1); the inner edge is kit ink at low
-     alpha. */
-  --cy-text: #14606C;
-  --edge-shade: rgba(28, 29, 34, 0.08);
-  --kind-fallback: var(--mut);
-  --field: rgba(255, 255, 255, 0.7);
-  --field-strong: rgba(255, 255, 255, 0.95);
-  --code-bg: rgba(28, 29, 34, 0.06);
-  --scroll: rgba(28, 29, 34, 0.28);
-  /* Kit text-secondary and overlay; dark keeps secondary = muted and the
-     kit's dark overlay (mapping below). */
-  --slc-text-secondary: #454857;
-  --slc-overlay: rgba(28,29,34,0.4);
-  color-scheme: light;
+  --sl-bg-canvas:         #e3e9e7;
+  --sl-bg-surface:        #f9fbfb;
+  --sl-bg-surface-raised: #ffffff;
+  --sl-bg-tile:           #ffffff;
+  --sl-bg-sunken:         #f4f8f7;
+  --sl-bg-overlay:        rgba(24,31,29,0.4);
+  --sl-text-primary:      #181f1d;
+  --sl-text-secondary:    #3c4542;
+  --sl-text-muted:        #535e5a;
+  --sl-border-subtle:     rgba(24,31,29,0.09);
+  --sl-border-default:    rgba(24,31,29,0.16);
+  --sl-border-strong:     rgba(24,31,29,0.28);
+  --sl-border-lit:        rgba(255,255,255,0.9);
+  --sl-code-fg:           #212826;
+  --sl-code-comment:      #5c6663;
+  --sl-code-null:         #5c6663;
 
-  /* Kit light status, code and viz values (see the dark block). */
   --sl-status-success: #4a6205;
   --sl-status-warning: #795305;
   --sl-status-danger:  #a72b05;
   --sl-status-info:    #3853af;
-  --sl-code-fg:        #383a42;
-  --sl-code-comment:   #727e7f;
   --sl-code-keyword:   #4460b6;
   --sl-code-string:    #536d0b;
   --sl-code-number:    #aa442b;
@@ -131,19 +120,35 @@
   --sl-code-function:  #1f6a96;
   --sl-code-tag:       #b33c1e;
   --sl-code-builtin:   #865d06;
-  --sl-code-null:      #727e7f;
   --sl-viz-0: #E0405E;
   --sl-viz-1: #2F6FE0;
-  --sl-viz-2: #0E958A;
-  --sl-viz-3: #D26A00;
+  --sl-viz-2: #0E9186;
+  --sl-viz-3: #CD6400;
   --sl-viz-4: #7A35E0;
   --sl-viz-5: #2E8540;
   --sl-viz-6: #A57C00;
   --sl-viz-7: #C93FC4;
   /* Re-declared: the dark :root block above overrides tokens.css. */
-  --sl-shadow-sm: 0 1px 2px rgba(28,29,34,0.08), 0 0 0 1px rgba(28,29,34,0.03);
-  --sl-shadow-md: 0 2px 4px rgba(28,29,34,0.06), 0 10px 28px rgba(28,29,34,0.12);
-  --sl-shadow-lg: 0 4px 8px rgba(28,29,34,0.08), 0 28px 72px rgba(28,29,34,0.22);
+  --sl-shadow-sm:    0 1px 2px rgba(0,0,0,0.09), 0 4px 10px -4px rgba(0,0,0,0.15);
+  --sl-shadow-md:    0 1px 2px rgba(0,0,0,0.06), 0 8px 20px -8px rgba(0,0,0,0.18);
+  --sl-shadow-lg:    0 1px 2px rgba(0,0,0,0.06), 0 12px 28px -10px rgba(0,0,0,0.21), 0 32px 64px -28px rgba(0,0,0,0.27);
+  --sl-shadow-inset: inset 0 1px 2px rgba(0,0,0,0.06);
+
+  --cy: #0e9c84;
+  /* The dot grid at 5% of the ink: the subtle line (9%) is busy on paper. */
+  --grid: color-mix(in srgb, var(--txt) 5%, transparent);
+  --glow: color-mix(in srgb, var(--cy) 5%, transparent);
+  --glass-bg-top: color-mix(in srgb, var(--sl-bg-surface-raised) 66%, transparent);
+  --glass-bg-bot: color-mix(in srgb, var(--sl-bg-canvas) 66%, transparent);
+  --glass-border: color-mix(in srgb, var(--cy) 22%, transparent);
+  --code-bg: color-mix(in srgb, var(--txt) 6%, transparent);
+  /* The light accent is ~3:1 as text on its tints; accent text takes the
+     kit light accent-depth (>=5.8:1). */
+  --cy-text: #14606C;
+  --edge-shade: rgba(0, 0, 0, 0.06);
+  --kind-fallback: var(--mut);
+  color-scheme: light;
+
   /* Event kinds re-pointed for white chip labels (>=4.5:1): kit light
      accent-depth, status-success, spectrum-ink-1 and viz-5. tool_result is
      the olive status-success, not a second dark grey beside text and not
@@ -153,38 +158,45 @@
   --k-subagent_spawn: #B85A00;
   --k-skill_use:      var(--sl-viz-5);
   --k-on:             #FFFFFF;
-  /* Kit light accent hover recipe over introspect's accent. The kit's light
-     on-accent (white) is only 3.44:1 on this lighter teal; its dark on-accent
-     ink holds >=4.5:1 on both the accent and its hover. */
-  --slc-accent-hover:   color-mix(in srgb, var(--cy) 89%, black);
-  --slc-on-accent:      #0A0A0B;
-  /* Caps the kit's derived --slc-accent-text (tags, pressed toggles and chips,
-     nav edge) at oklch L 0.5, as the kit's own light theme does. */
-  --sl-accent-text-lmax: 0.5;
+
+  /* The three light-layer numbers the kit sets only under its own light
+     theme (ui-kit README, Tier B): the accent as text capped at oklch L
+     0.46, the primary's edge capped on paper, an accent glow at 0.35. The
+     on-accent is the kit's dark label: white reads 3.44:1 on this teal. */
+  --sl-accent-text-lmax: 0.46;
+  --slc-edge-accent-lmax: 0.59;
+  --slc-glow: 0.35;
+  --slc-on-accent: #0A0A0B;
 }
 
-/* Sondalab component role-vars (--slc-*) mapped once onto introspect's own
-   colour layer. Those product vars flip under [data-theme], so this single
-   block covers both light and dark; the light block above re-points the few
-   that need a light value (secondary text, overlay, accent hover, on-accent).
-   This is the entire integration surface for @sondalab/ui-kit components — bump the package and the update lands. */
+/* Sondalab component role-vars (--slc-*) mapped once onto the layer above.
+   Those vars flip under [data-theme], so this single block covers both
+   themes; the light block above sets the light-only numbers and label.
+   Unmapped on purpose, so the kit derives them from --slc-accent: the
+   accent wash (--slc-accent-subtle, 12%), the accent as text
+   (--slc-accent-text), the focus ring and the nav seam (both the accent
+   text), the edges in shade (--slc-edge-*) and the depth recipes
+   (--slc-depth-*), which are composed from the rungs mapped here. */
 :root {
   --slc-accent:         var(--cy);
-  --slc-accent-hover:   color-mix(in srgb, var(--cy) 80%, white);
-  --slc-accent-active:  var(--cy);
-  --slc-accent-subtle:  color-mix(in srgb, var(--cy) 14%, transparent);
+  /* Hover and press step AWAY from the label, as the kit's danger tone
+     does: the label is dark on both themes, so each step is lighter. */
+  --slc-accent-hover:   oklch(from var(--cy) calc(l + 0.05) c h);
+  --slc-accent-active:  oklch(from var(--cy) calc(l + 0.1) c h);
   --slc-on-accent:      var(--bg);
-  --slc-canvas:         var(--bg);
-  --slc-surface:        var(--field);
-  --slc-raised:         var(--field-strong);
-  --slc-overlay:        rgba(0, 0, 0, 0.6);
-  --slc-text:           var(--txt);
-  --slc-text-secondary: var(--mut);
-  --slc-text-muted:     var(--mut);
-  --slc-border:         var(--glass-border);
-  --slc-border-subtle:  var(--line);
-  --slc-border-strong:  var(--cy);
-  --slc-focus:          var(--cy);
+  --slc-canvas:         var(--sl-bg-canvas);
+  --slc-surface:        var(--sl-bg-surface);
+  --slc-raised:         var(--sl-bg-surface-raised);
+  --slc-tile:           var(--sl-bg-tile);
+  --slc-sunken:         var(--sl-bg-sunken);
+  --slc-lit:            var(--sl-border-lit);
+  --slc-overlay:        var(--sl-bg-overlay);
+  --slc-text:           var(--sl-text-primary);
+  --slc-text-secondary: var(--sl-text-secondary);
+  --slc-text-muted:     var(--sl-text-muted);
+  --slc-border:         var(--sl-border-default);
+  --slc-border-subtle:  var(--sl-border-subtle);
+  --slc-border-strong:  var(--sl-border-strong);
   --slc-success:        var(--sl-status-success);
   --slc-warning:        var(--sl-status-warning);
   --slc-danger:         var(--sl-status-danger);
@@ -192,11 +204,11 @@
   --slc-shadow-sm:      var(--sl-shadow-sm);
   --slc-shadow-md:      var(--sl-shadow-md);
   --slc-shadow-lg:      var(--sl-shadow-lg);
-  /* introspect's blessed mono is IBM Plex — the shared components adopt it. */
-  --sl-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --slc-shadow-inset:   var(--sl-shadow-inset);
+  --slc-glow:           0.5;
 
-  /* JSON view syntax — adopt the shared DS atom-one palette (--sl-code-*,
-     pinned per [data-theme] above). One mapping covers both themes. */
+  /* JSON view syntax — the shared DS atom-one palette (--sl-code-*, pinned
+     per theme above). One mapping covers both themes. */
   --jv-base:   var(--sl-code-fg);
   --jv-string: var(--sl-code-string);
   --jv-number: var(--sl-code-number);
@@ -224,7 +236,7 @@
 body {
   background: var(--bg);
   color: var(--txt);
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--sl-font-mono);
   height: 100vh;
   overflow: hidden;
   background-image:
@@ -246,33 +258,40 @@ body {
 
 .nav { padding: 18px 0; display: flex; flex-direction: column; overflow-y: auto;
   box-shadow: 1px 0 24px var(--edge-shade) inset; min-width: 0; }
-/* Signature mono wordmark — tracked, matches the Sondalab family header. */
-.brand { padding: 0 18px 18px; font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14px; letter-spacing: .12em; color: var(--txt); }
+/* The current item is a tile whose ring and cast sit outside its box: the
+   inset keeps them clear of the scrolling pane's edge (ui-kit 0.31). */
+.nav .sl-nav { padding-inline: var(--sl-space-2); }
+/* Signature mono wordmark — tracked, matches the Sondalab family header;
+   its left edge lines up with the nav labels (inset + item padding). */
+.brand { padding: 0 24px 18px; font-family: var(--sl-font-mono); font-weight: 600; font-size: 14px; letter-spacing: .12em; color: var(--txt); }
 .brand b { color: var(--cy); }
 
 /* Preferences footer (theme + UI zoom). */
-.nav-foot { margin-top: auto; padding: 12px 14px 2px; display: flex; flex-direction: column;
+.nav-foot { margin-top: auto; padding: 12px var(--sl-space-2) 2px; display: flex; flex-direction: column;
   gap: 8px; border-top: 1px solid var(--line); }
 
 .canvas { padding: 18px 22px; overflow: hidden; }
-/* Page header reads as a mono structural label, not sans body. */
-.canvas .l { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--mut);
-  border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+/* The micro register (design-language L1): mono, uppercase, 10.5px, 500,
+   +0.06em, muted. The only uppercase in the app: each names a region (page
+   header, rail header, list title) or classifies a row (an event kind). */
+.canvas .l, .rail h4, .ld-list-title, .ld-section, .lr-kind, .ev-kind, .exec-detail-kind {
+  font-family: var(--sl-font-mono); font-size: var(--sl-text-micro); font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--mut); }
+/* Page header: a micro label over a hairline. */
+.canvas .l { border-bottom: 1px solid var(--line); padding-bottom: 12px; }
 
-/* .sl-eyebrow / .sl-tag now ship from @sondalab/ui-kit/components.css and read
-   the role-vars mapped above (mono adopts introspect's IBM Plex via --sl-font-mono). */
+/* .sl-eyebrow / .sl-tag ship from @sondalab/ui-kit/components.css and read
+   the role-vars mapped above. */
 
 .rail { padding: 18px 14px; overflow: hidden; display: flex; flex-direction: column;
   border-left: 1px solid var(--glass-border); box-shadow: -1px 0 24px var(--edge-shade) inset; }
-.rail h4 { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--txt-dim);
-  margin: 0; }
+.rail h4 { margin: 0; }
 
 /* Live rail content (header + status pill + scrollable feed). */
 .lr-head { display: flex; align-items: center; justify-content: space-between;
   padding-bottom: 8px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .lr-status { display: inline-flex; align-items: center; gap: 5px;
-  font-family: "IBM Plex Mono"; font-size: 10px; color: var(--mut); }
+  font-family: var(--sl-font-mono); font-size: 10px; color: var(--mut); }
 .lr-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mut);
   box-shadow: 0 0 4px rgba(0,0,0,.4); }
 .lr-status-open .lr-dot { background: var(--cy); box-shadow: 0 0 6px var(--cy); }
@@ -280,19 +299,17 @@ body {
 .lr-status-closed .lr-dot { background: var(--sl-status-danger); }
 .lr-controls { display: flex; gap: 6px; align-items: stretch; margin-bottom: 8px; }
 .lr-filter { flex: 1; min-width: 0; }
-/* Pressed toggles and chips: the kit's --slc-accent-text capped at L 0.5
-   measures 4.48:1 on introspect's 14% pressed wash over the light rail, so
-   pressed text keeps --cy-text (5.85:1 there; the accent itself in dark,
-   where the kit value is identical). */
-:is(.sl-chip, .sl-btn:not(.sl-btn--primary), .sl-icon-btn)[aria-pressed="true"] { color: var(--cy-text); }
 .lr-list { flex: 1; min-height: 0; overflow-y: auto; padding-right: 4px;
-  /* Kind column: fits the longest name (SUBAGENT_SPAWN, 98px with its dot)
-     so no kind is ellipsised. One width for every row keeps columns aligned. */
-  --lr-kind-w: 100px; }
+  /* Kind column: fits the longest name (SUBAGENT_SPAWN, 109px with its dot
+     in the micro register) so no kind is ellipsised. One width for every row
+     keeps columns aligned. */
+  --lr-kind-w: 110px; }
 .lr-empty { color: var(--mut); font-size: 11px; padding: 8px 4px; font-style: italic; }
-/* Expanded state is read from the disclosure's aria-expanded, not a class. */
+/* Expanded state is read from the disclosure's aria-expanded, not a class.
+   List rows are borderless since ui-kit 0.31, so the edge is an inset ring;
+   the row div is not focusable, so it never meets the focus halo. */
 .lr-row:has(> [aria-expanded="true"]) { background-color: var(--slc-accent-subtle);
-  border-color: color-mix(in srgb, var(--slc-accent) 35%, transparent); }
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--slc-accent) 35%, transparent); }
 /* The disclosure head carries the row's columns; its chevron takes the first. */
 .lr-row-head { display: grid; grid-template-columns: auto var(--lr-kind-w) 48px minmax(0, 1fr) auto;
   gap: 6px; align-items: center; width: 100%; text-align: left; }
@@ -303,9 +320,9 @@ body {
   align-items: center; color: var(--cy-text); cursor: default; }
 .lr-expand { margin: 6px 0 0; padding: 8px 10px; background: var(--code-bg);
   border: 1px solid var(--line); border-radius: 5px; color: var(--txt);
-  font-family: "IBM Plex Mono"; font-size: 10.5px; line-height: 1.5;
+  font-family: var(--sl-font-mono); font-size: 10.5px; line-height: 1.5;
   white-space: pre-wrap; word-break: break-word; max-height: 240px; overflow: auto; }
-.lr-expand-md { font-family: var(--sl-font-sans), system-ui, sans-serif; font-size: 12px;
+.lr-expand-md { font-family: var(--sl-font-sans); font-size: 12px;
   white-space: normal; }
 .lr-expand-md .markdown { font-size: 12px; line-height: 1.55; }
 .lr-expand-md .markdown h1,
@@ -320,7 +337,7 @@ body {
   margin-top: 6px; }
 .lr-running { color: var(--sl-status-warning); font-size: 9px; line-height: 1;
   animation: lr-pulse 1.2s ease-in-out infinite; display: inline-block; }
-.lr-runbar { font-family: "IBM Plex Mono"; font-size: 10px; color: var(--sl-status-warning);
+.lr-runbar { font-family: var(--sl-font-mono); font-size: 10px; color: var(--sl-status-warning);
   padding: 4px 7px; margin-bottom: 8px; border: 1px solid color-mix(in srgb, var(--sl-status-warning) 30%, transparent);
   border-radius: 5px; background: color-mix(in srgb, var(--sl-status-warning) 5%, transparent);
   display: flex; align-items: center; gap: 6px; }
@@ -350,8 +367,7 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.35; }
 }
-.lr-kind { color: var(--mut); text-transform: uppercase; letter-spacing: .05em;
-  font-size: 9.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lr-kind { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lr-kind[class*=" k-"] { color: var(--slc-text-secondary); }
 .lr-time { color: var(--mut); font-size: 10px; }
 .lr-label { color: var(--txt); overflow: hidden; text-overflow: ellipsis;
@@ -365,12 +381,13 @@ body {
 /* Inner padding gives the rows' focus ring room before scroll clipping. */
 .ld-list { padding: 8px 12px 12px 8px; overflow-y: auto; min-width: 0; }
 .ld-search { margin-bottom: 10px; }
-.ld-list-title { font-family: var(--sl-font-sans); font-size: 11px; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--mut); padding-bottom: 10px;
-  border-bottom: 1px solid var(--line); margin-bottom: 8px; }
-/* Indented child row under a MEMORY.md header — subtle hierarchy guide. */
+.ld-list-title { padding-bottom: 10px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+/* A section label inside a detail pane (settings: hooks, permissions, env). */
+.ld-section { margin-top: 12px; }
+/* Indented child row under a MEMORY.md header — subtle hierarchy guide.
+   15px: rows lost their 1px border to padding in ui-kit 0.31. */
 .sl-list__row.is-child { position: relative; }
-.sl-list__row.is-child::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0;
+.sl-list__row.is-child::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0;
   width: 1px; background: var(--slc-border-subtle); }
 .ld-empty { color: var(--mut); font-size: 12px; padding: 12px 4px; }
 /* Detail panel — wraps content in a readable column on large screens. */
@@ -384,7 +401,7 @@ body {
 .ld-detail h2 { font-family: var(--sl-font-sans); font-size: 22px; color: var(--txt);
   margin-bottom: 8px; line-height: 1.3; letter-spacing: -0.01em; }
 .ld-detail .meta { font-size: 12px; color: var(--mut); margin-bottom: 18px; line-height: 1.5; }
-.ld-detail pre, .ld-detail code { font-family: "IBM Plex Mono"; font-size: 13.5px;
+.ld-detail pre, .ld-detail code { font-family: var(--sl-font-mono); font-size: 13.5px;
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px;
   padding: 14px 16px; color: var(--txt); overflow-x: auto; white-space: pre-wrap;
   line-height: 1.6; }
@@ -396,7 +413,7 @@ body {
 .markdown pre > code { padding: 0; background: transparent; border: 0; border-radius: 0; }
 
 /* Markdown typography in detail panes. */
-.markdown { font-family: "Inter", "IBM Plex Mono", sans-serif; font-size: 14px;
+.markdown { font-family: var(--sl-font-sans); font-size: 14px;
   color: var(--txt); line-height: 1.65; }
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
   font-family: var(--sl-font-sans); color: var(--txt); letter-spacing: -0.01em;
@@ -404,7 +421,7 @@ body {
 .markdown h1 { font-size: 22px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 .markdown h2 { font-size: 18px; }
 .markdown h3 { font-size: 15px; color: var(--txt); letter-spacing: .02em; }
-.markdown h4 { font-size: 13px; color: var(--txt-sub); text-transform: uppercase; letter-spacing: .12em; }
+.markdown h4 { font-size: 13px; color: var(--txt-soft); }
 .markdown p { margin: 8px 0; }
 .markdown ul, .markdown ol { margin: 8px 0 8px 22px; }
 .markdown li { margin: 4px 0; }
@@ -453,54 +470,52 @@ body {
 .ev-row { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px;
   background: color-mix(in srgb, var(--tint) 2%, transparent); }
 .ev-row.is-side { border-left: 2px solid var(--sl-viz-0); }
-.ev-head { display: flex; align-items: center; gap: 10px; font-family: "IBM Plex Mono";
+.ev-head { display: flex; align-items: center; gap: 10px; font-family: var(--sl-font-mono);
   font-size: 11px; color: var(--mut); margin-bottom: 6px; }
 .ev-time { color: var(--mut); }
 .ev-side { color: var(--sl-viz-0); }
-.ev-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .05em;
-  text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
+.ev-kind { padding: 2px 8px; border-radius: 4px;
   border: 1px solid var(--line); color: var(--kind-fallback);
   background: color-mix(in srgb, var(--tint) 4%, transparent); }
 .ev-kind[class*=" k-"] { color: var(--txt); border-color: color-mix(in srgb, var(--k) 40%, transparent); }
 .ev-body { font-size: 13px; line-height: 1.55; color: var(--txt); }
 .ev-body .markdown { font-size: 13px; }
-.ev-input { display: inline-block; font-family: "IBM Plex Mono"; font-size: 11.5px;
+.ev-input { display: inline-block; font-family: var(--sl-font-mono); font-size: 11.5px;
   color: var(--txt); background: var(--code-bg); border: 1px solid var(--line);
   padding: 3px 8px; border-radius: 4px; margin-left: 6px;
   white-space: pre-wrap; word-break: break-word; max-width: 100%; }
 .ev-empty { color: var(--mut); font-style: italic; font-size: 12px; }
 .ev-row.is-focus { border-color: var(--cy); box-shadow: 0 0 0 1px var(--cy) inset, 0 0 14px color-mix(in srgb, var(--tint) 18%, transparent); }
 .exec-controls { display: flex; gap: 8px; padding-top: 6px; align-items: center; }
-.exec-hint { font-family: "IBM Plex Mono"; font-size: 10.5px; color: var(--mut);
+.exec-hint { font-family: var(--sl-font-mono); font-size: 10.5px; color: var(--mut);
   padding: 6px 4px; font-style: italic; }
 .exec-detail { margin-top: 10px; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--tint) 30%, transparent);
   border-radius: 8px; background: color-mix(in srgb, var(--tint) 4%, transparent); }
 .exec-detail-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
   flex-wrap: wrap; }
-.exec-detail-kind { font-family: "IBM Plex Mono"; font-size: 10.5px; letter-spacing: .06em;
-  text-transform: uppercase; padding: 3px 9px; border-radius: 4px; font-weight: 600; }
-.exec-detail-label { font-family: "IBM Plex Mono"; font-size: 13px; color: var(--txt); }
-.exec-detail-tag { font-family: "IBM Plex Mono"; font-size: 10px; color: var(--sl-viz-0);
+.exec-detail-kind { padding: 3px 9px; border-radius: 4px; }
+.exec-detail-label { font-family: var(--sl-font-mono); font-size: 13px; color: var(--txt); }
+.exec-detail-tag { font-family: var(--sl-font-mono); font-size: 10px; color: var(--sl-viz-0);
   border: 1px solid color-mix(in srgb, var(--sl-viz-0) 40%, transparent); border-radius: 4px; padding: 2px 7px; }
 .exec-detail-kv { margin-bottom: 10px; }
-.exec-detail-kv code { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--txt);
+.exec-detail-kv code { font-family: var(--sl-font-mono); font-size: 11px; color: var(--txt);
   word-break: break-all; background: transparent; border: 0; padding: 0; border-radius: 0; }
 .exec-detail-body { margin: 0; padding: 8px 10px; background: var(--code-bg);
   border: 1px solid var(--line); border-radius: 5px; max-height: 320px; overflow: auto;
-  font-family: "IBM Plex Mono"; font-size: 11.5px; line-height: 1.5; color: var(--txt); }
+  font-family: var(--sl-font-mono); font-size: 11.5px; line-height: 1.5; color: var(--txt); }
 .exec-detail-pre { white-space: pre-wrap; word-break: break-word; }
-.exec-detail-md { font-family: var(--sl-font-sans), system-ui, sans-serif; font-size: 13px; }
+.exec-detail-md { font-family: var(--sl-font-sans); font-size: 13px; }
 .exec-detail-md .markdown { font-size: 13px; line-height: 1.55; }
 .exec-detail-md .markdown pre { font-size: 11px; }
 .exec-detail-empty { font-style: italic; color: var(--mut); padding: 8px 10px;
   background: transparent; border-color: transparent; }
-.debug-pre { font-family: "IBM Plex Mono"; font-size: 11.5px; color: var(--txt);
+.debug-pre { font-family: var(--sl-font-mono); font-size: 11.5px; color: var(--txt);
   background: var(--code-bg); border: 1px solid var(--line); border-radius: 6px;
   padding: 12px 14px; overflow: auto; max-height: 60vh; line-height: 1.45;
   margin: 0; white-space: pre-wrap; word-break: break-word; }
 
 /* JsonView — pretty + syntax highlighted JSON. */
-.jv { font-family: "IBM Plex Mono"; font-size: 11.5px; line-height: 1.5;
+.jv { font-family: var(--sl-font-mono); font-size: 11.5px; line-height: 1.5;
   color: var(--jv-base); background: var(--code-bg); border: 1px solid var(--line);
   border-radius: 6px; padding: 10px 12px; margin: 0; overflow: auto;
   white-space: pre-wrap; word-break: break-word; }
@@ -549,9 +564,9 @@ body {
 .exec-wf-row.sel .exec-wf-label { box-shadow: inset 2px 0 0 var(--cy); }
 .exec-wf-dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto;
   background: currentColor; }
-.exec-wf-kind { font-family: "IBM Plex Mono"; font-size: 9.5px; letter-spacing: .04em;
+.exec-wf-kind { font-family: var(--sl-font-mono); font-size: 9.5px; letter-spacing: .04em;
   color: var(--mut); flex: 0 0 auto; }
-.exec-wf-name { font-family: "IBM Plex Mono"; font-size: 11px; color: var(--txt);
+.exec-wf-name { font-family: var(--sl-font-mono); font-size: 11px; color: var(--txt);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .exec-wf-track { position: relative; height: 18px; }
 .exec-wf-bar { position: absolute; top: 5px; height: 8px; min-width: 5px;
@@ -562,15 +577,15 @@ body {
   border: 2px solid currentColor; box-shadow: none; }
 .legend-dot.is-side { background: transparent; border: 2px solid var(--mut); }
 .exec-wf-dur { position: absolute; top: 3px; margin-left: 5px;
-  font-family: "IBM Plex Mono"; font-size: 9px; color: var(--mut); white-space: nowrap;
+  font-family: var(--sl-font-mono); font-size: 9px; color: var(--mut); white-space: nowrap;
   pointer-events: none; }
 /* Collapsed idle gap: dashed full-height break with the real elapsed time. */
 .exec-wf-gapline { position: absolute; top: 0; bottom: 0; width: 0;
   border-left: 1px dashed color-mix(in srgb, var(--sl-status-warning) 45%, transparent); z-index: 2; pointer-events: none; }
-.exec-wf-gaplabel { position: absolute; top: 2px; left: 3px; font-family: "IBM Plex Mono";
+.exec-wf-gaplabel { position: absolute; top: 2px; left: 3px; font-family: var(--sl-font-mono);
   font-size: 9px; color: var(--sl-status-warning); white-space: nowrap; background: var(--bg);
   padding: 0 3px; border-radius: 3px; }
-.exec-legend { display: flex; flex-wrap: wrap; gap: 12px; font-family: "IBM Plex Mono";
+.exec-legend { display: flex; flex-wrap: wrap; gap: 12px; font-family: var(--sl-font-mono);
   font-size: 10.5px; color: var(--mut); padding: 6px 4px 0;
   border-top: 1px solid var(--line); }
 .legend-item { display: inline-flex; align-items: center; gap: 5px; }

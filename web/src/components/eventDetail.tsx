@@ -15,6 +15,20 @@ export const KIND_COLOR: Record<SessionEvent["kind"], string> = {
   meta: "var(--k-meta)",
 };
 
+/** Sentence-case name of each kind, for controls (design-language L1: a
+ *  control's label is written in sentence case at the source; the kit no
+ *  longer upper-cases it). Rows and legends keep the kind identifier. */
+export const KIND_LABEL: Record<SessionEvent["kind"], string> = {
+  thinking: "Thinking",
+  text: "Text",
+  user: "User",
+  tool_use: "Tool use",
+  tool_result: "Tool result",
+  subagent_spawn: "Subagent spawn",
+  skill_use: "Skill use",
+  meta: "Meta",
+};
+
 /** Failed tool_result colour (kit status-danger per theme). */
 export const ERROR_COLOR = "var(--k-error)";
 

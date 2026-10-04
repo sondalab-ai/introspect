@@ -22,7 +22,7 @@ function ProjectSessions({ slug }: { slug: string }) {
     return (
       <div style={{ marginTop: 14 }}>
         <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" style={{ marginBottom: 10 }} onClick={() => setSessionId(null)}>
-          ← sessioni
+          ← Sessioni
         </button>
         <SessionDetailPage slug={slug} sessionId={sessionId} embedded />
       </div>
