@@ -62,7 +62,9 @@
   --glass-bg-top: color-mix(in srgb, var(--sl-bg-surface) 55%, transparent);
   --glass-bg-bot: color-mix(in srgb, var(--sl-bg-canvas) 55%, transparent);
   --glass-border: color-mix(in srgb, var(--cy) 14%, transparent);
-  --code-bg: color-mix(in srgb, var(--sl-bg-canvas) 60%, transparent);
+  /* Code sits in the sunken rung: the kit holds every --sl-code-* role to
+     4.5:1 there (comment and null 3:1), so a block on any pane reads. */
+  --code-bg: var(--sl-bg-sunken);
   /* Accent as text, and the nav/rail inner cast. */
   --cy-text: var(--cy);
   --edge-shade: rgba(0, 0, 0, 0.4);
@@ -141,7 +143,6 @@
   --glass-bg-top: color-mix(in srgb, var(--sl-bg-surface-raised) 66%, transparent);
   --glass-bg-bot: color-mix(in srgb, var(--sl-bg-canvas) 66%, transparent);
   --glass-border: color-mix(in srgb, var(--cy) 22%, transparent);
-  --code-bg: color-mix(in srgb, var(--txt) 6%, transparent);
   /* The light accent is ~3:1 as text on its tints; accent text takes the
      kit light accent-depth (>=5.8:1). */
   --cy-text: #14606C;
@@ -495,7 +496,9 @@ body {
   flex-wrap: wrap; }
 .exec-detail-kind { padding: 3px 9px; border-radius: 4px; }
 .exec-detail-label { font-family: var(--sl-font-mono); font-size: 13px; color: var(--txt); }
-.exec-detail-tag { font-family: var(--sl-font-mono); font-size: 10px; color: var(--sl-viz-0);
+/* Neutral text, the viz hue on the edge only: viz-0 as 10px text is 3.2:1
+   on the light canvas. */
+.exec-detail-tag { font-family: var(--sl-font-mono); font-size: 10px; color: var(--txt-soft);
   border: 1px solid color-mix(in srgb, var(--sl-viz-0) 40%, transparent); border-radius: 4px; padding: 2px 7px; }
 .exec-detail-kv { margin-bottom: 10px; }
 .exec-detail-kv code { font-family: var(--sl-font-mono); font-size: 11px; color: var(--txt);
