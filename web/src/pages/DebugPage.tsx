@@ -44,7 +44,7 @@ export function DebugPage() {
     : "/profile — discovery profile";
 
   return (
-    <div className="canvas-body" style={{ overflow: "auto" }}>
+    <div className="canvas-body" style={{ overflow: "auto", padding: 8 }}>
       <Section
         title="/sources — resolved config roots"
         data={sources.status === "ready" ? sources.data : null}

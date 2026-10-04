@@ -116,13 +116,13 @@ export function App() {
               className="sl-segmented__item"
               aria-pressed={prefs.theme === "light"}
               onClick={() => prefs.setTheme("light")}
-            >☀ light</button>
+            >☀ Light</button>
             <button
               type="button"
               className="sl-segmented__item"
               aria-pressed={prefs.theme === "dark"}
               onClick={() => prefs.setTheme("dark")}
-            >☾ dark</button>
+            >☾ Dark</button>
           </div>
           <div className="sl-btn-group" role="group" aria-label="Interface size" title="Interface size">
             <button type="button" className="sl-btn sl-btn--ghost sl-btn--sm" onClick={() => prefs.bumpScale(-SCALE_STEP)} aria-label="Decrease">A−</button>

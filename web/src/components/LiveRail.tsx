@@ -4,12 +4,12 @@ import { JsonView } from "./JsonView.js";
 import { useLiveEvents, type LiveStatus } from "../useLiveEvents.js";
 import type { LiveFrame, LiveEvent, SessionEvent } from "../api.js";
 import { prettyProjectName } from "../projectName.js";
-import { kindKey } from "./eventDetail.js";
+import { KIND_LABEL, kindKey } from "./eventDetail.js";
 
 const STATUS_LABEL: Record<LiveStatus, string> = {
-  connecting: "connecting…",
-  open: "live",
-  closed: "offline",
+  connecting: "Connecting…",
+  open: "Live",
+  closed: "Offline",
 };
 
 const ALL = "__all__";
@@ -243,7 +243,7 @@ export function LiveRail() {
   return (
     <>
       <div className="lr-head">
-        <h4>EVENT STREAM</h4>
+        <h4>Event stream</h4>
         <span className={`lr-status lr-status-${status}`}>
           <span className="lr-dot" /> {STATUS_LABEL[status]}
           {status === "open" && clients > 0 ? ` · ${clients}` : ""}
@@ -258,7 +258,7 @@ export function LiveRail() {
             aria-label="Filter by project slug"
             title="Filter by project slug"
           >
-            <option value={ALL}>tutti i progetti</option>
+            <option value={ALL}>Tutti i progetti</option>
             {slugs.map((s) => (
               <option key={s} value={s}>{shortSlug(s, 28)}</option>
             ))}
@@ -291,8 +291,8 @@ export function LiveRail() {
                 className={`sl-chip k-${k}`}
                 aria-pressed={!off}
                 onClick={() => toggleKind(k)}
-                title={off ? `Mostra ${k}` : `Nascondi ${k}`}
-              >{k}</button>
+                title={off ? `Mostra ${KIND_LABEL[k]}` : `Nascondi ${KIND_LABEL[k]}`}
+              >{KIND_LABEL[k]}</button>
             );
           })}
         </div>

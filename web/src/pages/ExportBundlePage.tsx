@@ -3,7 +3,7 @@ export function ExportBundlePage() {
     window.location.href = "/export";
   }
   return (
-    <div className="canvas-body" style={{ overflow: "auto", padding: "0 4px" }}>
+    <div className="canvas-body" style={{ overflow: "auto", padding: 8 }}>
       <h2>Export bundle</h2>
       <p className="detail-lead">
         Esporta una copia portatile della configurazione locale di Claude:

@@ -59,7 +59,7 @@ function renderBody(ev: SessionEvent) {
     case "tool_result":
       return (
         <>
-          <span className={`sl-badge ${ev.ok ? "sl-badge--success" : "sl-badge--danger"}`}>{ev.ok ? "ok" : "error"}</span>
+          <span className={`sl-badge ${ev.ok ? "sl-badge--success" : "sl-badge--danger"}`}>{ev.ok ? "OK" : "Error"}</span>
           {ev.preview ? <code className="ev-input">{truncate(ev.preview)}</code> : null}
         </>
       );

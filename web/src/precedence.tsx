@@ -16,18 +16,18 @@ export function precedenceSuffix(p: Precedence): string {
 export function PrecedenceBadges({ p }: { p: Precedence }) {
   return (
     <div className="tools-row" style={{ marginTop: 6 }}>
-      <span className="sl-tag sl-tag--plain">{p.source === "plugin" ? "da plugin" : "personale"}</span>
+      <span className="sl-tag sl-tag--plain">{p.source === "plugin" ? "Da plugin" : "Personale"}</span>
       {p.shadowed && p.shadowedBy ? (
         <span
           className="sl-tag sl-tag--plain"
           title={`Sovrascritta da una copia ${sourceLabel(p.shadowedBy.source)} con lo stesso nome:\n${p.shadowedBy.path}`}
         >
-          ↩ shadowed da {sourceLabel(p.shadowedBy.source)}
+          ↩ Shadowed da {sourceLabel(p.shadowedBy.source)}
         </span>
       ) : null}
       {p.duplicate ? (
         <span className="sl-tag sl-tag--plain" title="Another copy exists with the same name and origin: likely a duplicate or an error.">
-          ⚠ duplicato
+          ⚠ Duplicato
         </span>
       ) : null}
     </div>

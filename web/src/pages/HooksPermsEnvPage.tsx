@@ -30,15 +30,15 @@ export function HooksPermsEnvPage() {
                 ? ` · ${item.raw.redactedKeys.length} chiavi redatte`
                 : ""}
             </div>
-            <h3 style={{ marginTop: 12, fontSize: 12, color: "var(--txt-sub)", letterSpacing: ".14em", textTransform: "uppercase" }}>Hooks</h3>
+            <h3 className="ld-section">Hooks</h3>
             <pre>{JSON.stringify(item.raw.hooks, null, 2)}</pre>
-            <h3 style={{ marginTop: 12, fontSize: 12, color: "var(--txt-sub)", letterSpacing: ".14em", textTransform: "uppercase" }}>Permissions</h3>
+            <h3 className="ld-section">Permissions</h3>
             <pre>{JSON.stringify(item.raw.permissions, null, 2)}</pre>
-            <h3 style={{ marginTop: 12, fontSize: 12, color: "var(--txt-sub)", letterSpacing: ".14em", textTransform: "uppercase" }}>Env (redacted)</h3>
+            <h3 className="ld-section">Env (redacted)</h3>
             <pre>{JSON.stringify(item.raw.env, null, 2)}</pre>
             {Object.keys(item.raw.other).length > 0 ? (
               <>
-                <h3 style={{ marginTop: 12, fontSize: 12, color: "var(--txt-sub)", letterSpacing: ".14em", textTransform: "uppercase" }}>Other</h3>
+                <h3 className="ld-section">Other</h3>
                 <pre>{JSON.stringify(item.raw.other, null, 2)}</pre>
               </>
             ) : null}

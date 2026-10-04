@@ -15,6 +15,20 @@ export const KIND_COLOR: Record<SessionEvent["kind"], string> = {
   meta: "var(--k-meta)",
 };
 
+/** Sentence-case name of each kind, for controls (design-language L1: a
+ *  control's label is written in sentence case at the source; the kit no
+ *  longer upper-cases it). Rows and legends keep the kind identifier. */
+export const KIND_LABEL: Record<SessionEvent["kind"], string> = {
+  thinking: "Thinking",
+  text: "Text",
+  user: "User",
+  tool_use: "Tool use",
+  tool_result: "Tool result",
+  subagent_spawn: "Subagent spawn",
+  skill_use: "Skill use",
+  meta: "Meta",
+};
+
 /** Failed tool_result colour (kit status-danger per theme). */
 export const ERROR_COLOR = "var(--k-error)";
 
@@ -120,7 +134,7 @@ export function EventDetail({ ev }: { ev: SessionEvent }) {
           {ev.kind}
         </span>
         <span className="exec-detail-label">{eventLabel(ev)}</span>
-        {ev.isSidechain ? <span className="exec-detail-tag">sidechain</span> : null}
+        {ev.isSidechain ? <span className="exec-detail-tag">Sidechain</span> : null}
       </div>
       <dl className="sl-kv exec-detail-kv">
         <dt>time</dt><dd>{fmtTime(ev.ts)}</dd>
