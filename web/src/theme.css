@@ -20,8 +20,8 @@
   --sl-text-primary:      #e7eceb;
   --sl-text-secondary:    #b6bcba;
   --sl-text-muted:        #959d9b;
-  --sl-border-subtle:     rgba(231,236,235,0.07);
-  --sl-border-default:    rgba(231,236,235,0.13);
+  --sl-border-subtle:     rgba(231,236,235,0.065);
+  --sl-border-default:    rgba(231,236,235,0.11);
   --sl-border-strong:     rgba(231,236,235,0.28);
   --sl-border-lit:        rgba(255,255,255,0.07);
   --sl-code-fg:           #d9e0dd;
@@ -32,13 +32,13 @@
   --sl-status-warning: #db9e2e;
   --sl-status-danger:  #fe8263;
   --sl-status-info:    #87a7fd;
-  --sl-code-keyword:   #87a7fd;
-  --sl-code-string:    #99b860;
-  --sl-code-number:    #f5886c;
-  --sl-code-boolean:   #f5886c;
-  --sl-code-function:  #6db3e4;
-  --sl-code-tag:       #fe8263;
-  --sl-code-builtin:   #d4a14a;
+  --sl-code-keyword:   #a9b0fd;
+  --sl-code-string:    #9ccf7f;
+  --sl-code-number:    #fd9976;
+  --sl-code-boolean:   #fd9976;
+  --sl-code-function:  #75caf2;
+  --sl-code-tag:       #a9b0fd;
+  --sl-code-builtin:   #e5bf6d;
   --sl-shadow-sm:    0 1px 2px rgba(0,0,0,0.25), 0 4px 10px -4px rgba(0,0,0,0.35);
   --sl-shadow-md:    0 2px 4px rgba(0,0,0,0.3), 0 8px 20px -8px rgba(0,0,0,0.5);
   --sl-shadow-lg:    0 1px 2px rgba(0,0,0,0.3), 0 8px 18px -6px rgba(0,0,0,0.55), 0 32px 64px -24px rgba(0,0,0,0.7);
@@ -74,6 +74,9 @@
   color-scheme: dark;
   /* UI zoom factor driven by the font +/- controls. */
   --ui-scale: 1;
+  /* Dark-layer number the kit sets only under its own dark theme (README,
+     Tier B): the accent as text inside an inversion band. */
+  --sl-accent-band-text-lmax: 0.45;
 
   /* Event-kind palette: the one source for every kind mark (graph nodes,
      waterfall, legends, detail chip, stream and live-rail dots). Kit roles,
@@ -100,13 +103,13 @@
   --sl-bg-surface-raised: #ffffff;
   --sl-bg-tile:           #ffffff;
   --sl-bg-sunken:         #f4f8f7;
-  --sl-bg-overlay:        rgba(24,31,29,0.4);
-  --sl-text-primary:      #181f1d;
+  --sl-bg-overlay:        rgba(17,24,22,0.4);
+  --sl-text-primary:      #111816;
   --sl-text-secondary:    #3c4542;
   --sl-text-muted:        #535e5a;
-  --sl-border-subtle:     rgba(24,31,29,0.09);
-  --sl-border-default:    rgba(24,31,29,0.16);
-  --sl-border-strong:     rgba(24,31,29,0.28);
+  --sl-border-subtle:     rgba(17,24,22,0.08);
+  --sl-border-default:    rgba(17,24,22,0.14);
+  --sl-border-strong:     rgba(17,24,22,0.28);
   --sl-border-lit:        rgba(255,255,255,0.9);
   --sl-code-fg:           #212826;
   --sl-code-comment:      #5c6663;
@@ -116,13 +119,13 @@
   --sl-status-warning: #795305;
   --sl-status-danger:  #a72b05;
   --sl-status-info:    #3853af;
-  --sl-code-keyword:   #4460b6;
-  --sl-code-string:    #536d0b;
-  --sl-code-number:    #aa442b;
-  --sl-code-boolean:   #aa442b;
-  --sl-code-function:  #1f6a96;
-  --sl-code-tag:       #b33c1e;
-  --sl-code-builtin:   #865d06;
+  --sl-code-keyword:   #5847b7;
+  --sl-code-string:    #316a23;
+  --sl-code-number:    #b13e06;
+  --sl-code-boolean:   #b13e06;
+  --sl-code-function:  #006191;
+  --sl-code-tag:       #5847b7;
+  --sl-code-builtin:   #865900;
   --sl-viz-0: #E0405E;
   --sl-viz-1: #2F6FE0;
   --sl-viz-2: #0E9186;

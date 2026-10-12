@@ -29,6 +29,13 @@ const TOKEN = {
   "code-fg": "--sl-code-fg",
   "code-comment": "--sl-code-comment",
   "code-null": "--sl-code-null",
+  "code-keyword": "--sl-code-keyword",
+  "code-string": "--sl-code-string",
+  "code-number": "--sl-code-number",
+  "code-boolean": "--sl-code-boolean",
+  "code-function": "--sl-code-function",
+  "code-tag": "--sl-code-tag",
+  "code-builtin": "--sl-code-builtin",
 };
 
 /** Declarations of the first rule whose selector is exactly `selector`. */
