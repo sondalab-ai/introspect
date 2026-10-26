@@ -123,9 +123,7 @@ export function ListDetail<T extends ListDetailItem>({
         {selected ? (
           renderDetail(selected)
         ) : (
-          <div className="sl-empty sl-empty--void ld-void">
-            <p className="sl-empty__body">{emptyText}</p>
-          </div>
+          <div className="sl-empty sl-empty--void ld-void" aria-hidden="true" />
         )}
       </div>
     </div>

@@ -1,6 +1,7 @@
 // ListDetail's empty states carry the kit's Bauhaus art (ui-kit 0.41): the
 // list shows `.sl-empty--shapes`, and the detail pane, blank when nothing
-// matches, shows `.sl-empty--void` instead of rendering nothing. The component
+// matches, shows a silent `.sl-empty--void` filler instead of rendering nothing
+// (the list already carries the message). The component
 // is bundled with the esbuild Vite already installs and rendered to markup.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -50,10 +51,12 @@ function detailPane(html) {
   return m[1];
 }
 
-test("blank detail pane renders an .sl-empty.sl-empty--void with the empty message", () => {
-  const pane = detailPane(render([]));
-  assert.match(pane, /^<div class="sl-empty sl-empty--void[ "]/);
-  assert.match(pane, /<p class="sl-empty__body">Nothing here\.<\/p>/);
+test("blank detail pane renders a silent .sl-empty.sl-empty--void filler", () => {
+  const html = render([]);
+  const pane = detailPane(html);
+  assert.match(pane, /^<div class="sl-empty sl-empty--void[ "][^>]*aria-hidden="true"/);
+  assert.doesNotMatch(pane, /Nothing here/);
+  assert.equal(html.match(/Nothing here\./g)?.length, 1, "the empty message renders once, in the list");
 });
 
 test("empty list renders an .sl-empty.sl-empty--shapes, not the void", () => {
