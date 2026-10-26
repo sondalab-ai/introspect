@@ -65,6 +65,7 @@ export function ListDetail<T extends ListDetailItem>({
 
   const filtered = useMemo(() => items.filter((i) => matches(i, query)), [items, query]);
   const selected = filtered.find((i) => i.id === selectedId) ?? filtered[0];
+  const emptyText = query.trim() ? "No results." : emptyMessage;
 
   return (
     <div className="ld" style={{ gridTemplateColumns: `${width}px 9px 1fr` }}>
@@ -85,7 +86,9 @@ export function ListDetail<T extends ListDetailItem>({
           </div>
         ) : null}
         {filtered.length === 0 ? (
-          <div className="ld-empty">{query.trim() ? "No results." : emptyMessage}</div>
+          <div className="sl-empty sl-empty--shapes ld-list-empty">
+            <p className="sl-empty__body">{emptyText}</p>
+          </div>
         ) : (
           <div className="sl-list sl-list--dense" role="listbox" aria-label={listTitle}>
             {filtered.map((item) => {
@@ -116,7 +119,15 @@ export function ListDetail<T extends ListDetailItem>({
         aria-label="Resize list pane"
         {...handlers}
       />
-      <div className="ld-detail">{selected ? renderDetail(selected) : null}</div>
+      <div className="ld-detail">
+        {selected ? (
+          renderDetail(selected)
+        ) : (
+          <div className="sl-empty sl-empty--void ld-void">
+            <p className="sl-empty__body">{emptyText}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

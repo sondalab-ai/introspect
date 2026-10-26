@@ -32,12 +32,15 @@ export function HooksPermsEnvPage() {
             </div>
             <h3 className="ld-section">Hooks</h3>
             <pre>{JSON.stringify(item.raw.hooks, null, 2)}</pre>
+            <hr className="sl-rule sl-rule--weave ld-weave" aria-hidden="true" />
             <h3 className="ld-section">Permissions</h3>
             <pre>{JSON.stringify(item.raw.permissions, null, 2)}</pre>
+            <hr className="sl-rule sl-rule--weave ld-weave" aria-hidden="true" />
             <h3 className="ld-section">Env (redacted)</h3>
             <pre>{JSON.stringify(item.raw.env, null, 2)}</pre>
             {Object.keys(item.raw.other).length > 0 ? (
               <>
+                <hr className="sl-rule sl-rule--weave ld-weave" aria-hidden="true" />
                 <h3 className="ld-section">Other</h3>
                 <pre>{JSON.stringify(item.raw.other, null, 2)}</pre>
               </>

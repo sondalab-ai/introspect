@@ -415,6 +415,14 @@ body {
 .sl-list__row.is-child::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0;
   width: 1px; background: var(--slc-border-subtle); }
 .ld-empty { color: var(--mut); font-size: 12px; padding: 12px 4px; }
+/* Bauhaus art (ui-kit 0.41). The list's empty-state takes the kit's padding;
+   the blank detail pane's void needs height, or its 150-210px erased zone
+   covers the whole box and leaves strokes only at the sides. */
+.ld-list-empty { margin-top: 4px; }
+.ld-void { min-height: 100%; }
+/* The weave strip paints 13px above and 11px below its 1px rule; 16px above
+   clears the pre, the next .ld-section's 12px margin clears the heading. */
+.ld-weave { margin: 16px 0 0; max-width: 100ch; }
 /* Detail panel — wraps content in a readable column on large screens. */
 /* 8px left and top: a focused control's ring and halo reach 7px outside it,
    and this pane scrolls, so it would clip them (ui-kit 0.32 halo). */
