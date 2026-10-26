@@ -53,8 +53,8 @@
   --line: var(--sl-border-default);
   --hair: var(--sl-border-subtle);
   --grid: var(--sl-border-subtle);
-  /* The kit's own thumb: the one control edge, >= 3:1 on every ground. */
-  --scroll: var(--slc-edge-control);
+  /* The kit's own thumb: the control hairline at rest (ui-kit 0.39). */
+  --scroll: var(--slc-edge-hairline);
   --cy: #2ee6c0;
   /* Accent tint for rows, chips, edges and the glow, mixed at 2-50% over
      the ground. Each theme tints with its own accent. */
