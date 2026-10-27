@@ -1,6 +1,7 @@
 {
   "name": "@introspect/server",
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "bin": {
     "introspect": "./dist/bin/introspect.js",
