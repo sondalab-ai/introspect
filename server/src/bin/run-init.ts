@@ -58,7 +58,7 @@ export async function runInit(io: Io): Promise<number> {
     io.stdout.write("\n".repeat(LAYOUT.blankBeforeSummary) + summary(3, 0, warned, 0, { mode: ctx.out, ascii: ctx.ascii }) + "\n");
     return 0;
   } catch (error) {
-    reportFailure(ctx, error, NAME, "Could not write the discovery profile");
+    reportFailure(ctx, error, NAME, "Could not build the discovery profile");
     return 1;
   }
 }

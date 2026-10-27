@@ -115,6 +115,11 @@ describe("introspect", () => {
       "    127.0.0.1:4399 is already in use (EADDRINUSE)\n" +
       "    Try: INTROSPECT_PORT=4400 introspect\n",
     );
+
+    const debug = io(["--debug"], { env: { INTROSPECT_PORT: "4399" } });
+    await runIntrospect(debug.io, deps(inUse));
+    expect(debug.stderr.text()).toContain("Caused by: Error: listen EADDRINUSE\n");
+    expect(debug.stderr.text().trimEnd().split("\n").at(-1)).toBe("    Try: INTROSPECT_PORT=4400 introspect");
   });
 
   it("rejects an unknown flag and a bad port before listening", async () => {
@@ -173,7 +178,7 @@ describe("introspect-init", () => {
     const t = io([], { env: blocked });
     expect(await runInit(t.io)).toBe(1);
     const lines = t.stderr.text().trimEnd().split("\n");
-    expect(lines[0]).toBe("  ✗ Could not write the discovery profile");
+    expect(lines[0]).toBe("  ✗ Could not build the discovery profile");
     expect(lines[1]).toContain("EEXIST");
     expect(lines.at(-1)).toBe("    Try: introspect-init --debug");
     expect(t.stderr.text()).not.toMatch(/^\s+at /m);

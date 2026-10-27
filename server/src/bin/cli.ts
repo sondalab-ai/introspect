@@ -116,12 +116,15 @@ export function continuation(text: string): string {
 /**
  * Write a failure to stderr as the three-line error block. A TermError keeps its own
  * what/why/fix; anything else is unexpected: `what` names it and the fix is
- * `<command> --debug`. Under --debug the stack comes first, so `Try:` stays last.
+ * `<command> --debug`. Under --debug the stack, then each cause's, comes first, so
+ * `Try:` stays last.
  */
 export function reportFailure(ctx: Ctx, error: unknown, command: string, what: string): void {
   const opts = { env: ctx.env, ascii: ctx.ascii, mode: ctx.err };
-  if (ctx.flags.debug && error instanceof Error && error.stack) {
-    ctx.io.stderr.write(error.stack + "\n\n");
+  if (ctx.flags.debug) {
+    for (let e: unknown = error; e instanceof Error; e = e.cause) {
+      if (e.stack) ctx.io.stderr.write((e === error ? "" : "Caused by: ") + e.stack + "\n\n");
+    }
   }
   const block = error instanceof TermError
     ? error.block(opts)

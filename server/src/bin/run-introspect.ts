@@ -77,13 +77,16 @@ function parsePort(raw: string | undefined): number {
   );
 }
 
-/** A port already taken becomes an error block naming the next port; other errors pass through. */
+/** A port already taken becomes an error block naming the next port, the original as its cause; other errors pass through. */
 function portError(error: unknown, port: number): unknown {
   if ((error as NodeJS.ErrnoException | null)?.code !== "EADDRINUSE") return error;
-  return new TermError(
-    `Could not start server on port ${port}`,
-    `127.0.0.1:${port} is already in use (EADDRINUSE)`,
-    `INTROSPECT_PORT=${port + 1} ${NAME}`,
+  return Object.assign(
+    new TermError(
+      `Could not start server on port ${port}`,
+      `127.0.0.1:${port} is already in use (EADDRINUSE)`,
+      `INTROSPECT_PORT=${port + 1} ${NAME}`,
+    ),
+    { cause: error },
   );
 }
 
