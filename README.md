@@ -14,7 +14,7 @@ It never writes to Claude's config. The only output it produces is an export bun
 - **Projects & sessions explorer** — browse every project directory Claude has touched, drill down to its sessions, and replay a past session as an execution graph.
 - **Live observability** — a real-time graph of the active session (subagent spawns, tool use, file reads/writes, current reasoning) streamed over WebSocket.
 - **Export & restore** — bundle selected config sources into a `.tar.gz` with a manifest and a restore script, to recreate the same Claude setup on another machine. Secrets are redacted by default.
-- **Convention-aware discovery** — `introspect init` builds a profile of where your custom artifacts live (specs, memories, custom prompts), so source resolution is not hardcoded.
+- **Convention-aware discovery** — `introspect-init` builds a profile of where your custom artifacts live (specs, memories, custom prompts), so source resolution is not hardcoded.
 
 ## Design principles
 
@@ -63,7 +63,7 @@ web/      Vite + React frontend
 
 - Node.js ≥ 20
 - npm ≥ 9 (workspaces)
-- Optional: the `claude` CLI, for the (planned) `introspect init --with-claude` enrichment.
+- Optional: the `claude` CLI, for the (planned) `introspect-init --with-claude` enrichment.
 
 ## Install
 
@@ -119,13 +119,15 @@ Both commands follow the Sondalab terminal spec through `@sondalab/ui-kit/term.j
 | `--color`, `--no-color` | Force or drop colour; otherwise `NO_COLOR`, then `FORCE_COLOR`, then TTY detection. |
 | `--help` | List the flags and environment variables. |
 
+The discovery command is `introspect-init`; `introspect init` is rejected (`introspect` takes no arguments) and points at `introspect --help`.
+
 ---
 
 ## Configuration
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `INTROSPECT_PORT` | `4317` | Backend listen port. |
+| `INTROSPECT_PORT` | `4317` | Backend listen port: digits only, 1 to 65535; unset or blank means the default. `0` (an ephemeral port before) is now rejected. |
 | `INTROSPECT_EXTRA_ROOTS` | — | Extra Claude config roots (comma-separated) in addition to `CLAUDE_CONFIG_DIR` / `~/.claude`. |
 | `CLAUDE_CONFIG_DIR` | `~/.claude` | Honored when present to locate the primary config root. |
 
@@ -171,7 +173,7 @@ Built in independently reviewable slices (see `docs/superpowers/specs/` and `doc
 |---|---|---|
 | 0 | Scaffold: monorepo, `sources/` resolution, startup command, UI shell | Implemented |
 | 1 | Static config pages + `parser/` | Implemented |
-| 1.5 | `discovery/` + `introspect init` (heuristic; `--with-claude` planned) | Implemented |
+| 1.5 | `discovery/` + `introspect-init` (heuristic; `--with-claude` planned) | Implemented |
 | 2 | Projects explorer, sessions/history, static graph replay | Implemented |
 | 3 | Live watcher + WebSocket + real-time graph | Implemented |
 | 4 | Export bundle + manifest + restore script | Implemented |
