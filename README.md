@@ -101,11 +101,23 @@ introspect          # start the dashboard
 Run once after install (re-run whenever your conventions change):
 
 ```bash
-introspect init                 # offline heuristic discovery
-introspect init --with-claude   # planned: enrich via local claude CLI (currently heuristic only)
+introspect-init                 # offline heuristic discovery
+introspect-init --with-claude   # planned: enrich via local claude CLI (currently heuristic only)
 ```
 
 This writes an editable `profile.json` that `sources/` consumes to locate custom artifacts (specs, memories, prompt directories).
+
+### Terminal output
+
+Both commands follow the Sondalab terminal spec through `@sondalab/ui-kit/term.js`: a header on an interactive launch only (nothing when stdout is piped), one step line per startup step, and a three-line error block (what, why, `Try:` fix) on failure. Both accept:
+
+| Flag | Effect |
+|---|---|
+| `--version` | Print the one-line lockup `sonda/lab <name> <version>`. |
+| `--debug` | Print the stack trace before the error block. Without it, no stack. |
+| `--ascii` | ASCII glyphs only (also `SONDALAB_ASCII=1`, `TERM=dumb` or a non-UTF-8 locale). |
+| `--color`, `--no-color` | Force or drop colour; otherwise `NO_COLOR`, then `FORCE_COLOR`, then TTY detection. |
+| `--help` | List the flags and environment variables. |
 
 ---
 
