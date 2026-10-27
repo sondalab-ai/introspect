@@ -1,4 +1,4 @@
-/** Persisted convention profile produced by `introspect init`. Editable by hand. */
+/** Persisted convention profile produced by `introspect-init`. Editable by hand. */
 export interface Profile {
   /** Schema version. Increment if/when fields change incompatibly. */
   version: 1;

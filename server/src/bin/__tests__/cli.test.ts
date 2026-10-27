@@ -1,4 +1,4 @@
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -22,17 +22,22 @@ function io(argv: string[], { tty = false, env = {} as NodeJS.ProcessEnv } = {})
   return { io: value, stdout, stderr };
 }
 
-/** Deps whose listen resolves to a fake server, or rejects with `error`. */
-function deps(error?: unknown): IntrospectDeps & { opened: string[] } {
+/** Deps whose listen resolves to a fake server, or rejects with `error`; `watchError` makes watch() reject. */
+function deps(error?: unknown, watchError?: unknown) {
   const opened: string[] = [];
-  return {
-    opened,
-    listen: vi.fn(async (port: number) => {
-      if (error) throw error;
-      return { url: `http://localhost:${port}`, watch: async () => {} };
-    }),
-    openBrowser: (url: string) => void opened.push(url),
-  };
+  const close = vi.fn(async () => {});
+  const listen = vi.fn(async (port: number) => {
+    if (error) throw error;
+    return {
+      url: `http://localhost:${port}`,
+      watch: async () => {
+        if (watchError) throw watchError;
+      },
+      close,
+    };
+  });
+  const value: IntrospectDeps = { listen, openBrowser: (url: string) => void opened.push(url) };
+  return Object.assign(value, { opened, close, listen });
 }
 
 describe("introspect", () => {
@@ -134,6 +139,83 @@ describe("introspect", () => {
     expect(port.stderr.text()).toContain("Try: INTROSPECT_PORT=4317 introspect");
     expect(d.listen).not.toHaveBeenCalled();
   });
+
+  it("pins the why line of an argument error, and rejects `introspect init`", async () => {
+    const t = io(["init"]);
+    expect(await runIntrospect(t.io, deps())).toBe(1);
+    expect(t.stderr.text()).toBe(
+      "  ✗ Unexpected argument init\n" +
+      "    introspect takes only --debug, --ascii, --color, --no-color, --version, --help\n" +
+      "    Try: introspect --help\n",
+    );
+  });
+
+  it.each([
+    ["", 4317],
+    ["  ", 4317],
+    [" 4400 ", 4400],
+    ["65535", 65535],
+  ])("reads INTROSPECT_PORT %j as %i", async (raw, port) => {
+    const t = io([], { env: { INTROSPECT_PORT: raw } });
+    const d = deps();
+    expect(await runIntrospect(t.io, d)).toBe(0);
+    expect(d.listen).toHaveBeenCalledWith(port, []);
+  });
+
+  it.each(["1e3", "0", "65536", "-1", "4317.0", "0x10"])("rejects INTROSPECT_PORT %j", async (raw) => {
+    const t = io([], { env: { INTROSPECT_PORT: raw } });
+    const d = deps();
+    expect(await runIntrospect(t.io, d)).toBe(1);
+    expect(t.stderr.text()).toBe(
+      `  ✗ Invalid INTROSPECT_PORT ${raw}\n` +
+      "    the port must be digits only, from 1 to 65535\n" +
+      "    Try: INTROSPECT_PORT=4317 introspect\n",
+    );
+    expect(d.listen).not.toHaveBeenCalled();
+  });
+
+  it("suggests the default's neighbour when port 65535 is in use", async () => {
+    const inUse = Object.assign(new Error("listen EADDRINUSE"), { code: "EADDRINUSE" });
+    const t = io([], { env: { INTROSPECT_PORT: "65535" } });
+    expect(await runIntrospect(t.io, deps(inUse))).toBe(1);
+    expect(t.stderr.text().trimEnd().split("\n").at(-1)).toBe("    Try: INTROSPECT_PORT=4318 introspect");
+  });
+
+  it("closes the server and exits 1 when the watcher fails after listen", async () => {
+    const t = io([]);
+    const d = deps(undefined, new Error("watch failed"));
+    expect(await runIntrospect(t.io, d)).toBe(1);
+    expect(d.close).toHaveBeenCalledTimes(1);
+    expect(d.opened).toEqual([]);
+    expect(t.stdout.text()).toBe("  ✓ Started server              http://localhost:4317\n");
+    expect(t.stderr.text()).toBe(
+      "  ✗ Could not start the dashboard\n" +
+      "    watch failed\n" +
+      "    Try: introspect --debug\n",
+    );
+  });
+
+  it("prints --help off a TTY and starts nothing", async () => {
+    const t = io(["--help"]);
+    const d = deps();
+    expect(await runIntrospect(t.io, d)).toBe(0);
+    expect(t.stdout.text()).toMatchInlineSnapshot(`
+      "Usage: introspect [flags]
+
+      FLAGS
+          --ascii                     ASCII glyphs only
+          --color, --no-color         force or drop colour
+          --debug                     print the stack on failure
+          --version                   print the version
+          --help                      print this help
+
+      ENVIRONMENT
+          INTROSPECT_PORT             listen port, default 4317
+          INTROSPECT_EXTRA_ROOTS      extra Claude config roots, comma-separated
+      "
+    `);
+    expect(d.listen).not.toHaveBeenCalled();
+  });
 });
 
 describe("introspect-init", () => {
@@ -187,5 +269,28 @@ describe("introspect-init", () => {
     expect(await runInit(d.io)).toBe(1);
     expect(d.stderr.text()).toMatch(/^\s+at /m);
     expect(d.stderr.text().trimEnd().split("\n").at(-1)).toBe("    Try: introspect-init --debug");
+  });
+
+  it("prints --help off a TTY and writes nothing", async () => {
+    const t = io(["--help"], { env: env() });
+    expect(await runInit(t.io)).toBe(0);
+    expect(t.stdout.text()).toMatchInlineSnapshot(`
+      "Usage: introspect-init [flags]
+
+      FLAGS
+          --with-claude               planned: enrich via the claude CLI
+          --ascii                     ASCII glyphs only
+          --color, --no-color         force or drop colour
+          --debug                     print the stack on failure
+          --version                   print the version
+          --help                      print this help
+
+      ENVIRONMENT
+          INTROSPECT_PROFILE          profile path, default ~/.config/introspect/profile.json
+          INTROSPECT_EXTRA_ROOTS      extra Claude config roots, comma-separated
+          CLAUDE_CONFIG_DIR           primary Claude config root
+      "
+    `);
+    expect(existsSync(join(dir, "profile.json"))).toBe(false);
   });
 });
