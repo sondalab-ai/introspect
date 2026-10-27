@@ -10,7 +10,7 @@
     "test": "node --test \"test/*.test.mjs\""
   },
   "dependencies": {
-    "@sondalab/ui-kit": "^0.40.0",
+    "@sondalab/ui-kit": "^0.41.0",
     "d3-force": "^3.0.0",
     "d3-selection": "^3.0.0",
     "d3-zoom": "^3.0.0",
@@ -26,6 +26,7 @@
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",
+    "esbuild": "^0.28.0",
     "typescript": "^5.7.0",
     "vite": "^6.0.0"
   }
