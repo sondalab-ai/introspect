@@ -36,7 +36,7 @@ export interface Flags {
   extra: Record<string, boolean>;
 }
 
-/** Resolved output settings: one colour mode per stream, the glyph set and the env term.js reads. */
+/** Resolved output settings: one colour mode per stream, the glyph set and the process env. */
 export interface Ctx {
   io: Io;
   flags: Flags;
@@ -85,19 +85,9 @@ export function parseFlags(argv: string[], command: string, extra: readonly stri
   };
 }
 
-/**
- * Resolve the output settings for `flags`. header() reads only the env, so the flags
- * are folded into it: `--ascii` as SONDALAB_ASCII=1, `--no-color` as NO_COLOR=1 and
- * `--color` as FORCE_COLOR=1 with NO_COLOR dropped.
- */
+/** Resolve the output settings for `flags`: the flags win over the env and the TTYs. */
 export function context(io: Io, flags: Flags): Ctx {
-  const env: NodeJS.ProcessEnv = { ...io.env };
-  if (flags.ascii) env.SONDALAB_ASCII = "1";
-  if (flags.color === false) env.NO_COLOR = "1";
-  if (flags.color === true) {
-    delete env.NO_COLOR;
-    env.FORCE_COLOR = "1";
-  }
+  const env = io.env;
   return {
     io,
     flags,
