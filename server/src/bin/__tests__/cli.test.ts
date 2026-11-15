@@ -77,6 +77,20 @@ describe("introspect", () => {
     expect(flagged.stdout.text()).not.toContain(ESC);
   });
 
+  it("hands --ascii, --color and --no-color to the header, over the env", async () => {
+    const ascii = io(["--ascii"], { tty: true, env: { NO_COLOR: "1" } });
+    await runIntrospect(ascii.io, deps());
+    expect(ascii.stdout.text().split("\n")[0]).toBe(`sonda/lab introspect ${packageVersion()}`);
+
+    const forced = io(["--color"], { tty: true, env: { NO_COLOR: "1" } });
+    await runIntrospect(forced.io, deps());
+    expect(forced.stdout.text().split("\n")[0]).toContain(ESC);
+
+    const plain = io(["--no-color"], { tty: true, env: { FORCE_COLOR: "1" } });
+    await runIntrospect(plain.io, deps());
+    expect(plain.stdout.text().split("\n")[0]).toBe("▄█▄ ▄▄  sonda/lab");
+  });
+
   it("uses ASCII glyphs under --ascii", async () => {
     const t = io(["--ascii"]);
     await runIntrospect(t.io, deps());
@@ -244,6 +258,21 @@ describe("introspect-init", () => {
       "Summary  3 ok · 0 fixed · 0 warn · 0 failed\n",
     );
     expect(JSON.parse(readFileSync(profile, "utf8")).version).toBe(1);
+  });
+
+  it("hands --ascii, --color and --no-color to the compact header", async () => {
+    const ascii = io(["--ascii"], { tty: true, env: { ...env(), NO_COLOR: "1" } });
+    await runInit(ascii.io);
+    expect(ascii.stdout.text().split("\n")[0]).toBe(`sonda/lab introspect-init ${packageVersion()}`);
+
+    const forced = io(["--color"], { tty: true, env: { ...env(), NO_COLOR: "1" } });
+    await runInit(forced.io);
+    expect(forced.stdout.text().split("\n")[0]).toContain(ESC);
+
+    const plain = io(["--no-color"], { tty: true, env: { ...env(), FORCE_COLOR: "1" } });
+    await runInit(plain.io);
+    expect(plain.stdout.text().split("\n")[0]).toMatch(/ sonda\/lab introspect-init$/);
+    expect(plain.stdout.text().split("\n")[0]).not.toContain(ESC);
   });
 
   it("warns on stderr for --with-claude and counts it in the Summary", async () => {

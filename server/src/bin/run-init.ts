@@ -22,7 +22,7 @@ export async function runInit(io: Io): Promise<number> {
       io.stdout.write(lockup(NAME, version, ctx.out) + "\n");
       return 0;
     }
-    io.stdout.write(header(NAME, version, "", { compact: true, env: ctx.env, isTTY: io.stdout.isTTY === true }));
+    io.stdout.write(header(NAME, version, "", { compact: true, env: ctx.env, isTTY: io.stdout.isTTY === true, ascii: ctx.ascii, mode: ctx.out }));
     if (ctx.flags.help) {
       io.stdout.write(helpText(ctx, NAME, [["--with-claude", "planned: enrich via the claude CLI"]], [
         ["INTROSPECT_PROFILE", "profile path, default ~/.config/introspect/profile.json"],

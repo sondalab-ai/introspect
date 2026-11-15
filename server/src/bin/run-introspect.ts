@@ -41,7 +41,7 @@ export async function runIntrospect(io: Io, deps: IntrospectDeps = defaultDeps):
       io.stdout.write(lockup(NAME, version, ctx.out) + "\n");
       return 0;
     }
-    const head = header(NAME, version, DESCRIPTION, { env: ctx.env, isTTY: io.stdout.isTTY === true });
+    const head = header(NAME, version, DESCRIPTION, { env: ctx.env, isTTY: io.stdout.isTTY === true, ascii: ctx.ascii, mode: ctx.out });
     io.stdout.write(head ? head + "\n" : "");
     if (ctx.flags.help) {
       io.stdout.write(helpText(ctx, NAME, [], [
